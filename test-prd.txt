@@ -1,0 +1,199 @@
+# PRD: Fly Bundles — Pricing & Monetization Revamp
+
+Product strategy · Hypothetical product proposal · October 2026
+
+## 1. Overview
+
+Objective: Increase revenue per merchant while preserving accessibility for smaller Shopify stores by introducing usage-based differentiation between the existing $20 and new $50 plans.
+
+Fly Bundles already offers a broad suite of conversion tools: Fixed Bundles, BOGO, Frequently Bought Together (FBT), Quantity Breaks, Volume Discounts, Free Gifts, and subscriptions. The proposed pricing change monetizes the scale of usage rather than simply access to features.
+
+The core hypothesis: merchants should be able to access the full product experience at $20, while merchants generating more value through extensive discounting should have a compelling reason to upgrade to $50.
+
+## 2. Problem statement
+
+The current pricing structure has two tiers:
+
+- $0 — Free: Limited use cases, primarily for discovery and adoption.
+- $20 — Paid: Full access to all features, regardless of usage.
+
+This creates three potential business problems:
+
+1. Limited monetization upside: A small merchant and a high-volume merchant pay the same $20 despite potentially deriving very different levels of value.
+2. No natural upgrade path: Once a merchant subscribes to the paid plan, there is little pricing incentive to upgrade as their business grows.
+3. Value capture mismatch: Merchants running many discounts, bundles, and promotions can potentially generate substantial incremental revenue without contributing more subscription revenue.
+
+The challenge is to increase average revenue per paying merchant (ARPPU) without damaging adoption, retention, or merchant trust.
+
+## 3. Proposed pricing
+
+## Free
+
+## $0/mo
+
+Entry-level adoption
+
+- Limited bundle functionality or usage.
+- Access to a constrained set of use cases.
+- Upgrade prompts when merchants need more capability.
+
+## Growth
+
+## $20/mo
+
+Existing paid plan
+
+- Full access to bundle types and features.
+- A defined monthly allowance for eligible bundle discounts.
+- Usage visibility and alerts before reaching the allowance.
+- Option to upgrade when additional discount capacity is needed.
+
+## Scale
+
+## $50/mo
+
+New plan
+
+- Full access to all bundle features.
+- Unlimited eligible bundle discounts.
+- No usage-based upgrade interruptions within the supported product scope.
+- Designed for high-volume merchants and promotion-heavy stores.
+
+Important product decision: The $20 plan should limit a clearly defined usage metric, not remove core features. Merchants should not discover that a bundle type they rely on is suddenly locked behind a higher-priced plan.
+
+The precise discount allowance and its counting rules should be finalized using existing merchant usage data before launch.
+
+## 4. Goals and non-goals
+
+### Goals
+
+- Increase average revenue per paying merchant.
+- Convert a share of high-usage $20 merchants to the $50 plan.
+- Preserve the $20 plan's perceived value and feature completeness.
+- Improve monetization as merchants grow.
+- Maintain merchant retention and satisfaction during the transition.
+
+### Non-goals
+
+- Rebuilding the bundle engine or changing bundle functionality.
+- Charging merchants per individual bundle feature.
+- Introducing complex, unpredictable metered billing.
+- Forcing small merchants to upgrade before they see value.
+
+## 5. Product requirements
+
+| Priority | Requirement | Expected outcome |
+| --- | --- | --- |
+| P0 | Define and enforce the $20 discount allowance | Predictable monetization |
+| P0 | Keep all core bundle types available on both paid plans | Feature parity and trust |
+| P0 | Build a usage dashboard showing consumption and remaining allowance | Fewer surprises |
+| P0 | Add contextual upgrade prompts at relevant usage thresholds | Higher upgrade conversion |
+| P0 | Support plan changes and billing through Shopify's subscription flow | Reliable billing |
+| P1 | Notify merchants at 70%, 90%, and 100% of allowance | Proactive communication |
+| P1 | Add plan comparison and upgrade messaging in the app | Better plan discovery |
+| P1 | Track plan-level revenue, usage, churn, and conversion | Measurable outcomes |
+
+### Usage-limit behavior
+
+- At 70% usage: show a non-intrusive usage indicator.
+- At 90% usage: notify the merchant and explain the $50 unlimited option.
+- At 100% usage: clearly explain what happens next and provide an upgrade path.
+
+Recommended default: Avoid silently disabling existing bundle configurations or unexpectedly blocking checkout discounts. Before implementation, validate which enforcement model Shopify's discount mechanisms and Fly Bundles' architecture support. If a hard limit cannot be safely enforced without disrupting shoppers, use an agreed soft-limit or controlled overage policy instead.
+
+## 6. Thought process: why this direction?
+
+The decision is based on four product and business principles.
+
+1. Monetize value, not feature access
+
+Fly Bundles' feature breadth is already a selling point. Restricting individual bundle types at $20 would weaken that proposition. A usage-based distinction preserves the product experience while differentiating plans by scale.
+
+2. Create a natural expansion path
+
+Merchants often begin with a few bundles and expand their promotional strategy over time. A usage threshold creates an upgrade trigger tied to real product adoption rather than an arbitrary feature paywall.
+
+3. Capture more value from high-volume merchants
+
+The $50 plan costs 2.5 times the $20 plan. It is best positioned for merchants who regularly hit the allowance and consider uninterrupted, unrestricted discounting worth the additional $30 per month.
+
+4. Protect acquisition and retention
+
+Keeping a fully functional entry-level paid plan reduces the risk of alienating smaller stores. Transparent limits, early warnings, and an explicit upgrade choice help prevent the change from feeling like a bait-and-switch.
+
+## 7. Why not alternative pricing models?
+
+| Alternative | Why we would not choose it now |
+| --- | --- |
+| Feature-gated pricing | Undermines the promise of full bundle functionality at $20 and makes the product harder to understand. |
+| Per-bundle or per-feature charges | Adds pricing complexity and may discourage experimentation with the app's core features. |
+| Usage-based overage fees | Can create unpredictable bills and merchant anxiety, particularly during major promotions. |
+| Increase the existing paid plan directly to $50 | Raises the price for every paid merchant, including low-usage merchants who may not receive enough incremental value. |
+
+The proposed two-tier paid model gives merchants a choice between a lower-cost plan with a transparent allowance and a higher-cost plan without that restriction.
+
+## 8. Success metrics
+
+Measure the impact against a pre-launch baseline and, where possible, a comparable control group.
+
+### Primary metrics
+
+Revenue
+
+# ARPPU
+
+Average revenue per paying merchant
+
+Monetization
+
+# Upgrade rate
+
+$20 to $50 conversion
+
+### Guardrail metrics
+
+- Paid-plan churn and downgrade rate.
+- Free-to-paid conversion.
+- Upgrade prompt dismissal and conversion rates.
+- Support tickets and complaints related to usage limits.
+- Bundle discount failures and checkout impact.
+
+### Illustrative 90-day targets
+
+These are proposed targets for planning, not forecasts based on existing performance data.
+
+- Increase ARPPU by 10–15%.
+- Convert 10–20% of eligible high-usage $20 merchants to $50.
+- Keep paid merchant churn within 2 percentage points of baseline.
+- Have zero known checkout failures caused by the new limit enforcement.
+
+The most important success criterion is incremental subscription revenue after accounting for lost subscriptions and churn, not upgrade conversion alone.
+
+## 9. Rollout plan
+
+1. Phase 1 — Data validation
+   Analyze current merchant usage, identify the discount metric that best predicts value, and estimate how many merchants would exceed potential thresholds.
+2. Phase 2 — Build and internal testing
+   Implement allowance tracking, usage messaging, plan comparison, billing transitions, and failure-safe enforcement. Test high-volume and edge-case discount scenarios.
+3. Phase 3 — Controlled launch
+   Release to a small eligible merchant cohort. Monitor upgrade behavior, discount execution, support volume, and retention.
+4. Phase 4 — Evaluate and expand
+   Compare revenue and guardrails against the baseline. Adjust the allowance or messaging before expanding to all eligible merchants.
+
+For existing $20 subscribers, communicate the change well in advance and honor any applicable billing commitments. Avoid retroactively changing entitlements without clear notice and a migration policy.
+
+## 10. Key open questions before launch
+
+1. What exactly counts as a discount? Discount redemptions, discount value, orders using a discount, or discount rules created? These metrics have very different implications for merchants.
+2. What is the right allowance? Use real usage percentiles to choose a threshold that protects low- and medium-usage merchants while identifying genuine expansion opportunities.
+3. What happens at the limit? Hard blocking, a grace period, or a soft limit? The decision must protect shopper checkout and merchant revenue.
+4. How does the change affect existing subscribers? Decide on grandfathering, notice periods, and migration terms.
+5. Does $50 deliver enough perceived value? Validate willingness to pay among merchants who are likely to exceed the $20 allowance.
+
+## Final product decision
+
+Keep $20 as the accessible, full-featured plan and introduce $50 as the unlimited scale plan.
+
+The strategic shift is from selling access to bundle features to monetizing the scale at which merchants use those features. This creates a clearer growth path, increases potential revenue from high-usage merchants, and avoids making the core product less attractive to smaller stores.
+
+The key caveat is that this strategy only works if the discount limit is easy to understand, meaningfully differentiates merchant segments, and can be enforced without compromising checkout reliability. Validate those three conditions before committing to a specific allowance or rolling out the change.
