@@ -1,0 +1,391 @@
+{
+  "plan": {
+    "steps": [
+      {
+        "tool": "company_identify",
+        "params": {
+          "company_name": "Linear",
+          "domain": "linear.app"
+        }
+      },
+      {
+        "tool": "company_identify",
+        "params": {
+          "company_name": "Asana",
+          "domain": "asana.com"
+        }
+      },
+      {
+        "tool": "company_identify",
+        "params": {
+          "company_name": "Monday.com",
+          "domain": "monday.com"
+        }
+      },
+      {
+        "tool": "company_identify",
+        "params": {
+          "company_name": "Jira",
+          "domain": "atlassian.com"
+        }
+      },
+      {
+        "tool": "company_enrich",
+        "params": {
+          "domain": "asana.com"
+        }
+      },
+      {
+        "tool": "company_enrich",
+        "params": {
+          "domain": "monday.com"
+        }
+      },
+      {
+        "tool": "company_enrich",
+        "params": {
+          "domain": "atlassian.com"
+        }
+      },
+      {
+        "tool": "company_search",
+        "params": {
+          "filters": {
+            "employee_count": {
+              "min": 20,
+              "max": 200
+            },
+            "regions": [
+              "United States",
+              "European Union"
+            ],
+            "industries": [
+              "Software",
+              "SaaS",
+              "Information Technology"
+            ],
+            "technologies": [
+              "Jira",
+              "Asana",
+              "Monday.com",
+              "Linear",
+              "Notion"
+            ],
+            "keywords": [
+              "B2B SaaS",
+              "product squads",
+              "parallel initiatives",
+              "cross-project dependencies"
+            ]
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "job_search",
+        "params": {
+          "filters": {
+            "titles": [
+              "Head of Product",
+              "VP Engineering"
+            ],
+            "company_employee_count": {
+              "min": 20,
+              "max": 200
+            },
+            "regions": [
+              "United States",
+              "European Union"
+            ],
+            "industries": [
+              "Software",
+              "SaaS"
+            ]
+          },
+          "limit": 100
+        }
+      },
+      {
+        "tool": "job_search",
+        "params": {
+          "filters": {
+            "titles": [
+              "Product Operations",
+              "Engineering Manager",
+              "Product Manager",
+              "Product Designer"
+            ],
+            "company_employee_count": {
+              "min": 20,
+              "max": 200
+            },
+            "regions": [
+              "United States",
+              "European Union"
+            ],
+            "industries": [
+              "Software",
+              "SaaS"
+            ]
+          },
+          "limit": 100
+        }
+      },
+      {
+        "tool": "web_search_live",
+        "params": {
+          "query": "cross-project dependency management market trends B2B SaaS 2025 competitor features Linear Asana Monday Jira Slack integrations",
+          "max_results": 10
+        }
+      }
+    ]
+  },
+  "results": [
+    {
+      "step": {
+        "tool": "web_search_live",
+        "params": {
+          "query": "cross-project dependency management market trends B2B SaaS 2025 competitor features Linear Asana Monday Jira Slack integrations",
+          "max_results": 10
+        }
+      },
+      "result": {
+        "success": true,
+        "query": "cross-project dependency management market trends B2B SaaS 2025 competitor features Linear Asana Monday Jira Slack integrations",
+        "timestamp": 1791801632023,
+        "results": [
+          {
+            "source": "web",
+            "title": "12 Best Free Project Management Tools for B2B Teams ...",
+            "url": "https://makeautomation.co/best-free-project-management-tools/",
+            "snippet": "Discover the 12 best free project management tools for SaaS & B2B teams. Compare features, limits, and integration potential to find the perfect fit.",
+            "position": 1
+          },
+          {
+            "source": "web",
+            "title": "Best Project Management Software: 11 Tools Compared",
+            "url": "https://asana.com/resources/best-project-management-software",
+            "snippet": "Best project management software guide comparing 11 tools—Asana, Jira, Trello, monday.com, and more—with features, integrations, and scaling tips for teams.",
+            "position": 2
+          },
+          {
+            "source": "web",
+            "title": "Software Development Collaboration Tools",
+            "url": "https://monday.com/blog/rnd/software-development-collaboration-tools/",
+            "snippet": "Nov 27, 2025 — Uncover the top software development collaboration platforms for 2026 and learn how to reduce delays and accelerate delivery. Explore now.",
+            "position": 3
+          },
+          {
+            "source": "web",
+            "title": "31 Product Management Tools: The Ultimate List for 2025",
+            "url": "https://productschool.com/blog/product-fundamentals/product-management-tools",
+            "snippet": "Oct 9, 2025 — Linear – The modern alternative to Jira 🏅. Fewer third-party integrations: Linear is an excellent alternative. broad project management ...",
+            "position": 4
+          },
+          {
+            "source": "web",
+            "title": "Linear – The system for product development",
+            "url": "https://linear.app/",
+            "snippet": "A new species of product tool. Purpose-built for modern teams with AI workflows at its core, Linear sets a new standard for planning and building products.Read more",
+            "position": 5
+          },
+          {
+            "source": "web",
+            "title": "10 Best Project Management Software of 2026",
+            "url": "https://www.forbes.com/advisor/business/software/best-project-management-software/",
+            "snippet": "Sep 25, 2026 — Our testing found that Jira is the best project management software for Scrum teams, earning a 4.0 star rating from our research team. Its agile ...Read more",
+            "position": 6
+          },
+          {
+            "source": "web",
+            "title": "Best cross-functional project management software in 2026 ...",
+            "url": "https://www.goodday.work/blog/best-cross-functional-project-management-software/",
+            "snippet": "Aug 2, 2026 — The best cross-functional project management software includes GoodDay, Quire, Asana, Monday.com, ClickUp, and Wrike.Read more",
+            "position": 7
+          },
+          {
+            "source": "web",
+            "title": "Best Productivity Apps for Project and Task Management in ...",
+            "url": "https://bridgeapp.ai/resources/blog/best-productivity-apps-for-project-and-task-management-in-2025",
+            "snippet": "Sep 11, 2025 — Compare and choose the right project management app for your team in 2025. Dive into expert analysis of AI, UX, pricing, and integration ...",
+            "position": 8
+          },
+          {
+            "source": "web",
+            "title": "Best Project Management Vendors Compared for 2025",
+            "url": "https://planisware.com/resources/selecting-tool/what-best-project-management-vendors-comparison",
+            "snippet": "Dec 18, 2025 — This report distills user-driven criteria and analyst findings to compare leading platforms across usability, automation, integrations, security ...Read more",
+            "position": 9
+          }
+        ],
+        "metadata": {
+          "total_results": 9,
+          "failed_pages": [],
+          "empty_pages": []
+        }
+      }
+    }
+  ],
+  "errors": [
+    {
+      "step": {
+        "tool": "company_identify",
+        "params": {
+          "company_name": "Linear",
+          "domain": "linear.app"
+        }
+      },
+      "error": "Exactly one identifier must be provided: names, domains, professional_network_profile_urls, or crustdata_company_ids"
+    },
+    {
+      "step": {
+        "tool": "company_identify",
+        "params": {
+          "company_name": "Asana",
+          "domain": "asana.com"
+        }
+      },
+      "error": "Exactly one identifier must be provided: names, domains, professional_network_profile_urls, or crustdata_company_ids"
+    },
+    {
+      "step": {
+        "tool": "company_identify",
+        "params": {
+          "company_name": "Monday.com",
+          "domain": "monday.com"
+        }
+      },
+      "error": "Exactly one identifier must be provided: names, domains, professional_network_profile_urls, or crustdata_company_ids"
+    },
+    {
+      "step": {
+        "tool": "company_identify",
+        "params": {
+          "company_name": "Jira",
+          "domain": "atlassian.com"
+        }
+      },
+      "error": "Exactly one identifier must be provided: names, domains, professional_network_profile_urls, or crustdata_company_ids"
+    },
+    {
+      "step": {
+        "tool": "company_enrich",
+        "params": {
+          "domain": "asana.com"
+        }
+      },
+      "error": "Exactly one identifier must be provided: names, domains, professional_network_profile_urls, or crustdata_company_ids"
+    },
+    {
+      "step": {
+        "tool": "company_enrich",
+        "params": {
+          "domain": "monday.com"
+        }
+      },
+      "error": "Exactly one identifier must be provided: names, domains, professional_network_profile_urls, or crustdata_company_ids"
+    },
+    {
+      "step": {
+        "tool": "company_enrich",
+        "params": {
+          "domain": "atlassian.com"
+        }
+      },
+      "error": "Exactly one identifier must be provided: names, domains, professional_network_profile_urls, or crustdata_company_ids"
+    },
+    {
+      "step": {
+        "tool": "company_search",
+        "params": {
+          "filters": {
+            "employee_count": {
+              "min": 20,
+              "max": 200
+            },
+            "regions": [
+              "United States",
+              "European Union"
+            ],
+            "industries": [
+              "Software",
+              "SaaS",
+              "Information Technology"
+            ],
+            "technologies": [
+              "Jira",
+              "Asana",
+              "Monday.com",
+              "Linear",
+              "Notion"
+            ],
+            "keywords": [
+              "B2B SaaS",
+              "product squads",
+              "parallel initiatives",
+              "cross-project dependencies"
+            ]
+          },
+          "limit": 50
+        }
+      },
+      "error": "'filters' must be either a single condition ({\"field\", \"type\", \"value\"}) or a tree ({\"op\", \"conditions\": [...]}). Received an object with neither."
+    },
+    {
+      "step": {
+        "tool": "job_search",
+        "params": {
+          "filters": {
+            "titles": [
+              "Head of Product",
+              "VP Engineering"
+            ],
+            "company_employee_count": {
+              "min": 20,
+              "max": 200
+            },
+            "regions": [
+              "United States",
+              "European Union"
+            ],
+            "industries": [
+              "Software",
+              "SaaS"
+            ]
+          },
+          "limit": 100
+        }
+      },
+      "error": "'filters' must be either a single condition ({\"field\", \"type\", \"value\"}) or a tree ({\"op\", \"conditions\": [...]}). Received an object with neither."
+    },
+    {
+      "step": {
+        "tool": "job_search",
+        "params": {
+          "filters": {
+            "titles": [
+              "Product Operations",
+              "Engineering Manager",
+              "Product Manager",
+              "Product Designer"
+            ],
+            "company_employee_count": {
+              "min": 20,
+              "max": 200
+            },
+            "regions": [
+              "United States",
+              "European Union"
+            ],
+            "industries": [
+              "Software",
+              "SaaS"
+            ]
+          },
+          "limit": 100
+        }
+      },
+      "error": "'filters' must be either a single condition ({\"field\", \"type\", \"value\"}) or a tree ({\"op\", \"conditions\": [...]}). Received an object with neither."
+    }
+  ]
+}

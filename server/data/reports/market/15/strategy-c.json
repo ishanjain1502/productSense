@@ -1,0 +1,130 @@
+{
+  "strategy": "planned_c",
+  "generatedAt": "2026-10-12T07:32:00.481Z",
+  "feature": {
+    "name": "Recurring invoice templates",
+    "description": "Let users save invoice layouts and auto-send on a schedule to repeat clients, with gentle payment reminders."
+  },
+  "executiveSummary": "LedgerLite's recurring invoice templates feature enters a market where the headline capability — recurring invoices, customizable branded templates and payment reminders — is already standard in all three named competitors (FreshBooks, Wave, Zoho Invoice) according to retrieved third-party comparison content, and where the low end of invoicing has been commoditized by free tiers. The category is nonetheless growing: retrieved sources put billing and invoicing software at $5.43B in 2025, growing at 12.5% CAGR to $13.94B by 2033, with the freelancer-specific invoicing slice cited at roughly $446M in 2025. That is enough to support a focused, self-serve product for independents and micro-businesses billing by project or retainer, but not enough to win a feature-parity race. Differentiation has to come from execution that the retrieved data does not show competitors differentiating on: mobile-first scheduling setup (Maya invoices from her phone between client calls), retainer-specific auto-send (Omar's recurring retainers), export-friendly records for multi-client bookkeepers (Priya), and the explicitly 'gentle' reminder tone named in the feature description. Material caveat: every competitor firmographic call failed and the competitor job search returned unrelated employers, so competitor positioning below rests on a single web search plus productData, not on first-party company data.",
+  "competitorLandscape": [
+    {
+      "name": "FreshBooks",
+      "positioning": "Mid-tier paid small-business and freelancer invoicing/accounting platform; positioned above free tools on time-tracking and template/billing depth. Retrieved sources cite pricing of $15–55 per month, with a starting price of $23 per month in one comparison.",
+      "relevantMoves": [
+        "Core features cited as customized invoices with branded templates and recurring billing (cashflowy.ai FreshBooks vs Wave comparison, Mar 2026)",
+        "Pricing cited at $15–55 per month (InfluenceFlow freelance-platform comparison, Mar 2026)",
+        "Starting price cited at $23/month (cashflowy.ai, Mar 2026)",
+        "Subject of dedicated head-to-head comparison content against Wave for freelancers and small business (invoicesimple.com, Sep 2026)",
+        "FreshBooks-hosted content positions Zoho Invoice's free tier (customizable invoice templates, recurring invoices, time and expense tracking) as part of the buyer's consideration set (freshbooks.com hub, Sep 2026)"
+      ],
+      "sources": [
+        "https://cashflowy.ai/blog/freshbooks-vs-wave",
+        "https://influenceflow.io/resources/compare-invoicing-platforms-by-freelance-profession-the-complete-2026-guide/",
+        "https://www.invoicesimple.com/blog/compare-freshbooks-vs-wave/",
+        "https://www.freshbooks.com/hub/invoicing/best-invoice-app"
+      ]
+    },
+    {
+      "name": "Wave",
+      "positioning": "Free-tier accounting-plus-invoicing player that anchors the bottom of the market; positioned as adequate for low invoice volumes rather than for automation-heavy workflows.",
+      "relevantMoves": [
+        "Provides unlimited invoices with free accounting attached (knowlix.ai, Sep 2026)",
+        "Cited as workable 'if you have under 50 invoices per month' (InfluenceFlow, Mar 2026)",
+        "Named, alongside Zoho Invoice and PayPal, among free tiers that have commoditized basic invoicing at the low end (micronichebrowser.com niche deep dive)",
+        "Paired with FreshBooks in dedicated freelancer/SMB comparison content (invoicesimple.com, Sep 2026; cashflowy.ai, Mar 2026)"
+      ],
+      "sources": [
+        "https://knowlix.ai/blog/best-invoicing-software-freelancers-consultants",
+        "https://influenceflow.io/resources/compare-invoicing-platforms-by-freelance-profession-the-complete-2026-guide/",
+        "https://www.micronichebrowser.com/blog/deep-dive-invoicing-tool-freelancers-score-72",
+        "https://www.invoicesimple.com/blog/compare-freshbooks-vs-wave/"
+      ]
+    },
+    {
+      "name": "Zoho Invoice",
+      "positioning": "Free/low-cost invoicing tier inside the broader Zoho suite; competes on price and breadth (templates, recurring invoices, time and expense tracking) rather than on a focused freelancer experience.",
+      "relevantMoves": [
+        "Described as a free invoicing tool offering customizable invoice templates, recurring invoices, and time and expense tracking (freshbooks.com hub, Sep 2026)",
+        "Reported to allow up to 500 invoices a year for two users on its free tier (knowlix.ai, Sep 2026)",
+        "Pricing cited at $10–35 per month (InfluenceFlow, Mar 2026)",
+        "Named among free tiers that have commoditized low-end basic invoicing, with a score of 72 in one niche ranking (micronichebrowser.com)"
+      ],
+      "sources": [
+        "https://www.freshbooks.com/hub/invoicing/best-invoice-app",
+        "https://knowlix.ai/blog/best-invoicing-software-freelancers-consultants",
+        "https://influenceflow.io/resources/compare-invoicing-platforms-by-freelance-profession-the-complete-2026-guide/",
+        "https://www.micronichebrowser.com/blog/deep-dive-invoicing-tool-freelancers-score-72"
+      ]
+    }
+  ],
+  "marketSignals": [
+    {
+      "signal": "The wider billing and invoicing software category is large and growing at a double-digit rate.",
+      "evidence": "Retrieved snippet states: 'The billing and invoicing software market is valued at $5.43 billion in 2025, growing at 12.5% CAGR to $13.94 billion by 2033.'",
+      "implicationForFeature": "Recurring templates sit inside an expanding category, so LedgerLite does not need to create demand for scheduled/automated billing — it can compete for a defined slice of it rather than educate the market.",
+      "source": "https://www.microgaps.com/opportunities/2026-02-24-freelancer-invoicing-payment-collection"
+    },
+    {
+      "signal": "The freelancer-specific invoicing slice is small in absolute terms relative to the broader category.",
+      "evidence": "Retrieved snippet states: 'The global freelancer invoicing software market size 2025 is projected to reach $446 million, growing at a compound annual growth rate (CAGR) ...' — the CAGR value itself is truncated in the retrieved text.",
+      "implicationForFeature": "Target market (independent professionals and micro-businesses) is a modest TAM; a one-person team must keep self-serve acquisition costs low and monetise automation rather than chase broad SMB accounting spend.",
+      "source": "https://research.com/software/billing-software-for-freelancers"
+    },
+    {
+      "signal": "Recurring invoices, reminders, templates and multi-currency are already marketed as standard bundled capabilities, not differentiators.",
+      "evidence": "Retrieved snippet on freelancer invoicing software states users 'get recurring invoices, reminders, templates, tax handling, multi-currency support, and a client ...'. FreshBooks is separately described as offering 'customized invoices with branded templates and recurring billing', and Zoho Invoice as offering 'customizable invoice templates, recurring invoices, time and expense tracking'.",
+      "implicationForFeature": "Parity risk is high on the headline capability. The feature's defensible ground is the specified UX behaviour — saved layouts that auto-send on schedule with 'gentle' reminders — rather than the existence of recurring invoicing itself.",
+      "source": "https://www.chronoid.app/blog/freelance-invoicing-software"
+    },
+    {
+      "signal": "The low end of invoicing has been commoditized by free tiers.",
+      "evidence": "Retrieved snippet states: 'The invoicing market has been commoditized at the low end — Wave, Zoho Invoice, and PayPal all offer free tiers that cover basic invoicing adequately.' Wave is described as offering unlimited invoices with free accounting attached, and Zoho Invoice as free for up to 500 invoices a year for two users.",
+      "implicationForFeature": "LedgerLite cannot charge for basic invoicing. Pricing must be attached to scheduling automation, template reuse and reminder cadence — the parts free tiers do not cover adequately.",
+      "source": "https://www.micronichebrowser.com/blog/deep-dive-invoicing-tool-freelancers-score-72"
+    },
+    {
+      "signal": "Buyers actively research and compare freelancer invoicing tools, and comparison content is an established acquisition surface.",
+      "evidence": "Multiple 2026 comparison pieces appeared in a single search: 'FreshBooks vs Wave for Freelancers and Small Business', '10 Best Freelance Invoicing Software Picks for 2026', 'Compare Invoicing Platforms by Freelance Profession', 'Best Invoicing Software for Freelancers & Consultants', 'FreshBooks vs Wave: 2026 Comparison (And a Smarter...)'.",
+      "implicationForFeature": "Distribution for a solo-built feature is likely to run through comparison/listicle surfaces and switching from incumbent free tiers, which also means LedgerLite will be evaluated against suites on breadth it does not have.",
+      "source": "https://www.invoicesimple.com/blog/compare-freshbooks-vs-wave/"
+    },
+    {
+      "signal": "Competitor pricing spans free to roughly $55/month, with the paid tiers clustered in the low double digits.",
+      "evidence": "Retrieved pricing citations: FreshBooks $15–55/month and a $23/month starting price; Zoho $10–35/month; Wave and Zoho Invoice available free with volume constraints (Wave 'under 50 invoices per month'; Zoho Invoice 'up to 500 invoices a year for two users').",
+      "implicationForFeature": "Expectation anchoring for a minimalist tool is low; the recurring-templates feature must be priced inside or below this band to convert freelancers already on a $0 plan.",
+      "source": "https://influenceflow.io/resources/compare-invoicing-platforms-by-freelance-profession-the-complete-2026-guide/"
+    }
+  ],
+  "gapsAndOpportunities": [
+    "Mobile-first recurring setup is the clearest stated persona need (Maya 'needs fast invoicing from her phone between client calls') and retrieved competitor content sells on feature lists and price tiers, not on phone-first scheduling UX — a narrow but concrete differentiation surface for saved templates plus auto-send.",
+    "The 'gentle payment reminder' tone is named explicitly in the feature description but no retrieved competitor evidence describes reminder tone or cadence design; this is an unclaimed UX position to own, particularly for freelancers who fear damaging client relationships.",
+    "Retainer billing is the strongest fit for auto-send on a schedule and maps directly to Omar's persona ('wants recurring retainers without manual copy-paste'). Positioning the feature around retainers rather than one-off projects targets the behaviour the feature actually automates.",
+    "First-time freelancer onboarding (Jordan persona, 'nervous about looking legit') aligns with template quality: branded, reusable layouts lower the perceived legitimacy gap, which incumbents already advertise ('customized invoices with branded templates'). Matching template polish is table stakes for this persona.",
+    "Multi-client bookkeeper workflows (Priya persona managing books for 5 clients, needing 'export-friendly records') are not addressed by any retrieved competitor evidence in this bundle — a potential wedge, but unvalidated by the raw data.",
+    "Given free-tier commoditization, the cleanest monetisation boundary is free manual invoicing with paid recurring templates + scheduled auto-send + reminders, since that is exactly the scope retrieved free tiers do not adequately cover.",
+    "Comparison/listicle content is an active, ranked surface for this category, giving a solo team a low-cost acquisition channel if it can claim a specific niche (e.g. retainers for freelancers, phone-first) rather than a broad 'invoicing software' claim."
+  ],
+  "risks": [
+    "Differentiation risk: recurring invoices, reusable templates and reminders are already offered by FreshBooks, Wave and Zoho Invoice per retrieved content, so the headline feature alone provides no defensible advantage.",
+    "Pricing risk: Wave and Zoho Invoice free tiers are described as covering basic invoicing adequately, capping willingness to pay for a minimalist tool and forcing monetisation onto automation the target user may not perceive as worth paying for yet.",
+    "Segment-size risk: the freelancer invoicing slice is cited at roughly $446M in 2025 against a $5.43B broader category, so the addressable niche is small relative to suite competitors who can spread cost across accounting, expenses and payments.",
+    "Distribution risk: the category is served by heavily compared, SEO-dense incumbents and listicle content; a 1-person team can be outspent on the same surfaces and compared unfavourably on breadth.",
+    "Operational risk: auto-send on a schedule with reminders depends on reliable scheduling, deliverability and client-facing email quality, and payment reminders sit adjacent to payment handling; the bundle contains no data on LedgerLite's sending or payments stack to assess this.",
+    "Evidence risk: all competitor firmographic and enrichment calls failed and the competitor job search returned unrelated employers, so competitor positioning, pricing and roadmap inference here rests on third-party blog snippets dated 2026 rather than first-party sources.",
+    "Persona-validation risk: the Jordan (new freelancer) persona is declared as the new-install persona, but no retrieved data measures demand for beginner-focused onboarding, and the persona and PRD documents referenced in productData are not included in the bundle.",
+    "Scope risk for a solo builder: retainer auto-send, template versioning and reminder cadence each carry support surface; with teamSize 1 and no stated runway, financial threshold, expected duration or resource budget, the capacity to maintain recurring send reliability is unassessed."
+  ],
+  "dataLimitations": [
+    "company_identify failed for freshbooks.com with error 'fetch failed'; it failed for waveapps.com and zoho.com with 'Exactly one identifier must be provided: names, domains, professional_network_profile_urls, or crustdata_company_ids'.",
+    "company_enrich failed for all three competitor domains (freshbooks.com, waveapps.com, zoho.com) with the same identifier validation error, so no employee counts, revenue, funding, tech stack, location or industry data was obtained for any named competitor.",
+    "company_search failed with \"'filters' must be either a single condition ({\\\"field\\\", \\\"type\\\", \\\"value\\\"}) or a tree ({\\\"op\\\", \\\"conditions\\\": [...]})\" — no SMB/freelancer customer-company signal was collected.",
+    "job_search scoped to FreshBooks/Wave/Zoho returned no postings from those companies; results were from unrelated employers (Serco, Amazon, TCS, Tata Consultancy Services, Evlo AI, Blacksmith Agency, RemoteHunter, Fundamental Research Labs and others), and the result reported total_count 75,300,631, indicating the query did not constrain to the intended companies. No competitor hiring or roadmap signal is usable.",
+    "job_search for 'Freelance OR Contract' in the US/Canada/UK likewise returned unrelated listings (Serco, Amazon, Tekgence, Vasion/PrinterLogic, Willsmarg, ITMC Systems and others); nothing in the returned job data is specific to freelancer invoicing, recurring billing or payments.",
+    "Only one successful web search was executed. Both market-size figures ($5.43B billing/invoicing 2025, 12.5% CAGR to $13.94B by 2033; ~$446M freelancer invoicing 2025) come from third-party blog snippets, not primary market research; the CAGR attached to the $446M figure is truncated in the retrieved text.",
+    "One snippet cites '58.4% of market revenue share in 2025' without naming the segment it refers to, so it is not usable as a market signal.",
+    "All retrieved web content is dated March–September 2026 and the search timestamp resolves to approximately October 2026; competitor pricing and feature claims are point-in-time and should be re-verified before pricing or positioning decisions.",
+    "productData contains no values for financialThresholdAmount, expectedDurationWeeks, expectedResourceConsumption, companyProfitabilityDetails or runwayRemainingMonths, so no cost, timeline or runway analysis could be performed for a team of 1.",
+    "The referenced supporting documents (recurring-invoices-prd.pdf, ledgerlite-persona-research.docx) are not included in the raw bundle; persona details used here come only from the persona names and descriptions embedded in productData."
+  ],
+  "planSummary": "Executed 3 step(s); 7 error(s). Planned tools: company_identify, company_identify, company_identify, company_enrich, company_enrich, company_enrich, company_search, job_search, job_search, web_search_live"
+}

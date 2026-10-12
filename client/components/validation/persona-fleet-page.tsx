@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { AlertCircle, CheckCircle2, Loader2 } from "lucide-react";
@@ -17,7 +17,16 @@ import {
 } from "@/components/ui/card";
 import { Slider } from "@/components/ui/slider";
 import { FieldLabel } from "@/components/ui/field";
+import { FleetJudgmentPanel } from "@/components/validation/fleet-judgment-panel";
+import type { FleetJudgment } from "@/lib/fleet-judgment-types";
 import {
+  fleetJudgmentCacheKey,
+  loadFleetJudgmentCache,
+  resolveFleetJudgmentScopeId,
+  saveFleetJudgmentCache,
+} from "@/lib/fleet-judgment-cache";
+import {
+  composePersonaFleetJudgment,
   fetchPersonaFleetStatus,
   startPersonaFleet,
   type PersonaFleetStatusResponse,
@@ -49,6 +58,10 @@ export function PersonaFleetPage({ mode }: PersonaFleetPageProps) {
   const [error, setError] = useState<string | null>(null);
   const [status, setStatus] = useState<PersonaFleetStatusResponse | null>(null);
   const [fleetRunId, setFleetRunId] = useState<number | null>(null);
+  const [judgment, setJudgment] = useState<FleetJudgment | null>(null);
+  const [judgmentLoading, setJudgmentLoading] = useState(false);
+  const [judgmentError, setJudgmentError] = useState<string | null>(null);
+  const judgmentRequestedRef = useRef(false);
 
   useEffect(() => {
     const loaded = loadValidationSession();
@@ -59,6 +72,20 @@ export function PersonaFleetPage({ mode }: PersonaFleetPageProps) {
     setSession(loaded);
     if (loaded.personaFleetRunId) {
       setFleetRunId(loaded.personaFleetRunId);
+      const scopeId = resolveFleetJudgmentScopeId(
+        mode,
+        loaded.demoId,
+        loaded.featureId
+      );
+      const cacheKey = fleetJudgmentCacheKey(
+        mode,
+        scopeId,
+        loaded.personaFleetRunId
+      );
+      const cached = loadFleetJudgmentCache(cacheKey);
+      if (cached?.judgment) {
+        setJudgment(cached.judgment);
+      }
       void fetchPersonaFleetStatus(loaded.personaFleetRunId, mode)
         .then((next) => {
           setStatus(next);
@@ -72,6 +99,52 @@ export function PersonaFleetPage({ mode }: PersonaFleetPageProps) {
         .catch(() => setUiPhase("running_agents"));
     }
   }, [mode, router]);
+
+  const composeJudgment = useCallback(
+    async (id: number, productData: ValidationSession["data"]) => {
+      if (judgmentRequestedRef.current) return;
+      judgmentRequestedRef.current = true;
+      setJudgmentLoading(true);
+      setJudgmentError(null);
+      try {
+        const result = await composePersonaFleetJudgment(id, mode, {
+          productData,
+        });
+        setJudgment(result);
+        const scopeId = resolveFleetJudgmentScopeId(
+          mode,
+          session?.demoId ?? null,
+          session?.featureId
+        );
+        saveFleetJudgmentCache(
+          fleetJudgmentCacheKey(mode, scopeId, id),
+          id,
+          result
+        );
+      } catch (err) {
+        judgmentRequestedRef.current = false;
+        setJudgmentError(
+          err instanceof Error ? err.message : "Could not compose judgment."
+        );
+      } finally {
+        setJudgmentLoading(false);
+      }
+    },
+    [mode, session?.demoId, session?.featureId]
+  );
+
+  useEffect(() => {
+    if (
+      uiPhase !== "completed" ||
+      !fleetRunId ||
+      !session ||
+      judgment ||
+      judgmentLoading
+    ) {
+      return;
+    }
+    void composeJudgment(fleetRunId, session.data);
+  }, [uiPhase, fleetRunId, session, judgment, judgmentLoading, composeJudgment]);
 
   const pollStatus = useCallback(
     async (id: number) => {
@@ -127,6 +200,9 @@ export function PersonaFleetPage({ mode }: PersonaFleetPageProps) {
     if (!session) return;
     setError(null);
     setUiPhase("starting");
+    judgmentRequestedRef.current = false;
+    setJudgment(null);
+    setJudgmentError(null);
     try {
       const result = await startPersonaFleet({
         mode: session.mode,
@@ -307,6 +383,57 @@ export function PersonaFleetPage({ mode }: PersonaFleetPageProps) {
                   )}
                 </CardContent>
               </Card>
+
+              {judgmentLoading && (
+                <Card className="border-border/60 bg-card/80">
+                  <CardContent className="flex items-center gap-3 py-8 text-muted-foreground">
+                    <Loader2 className="size-5 animate-spin text-primary" />
+                    Composing final judgment…
+                  </CardContent>
+                </Card>
+              )}
+
+              {judgmentError && (
+                <Card className="border-destructive/40 bg-destructive/5">
+                  <CardContent className="flex flex-col gap-3 py-6 text-sm text-destructive">
+                    <p>{judgmentError}</p>
+                    <Button
+                      type="button"
+                      variant="outline"
+                      size="sm"
+                      className="self-start"
+                      onClick={() => {
+                        if (!fleetRunId || !session) return;
+                        judgmentRequestedRef.current = false;
+                        void composeJudgment(fleetRunId, session.data);
+                      }}
+                    >
+                      Retry judgment
+                    </Button>
+                  </CardContent>
+                </Card>
+              )}
+
+              {judgment && !judgmentLoading && (
+                <FleetJudgmentPanel judgment={judgment} />
+              )}
+
+              {uiPhase === "completed" && (
+                <div className="flex flex-col items-end gap-2 border-t border-border/60 pt-6">
+                  {judgmentLoading && (
+                    <p className="text-xs text-muted-foreground">
+                      Final judgment still composing — you can continue to
+                      financial analysis.
+                    </p>
+                  )}
+                  <Link
+                    href={`/${mode}/financial-analysis`}
+                    className={cn(buttonVariants())}
+                  >
+                    Next: financial analysis →
+                  </Link>
+                </div>
+              )}
             </div>
           )}
 

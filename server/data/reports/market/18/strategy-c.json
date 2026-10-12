@@ -1,0 +1,121 @@
+{
+  "strategy": "planned_c",
+  "generatedAt": "2026-10-12T10:35:37.844Z",
+  "feature": {
+    "name": "Cross-project dependency map",
+    "description": "Visualize blockers across teams with live links to tasks and Slack digests when critical paths slip."
+  },
+  "executiveSummary": "FlowStack's proposed cross-project dependency map targets a real gap in the 20–200 employee B2B SaaS mid-market: teams run multiple parallel initiatives across task tools but lack a lightweight, live view of cross-team blockers. The market for dependency mapping is growing (application dependency mapping tools projected at 19.97% CAGR 2025–2035; AI infrastructure dependency mapping software projected to reach $1,557.2M by 2036), and Bain estimates a $100B cross-system labor opportunity with >90% uncaptured. Incumbent competitors—Linear, Asana, Monday.com, and Atlassian/Jira—are strong work management platforms but their raw-data positioning does not explicitly claim a cross-project dependency map for product squads; they emphasize issue tracking, Work Graph, AI work platforms, and broad collaboration. The feature's differentiators are live task links and Slack digests when critical paths slip, which align with personas Elena, Sam, Chris, and Alicia. Key risks include incumbent bundling, data integration complexity, adoption discipline, and a 14-week build with a 7-person team and negative EBITDA. Data limitations are material: company_search and company_enrich steps failed, job_search returned mostly unrelated roles, and web research covered only 9 market-sizing results with no competitor feature-level details.",
+  "competitorLandscape": [
+    {
+      "name": "Linear",
+      "positioning": "Issue tracking and project management tool for product teams, emphasizing UI elegance and world-class performance; privately held, 51–200 employees, founded 2019.",
+      "relevantMoves": [
+        "No dependency-map-specific move captured in raw data; company_identify confirms Linear positions as a product team issue tracking and project management tool."
+      ],
+      "sources": [
+        "https://linear.app",
+        "https://www.linkedin.com/company/linearapp"
+      ]
+    },
+    {
+      "name": "Asana",
+      "positioning": "Work management platform for human + AI collaboration, powered by Work Graph; public company, 1001–5000 employees, more than 170,000 organizations.",
+      "relevantMoves": [
+        "Positions Work Graph as giving context and control to keep work moving and scale impact; no explicit cross-project dependency map feature captured in raw data."
+      ],
+      "sources": [
+        "http://asana.com/",
+        "https://www.linkedin.com/company/asana"
+      ]
+    },
+    {
+      "name": "Monday.com",
+      "positioning": "AI work platform bringing people, workflows, and AI agents together; public company, 1001–5000 employees, 250,000+ customers including over 60% of Fortune 500.",
+      "relevantMoves": [
+        "Promotes monday sidekick, AI Blocks, AI Workflows, and monday agents for automation and specialized tasks; no explicit cross-project dependency map feature captured in raw data."
+      ],
+      "sources": [
+        "https://www.monday.com",
+        "https://www.linkedin.com/company/mondaydotcom"
+      ]
+    },
+    {
+      "name": "Atlassian (Jira)",
+      "positioning": "Collaboration software company powering team collaboration with Jira, Confluence, Loom, and Trello; public company, 10001+ employees, 300,000+ customers and 80% of Fortune 500.",
+      "relevantMoves": [
+        "Broad suite for team collaboration and productivity; no explicit cross-project dependency map feature captured in raw data."
+      ],
+      "sources": [
+        "https://atlassian.com/",
+        "https://www.linkedin.com/company/atlassian"
+      ]
+    }
+  ],
+  "marketSignals": [
+    {
+      "signal": "B2B SaaS market is large and growing.",
+      "evidence": "B2B SaaS market size was $395.3B in 2025 and is projected to grow from $434.4B in 2026 to $931.5B by 2033.",
+      "implicationForFeature": "A growing B2B SaaS market expands the addressable base of companies that may need lightweight cross-project dependency visibility.",
+      "source": "https://www.grandviewresearch.com/industry-analysis/b2b-software-as-a-service-market-report"
+    },
+    {
+      "signal": "Cross-system labor coordination is a large, undercaptured opportunity.",
+      "evidence": "Bain estimates the potential market could be $100 billion in the US, and more than 90% remains uncaptured.",
+      "implicationForFeature": "Cross-team dependency mapping and critical-path alerts address a coordination problem that remains largely unsolved by current tooling.",
+      "source": "https://www.bain.com/insights/100-billion-saas-opportunity-hiding-in-cross-system-labor100-billion-saas-opportunity-hiding-in-cross-system-labor-technology-report-2026/"
+    },
+    {
+      "signal": "Application dependency mapping tools are a high-growth category.",
+      "evidence": "The Application Dependency Mapping Tool Market is poised for growth at 19.97% CAGR from 2025 to 2035, driven by increasing cloud adoption.",
+      "implicationForFeature": "Rising demand for dependency mapping supports the core value proposition of visualizing blockers across teams.",
+      "source": "https://www.marketresearchfuture.com/reports/application-dependency-mapping-tool-market-26656"
+    },
+    {
+      "signal": "AI infrastructure dependency mapping software is projected to grow substantially.",
+      "evidence": "The AI Infrastructure Dependency Mapping Software Market is projected to reach USD 1,557.2 million by 2036, rising from USD 611.4 million in 2026.",
+      "implicationForFeature": "Dependency mapping is increasingly recognized as a distinct software category, which can help positioning and buyer education.",
+      "source": "https://www.openpr.com/news/4645412/ai-infrastructure-dependency-mapping-software-market-to-reach"
+    },
+    {
+      "signal": "Cross-team dependency analysis is a recognized operational metric.",
+      "evidence": "Count.co provides guidance on how to analyze cross-team dependencies, compare against healthy benchmarks, and minimize team coupling.",
+      "implicationForFeature": "Teams are already thinking about cross-team dependency health, creating a conceptual opening for a visual dependency map with Slack alerts.",
+      "source": "https://count.co/metric/cross-team-dependency-analysis"
+    },
+    {
+      "signal": "Small-business project management tool evaluations are active in 2026.",
+      "evidence": "Simular.ai benchmarks the top seven project management platforms for small businesses in 2026 across operational paradigms.",
+      "implicationForFeature": "Buyers in the mid-market are actively comparing tools, so a dependency-map feature can be a meaningful evaluation criterion.",
+      "source": "https://www.simular.ai/alternatives/project-management-tools-for-small-business"
+    }
+  ],
+  "gapsAndOpportunities": [
+    "Mid-market B2B SaaS companies with 20–200 employees run multiple parallel initiatives but lack a purpose-built cross-project dependency map that stays lightweight and integrated with existing task tools.",
+    "Incumbent platforms in the raw data—Linear, Asana, Monday.com, and Atlassian/Jira—are positioned broadly around work management, issue tracking, AI work platforms, or collaboration suites; none explicitly claims a cross-project dependency map for product squads in the captured data.",
+    "Slack digests for critical-path slips meet engineering, product ops, and design personas where they already communicate, reducing adoption friction versus requiring a new daily dashboard.",
+    "Live links to tasks can reduce context switching for Elena (engineering manager), Sam (product ops lead), and Chris (IC designer) by connecting the dependency view directly to source-of-truth tasks.",
+    "Alicia—new PM at a Series A startup—represents an entry point for teams that inherited messy roadmaps and want dependency visibility without enterprise complexity.",
+    "The growing application and AI infrastructure dependency mapping markets suggest buyer awareness is increasing, creating an opportunity to define a mid-market category position before incumbents bundle similar functionality."
+  ],
+  "risks": [
+    "Linear, Asana, Monday.com, and Atlassian/Jira could add or bundle cross-project dependency-map capabilities, leveraging their installed bases and broader platforms.",
+    "Accurate dependency mapping depends on reliable integrations and data models across task tools; incomplete or stale links would undermine trust in the map and Slack alerts.",
+    "Adoption requires teams to maintain dependency metadata; if squads do not consistently update blockers, the feature may become a stale view rather than a live operational tool.",
+    "FlowStack has a 7-person team, expected 14-week duration, 2 full-stack engineers, PM at 30%, and designer for 3 weeks; competing priorities could strain delivery.",
+    "The company is Series A with ~$1.8M ARR, ~72% gross margin, negative EBITDA (~$180k/mo burn), and 22 months runway; feature build and ~$3k/mo extra infra during beta add financial pressure.",
+    "The raw job_search results are dominated by unrelated engineering, marketing, and operations roles, so they do not validate specific demand for dependency-map roles or budgets.",
+    "No competitor pricing, packaging, roadmap, or feature-level data was captured, so competitive response and willingness-to-pay assumptions remain unverified."
+  ],
+  "dataLimitations": [
+    "Two company_search steps failed with 'At least one of filters or search is required', so no additional 20–200 employee B2B SaaS companies were identified beyond the named competitors.",
+    "Three company_enrich steps failed with 'Exactly one identifier must be provided', so no enriched company data was obtained for Linear, Asana, or a step2 search result.",
+    "The job_search steps returned 75,389,656 total listings but the visible results are almost entirely software engineering, marketing, operations, and other unrelated roles; no dependency-mapping-specific hiring signal was captured.",
+    "The web_search_live step returned only 9 results, mostly market-sizing summaries; no competitor feature-level, pricing, or product-roadmap detail was captured.",
+    "No raw content from dependency-map-spec-v2.pdf or flowstack-user-interviews-summary.pdf is present in the bundle; persona descriptions are summaries only.",
+    "No primary customer interviews, survey data, win/loss analysis, or beta feedback are included in the raw bundle.",
+    "No internal FlowStack usage data, conversion metrics, or competitive displacement data are provided.",
+    "No financial model, pricing test, or ROI analysis for the feature is included beyond the stated $180,000 financial threshold and resource estimates."
+  ],
+  "planSummary": "Executed 4 step(s); 5 error(s). Planned tools: company_identify, company_search, company_search, company_enrich, company_enrich, company_enrich, job_search, job_search, web_search_live"
+}

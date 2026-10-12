@@ -58,12 +58,17 @@ enter demo mode:
 
         once done we will show on frontend that insights have been gatherer
         this process will be done in batches of 5 subagents at once, and as the progress takes place here, we will have to update that on frontend as well in terms of percent, using batch wise progress
+        after fleet completion, server composes a final judgment (aggregate + synthesis) and the client caches it in localStorage for 4 hours — see `docs/superpowers/specs/2026-10-12-market-analysis-step2-persona-fleet-judgment-design.md`
 
 initial product context (before agent prompt / validation pipeline):
     steps: Product → Feature → Market → GTM → Financials
     Financials (after GTM, before starting downstream steps):
         feature investment: threshold (USD), build duration (weeks), expected resource consumption
         company financial health: profitability details (margins, burn, path to profit), runway remaining (months)
-    all financial fields live on `projects`: financial_threshold_amount, expected_duration_weeks, expected_resource_consumption, profitability_details, runway_remaining_months; demo cards also use `demo_id` on projects
-    optional financial workbook upload on Financials step (CSV/Excel) → `financial_reports` table: report_id, user_id, project_id, feature_id, location, uploaded_to_cfo (default false); demo uploads link to seeded demo project; full mode uploads link when project is created at agent-prompt
-    seed: from `server/`, run `npm run seed:demo` — creates demo user (DEMO_USER_EMAIL / DEMO_USER_PASSWORD) and projects `demo-project-{ledgerlite|flowstack|nimbus}` with features `demo-feature-*`, all owned by that user
+        all financial fields live on `projects`: financial_threshold_amount, expected_duration_weeks, expected_resource_consumption, profitability_details, runway_remaining_months; demo cards also use `demo_id` on projects
+        optional financial workbook upload on Financials step (CSV/Excel) → `financial_reports` table: report_id, user_id, project_id, feature_id, location, uploaded_to_cfo (default false); demo uploads link to seeded demo project; full mode uploads link when project is created at agent-prompt
+        seed: from `server/`, run `npm run seed:demo` — creates demo user (DEMO_USER_EMAIL / DEMO_USER_PASSWORD) and projects `demo-project-{ledgerlite|flowstack|nimbus}` with features `demo-feature-*`, all owned by that user
+
+    step3: financial analysis, with the data that we have about the we intook at the start, and details related to how much resources this will use, how much time it will take, ask mcp ari to give some input, once recieved that input, formalize it by sending it commandcode and changing its format into required one and rendering it over the screen, and store it in the localStorage
+
+    step4: compose all the finding and results, and create one report, one paegr, which discusses, all the pointers that were analyzed and gives you a final verdict regarding the faeture

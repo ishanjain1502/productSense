@@ -25,3 +25,16 @@ export function dbGet(sql, params = []) {
     });
   });
 }
+
+/**
+ * @param {string} sql
+ * @param {unknown[]} [params]
+ */
+export function dbAll(sql, params = []) {
+  return new Promise((resolve, reject) => {
+    getDb().all(sql, params, (err, rows) => {
+      if (err) reject(err);
+      else resolve(rows ?? []);
+    });
+  });
+}

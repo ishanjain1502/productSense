@@ -16,8 +16,16 @@ import { registerRegressionRoutes } from "./regression-routes.js";
 import { registerMarketAnalysisRoutes } from "./market-analysis-routes.js";
 import { registerPersonaFleetRoutes } from "./persona-fleet-routes.js";
 import { migratePersonaFleetSchema } from "./persona-fleet/schema.js";
-import { migrateFinancialReportsSchema } from "./financial-reports.js";
+import {
+  ensureFinancialReportsStorageDirs,
+  migrateFinancialReportsSchema,
+} from "./financial-reports.js";
 import { registerFinancialReportsRoutes } from "./financial-reports-routes.js";
+import { migrateCfoSchema } from "./cfo/migrate.js";
+import { registerCfoIntegrationRoutes } from "./cfo/routes.js";
+import { registerFinancialAnalysisRoutes } from "./financial-analysis-routes.js";
+import { registerFinalReportRoutes } from "./final-report-routes.js";
+import { migrateFinalReportSchema } from "./final-report/schema.js";
 
 const port = Number(process.env.PORT) || 1337;
 const databasePath = process.env.DATABASE_PATH || "./data/app.db";
@@ -91,6 +99,9 @@ registerRegressionRoutes(app);
 registerMarketAnalysisRoutes(app);
 registerPersonaFleetRoutes(app);
 registerFinancialReportsRoutes(app);
+registerCfoIntegrationRoutes(app);
+registerFinancialAnalysisRoutes(app);
+registerFinalReportRoutes(app);
 
 app.get("/auth/me", authMiddleware, async (req, res) => {
   try {
@@ -113,6 +124,9 @@ await migrateProjectsSchema();
 await migrateRegressionSchema();
 await migratePersonaFleetSchema();
 await migrateFinancialReportsSchema();
+await ensureFinancialReportsStorageDirs();
+await migrateCfoSchema();
+await migrateFinalReportSchema();
 
 const server = app.listen(port, () => {
   console.log(`Server listening on http://localhost:${port}`);

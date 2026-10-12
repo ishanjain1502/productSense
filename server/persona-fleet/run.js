@@ -3,6 +3,7 @@ import { dbGet, dbRun } from "../db-helpers.js";
 import { runPersonaAgent } from "./agent.js";
 import { buildPersonaFleet } from "./personas.js";
 import { generateMarketResearchQuestions } from "./questions.js";
+import { loadFleetJudgmentFromCache } from "./compose-judgment.js";
 
 const BATCH_SIZE = 5;
 
@@ -26,6 +27,11 @@ export async function getFleetRunStatus(fleetRunId) {
   if (row.status === "completed") phase = "completed";
   if (row.status === "failed") phase = "failed";
 
+  const judgmentReady =
+    row.status === "completed"
+      ? Boolean(await loadFleetJudgmentFromCache(row.id))
+      : false;
+
   return {
     fleetRunId: row.id,
     status: row.status,
@@ -37,6 +43,7 @@ export async function getFleetRunStatus(fleetRunId) {
     progressPercent,
     questions: JSON.parse(row.questions_json),
     personaCount: JSON.parse(row.personas_json).length,
+    judgmentReady,
     error: row.error,
   };
 }

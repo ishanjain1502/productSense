@@ -1,6 +1,8 @@
-# SDD progress — market-analysis-step1
+# SDD progress — persona fleet judgment (step 2)
 
 Branch: feat/market-analysis-step1
 
-Task 1: complete (090cc75, report storage)
-Tasks 2–11: complete (single implementation commit after 090cc75)
+Tasks 1–10: complete (inline implementation, tests passing)
+- Server: stats, aggregate, quotes, theme-map/fallback, synthesis, compose, routes, dbAll
+- Client: types, localStorage cache, API, fleet-judgment-panel, persona-fleet-page wiring
+- Docs: spec plan link, guide note

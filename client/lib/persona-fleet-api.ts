@@ -1,4 +1,5 @@
 import { API_BASE, getStoredToken } from "@/lib/auth";
+import type { FleetJudgment } from "@/lib/fleet-judgment-types";
 import type { ProductValidationData } from "@/lib/product-validation";
 
 export type MarketResearchQuestion = {
@@ -27,6 +28,7 @@ export type PersonaFleetStatusResponse = {
   progressPercent: number;
   questions: MarketResearchQuestion[];
   personaCount: number;
+  judgmentReady?: boolean;
   error?: string | null;
 };
 
@@ -82,4 +84,44 @@ export async function fetchPersonaFleetStatus(
     );
   }
   return data as PersonaFleetStatusResponse;
+}
+
+export async function composePersonaFleetJudgment(
+  fleetRunId: number,
+  mode: "demo" | "full",
+  body: { productData: ProductValidationData; force?: boolean }
+): Promise<FleetJudgment> {
+  const res = await fetch(
+    `${API_BASE}/market-analysis/persona-fleet/${fleetRunId}/judgment`,
+    {
+      method: "POST",
+      headers: authHeaders(mode),
+      body: JSON.stringify(body),
+    }
+  );
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) {
+    throw new Error(
+      typeof data.error === "string" ? data.error : "Judgment compose failed"
+    );
+  }
+  return data as FleetJudgment;
+}
+
+export async function fetchPersonaFleetJudgment(
+  fleetRunId: number,
+  mode: "demo" | "full"
+): Promise<FleetJudgment | null> {
+  const res = await fetch(
+    `${API_BASE}/market-analysis/persona-fleet/${fleetRunId}/judgment`,
+    { headers: authHeaders(mode) }
+  );
+  if (res.status === 404) return null;
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) {
+    throw new Error(
+      typeof data.error === "string" ? data.error : "Judgment fetch failed"
+    );
+  }
+  return data as FleetJudgment;
 }
