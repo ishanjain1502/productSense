@@ -1,0 +1,135 @@
+{
+  "strategy": "planned_c",
+  "generatedAt": "2026-10-12T13:09:23.366Z",
+  "feature": {
+    "name": "Pricing Change",
+    "description": "Current pricing tiers are $0 (limited use case) and $20 (full access). The feature changes the packaging to $20 (full access with limits on total discounts) and $50 (full access + no limits)."
+  },
+  "executiveSummary": "Fly Upsell & Cross Sell is proposing to replace its current $0 (limited use case) / $20 (full access) tiers with $20/month for full access subject to a cap on total discounts and $50/month for full access with no discount cap, for Shopify Advanced and Plus merchants worldwide. The grounded competitor picture is thin but directionally consistent: Kaching Bundles publishes a free-to-install plan plus $14.99 / $29.99 / $59.99 per month tiers (apps.shopify.com/bundle-deals), a Shopify blog article dated Nov 4, 2024 describes three Kaching paid plans starting at ~$15 (Starter) and ~$30 (Scale) with a Pro tier, and Rapi Bundles is documented as having renamed its listing to “Rapid Bundles & Upsell app” with a Pro plan covering “up to $10,000 of extra” usage (oxify.app). On that evidence the new $50 tier sits at the top of the observed price band while the recapped $20 tier sits near competitor entry pricing (~$15). The strongest grounded fit for $50 is the BFCM Campaign Power User and Promotion Strategist personas, who explicitly need uncapped, expandable discount usage; the Efficient Small-Scale Merchant and the new-install Stable, Low-Change Merchant personas both state low friction with the current $20 plan and sensitivity to recurring cost, making the cap on the $20 tier the main churn vector. Commercially this is an expansion play on a small base: revenue is $8 per merchant per month and MRR is $9,000 (implied ~1,125 merchants), so each $20→$50 upgrade adds $30/month, while retention of 4 months and average LTV of $40 mean churned merchants are costly relative to a $4 CAC. Confidence is limited by failed competitor enrichment, failed job-market queries, and the absence of internal upgrade, churn, and discount-usage data.",
+  "competitorLandscape": [
+    {
+      "name": "Kaching Bundles",
+      "positioning": "Shopify bundle and upsell app positioned on AOV growth via quantity breaks; publicly lists multiple paid tiers, the lowest of which undercuts the recapped $20 tier.",
+      "relevantMoves": [
+        "App Store listing shows pricing of Free to install, $14.99/month, $29.99/month, $59.99/month",
+        "Shopify blog (Nov 4, 2024) describes three paid plans starting at $15/month for Starter, $30/month for Scale, and a Pro tier",
+        "Ranks in Shopify's own best-bundle-apps blog content alongside the other named competitors"
+      ],
+      "sources": [
+        "web_search_live: apps.shopify.com/bundle-deals (Kaching Bundles App & Upsells pricing snippet)",
+        "web_search_live: shopify.com/blog/bundle-app (Nov 4, 2024)"
+      ]
+    },
+    {
+      "name": "Rapi Bundles (listed as “Rapid Bundles & Upsell app”)",
+      "positioning": "Shopify bundle app positioned around product bundles, mix-and-match offers, volume discounts and upsells to boost revenue.",
+      "relevantMoves": [
+        "Renamed its listing to “Rapid Bundles & Upsell app” while carrying over the handle and reviews",
+        "Pro plan is documented as covering up to $10,000 of extra usage — i.e. a usage/revenue-capped top tier rather than a purely feature-capped one"
+      ],
+      "sources": [
+        "web_search_live: apps.shopify.com/rapi (Rapid Bundles & Upsell app listing)",
+        "web_search_live: oxify.app/blog/best-shopify-quantity-breaks-apps (Sep 23, 2026)",
+        "web_search_live: letsmetrix.com/app/rapi",
+        "rawBundle errors: company_enrich for “Rapi Bundles” failed"
+      ]
+    },
+    {
+      "name": "Fast Bundle",
+      "positioning": "Self-described “go-to Shopify app for seamless product bundling, designed to increase sales and enhance the customer experience… boosting average order value and driving growth.”",
+      "relevantMoves": [
+        "Named in the company's competitor set for this pricing feature",
+        "Publishes comparison/SEO content in the bundle category (“Best Shopify Bundle App 2026: 15 Top Apps Tested & …”)",
+        "Company record: founded 2020, employee range 2–10, headcount 5 with largest headcount country Canada, flat 1m/3m/6m/12m headcount growth"
+      ],
+      "sources": [
+        "web_search_live: fastbundle.co/blog/best-shopify-bundle-apps/ (Oct 4, 2026)",
+        "company_search result: Fast Bundle, crustdata_company_id 3646182, primary_domain fastbundle.co",
+        "rawBundle errors: company_enrich for “Fast Bundles” failed"
+      ]
+    },
+    {
+      "name": "Adjacent bundle/AOV apps surfaced in the same scans (Rebolt, BundleSuite, Simple Bundles by Freshly Commerce)",
+      "positioning": "Broad set of bundle, BOGO, quantity-break and upsell apps competing for the same AOV use case, several explicitly marketing peak-season and no-code setup.",
+      "relevantMoves": [
+        "Rebolt states it is trusted by 10K+ Shopify merchants and is “Optimized for BFCM, seasonal campaigns & everyday growth”, claiming +30% AOV and +25% conversion",
+        "BundleSuite states 2,000+ Shopify brands and offers mix-and-match, combo kits, volume discounts, gifts and BOGO",
+        "Simple Bundles by Freshly Commerce states “join 15,000+ Shopify stores”"
+      ],
+      "sources": [
+        "company_search result: Rebolt Bundles, Upsell & BOGO | Shopify App (reboltbundle.com)",
+        "company_search result: BundleSuite (bundlesuiteapp.com), crustdata_company_id 11909456",
+        "company_search result: Simple Bundles by Freshly Commerce (freshlycommerce.com), crustdata_company_id 2048066"
+      ]
+    }
+  ],
+  "marketSignals": [
+    {
+      "signal": "Competitor list prices in the bundle/AOV category cluster between roughly $15 and $60 per month.",
+      "evidence": "Kaching Bundles listing: “Free to install · $14.99 / month · $29.99 / month · $59.99 / month”; Shopify blog (Nov 4, 2024): Kaching “three paid plans starting at $15 per month for the Starter plan, with the Scale plan at $30 per month, and a Pro …”",
+      "implicationForFeature": "The new $50 tier lands at the top of the observed band and the recapped $20 tier sits just above the ~$15 entry anchor, so the $50 tier must be justified by capacity (no discount limits) rather than by feature breadth.",
+      "source": "web_search_live: apps.shopify.com/bundle-deals; web_search_live: shopify.com/blog/bundle-app"
+    },
+    {
+      "signal": "Usage-capped monetization already exists among direct competitors.",
+      "evidence": "Rapi Bundles: “Its Pro plan covers up to $10,000 of extra …” (snippet truncated).",
+      "implicationForFeature": "Capping total discounts on the $20 tier follows an existing category pattern, which reduces the perceived novelty of limits — but the cap should be expressed in a metric merchants can forecast (discount usage), with an in-app meter and upgrade path.",
+      "source": "web_search_live: oxify.app/blog/best-shopify-quantity-breaks-apps (Sep 23, 2026)"
+    },
+    {
+      "signal": "Peak-season (BFCM) capacity is an explicit marketing battleground in this category.",
+      "evidence": "Rebolt: “Optimized for BFCM, seasonal campaigns & everyday growth”; Adsgun: “Built-in A/B testing plus scheduling, perfect for BFCM”.",
+      "implicationForFeature": "The BFCM Campaign Power User persona's upgrade trigger (forecasting usage beyond the monthly allowance) matches an already-marketed need; launch timing and messaging around peak-season preparation directly address it.",
+      "source": "company_search results: Rebolt (reboltbundle.com); Adsgun (adsgun.com), crustdata_company_id 6145784"
+    },
+    {
+      "signal": "The category is crowded, with multiple apps citing large installed bases.",
+      "evidence": "Rebolt 10K+ merchants; Simple Bundles 15,000+ Shopify stores; BundleSuite 2,000+ brands; additional entrants in the same scans include FoxSell Bundles, BVD, TaskLeap Bundles, PushBundle, Wolfpack Bundles, Owl Bundles, Bify and DiscountRay.",
+      "implicationForFeature": "Switching costs for a bundle app are low enough that a 150% price increase on the top tier (from $20 to $50) invites benchmarking against $15–$30 alternatives.",
+      "source": "company_search results across “Shopify Plus stores BFCM bundles high AOV” and “uses Rapi Bundles OR uses Fast Bundles OR uses Kaching Bundles” scans"
+    },
+    {
+      "signal": "Merchants in this category are openly price-sensitive.",
+      "evidence": "Reddit thread title surfaced in search: “Why are all the bundle & quantity break apps on Shopify so …” (r/shopify, 1joqda7).",
+      "implicationForFeature": "Value framing for the $50 tier should be revenue/capacity based (uncapped campaigns, peak-season headroom) rather than added features, and the $20 cap needs a clear rationale to avoid being read as a price increase by stealth.",
+      "source": "web_search_live: reddit.com/r/shopify/comments/1joqda7"
+    },
+    {
+      "signal": "Current ARPU is far below competitor list prices.",
+      "evidence": "Internal figures: revenue per merchant per month $8; MRR $9,000. Competitor published entry prices from $14.99–$15/month.",
+      "implicationForFeature": "Implied merchant base is ~1,125 (9,000 ÷ 8). Each $20→$50 upgrade adds $30/month, so broad adoption of the $50 tier — not new installs — is the lever this change pulls.",
+      "source": "productData companyProfitabilityDetails; web_search_live Kaching pricing snippet"
+    }
+  ],
+  "gapsAndOpportunities": [
+    "No competitor in the raw data uses an explicit discount-usage cap as its headline plan differentiator; only Rapi's $10,000-coverage Pro tier is a comparable usage cap. A transparent in-app usage meter with upgrade prompts would convert the new $20 cap into a measurable upgrade trigger.",
+    "Peak-season capacity is a proven message in this category (Rebolt and Adsgun both market BFCM readiness), and the BFCM Campaign Power User persona names BFCM preparation as the upgrade trigger — timing the $50 launch and messaging to peak-season planning is grounded in both internal personas and competitor behaviour.",
+    "At $8 revenue per merchant per month versus competitor list prices of $14.99–$59.99, there is documented headroom to lift ARPU; each $20→$50 move adds $30/month MRR against a current MRR of $9,000.",
+    "The $0 (limited use case) tier remains unchanged, giving merchants a downgrade path if they reject the recapped $20 tier — a targeted retention or grandfathering window is a low-cost hedge that protects the 4-month retention base.",
+    "The plan allocates support at 20% occupancy for pricing queries; self-serve pricing documentation and an in-app explanation of the cap would reduce the marginal support cost of the change.",
+    "No public install-count or revenue data exists in the raw bundle for Rapi Bundles, Fast Bundle or Kaching Bundles, so there is an unclaimed opportunity to publish clear, comparable pricing and capacity terms where competitors are vague."
+  ],
+  "risks": [
+    "The change reduces what existing $20 customers receive at the same price by introducing discount limits; both the Efficient Small-Scale Merchant (“My current plan does everything I need. Why pay more?”) and the Stable, Low-Change Merchant (“I don't need another subscription decision.”) personas indicate resistance, creating churn and downgrade risk.",
+    "Competitor entry prices are lower (Kaching $14.99–$15/month; Rapi, Fast Bundle positioned in the same category), so merchants who hit the new cap may substitute rather than upgrade to $50.",
+    "Retention is only 4 months with an average LTV of $40 against a CAC of $4; pricing friction burns through that short payback window quickly, and any upgrade revenue must be net of churn within roughly four months to be accretive.",
+    "Category crowding (Rebolt 10K+ merchants, Simple Bundles 15,000+ stores, BundleSuite 2,000+ brands, plus at least eight further bundle apps in the scans) makes a 150% top-tier price increase easy to benchmark and easy to leave.",
+    "Competitor intelligence is unverified: all three company_enrich calls for Rapi Bundles, Fast Bundles and Kaching Bundles failed, so their current pricing, headcount, funding and roadmap are not confirmed from first-party records.",
+    "No job-market signal was obtained — both job_search calls errored — so there is no external read on demand for pricing/product roles or on competitor hiring in this category.",
+    "Support impact is an assumption: 20% support occupancy is stated in the plan, but no ticket-volume or pricing-query baseline was provided to validate it.",
+    "The feature's financial framing is ambiguous: financialThresholdAmount of $10,000 has no stated definition; if read as monthly incremental revenue, at $30 per upgrade it implies roughly 334 upgrades (derived), approximately 30% of the implied 1,125 merchant base.",
+    "Delivery is sized at one engineer at 20% occupancy over one week — a compressed window for a pricing and entitlement change that also touches enforcement of discount limits, billing display and support documentation."
+  ],
+  "dataLimitations": [
+    "Competitor identity and enrichment failed: company_enrich returned “Exactly one identifier must be provided” for “Rapi Bundles”, “Fast Bundles” and “Kaching Bundles”; the company_search for these terms returned Fast Bundle (crustdata_company_id 3646182) plus deleted/empty records, and a “RapiDels” delivery company rather than the Rapi Bundles app.",
+    "The company_search intended to find stores using Rapi/Fast/Kaching Bundles returned only deleted or blank company records (50 records, all deleted/empty), so no install base, overlap or churn-risk quantification is available.",
+    "Job-market signals are absent: both job_search calls errored (“'filters' must be either a single condition … or a tree”), so no hiring or role-demand data is available for ecommerce/S店 Shopify Plus roles or Shopify app product/pricing roles.",
+    "Competitor pricing evidence comes from web snippets only: Kaching's apps.shopify.com listing, a Shopify blog post dated Nov 4, 2024, and an oxify.app article dated Sep 23, 2026 with a truncated Rapi Pro-plan claim. No first-party pricing page was captured for Rapi or Fast Bundle.",
+    "The target-market company_search returned predominantly Shopify agencies, app vendors and consultancies rather than Shopify Advanced/Plus merchant stores, so merchant-side evidence for the target segment is largely absent.",
+    "No internal data was provided on current upgrade rates, churn, plan mix, or the distribution of discount usage across merchants, so the share of $20 customers who would hit a new cap cannot be estimated.",
+    "Internal financial figures are internally inconsistent or undefined: LTV of $40 versus 4-month retention at $8/merchant/month implies about $32, a ~20% gap; financialThresholdAmount ($10,000) and expectedResourceConsumption (“1 engineer with 20% occupancy, support team with 20%”) are given without definitions or units.",
+    "Company financials (MRR $9,000, 70% margins, $0 burn, $8 revenue per merchant per month, $4 CAC) are self-reported in the product data; the derived merchant count of ~1,125 is computed from MRR ÷ revenue per merchant and is not independently verified.",
+    "The feature document is named “test-prd.txt” and is not included in the raw bundle; persona document name is null, so persona content is taken only from the provided persona descriptions."
+  ],
+  "planSummary": "Executed 5 step(s); 5 error(s). Planned tools: company_search, company_search, company_enrich, company_enrich, company_enrich, job_search, job_search, web_search_live, company_search, company_search"
+}

@@ -1,0 +1,103 @@
+{
+  "generatedAt": "2026-10-12T13:31:04.907Z",
+  "feature": {
+    "applicationName": "Fly Upsell & Cross Sell",
+    "name": "Pricing Change",
+    "description": "current pricing tiers are 0$(limited use case) and 20$(full access)\nwhich we are not changing to 20$(full access with limits on total discounts) and 50$(full access + no limits)"
+  },
+  "fleetRecommendation": "iterate",
+  "finalVerdict": "iterate",
+  "verdictRationale": "finalVerdict is iterate, directly aligned with the personaFleet recommendation of iterate and consistent with financial's proceed_with_caution. The fleet evidence shows the $20 cap is a churn vector and the $50 tier polarizes, so shipping as-is is not supported; the low-cost, one-week profile means a revised-cap test (not a stop) is the right next step.",
+  "executiveSummary": "Fly Upsell & Cross Sell's proposed pricing change ($20 capped / $50 unlimited) is a low-cost, one-week experiment within the $10k threshold, backed by 18-month runway and $0 burn. However, evidence is polarized: the $20 discount cap reads as a downgrade/repackaging, satisfaction is low (mean 31.4), and low-volume/stable merchants reject the $50 tier. The $50 unlimited plan resonates with high-volume BFCM and promotional merchants (upgrade means 90.4 and 88.3). Regression is skipped with no payload. Persona fleet recommends iterate; financial recommends proceed with caution. Executive decision: iterate—revise the $20 cap, add usage transparency, and test with merchant cohorts before broad rollout.",
+  "sections": {
+    "regression": {
+      "status": "skipped",
+      "summary": "Regression evidence was skipped; no payload was provided, so no test results, coverage, or pass/fail data are available for this pricing change.",
+      "highlights": [
+        "No regression payload provided",
+        "Section marked skipped by evidence bundle"
+      ],
+      "risks": [
+        "Pricing and entitlement changes touch billing display and discount-limit enforcement; absence of regression coverage leaves these untested."
+      ]
+    },
+    "market": {
+      "status": "available",
+      "summary": "Market scan is available but thin. Competitor published bundle/AOV pricing clusters roughly $15–$60/month (Kaching $14.99/$29.99/$59.99; Shopify blog Nov 4, 2024 cites Kaching paid plans from ~$15 Starter to ~$30 Scale plus Pro). Rapi Bundles' Pro plan is documented as covering up to $10,000 of extra usage, an existing usage-capped pattern. The new $50 tier sits at the top of the observed band; the recapped $20 sits near competitor entry pricing (~$15). BFCM capacity is an explicit category marketing theme. Internal ARPU is $8/merchant/month with $9k MRR, implying ~1,125 merchants; retention is 4 months and average LTV is $40 vs $4 CAC. Competitor enrichment and job-market queries failed, and no internal upgrade, churn, or discount-usage data were provided.",
+      "highlights": [
+        "Competitor list prices cluster roughly $15–$60/month; the new $50 tier lands at the top of the observed band.",
+        "Usage-capped monetization already exists among direct competitors (Rapi Pro plan covers up to $10,000 of extra usage).",
+        "Peak-season (BFCM) capacity is an explicit marketing battleground in the category.",
+        "The category is crowded, with Rebolt citing 10K+ merchants, Simple Bundles 15,000+ stores, and BundleSuite 2,000+ brands.",
+        "Merchants are openly price-sensitive, per a surfaced Reddit thread on bundle/quantity-break app pricing.",
+        "Current ARPU is far below competitor list prices: $8 revenue per merchant per month vs competitor entry prices from $14.99–$15/month."
+      ],
+      "risks": [
+        "The change reduces what existing $20 customers receive at the same price by introducing discount limits, creating churn and downgrade risk.",
+        "Competitor entry prices are lower, so merchants who hit the new cap may substitute rather than upgrade to $50.",
+        "Retention is only 4 months with average LTV of $40 against a CAC of $4; pricing friction burns through that payback window quickly.",
+        "Category crowding makes a 150% top-tier price increase easy to benchmark and easy to leave.",
+        "Competitor intelligence is unverified: company_enrich calls for Rapi Bundles, Fast Bundles, and Kaching Bundles failed.",
+        "No job-market signal was obtained; both job_search calls errored.",
+        "Support impact is an assumption: 20% support occupancy is stated without a ticket-volume or pricing-query baseline.",
+        "The $10,000 financialThresholdAmount has no stated definition; if read as monthly incremental revenue, at $30 per upgrade it implies roughly 334 upgrades (derived), approximately 30% of the implied 1,125 merchant base.",
+        "Delivery is sized at one engineer at 20% occupancy over one week, a compressed window for pricing, entitlement enforcement, billing display, and support documentation."
+      ]
+    },
+    "personaFleet": {
+      "status": "available",
+      "summary": "Persona fleet recommendation is iterate. Composite mean 46.5, median 48.6, percentLikelyAdopt 0. The $50 unlimited tier strongly appeals to high-volume BFCM/promotional personas (upgrade means 90.4 and 88.3; importance of unlimited discounts near-max at 96.4 and 94.3). But the capped $20 tier is widely seen as a downgrade/repackaging: satisfaction with new pricing is low (mean 31.4), recommendation likelihood is 43.1 with no scores in the 80–100 range, and low-volume/stable personas reject the $50 tier (upgrade means 8.8 and 11.3). The response is structurally polarized.",
+      "recommendation": "iterate",
+      "highlights": [
+        "Fleet composite mean 46.5, median 48.6, percentLikelyAdopt 0.",
+        "$50 unlimited tier upgrade means: 90.4 for persona_1 and 88.3 for persona_2.",
+        "Importance of unlimited discounts: 96.4 for persona_1 and 94.3 for persona_2.",
+        "$20 capped plan continuation means: 86.2 for persona_3 and 73.2 for new_install.",
+        "Satisfaction with new pricing mean 31.4; 20 of 25 agents scored in the 20–39 range.",
+        "Recommendation likelihood mean 43.1 with no scores in the 80–100 range.",
+        "Polarized upgrade intent: 12 agents scored 0–19 and 13 scored 80–100 on upgradeToFiftyForUnlimited."
+      ]
+    },
+    "financial": {
+      "status": "available",
+      "summary": "Financial status is available. Investment threshold is $10k, duration 1 week, with 1 engineer at 20% occupancy and support at 20% occupancy. CFO verdict is within_threshold. Company health: $9k MRR, 70% margins, $0 burn, 18 months runway, $8 revenue per merchant per month, $4 CAC, 4-month retention, and $40 average LTV. Financial recommendation is proceed_with_caution, driven by polarized market feedback: the $20 cap reads as a downgrade, while high-volume merchants show strong $50 upgrade intent. CFO workspace calls returned validation errors; only an uploaded report reference is available.",
+      "recommendation": "proceed_with_caution",
+      "highlights": [
+        "One-week effort with 1 engineer at 20% occupancy and support at 20% occupancy is within the $10k threshold.",
+        "Runway is 18 months with $9k MRR, 70% margins, and $0 burn.",
+        "The $50 unlimited tier is compelling for high-volume BFCM and promotional merchants.",
+        "High-upgrade-intent personas show strong interest in unlimited discounts.",
+        "The change is low-cost and short-duration, making it easy to test before broad rollout.",
+        "Positive margins, $0 burn, and 18 months of runway provide capacity for a measured pricing experiment."
+      ]
+    }
+  },
+  "crossCuttingThemes": [
+    "The $20 discount cap is widely perceived as a downgrade or repackaging of prior full access, creating churn and downgrade risk.",
+    "The $50 unlimited tier has strong fit with high-volume BFCM/promotional merchants but is rejected by low-volume and stable merchants.",
+    "The response is structurally polarized, so averages mask opposing merchant reactions.",
+    "The change is low-cost and short-duration, testable within the $10k threshold and supported by 18 months of runway.",
+    "Support load is assumed at 20% occupancy but lacks a ticket-volume or pricing-query baseline.",
+    "Competitor intelligence and internal upgrade/churn/discount-usage data are incomplete.",
+    "BFCM/peak-season timing is a shared opportunity across market and persona evidence."
+  ],
+  "conditions": [
+    "Revise or grandfather the $20 discount cap so existing full-access merchants do not experience a same-price downgrade.",
+    "Add an in-app discount-usage meter with a clear upgrade path to the $50 unlimited tier.",
+    "Stage rollout to BFCM/promotional high-volume merchants first; hold broad rollout until cap messaging is validated.",
+    "Validate pricing and cap thresholds with merchant cohorts before launch.",
+    "Provide self-serve pricing documentation and support playbooks to manage expected pricing queries.",
+    "Monitor support load, churn, downgrade rate, and $20→$50 conversion by merchant cohort.",
+    "Re-run regression testing on billing display, entitlement enforcement, and discount-limit logic before any launch."
+  ],
+  "dataLimitations": [
+    "Regression section skipped: no payload, so no test results, coverage, or pass/fail data.",
+    "Market: competitor enrichment failed for Rapi Bundles, Fast Bundles, and Kaching Bundles; job-market queries errored; target-market search returned agencies/app vendors rather than Shopify Advanced/Plus merchants.",
+    "Market: no internal upgrade rates, churn, plan mix, or discount-usage distribution were provided, so the share of $20 customers hitting a new cap cannot be estimated.",
+    "Market: competitor pricing evidence is from web snippets only, including a truncated Rapi claim; no first-party pricing pages were captured.",
+    "Persona fleet: synthetic panel of 25 agents; archetype counts 6–7; self-reported likelihoods; no real payment, usage, churn, or conversion data; unspecified discount-limit thresholds; results limited to Shopify Advanced/Plus.",
+    "Financial: CFO workspace scenario, memory, page, and integration calls returned validation errors; no detailed cost ledger or actual labor cost; uploaded report could not be read beyond filename and reportId.",
+    "Financial: financialThresholdAmount of $10,000 lacks a stated definition; LTV of $40 vs 4-month retention at $8/merchant/month implies about $32, a ~20% gap.",
+    "Feature document named test-prd.txt was not included in the raw bundle; persona document name is null."
+  ]
+}

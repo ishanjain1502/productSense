@@ -227,6 +227,19 @@ export async function saveRegressionPrompt({
 }
 
 /**
+ * @param {number} userId
+ * @param {number} promptId
+ */
+export async function loadFullRegressionPromptById(userId, promptId) {
+  return dbGet(
+    `SELECT id, prompt, project_id, feature_id
+     FROM regression_prompts
+     WHERE id = ? AND user_id = ? AND mode = 'full'`,
+    [promptId, userId]
+  );
+}
+
+/**
  * @param {Record<string, unknown>} payload
  * @param {{
  *   userId?: number | null;

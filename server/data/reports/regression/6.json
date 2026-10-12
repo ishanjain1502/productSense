@@ -1,0 +1,538 @@
+{
+  "summary": "The pricing change is not in the code. routes/pricing/pricing.json has many old plans. It has no 20 USD plan and no 50 USD plan. It has no total discount limit. Paywalls are empty. Discount routes do not read the plan. test-prd.txt is not in the repo.",
+  "blastRadius": [
+    {
+      "area": "Plan catalog",
+      "size": "large",
+      "confidence": "high",
+      "notes": "routes/pricing/pricing.json holds the plans. Prices include 0, 19, and 49. The file has no price 20 and no price 50. Each plan paywalls object is empty. The field monthly_store_orders is absent."
+    },
+    {
+      "area": "Billing and subscriptions",
+      "size": "large",
+      "confidence": "high",
+      "notes": "routes/pricing/pricing.service.js creates Shopify recurring charges from pricing.json. It also creates a free subscription, an annual subscription, a usage charge, and a cancel. A missing plan name throws an error."
+    },
+    {
+      "area": "Entitlements and paywalls",
+      "size": "small",
+      "confidence": "high",
+      "notes": "getPaywalls reads pricing.json paywalls. Those objects are empty. routes/pricing/paywall.json is not imported by any JS file. Its plan lists are empty."
+    },
+    {
+      "area": "Discount counters",
+      "size": "small",
+      "confidence": "high",
+      "notes": "The code has no total discount counter. users.counters stores modal counts only. shopOrdersCount stores a monthly order count. It does not store a discount count."
+    },
+    {
+      "area": "Order limit check",
+      "size": "small",
+      "confidence": "high",
+      "notes": "routes/orders/orders.controller.js reads monthly_store_orders. That field is not in pricing.json. The check does not stop the order. It sends a Slack note on each 100th order."
+    },
+    {
+      "area": "Usage charges",
+      "size": "medium",
+      "confidence": "high",
+      "notes": "routes/orders/orders.service.js bills a percent from plan charges.value. Current plan charges.value is 0, except Yearly_Plus_19_FlyBundles which is 10. A zero amount skips the usage charge."
+    },
+    {
+      "area": "Feature gates on offers",
+      "size": "medium",
+      "confidence": "high",
+      "notes": "routes/discounts, routes/bundles, routes/volumeBundle, and routes/frequentBought do not read the plan. Shopify discount extensions do not read the plan."
+    },
+    {
+      "area": "Storefront subscription copy",
+      "size": "small",
+      "confidence": "high",
+      "notes": "frontend.service.js writes isSubscription.name into the theme script. Theme widgets do not block offers by plan price."
+    },
+    {
+      "area": "Revenue jobs",
+      "size": "medium",
+      "confidence": "high",
+      "notes": "Revenue cron jobs filter users by isSubscription.name. They list old plan names such as Free_Plan_Sept_2025. They do not list a 20 USD plan or a 50 USD plan."
+    },
+    {
+      "area": "Admin UI",
+      "size": "small",
+      "confidence": "low",
+      "notes": "This repo has no admin screen files. Admin data comes from /api/user routes. The screen names are unknown."
+    }
+  ],
+  "impactedComponents": [
+    {
+      "name": "pricing.service.js",
+      "type": "service",
+      "impact": "Creates, cancels, and reads Shopify subscriptions from the plan catalog.",
+      "severity": "high"
+    },
+    {
+      "name": "pricing.controller.js",
+      "type": "module",
+      "impact": "Handles the pricing HTTP calls.",
+      "severity": "medium"
+    },
+    {
+      "name": "pricing.index.js",
+      "type": "module",
+      "impact": "Mounts the pricing routes under /api/pricing.",
+      "severity": "medium"
+    },
+    {
+      "name": "pricing.json",
+      "type": "configuration",
+      "impact": "Holds plan price, trial days, capped amount, charges, and empty paywalls.",
+      "severity": "high"
+    },
+    {
+      "name": "pricing.model.js",
+      "type": "data model",
+      "impact": "Stores shopName and shopifyData for the pricing collection.",
+      "severity": "medium"
+    },
+    {
+      "name": "paywall.json",
+      "type": "configuration",
+      "impact": "Defines empty tier buckets. No JS file loads this file.",
+      "severity": "low"
+    },
+    {
+      "name": "usersModel.js",
+      "type": "data model",
+      "impact": "Stores isSubscription as an object and planId as a string.",
+      "severity": "high"
+    },
+    {
+      "name": "users.js",
+      "type": "module",
+      "impact": "On install, sets UI counters. The free plan assignment is commented out.",
+      "severity": "medium"
+    },
+    {
+      "name": "users.service.js",
+      "type": "service",
+      "impact": "Attaches paywalls to user data. Decrements UI counters.",
+      "severity": "medium"
+    },
+    {
+      "name": "orders.controller.js",
+      "type": "module",
+      "impact": "Compares the monthly order count with monthly_store_orders. Sends Slack. Does not stop the order.",
+      "severity": "medium"
+    },
+    {
+      "name": "orders.service.js",
+      "type": "service",
+      "impact": "Creates a usage charge from the plan percent when the amount is above 0.",
+      "severity": "high"
+    },
+    {
+      "name": "shopOrdersCount.service.js",
+      "type": "service",
+      "impact": "Increments the monthly order count and order value.",
+      "severity": "medium"
+    },
+    {
+      "name": "frontend.service.js",
+      "type": "service",
+      "impact": "Copies isSubscription.name into the storefront script.",
+      "severity": "medium"
+    },
+    {
+      "name": "discount.index.js",
+      "type": "module",
+      "impact": "Creates and updates discounts. It does not check the plan or a discount cap.",
+      "severity": "high"
+    },
+    {
+      "name": "orders processWebhook",
+      "type": "webhook",
+      "impact": "Processes order webhooks. The plan limit check sits on POST /api/orders/create.",
+      "severity": "medium"
+    },
+    {
+      "name": "shopifyWebhooks",
+      "type": "webhook",
+      "impact": "Registers app uninstall and other topics. No subscription billing webhook is in this module.",
+      "severity": "medium"
+    },
+    {
+      "name": "revenueCalcAllStores.js",
+      "type": "job",
+      "impact": "Selects stores by old plan names.",
+      "severity": "medium"
+    },
+    {
+      "name": "revenueCalcSpecificStore.js",
+      "type": "job",
+      "impact": "Selects stores by old plan names.",
+      "severity": "medium"
+    },
+    {
+      "name": "updatePlanNameMigration.js",
+      "type": "job",
+      "impact": "Maps prices 0.00, 9.00, and 49.00 to old plan names.",
+      "severity": "medium"
+    },
+    {
+      "name": "flyBundlesCore.js",
+      "type": "theme widget",
+      "impact": "Reads merchantInfo. It does not enforce a plan discount cap.",
+      "severity": "low"
+    },
+    {
+      "name": "flyBundlesFBT.js",
+      "type": "theme widget",
+      "impact": "Renders frequently bought together. It does not enforce a plan discount cap.",
+      "severity": "low"
+    },
+    {
+      "name": "flyBundlesVolume.js",
+      "type": "theme widget",
+      "impact": "Renders quantity breaks. It does not enforce a plan discount cap.",
+      "severity": "low"
+    },
+    {
+      "name": "product-discount",
+      "type": "Shopify function",
+      "impact": "Applies product discounts. It does not read the merchant plan.",
+      "severity": "high"
+    },
+    {
+      "name": "cart-transformation",
+      "type": "Shopify function",
+      "impact": "Applies bundle cart changes. It does not read the merchant plan.",
+      "severity": "high"
+    },
+    {
+      "name": "unknown",
+      "type": "admin UI screen",
+      "impact": "Admin screens are not in this repo. The user APIs return paywalls and isSubscription.",
+      "severity": "medium"
+    }
+  ],
+  "apiAndDataImpact": {
+    "apis": [
+      {
+        "route": "POST /api/pricing/createSubscription",
+        "changeType": "changed",
+        "backwardCompatible": false,
+        "notes": "The body planName must exist in pricing.json. The 20 USD plan and the 50 USD plan are absent. Old plan names still work."
+      },
+      {
+        "route": "POST /api/pricing/createFreeSubscription",
+        "changeType": "changed",
+        "backwardCompatible": false,
+        "notes": "Writes isSubscription name and price on the user. It does not call Shopify. A removed free plan breaks this path."
+      },
+      {
+        "route": "POST /api/pricing/createAnnualSubscription",
+        "changeType": "changed",
+        "backwardCompatible": true,
+        "notes": "Uses Shopify appSubscriptionCreate. It reads price and trial days from pricing.json."
+      },
+      {
+        "route": "POST /api/pricing/cancelSubscription",
+        "changeType": "changed",
+        "backwardCompatible": true,
+        "notes": "Cancels the Shopify recurring charge and sets user isSubscription to false."
+      },
+      {
+        "route": "POST /api/pricing/usageCharge",
+        "changeType": "changed",
+        "backwardCompatible": true,
+        "notes": "Posts a Shopify usage charge when the subscription id exists."
+      },
+      {
+        "route": "GET /api/pricing/hasSubscriptionData",
+        "changeType": "changed",
+        "backwardCompatible": true,
+        "notes": "Reads active Shopify recurring charges and stores them on the user."
+      },
+      {
+        "route": "GET /api/pricing/getPaywalls",
+        "changeType": "changed",
+        "backwardCompatible": true,
+        "notes": "Returns the plan paywalls object. Current value is an empty object. The default plan key is free-user."
+      },
+      {
+        "route": "POST /api/orders/create",
+        "changeType": "changed",
+        "backwardCompatible": true,
+        "notes": "Updates the monthly order count. The limit field monthly_store_orders is missing, so the limit branch does not run."
+      },
+      {
+        "route": "POST /api/discounts/create",
+        "changeType": "changed",
+        "backwardCompatible": true,
+        "notes": "At risk. The route does not check a discount total. A new cap would change this route."
+      },
+      {
+        "route": "POST /api/discounts/dynamicCreateAutomaticAppDiscount",
+        "changeType": "changed",
+        "backwardCompatible": true,
+        "notes": "At risk. The route creates an automatic app discount with no plan check."
+      },
+      {
+        "route": "POST /api/user/decrementCounters",
+        "changeType": "changed",
+        "backwardCompatible": true,
+        "notes": "Decrements UI counters. It is not a discount counter."
+      },
+      {
+        "route": "GET /api/user/getAllData",
+        "changeType": "changed",
+        "backwardCompatible": true,
+        "notes": "Returns user data with paywalls. Empty paywalls stay backward compatible until the object shape changes."
+      }
+    ],
+    "data": [
+      {
+        "entity": "pricing.json plans",
+        "changeType": "changed",
+        "migrationNeeded": true,
+        "notes": "New 20 USD and 50 USD keys are absent. Old keys must stay so current isSubscription.name values still resolve."
+      },
+      {
+        "entity": "users.isSubscription",
+        "changeType": "changed",
+        "migrationNeeded": true,
+        "notes": "Object on the users collection. createFreeSubscription writes name and price. No migration maps merchants to a 20 USD plan or a 50 USD plan."
+      },
+      {
+        "entity": "users.planId",
+        "changeType": "changed",
+        "migrationNeeded": false,
+        "notes": "String field on users. Pricing code does not show a write to this field during createSubscription."
+      },
+      {
+        "entity": "users.counters",
+        "changeType": "changed",
+        "migrationNeeded": false,
+        "notes": "Holds reviewModal, themeExtensionModal, instructionsModalCnt, and crispSupportCntForBundleCompatiblity. It does not hold a discount total."
+      },
+      {
+        "entity": "pricing.shopifyData",
+        "changeType": "changed",
+        "migrationNeeded": false,
+        "notes": "Loose object on the pricing collection. strict is false. Orders code reads shopifyData.name for charge percent."
+      },
+      {
+        "entity": "shopOrdersCount.data",
+        "changeType": "changed",
+        "migrationNeeded": false,
+        "notes": "Monthly key holds count and totalValue. A new month uses a new key. No reset job is in the code."
+      },
+      {
+        "entity": "discounts",
+        "changeType": "changed",
+        "migrationNeeded": false,
+        "notes": "Discount documents have no plan field and no discount cap field."
+      },
+      {
+        "entity": "unknown",
+        "changeType": "added",
+        "migrationNeeded": true,
+        "notes": "A total discount limit field is not in the schema. The feature needs this field. The field name is unknown."
+      }
+    ]
+  },
+  "regressionTests": [
+    {
+      "name": "Create subscription with a known plan name",
+      "level": "unit",
+      "target": "pricing.service.js createSubscription",
+      "persona": "The Stable, Low-Change Merchant",
+      "expectedResult": "The call reads price, trial days, and capped amount from pricing.json. An unknown plan name throws an error."
+    },
+    {
+      "name": "Reject the new 20 USD and 50 USD plan names",
+      "level": "unit",
+      "target": "pricing.json",
+      "persona": "The Efficient Small-Scale Merchant",
+      "expectedResult": "The catalog has no 20 USD plan and no 50 USD plan. The test fails the release until those keys exist."
+    },
+    {
+      "name": "Return empty paywalls",
+      "level": "unit",
+      "target": "pricing.service.js getPaywalls",
+      "persona": "The Promotion Strategist",
+      "expectedResult": "The method returns an empty object for each current plan. A missing subscription uses the free-user key."
+    },
+    {
+      "name": "Write a free subscription on the user",
+      "level": "unit",
+      "target": "pricing.service.js createFreeSubscription",
+      "persona": "The Efficient Small-Scale Merchant",
+      "expectedResult": "The user isSubscription object gets the plan name and the base price. The call returns a return_url."
+    },
+    {
+      "name": "Skip usage charge when the percent is zero",
+      "level": "unit",
+      "target": "orders.service.js calculateChargePerOrder",
+      "persona": "The BFCM Campaign Power User",
+      "expectedResult": "charges.value 0 makes the billed amount 0. The usage charge call does not run."
+    },
+    {
+      "name": "Plan upgrade path",
+      "level": "integration",
+      "target": "POST /api/pricing/createSubscription",
+      "persona": "The Promotion Strategist",
+      "expectedResult": "A merchant on a 0 price plan can start a paid plan that exists in pricing.json. Shopify returns a confirmation url. The new 50 USD plan is absent, so that upgrade fails."
+    },
+    {
+      "name": "Plan downgrade path",
+      "level": "integration",
+      "target": "POST /api/pricing/cancelSubscription then POST /api/pricing/createFreeSubscription",
+      "persona": "The Efficient Small-Scale Merchant",
+      "expectedResult": "Cancel sets isSubscription to false. A later free subscription writes the free plan name. The theme script then receives that name."
+    },
+    {
+      "name": "Order limit boundary",
+      "level": "integration",
+      "target": "POST /api/orders/create and shopOrdersCount.service.js",
+      "persona": "The BFCM Campaign Power User",
+      "expectedResult": "The monthly count increments. The order still completes. No Slack limit note is sent, because monthly_store_orders is absent."
+    },
+    {
+      "name": "Discount cap boundary",
+      "level": "integration",
+      "target": "POST /api/discounts/create",
+      "persona": "The BFCM Campaign Power User",
+      "expectedResult": "The route accepts another discount. No counter blocks it. The release fails if the 20 USD plan must cap total discounts."
+    },
+    {
+      "name": "New install has no forced paid plan",
+      "level": "integration",
+      "target": "POST /api/user/auth-user",
+      "persona": "The Stable, Low-Change Merchant",
+      "expectedResult": "Install sets UI counters. It does not set isSubscription. The free forever assignment stays commented out."
+    },
+    {
+      "name": "Peak day offers stay active",
+      "level": "e2e",
+      "target": "product-discount and cart-transformation",
+      "persona": "The BFCM Campaign Power User",
+      "expectedResult": "Existing offers still discount the cart. The functions do not read the plan. A new cap must not stop offers during the peak day until the merchant chooses the 50 USD plan."
+    },
+    {
+      "name": "Many offer types on the unlimited plan",
+      "level": "e2e",
+      "target": "routes/discounts and routes/volumeBundle and routes/frequentBought",
+      "persona": "The Promotion Strategist",
+      "expectedResult": "Fixed bundles, frequently bought together, and quantity breaks save with no plan gate. The 50 USD plan is not in the catalog."
+    },
+    {
+      "name": "One or two bundles on the lower plan",
+      "level": "e2e",
+      "target": "routes/bundles and GET /api/pricing/getPaywalls",
+      "persona": "The Efficient Small-Scale Merchant",
+      "expectedResult": "The merchant can save one or two bundle types. Paywalls do not enforce a bundle count. The nearest prices in the catalog are 0 and 19, not 20."
+    },
+    {
+      "name": "New merchant storefront has no extra plan block",
+      "level": "e2e",
+      "target": "flyBundlesCore.js",
+      "persona": "The Stable, Low-Change Merchant",
+      "expectedResult": "The widget loads from merchantInfo. It does not ask for a new subscription and it does not hide the offer for a missing plan."
+    }
+  ],
+  "rolloutRisks": [
+    {
+      "risk": "Billing error on an unknown plan name",
+      "severity": "high",
+      "trigger": "createSubscription receives a plan name that is not in pricing.json.",
+      "impact": "The Shopify charge is not created. The merchant stays on the old plan or on no plan."
+    },
+    {
+      "risk": "Wrong entitlements",
+      "severity": "high",
+      "trigger": "The new plans ship while paywalls stay empty objects.",
+      "impact": "Every plan gets the same access. The 20 USD discount cap does not apply."
+    },
+    {
+      "risk": "Blocked discounts at peak time",
+      "severity": "high",
+      "trigger": "A new discount cap is enforced with no grace period during a peak campaign.",
+      "impact": "The BFCM merchant loses offers on peak days. Current code does not block discounts. The risk starts when the cap is added."
+    },
+    {
+      "risk": "Support load",
+      "severity": "medium",
+      "trigger": "Merchants see a price move from 0 or from about 20 to 20 with a cap, or to 50 with no cap.",
+      "impact": "The task states that support queries rise. The team support share is 20 percent."
+    },
+    {
+      "risk": "Revenue loss",
+      "severity": "high",
+      "trigger": "The free plan ends and the small merchant will not pay 20 USD.",
+      "impact": "Current revenue per merchant is 8 USD. Retention is 4 months. Lost merchants cut MRR. The code still has 0 price plans."
+    },
+    {
+      "risk": "Usage charge on the yearly percent plan",
+      "severity": "medium",
+      "trigger": "A merchant is on Yearly_Plus_19_FlyBundles, where charges.value is 10.",
+      "impact": "Orders add a usage charge. Other current plans charge 0 percent."
+    },
+    {
+      "risk": "Revenue jobs miss the new plans",
+      "severity": "medium",
+      "trigger": "Cron filters keep the old plan name list.",
+      "impact": "Reports omit merchants on any new plan name."
+    }
+  ],
+  "recommendedMitigations": [
+    {
+      "risk": "Billing error on an unknown plan name",
+      "mitigation": "Add the new plan keys before release. Keep every old plan key. Roll back by sending merchants to an old plan name that is still in pricing.json.",
+      "owner": "engineer"
+    },
+    {
+      "risk": "Wrong entitlements",
+      "mitigation": "Put the discount cap on the 20 USD plan paywall. Leave the 50 USD plan paywall with no cap. Alert when getPaywalls returns an empty object for a new plan.",
+      "owner": "engineer"
+    },
+    {
+      "risk": "Blocked discounts at peak time",
+      "mitigation": "Use a feature flag and a staged rollout. Give a grace period through peak days. Do not reset the discount counter during the grace period. There is no pricing feature flag in the code today.",
+      "owner": "engineer"
+    },
+    {
+      "risk": "Support load",
+      "mitigation": "Send a short plan note before the change. Staff support at the stated 20 percent occupancy. Watch Slack order-limit notes and billing errors.",
+      "owner": "support"
+    },
+    {
+      "risk": "Revenue loss",
+      "mitigation": "Keep the 0 price plans for current merchants until they choose a new plan. Stage the new prices. Roll back to the old plan keys if paid installs fall.",
+      "owner": "engineer"
+    },
+    {
+      "risk": "Usage charge on the yearly percent plan",
+      "mitigation": "Confirm charges.value before the price change. Alert when a usage charge is above 0 for a plan that should be a flat fee.",
+      "owner": "engineer"
+    },
+    {
+      "risk": "Revenue jobs miss the new plans",
+      "mitigation": "Add the new plan names to the cron plan lists in the same release as pricing.json.",
+      "owner": "engineer"
+    }
+  ],
+  "entireInsights": [
+    "Entire CLI is installed. entire status returns enabled false and error not set up.",
+    "Search on gh/skailama/backend-EchoFixedBundle-app9 fails. The error says no matching repositories. This repo is not mirrored to Entire.",
+    "The local checkpoint list is empty. The remote checkpoint list fails because git cannot read the GitHub remote.",
+    "The session list is empty.",
+    "Search for pricing change across all repos returns zero results.",
+    "Search for discount limits across all repos returns zero results.",
+    "Search for plan tiers across all repos returns six commits in ishanjain1502/founderOS. The titles link SP-01 through SP-05 specs. The titles do not name pricing, plan tiers, or discount limits.",
+    "No Entire plugin is installed. Plugin search for skill returns no match. No Entire skill matches this task."
+  ],
+  "source": "unknown",
+  "product": "unknown",
+  "promptId": 17,
+  "featureId": "8aa64999-5554-4181-929c-ccdb31130392"
+}

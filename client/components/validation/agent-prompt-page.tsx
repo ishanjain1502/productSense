@@ -1,11 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { AlertCircle, Loader2 } from "lucide-react";
 
 import { CopyablePromptBlock } from "@/components/validation/copyable-prompt-block";
+import { RegressionReportUpload } from "@/components/validation/regression-report-upload";
 import { ValidationPageShell } from "@/components/validation/page-shell";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -21,6 +22,7 @@ import { checkRegressionReport, fetchAgentPrompt } from "@/lib/regression-api";
 import {
   loadValidationSession,
   saveValidationSession,
+  withProjectIds,
   type ValidationSession,
 } from "@/lib/validation-session";
 import { cn } from "@/lib/utils";
@@ -36,12 +38,15 @@ export function AgentPromptPage({ mode }: AgentPromptPageProps) {
   const [meta, setMeta] = useState<{
     generatedBy: string;
     promptId: number;
+    projectId?: string;
+    featureId?: string;
   } | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [checkLoading, setCheckLoading] = useState(false);
   const [checkMessage, setCheckMessage] = useState<string | null>(null);
   const [checkPassed, setCheckPassed] = useState(false);
+  const bootstrapRequestId = useRef(0);
 
   useEffect(() => {
     const loaded = loadValidationSession();
@@ -58,6 +63,8 @@ export function AgentPromptPage({ mode }: AgentPromptPageProps) {
       setCheckPassed(true);
     }
 
+    const requestId = ++bootstrapRequestId.current;
+
     void (async () => {
       try {
         const result = await fetchAgentPrompt({
@@ -65,28 +72,40 @@ export function AgentPromptPage({ mode }: AgentPromptPageProps) {
           demoId: loaded.demoId,
           productData: loaded.data,
           financialReportId: loaded.financialReportId,
+          projectId: loaded.projectId,
+          featureId: loaded.featureId,
+          promptId: loaded.promptId,
         });
+        if (requestId !== bootstrapRequestId.current) return;
         setPrompt(result.prompt);
         setMeta({
           generatedBy: result.generatedBy,
           promptId: result.promptId,
+          projectId: result.projectId,
+          featureId: result.featureId,
         });
-        const updated: ValidationSession = {
-          ...loaded,
+        const updated = withProjectIds(loaded, {
           promptId: result.promptId,
-          projectId: result.projectId ?? loaded.projectId,
-          featureId: result.featureId ?? loaded.featureId,
-        };
+          projectId: result.projectId,
+          featureId: result.featureId,
+        });
         saveValidationSession(updated);
         setSession(updated);
       } catch (err) {
+        if (requestId !== bootstrapRequestId.current) return;
         setError(
           err instanceof Error ? err.message : "Could not load agent prompt."
         );
       } finally {
-        setLoading(false);
+        if (requestId === bootstrapRequestId.current) {
+          setLoading(false);
+        }
       }
     })();
+
+    return () => {
+      bootstrapRequestId.current += 1;
+    };
   }, [mode, router]);
 
   const title =
@@ -99,15 +118,59 @@ export function AgentPromptPage({ mode }: AgentPromptPageProps) {
       ? "Copy this prompt into your coding agent. It is fixed per sample product and uses ASD-STE100 technical language."
       : "This prompt was generated with CommandCode (DeepSeek v4) from your form. Copy it into your coding agent to run regression analysis and POST the report to the backend.";
 
+  const persistSessionForMarket = (): ValidationSession | null => {
+    if (!session) return null;
+    const updated = withProjectIds(session, {
+      promptId: meta?.promptId,
+      projectId: meta?.projectId,
+      featureId: meta?.featureId,
+    });
+    saveValidationSession(updated);
+    setSession(updated);
+    return updated;
+  };
+
   const goToMarket = () => {
+    const updated = persistSessionForMarket();
+    if (!updated) return;
+    if (mode === "full" && !updated.featureId) {
+      setCheckMessage(
+        "Wait until the agent prompt finishes loading (feature id is required for market analysis)."
+      );
+      return;
+    }
     router.push(`/${mode}/market-analysis`);
   };
 
   const handleSkip = () => {
+    const updated = persistSessionForMarket();
+    if (!updated) return;
+    if (mode === "full" && !updated.featureId) {
+      setCheckMessage(
+        "Wait until the agent prompt finishes loading before skipping to market analysis."
+      );
+      return;
+    }
+    saveValidationSession({ ...updated, regressionSkipped: true });
+    router.push(`/${mode}/market-analysis`);
+  };
+
+  const handleReportUploaded = (reportId: number) => {
     if (!session) return;
-    const updated = { ...session, regressionSkipped: true };
+    setCheckPassed(true);
+    const updated = withProjectIds(
+      { ...session, regressionCheckPassed: true },
+      {
+        promptId: meta?.promptId,
+        projectId: meta?.projectId,
+        featureId: meta?.featureId,
+      }
+    );
     saveValidationSession(updated);
-    goToMarket();
+    setSession(updated);
+    setCheckMessage(
+      `Report uploaded (id ${reportId}). You can continue to market analysis.`
+    );
   };
 
   const handleCheck = async () => {
@@ -122,7 +185,14 @@ export function AgentPromptPage({ mode }: AgentPromptPageProps) {
       });
       if (status.found) {
         setCheckPassed(true);
-        const updated = { ...session, regressionCheckPassed: true };
+        const updated = withProjectIds(
+          { ...session, regressionCheckPassed: true },
+          {
+            promptId: meta.promptId,
+            projectId: meta.projectId,
+            featureId: meta.featureId,
+          }
+        );
         saveValidationSession(updated);
         setSession(updated);
         setCheckMessage(
@@ -231,11 +301,22 @@ export function AgentPromptPage({ mode }: AgentPromptPageProps) {
             <CardHeader>
               <CardTitle className="text-base">Next: market analysis</CardTitle>
               <CardDescription>
-                After the agent POSTs a regression report, click Check. Use Skip
-                below to continue without a report (demo and full mode).
+                After the agent POSTs a regression report, click Check—or upload
+                the JSON manually if sync failed. Use Skip to continue without a
+                report (demo and full mode).
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
+              {meta && (
+                <RegressionReportUpload
+                  mode={session.mode}
+                  demoId={session.demoId}
+                  promptId={meta.promptId}
+                  featureId={session.featureId}
+                  disabled={loading}
+                  onUploaded={handleReportUploaded}
+                />
+              )}
               <div className="flex flex-wrap items-center gap-3">
                 <Button
                   type="button"
@@ -254,7 +335,11 @@ export function AgentPromptPage({ mode }: AgentPromptPageProps) {
                 </Button>
                 <Button
                   type="button"
-                  disabled={!checkPassed}
+                  disabled={
+                    !checkPassed ||
+                    (mode === "full" &&
+                      !(session.featureId ?? meta?.featureId))
+                  }
                   onClick={goToMarket}
                 >
                   Go ahead to market analysis
@@ -265,6 +350,10 @@ export function AgentPromptPage({ mode }: AgentPromptPageProps) {
                   type="button"
                   variant="outline"
                   className="w-full sm:w-auto"
+                  disabled={
+                    mode === "full" &&
+                    (loading || !(session.featureId ?? meta?.featureId))
+                  }
                   onClick={handleSkip}
                 >
                   Skip regression
