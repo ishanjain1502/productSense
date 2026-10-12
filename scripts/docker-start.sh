@@ -1,9 +1,18 @@
 #!/bin/sh
 set -e
 
+# Public HTTP port (Render injects PORT — do not set PORT=1337 in the dashboard).
+WEB_PORT="${PORT:-3000}"
 API_PORT="${API_INTERNAL_PORT:-1337}"
 WEB_DIR="${WEB_DIR:-/app/web}"
 SERVER_DIR="${SERVER_DIR:-/app/server}"
+
+if [ "$WEB_PORT" = "$API_PORT" ]; then
+  echo "PORT ($WEB_PORT) conflicts with API_INTERNAL_PORT ($API_PORT)."
+  echo "On Render: remove PORT from Environment (Render sets it automatically)."
+  echo "Locally: use PORT=3000 for the web app and API_INTERNAL_PORT=1337 for the API."
+  exit 1
+fi
 
 (
   cd "$SERVER_DIR"
@@ -35,4 +44,4 @@ if [ "$ready" -ne 1 ]; then
 fi
 
 cd "$WEB_DIR"
-exec node server.js
+exec env PORT="$WEB_PORT" HOSTNAME="${HOSTNAME:-0.0.0.0}" node server.js
