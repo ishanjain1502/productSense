@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowLeft, Layers } from "lucide-react";
 
+import { AuthNav } from "@/components/auth/auth-nav";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -41,16 +42,19 @@ export function ValidationPageShell({
             <ArrowLeft className="size-4" />
             Back home
           </Link>
-          <div className="flex items-center gap-2">
-            <span
-              className="flex size-8 items-center justify-center rounded-lg bg-primary text-primary-foreground"
-              aria-hidden
-            >
-              <Layers className="size-3.5" />
-            </span>
-            <span className="text-sm font-semibold tracking-tight">
-              productSense
-            </span>
+          <div className="flex flex-wrap items-center gap-3">
+            <div className="flex items-center gap-2">
+              <span
+                className="flex size-8 items-center justify-center rounded-lg bg-primary text-primary-foreground"
+                aria-hidden
+              >
+                <Layers className="size-3.5" />
+              </span>
+              <span className="text-sm font-semibold tracking-tight">
+                productSense
+              </span>
+            </div>
+            <AuthNav />
           </div>
         </div>
         <div className="space-y-2">

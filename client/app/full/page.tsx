@@ -6,7 +6,7 @@ export default function FullModePage() {
     <ValidationPageShell
       modeLabel="Full mode"
       title="Bring your own product context"
-      description="Complete each step with your application, feature, market, and go-to-market details. Every section must be filled before you can continue."
+      description="Sign in required. Complete each step with your application, feature, market, and go-to-market details before you continue."
     >
       <ProductValidationFlow mode="full" />
     </ValidationPageShell>

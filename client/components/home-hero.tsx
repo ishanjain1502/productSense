@@ -8,6 +8,7 @@ import {
   Zap,
 } from "lucide-react";
 
+import { AuthNav } from "@/components/auth/auth-nav";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import {
@@ -75,10 +76,13 @@ export function HomeHero() {
             </span>
           </span>
         </div>
-        <Badge variant="secondary" className="gap-1.5 px-3 py-1">
-          <Sparkles className="size-3.5" />
-          No login required
-        </Badge>
+        <div className="flex flex-wrap items-center gap-3">
+          <Badge variant="secondary" className="gap-1.5 px-3 py-1">
+            <Sparkles className="size-3.5" />
+            Demo — no login
+          </Badge>
+          <AuthNav />
+        </div>
       </header>
 
       <main className="mx-auto flex w-full max-w-5xl flex-1 flex-col justify-center px-6 pb-16 pt-4 sm:px-8">
