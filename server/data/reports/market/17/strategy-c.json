@@ -1,0 +1,133 @@
+{
+  "strategy": "planned_c",
+  "generatedAt": "2026-10-12T10:36:02.097Z",
+  "feature": {
+    "name": "Recurring invoice templates",
+    "description": "Let users save invoice layouts and auto-send on a schedule to repeat clients, with gentle payment reminders. Source: productData.featureName / productData.featureDescription (PRD 'recurring-invoices-prd.pdf'). Product context: LedgerLite, a minimalist invoicing and expense tracker for freelancers who hate spreadsheet chaos; teamSize 1; primary buyer 'Freelancer / solopreneur (self-serve)'; target geographies United States, Canada, United Kingdom."
+  },
+  "executiveSummary": "LedgerLite proposes 'Recurring invoice templates' (saved layouts, scheduled auto-send, gentle reminders) for self-serve freelancers in the US, Canada and the UK. The bundle shows the capability is already table stakes at the low end: Invlo markets 'recurring invoices, overdue aging reports' plus 'AI-drafted follow-up emails' on a free plan; Invocrest lists 'recurring schedules' and 'overdue reminders'; GETinvois offers 'send payment reminders... all for free'; InvoiceBerry sells reminder-driven cashflow. Two of the three named competitors operate at far greater scale — FreshBooks (founded 2003, 201-500 employees, Canada, positions itself for 'business owners and freelancers') and Zoho (10001+ employees, 55+ products, 150M+ users, privately held and profitable) — while the third, Wave, could not be identified as an accounting/invoicing company at all in this data. Directional demand signals exist but are weak for this use case: web results cite e-invoicing growth (USD 6.00B in 2024 to USD 36.72B by 2032, 25.40% CAGR) and freelance-platform market growth (US$5.4B in 2024 to US$13.3B by 2030; North America USD 19B in 2024 to USD 40B in 2035), yet these figures conflict across sources, mostly describe B2B/B2G compliance e-invoicing rather than solo-freelancer billing, and cannot size LedgerLite's niche. Conclusion supported by the evidence: recurring templates are hygiene, not a differentiator; the defensible angle named in the product data is minimalist, mobile-first simplicity, which this bundle does not validate. All three company_enrich calls failed and the job-search and Wave signals are unusable, so this read is directional and competitive coverage is materially incomplete.",
+  "competitorLandscape": [
+    {
+      "name": "FreshBooks",
+      "positioning": "Company description (company_identify, confidence 1.0, crustdata_company_id 662598, freshbooks.com): 'designed to drive small business success—built for business owners and freelancers who want an easier way to get paid, manage finances, and deliver work all in one place.' Canada-based, privately held, founded 2003, employee_count_range 201-500, industries Software Development / Technology, Information and Internet.",
+      "relevantMoves": [
+        "Direct audience overlap: it targets 'business owners and freelancers' with an all-in-one 'get paid, manage finances, deliver work' promise — the same self-serve buyer as LedgerLite.",
+        "Accounting channel: a separate 'FreshBooks Accounting Partner Program' entity (id 11817959, freshbooks.com/accountants, 501-1000 employees) offers 'essential tools, reports, and app integrations that both business owners and accountants will love' and frames clients 'accurately recording their invoices and expenses' — adjacent to the Priya bookkeeper persona.",
+        "Geographic/regulatory expansion in invoicing: 'Facturama by Freshbooks' (id 839380, facturama.mx, 11-50 employees, founded 2012) describes a Mexican billing/accounting platform with 'more than 25,000 clients' and an e-invoicing API for system integration.",
+        "Third-party ecosystem: 'Kaal: Desktop Timer for Freshbooks' (id 25005948, kaal.app, 2-10 employees, founded 2021) is a macOS timer for multiple projects on FreshBooks accounting software, indicating integrations around its billing surface.",
+        "Match-set caveat: 22 entities matched 'FreshBooks'; only the top match is the accounting software company. Others include an affiliate-domain profile (id 17211194), 'FreshBooks Partners' bookkeeping service (id 18157612), and 'Freshbooks & Lern' (id 70554280)."
+      ],
+      "sources": [
+        "company_identify FreshBooks — match crustdata_company_id 662598 (confidence 1)",
+        "company_identify FreshBooks — FreshBooks Accounting Partner Program, id 11817959",
+        "company_identify FreshBooks — Facturama by Freshbooks, id 839380",
+        "company_identify FreshBooks — Kaal: Desktop Timer for Freshbooks, id 25005948"
+      ]
+    },
+    {
+      "name": "Wave",
+      "positioning": "Not resolvable from the provided data. company_identify for 'Wave' returned no accounting or invoicing software company; the 27 matches (confidence 1.0) are unrelated entities sharing the name, e.g. WAVE 3 News (wave3.com, Louisville broadcaster), Wave utilities (wave-utilities.co.uk, UK water retailer), Wave XR (wavexr.com), Wave mental health (wavelife.io), WAVE A/V integrator (wave.us), Wave recruitment platform (wave-rs.co.uk), WAVE design (wave.design), Wave brand experiences (experiencewave.com), WAVE ocean platform (waveworld.org), Wave privacy browser (joinwave.app), Wave e-bikes (wave.bike), Wave case (wavecase.co.uk), WAVE lifestyle tech (wavehq.com).",
+      "relevantMoves": [],
+      "sources": [
+        "company_identify Wave — 27 matches returned, none an accounting/invoicing software provider; no reference to Wave's invoicing product in the bundle"
+      ]
+    },
+    {
+      "name": "Zoho Invoice",
+      "positioning": "Zoho Invoice itself was not resolved; identification returned Zoho Corporation and 20+ Zoho sub-brands. Zoho Corporation (id 1032449, zoho.com): 'Zoho offers beautifully smart software to help you grow your business. With over 150M+ users worldwide, Zoho's 55+ products aid your sales and marketing, support and collaboration, finance, and recruitment needs'; 'privately held and profitable'; founded 1996; employee_count_range 10001+; HQ Chennai with offices across the globe; 'does not have an ad-revenue model in any part of its business, including its free products.'",
+      "relevantMoves": [
+        "Bundle breadth as competitive threat: 55+ integrated products; Zoho Africa profile states products are available 'under one single integrated suite, Zoho One, that can put your business completely on the cloud.'",
+        "Presence in all three target geographies: Zoho UK (Bletchley), Zoho Canada, and Zoho USA entities were identified; Zoho Europe notes European offices in Milton Keynes, Utrecht, Essen, Lille and Valencia.",
+        "Free-product and privacy positioning is explicit ('does not have an ad-revenue model in any part of its business, including its free products'; 'Zoho respects user privacy') — a trust/price claim a paid indie tool must answer.",
+        "Finance-adjacent portfolio exists (e.g. Zoho Commerce for store operations and ecommerce, Zoho Vault, Zoho PageSense), but no product-level Zoho Invoice data — pricing, recurring-invoice capability, or roadmap — appears in this bundle."
+      ],
+      "sources": [
+        "company_identify Zoho Invoice — matched Zoho, crustdata_company_id 1032449",
+        "company_identify Zoho Invoice — Zoho UK id 1240064; Zoho Canada id 1524492; Zoho USA id 6624586; Zoho Europe id 3162899; Zoho Africa id 1524395; Zoho Commerce id 1524442"
+      ]
+    }
+  ],
+  "marketSignals": [
+    {
+      "signal": "Electronic invoicing is a high-growth category.",
+      "evidence": "DataBridge Market Research: 'E-Invoicing Market was valued at USD 6.00B in 2024 and is projected to reach USD 36.72B by 2032, growing at a 25.40% CAGR.' SNS Insider: 'The E-Invoicing Market size was valued at USD 12.7 Billion in 2023. It is expected to Reach USD 63.93 Billion by 2032.' MarketDataForecast: 'USD 35.77 billion by 2034, up from USD 10.76 billion in 2026, at a CAGR of 16.2%.' Maximize Market Research: 'USD 16.37 Billion in 2025 and the total E-Invoicing revenue is expected to grow at a CAGR of 15.4%.'",
+      "implicationForFeature": "Category momentum supports continued investment in invoicing, but the figures conflict by roughly 2x for overlapping years and describe electronic invoicing broadly (largely B2B/B2G compliance), not solo-freelancer billing. They cannot be used to size demand for recurring invoice templates in LedgerLite's niche.",
+      "source": "web_search_live 'freelance invoicing market trends 2024 North America Western Europe' — results 2 (databridgemarketresearch.com), 3 (snsinsider.com), 8 (marketdataforecast.com), 9 (maximizemarketresearch.com)"
+    },
+    {
+      "signal": "European regulation is actively reshaping invoicing workflows.",
+      "evidence": "Sovos / IDC MarketScape 2024: 'The European e-invoicing landscape is undergoing a transformative shift as new regulations reshape how businesses manage VAT compliance and reporting.' A separate web result describes 'The dynamic Europe Online Invoicing Software Market... defined by a relentless pursuit of efficiency, innovation, and optimized resource.'",
+      "implicationForFeature": "Because LedgerLite's target market includes Western Europe, saved recurring templates may need structured tax/VAT fields and compliant output rather than free-form layouts. Competitor Invlo already advertises 'custom tax rates (GST, VAT, or your own)', setting a visible baseline for tax handling in template design.",
+      "source": "web_search_live results 1 (Europe Online Invoicing Software Market) and 6 (sovos.com IDC MarketScape); company_search result for Invlo (crustdata_company_id 75081030)"
+    },
+    {
+      "signal": "The freelance market (and spend on freelance tooling) is growing, with North America dominant.",
+      "evidence": "Yahoo Finance / industry report: 'The global market for Freelance Platforms was valued at US$5.4 Billion in 2024 and is projected to reach US$13.3 Billion by 2030.' jobbers.io: 'The global freelance platforms market is projected to grow from approximately $9.91 billion in 2026 to $20.12 billion by 2030, at a CAGR of 19.4%.' WiseGuyReports: 'North America dominates the market with a valuation of 19 USD Billion in 2024, projected to rise to 40 USD Billion in 2035.'",
+      "implicationForFeature": "A growing, North-America-weighted freelance population is favourable for a self-serve admin tool aimed at US/Canada/UK freelancers. Note these are freelance-platform (marketplace/network) revenues, not invoicing-software revenues, so the signal is directional support, not a demand estimate for recurring templates.",
+      "source": "web_search_live results 4 (jobbers.io), 5 (finance.yahoo.com), 7 (wiseguyreports.com)"
+    },
+    {
+      "signal": "Recurring invoicing and payment reminders are already standard — and frequently free — at the low end of the market.",
+      "evidence": "Invlo (invlo.me, 'myself only'): 'Multi-currency invoicing, recurring invoices, overdue aging reports, and custom tax rates (GST, VAT, or your own) are locked behind paid plans on most invoicing platforms. Invlo includes them all on its free plan.' Invocrest: 'Create and send invoices... set recurring schedules, send overdue reminders, record payments manually, and track revenue, receivables, taxes.' GETinvois: 'craft professional invoices, send payment reminders, keep track of expenses, log your work hours... all for free!' InvoiceBerry: 'Businesses can send invoices and quotes... and increase their cashflow by sending invoice reminders to non-paying customers.'",
+      "implicationForFeature": "LedgerLite's planned capability set (saved layouts, scheduled auto-send, gentle reminders) matches features already shipped by multiple small vendors, several at $0. The feature cannot be positioned as novel; differentiation would have to come from the minimalist/mobile experience, reminder tone, or pricing — none of which is validated in this bundle.",
+      "source": "company_search 'invoicing software' (US/CA/UK, 1-50 employees) — Invlo id 75081030, Invocrest id 75008241, GETinvois id 66363071, InvoiceBerry id 2579911"
+    },
+    {
+      "signal": "All-in-one freelancer suites are converging on invoicing plus everything else.",
+      "evidence": "flowlancer.app: 'Proposal generator (AI-assisted), Hourly rate calculator, Time & expense tracker, Invoice generator (PDF), Daily stand-up / to-do list, Portfolio builder... all in one place.' Fluxlancer: 'Experiencing seamless invoicing, time tracking, proposals & project management with Kanban boards, in a single place. With AI built in to draft your proposals.' suitefreelancers: 'brings together project management, customer relationship management (CRM), time tracking, and market opportunity analysis tools... generate personalized proposals with AI, automate client follow-up.' Go Lancer: 'Time Tracking, Invoices, Clients, Bookings & Project Management + AI assistant.' Freelan Tools: 'complete set of tools for freelance building online portfolio, project management, Email & SMS Marketing...'",
+      "implicationForFeature": "Bundling pressure means a recurring-templates feature will often be evaluated against suites offered at freemium or lifetime-deal pricing. A one-person team cannot out-bundle these; the credible play is a narrow wedge (fast recurring invoicing) rather than breadth.",
+      "source": "company_search 'freelancer tools' (US/CA/UK) — flowlancer.app id 61053294, Fluxlancer id 74417536, suitefreelancers id 65953917, Go Lancer id 25236197, Freelan Tools id 3481043"
+    },
+    {
+      "signal": "AI-assisted dunning and follow-up is becoming the visible feature frontier.",
+      "evidence": "Invlo: 'AI-drafted follow-up emails, a late fee toggle you can flip per invoice, item photos on invoice lines, and the ability to bill by hour, km, item, or flat rate — all on one invoice.' Fluxlancer: 'AI built in to draft your proposals.' suitefreelancers: 'generate personalized proposals with AI, automate client follow-up.'",
+      "implicationForFeature": "'Gentle payment reminders' risks reading as behind if competitors ship AI-drafted follow-ups and per-invoice late-fee toggles. Reminder quality/tone should be treated as a competitive dimension, not a checkbox.",
+      "source": "company_search results — Invlo id 75081030; company_search 'freelancer tools' — Fluxlancer id 74417536, suitefreelancers id 65953917"
+    },
+    {
+      "signal": "Scale asymmetry between LedgerLite and the identifiable named competitors.",
+      "evidence": "productData.teamSize = 1. FreshBooks: founded 2003, employee_count_range 201-500, Canada. Zoho: employee_count_range 10001+, 55+ products, 150M+ users worldwide, 'privately held and profitable'.",
+      "implicationForFeature": "Distribution, support and brand trust are structurally against a solo build; the counter-position must be speed, focus and price for a specific self-serve freelancer segment rather than feature breadth.",
+      "source": "productData (teamSize 1); company_identify FreshBooks id 662598; company_identify Zoho id 1032449"
+    },
+    {
+      "signal": "A long tail of micro-scale invoicing vendors with flat or negative headcount growth.",
+      "evidence": "InvoiceBerry headcount total 5, 12m growth -16.67% (absolute -1). Billedger Invoice Billing Software total 1, all growth rates 0. Invoiceflow total 1, all growth 0. TimeInvoicing total 1, all growth 0. GETinvois 'myself only'. ProInvoice total 3, 12m growth +50% (absolute +1). Go Lancer total 2, 12m growth +100% (absolute +1). Freelan Tools total 40, 12m growth +2.56% (absolute +1).",
+      "implicationForFeature": "Entry into low-end invoicing appears easy but scaling appears hard, and the segment is not consolidated — which leaves room for a differentiated niche product while signalling weak monetisation at the very bottom of the market.",
+      "source": "company_search 'invoicing software' and 'freelancer tools' headcount fields — InvoiceBerry id 2579911, Billedger id 70067913, Invoiceflow id 3628456, TimeInvoicing id 15888483, ProInvoice id 2583327, Go Lancer id 25236197, Freelan Tools id 3481043"
+    }
+  ],
+  "gapsAndOpportunities": [
+    "Differentiation by minimalism rather than feature parity. Incumbents are broad: FreshBooks promises 'get paid, manage finances, and deliver work all in one place'; Zoho spans 55+ products and 150M+ users; freelancer suites bundle proposals, Kanban, CRM and time tracking. LedgerLite's own framing ('minimalist... for freelancers who hate spreadsheet chaos') and the Maya persona ('needs fast invoicing from her phone between client calls') point at a mobile-first, low-complexity slot. No user research in this bundle validates demand for that slot — treat it as a hypothesis to test, not an evidenced gap.",
+    "Accountant/bookkeeper adjacency. FreshBooks operates a dedicated Accounting Partner Program (id 11817959, 501-1000 employees) offering reports and app integrations to accountants, while the Priya persona is a bookkeeper 'managing 5 small clients' who 'needs export-friendly records'. That pairing suggests a real channel, but LedgerLite has no partner programme and the bundle contains no export-format, chart-of-accounts or reconciliation data.",
+    "First-time freelancer onboarding. The Jordan persona ('just left a full-time job, first time sending professional invoices and nervous about looking legit') maps neatly onto saved professional layouts and automatic scheduling — but no evidence in this bundle confirms, sizes or prices that need.",
+    "Tax/jurisdiction handling as a differentiator rather than an afterthought. The only regulatory signal in the bundle is European e-invoicing regulation reshaping VAT compliance, and competitor Invlo already advertises 'custom tax rates (GST, VAT, or your own)'. Saved templates that encode the right tax treatment per client jurisdiction would be a meaningful, evidence-adjacent differentiator for US/CA/UK/WE clients.",
+    "North America first. WiseGuyReports places North America as the dominant freelance platform market (USD 19B in 2024 rising to USD 40B in 2035), FreshBooks is Canada-founded and targets freelancers, and Zoho maintains dedicated US/Canada/UK entities — consistent with prioritising the stated US/Canada/UK geographies before continental Europe.",
+    "Unconsolidated low end. Numerous vendors operate at headcount 1-5 (Billedger 1, Invoiceflow 1, TimeInvoicing 1, InvoiceBerry 5) with flat or negative 12-month headcount growth, indicating the segment is neither consolidated nor obviously profitable — an opening for a focused, well-executed niche tool."
+  ],
+  "risks": [
+    "Commoditised feature with free alternatives: Invlo includes recurring invoices and overdue ageing on its free plan and adds 'AI-drafted follow-up emails'; Invocrest includes 'recurring schedules' and 'overdue reminders'; GETinvois offers payment reminders 'all for free'. Pricing power for recurring templates is unproven by this data.",
+    "Incumbent scale: FreshBooks (201-500 employees, founded 2003, Canada, same freelancer audience) and Zoho (10001+ employees, 55+ products, 150M+ users, profitable, with UK/Canada/US presence) can out-spend and out-distribute a team of one (productData.teamSize = 1).",
+    "Incomplete competitive picture: Wave could not be identified as an invoicing/accounting company at all, and all three company_enrich steps failed ('Exactly one identifier must be provided: names, domains, professional_network_profile_urls, or crustdata_company_ids'), so there is no funding, growth or headcount enrichment for any named competitor.",
+    "No hiring signal for competitive investment: job_search with {{company_identify_1.id}} returned an unresolved template and unrelated listings (AI Automation Engineer, security engineer, nursing, marketing), and job_search for 'recurring invoices' returned the same unrelated set — zero evidence either way on competitor investment in recurring invoicing.",
+    "Automation commitment risk: the feature promises scheduled auto-send and reminders, yet the bundle contains no data on email deliverability, scheduler reliability, failure/retry handling, or payment-rail behaviour. An auto-sent invoice is unforgiving of defects, and no reliability evidence exists in either direction.",
+    "Cross-border tax and compliance divergence: the only regulatory evidence present (European e-invoicing regulation reshaping VAT compliance and reporting) plus Invlo's 'custom tax rates (GST, VAT, or your own)' indicate per-jurisdiction tax handling across US/CA/UK/WE; no compliance requirements for a solo-freelancer tool are documented in this bundle.",
+    "Weak demand evidence: market-size sources conflict (e-invoicing 2024 estimates of USD 6.00B vs USD 12.7B in 2023; 2032-2034 forecasts USD 35.77B-63.93B; CAGRs 15.4%-25.4%) and several web results carry 2026+ datelines, so none of them should anchor sizing or forecast commitments.",
+    "Undocumented build economics: financialThresholdAmount, expectedDurationWeeks, expectedResourceConsumption, companyProfitabilityDetails and runwayRemainingMonths are all empty in productData, so cost, timeline and runway impact of shipping recurring templates cannot be assessed."
+  ],
+  "dataLimitations": [
+    "All three company_enrich steps failed with 'Exactly one identifier must be provided: names, domains, professional_network_profile_urls, or crustdata_company_ids' (company_id templates {{company_identify_1.id}}, {{company_identify_2.id}}, {{company_identify_3.id}} unresolved). No enriched firmographics, funding, revenue or headcount data exists for FreshBooks, Wave or Zoho Invoice beyond the company_identify snippets.",
+    "company_identify for Wave returned no accounting or invoicing software company. All 27 confidence-1.0 matches are unrelated entities sharing the name (broadcaster, water utility, XR, mental health, A/V, recruitment, design, brand, ocean platform, browser, e-bike, phone cases, and others). Nothing in the bundle describes Wave's invoicing product, pricing, features or strategy.",
+    "company_identify for Zoho Invoice resolved to Zoho Corporation and sub-brands only (Zoho, Zoho UK, Zoho Canada, Zoho USA, Zoho Europe, Zoho Commerce, Zoho Mail, etc.). There is no Zoho Invoice product-level record: no pricing, no feature list, no recurring-invoice capability details, no roadmap.",
+    "company_identify for FreshBooks returned 22 matches; only the top match (confidence 1, id 662598, freshbooks.com) is the accounting software business. Others are unrelated or adjacent (affiliate profile on awin.com, 'FreshBooks Partners' bookkeeping service, 'Facturama by Freshbooks' Mexico, 'Kaal' third-party timer, 'Freshbooks & Lern', a book retailer 'freshbooksTM'), so FreshBooks product-level data is also absent.",
+    "job_search keyed to {{company_identify_1.id}} returned no FreshBooks listings — the identifier was unresolved and results were unrelated job postings (AI Automation Engineer, IB-CHE/PMDT Developer, Certified Nursing Assistant, Marketing Manager, SEO Specialist, Senior Security Engineer, Enterprise Security & Compliance Engineer, Digital Marketing Coordinator, Books Social Media Manager, Cyber Data Analyst).",
+    "job_search for 'recurring invoices' in the US/Canada/UK returned no relevant listings — the same unrelated posting set — so no hiring-based signal on competitor investment in recurring invoicing could be derived.",
+    "Web evidence is a single query with 9 results, and most are e-invoicing market reports (B2B/B2G compliance-oriented) rather than freelancer self-serve invoicing: a category mismatch with LedgerLite's stated niche. Reported figures conflict materially across vendors (e-invoicing valued at USD 6.00B in 2024 by one source and USD 12.7B in 2023 by another; 2032-2034 forecasts from USD 35.77B to USD 63.93B; CAGRs 15.4% to 25.4%), and several results carry 2026 or later datelines, so all figures are directional only.",
+    "No quantitative evidence on competitor pricing, churn, conversion, instalment volumes, email deliverability, or user counts for any competitor, and none for LedgerLite. Market-share or willingness-to-pay conclusions cannot be drawn.",
+    "productData planning fields are empty: financialThresholdAmount, expectedDurationWeeks, expectedResourceConsumption, companyProfitabilityDetails, runwayRemainingMonths — no budget, duration, resourcing or runway context for this feature.",
+    "Customer evidence is limited to persona names and one-line descriptions from 'ledgerlite-persona-research.docx' (Maya, Omar, Priya, plus the new-install persona Jordan). No interview transcripts, survey data, or problem-frequency evidence is present in the bundle.",
+    "Reliability and compliance unknowns: no data on scheduler behaviour, reminder deliverability, failure handling, VAT/GST output formats, or jurisdiction-specific requirements for the auto-send feature.",
+    "planSummary reports: 'Executed 8 step(s); 3 error(s). Planned tools: company_identify, company_identify, company_identify, company_enrich, company_enrich, company_enrich, company_search, company_search, job_search, job_search, web_search_live.' Three of eleven planned capabilities produced no usable data."
+  ],
+  "planSummary": "Executed 8 step(s); 3 error(s). Planned tools: company_identify, company_identify, company_identify, company_enrich, company_enrich, company_enrich, company_search, company_search, job_search, job_search, web_search_live"
+}

@@ -28,6 +28,8 @@ export async function uploadFinancialReport(input: {
       throw new Error("Sign in to upload a financial report.");
     }
     headers.Authorization = `Bearer ${token}`;
+  } else if (token) {
+    headers.Authorization = `Bearer ${token}`;
   }
 
   const res = await fetch(`${API_BASE}/financial-reports/upload`, {
@@ -48,6 +50,10 @@ export async function uploadFinancialReport(input: {
         throw new Error("Demo data is not seeded on the server. Run npm run seed:demo.");
       case "unauthorized":
         throw new Error("Sign in to upload a financial report.");
+      case "cfo_needs_auth":
+        throw new Error(
+          "File saved locally. Connect cfo.ai at /integrations/cfo to sync."
+        );
       default:
         throw new Error("Could not upload financial report.");
     }

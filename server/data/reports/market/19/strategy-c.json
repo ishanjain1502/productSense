@@ -1,0 +1,109 @@
+{
+  "strategy": "planned_c",
+  "generatedAt": "2026-10-12T10:41:04.178Z",
+  "feature": {
+    "name": "Cross-project dependency map",
+    "description": "Visualize blockers across teams with live links to tasks and Slack digests when critical paths slip. Built for FlowStack, a team workflow hub connecting tasks, docs, and lightweight automations for growing product squads; targeting B2B SaaS companies with 20–200 employees running multiple parallel initiatives. Spec source: dependency-map-spec-v2.pdf. Primary buyer: Head of Product or VP Engineering. Expected duration 14 weeks, resourced with 2 full-stack engineers, PM at 30%, designer 3 weeks, and ~$3k/mo extra graph/alerting infra during beta."
+  },
+  "executiveSummary": "The planned research run for the FlowStack cross-project dependency map executed 1 of 11 planned steps; only the web_search_live step returned data (9 results). All four company_identify calls, all three company_enrich calls, the company_search call, and both job_search calls failed with tool-parameter validation errors, so no firmographic, account, or hiring data was collected. Consequently, this report is grounded almost entirely in generic web-search result titles and snippets about project management tooling, not in verified competitor product facts. Those snippets consistently frame the category around comparison and listicle content, position Linear as a modern alternative to Jira with fewer third-party integrations, and position Jira as strong for Scrum teams, while monday.com markets explicitly on reducing delays and accelerating delivery. That messaging adjacency supports the problem space the dependency map targets, but none of the retrieved evidence mentions cross-project dependency visualization, critical-path slip alerting, or Slack digests, so the feature's differentiation remains unvalidated. The personas provided in productData (Elena, Sam, Chris, and new-install persona Alicia) describe exactly this dependency-blindness pain, but no interview data from flowstack-user-interviews-summary.pdf appears in the raw bundle to corroborate it. Recommendation: treat this as a directional, low-confidence read and re-run the failed firmographic, account, and job searches before committing the 14-week build; FlowStack's ~22 months of runway and ~$180k/mo burn mean a mis-scoped 2-engineer bet is materially expensive.",
+  "competitorLandscape": [
+    {
+      "name": "Linear",
+      "positioning": "Positioned in retrieved web content as 'the modern alternative to Jira' and 'purpose-built for modern teams with AI workflows at its core,' with an explicit noted trade-off of 'fewer third-party integrations.'",
+      "relevantMoves": [],
+      "sources": [
+        "https://productschool.com/blog/product-fundamentals/product-management-tools",
+        "https://linear.app/"
+      ]
+    },
+    {
+      "name": "Asana",
+      "positioning": "Appears in the retrieved set as both a competitor and a publisher of category comparison content; its own resource page compares 11 tools including Asana, Jira, Trello and monday.com on features, integrations and scaling.",
+      "relevantMoves": [],
+      "sources": [
+        "https://asana.com/resources/best-project-management-software"
+      ]
+    },
+    {
+      "name": "Monday.com",
+      "positioning": "Surfaces via a developer-collaboration article (dated Nov 27, 2025) covering 'top software development collaboration platforms for 2026' with a stated aim to 'reduce delays and accelerate delivery'; also named in cross-functional PM software roundups.",
+      "relevantMoves": [],
+      "sources": [
+        "https://monday.com/blog/rnd/software-development-collaboration-tools/",
+        "https://www.goodday.work/blog/best-cross-functional-project-management-software/"
+      ]
+    },
+    {
+      "name": "Jira",
+      "positioning": "Framed by Forbes' roundup (dated Sep 25, 2026) as 'the best project management software for Scrum teams,' earning a 4.0-star research-team rating on the strength of its agile capabilities.",
+      "relevantMoves": [],
+      "sources": [
+        "https://www.forbes.com/advisor/business/software/best-project-management-software/"
+      ]
+    }
+  ],
+  "marketSignals": [
+    {
+      "signal": "Category discovery is dominated by vendor-authored and third-party comparison content.",
+      "evidence": "Of 9 retrieved results, at least 6 are listicles or comparison guides (makeautomation.co, asana.com/resources, productschool.com, Forbes, goodday.work, planisware.com), including two published by competitors themselves.",
+      "implicationForFeature": "Positioning for the dependency map must be legible inside comparison tables (feature grids, 'integrations', 'scaling tips') rather than relying on a novel concept name.",
+      "source": "https://asana.com/resources/best-project-management-software"
+    },
+    {
+      "signal": "Vendors are actively marketing delivery-delay reduction to software teams.",
+      "evidence": "monday.com's article (Nov 27, 2025) is framed around uncovering collaboration platforms for 2026 and explicitly 'reduce delays and accelerate delivery.'",
+      "implicationForFeature": "The dependency map's critical-path-slip Slack digest maps directly to an already-marketed buyer pain, which is favourable for messaging but means larger vendors can claim adjacency without shipping the same depth.",
+      "source": "https://monday.com/blog/rnd/software-development-collaboration-tools/"
+    },
+    {
+      "signal": "Linear's differentiation includes deliberately fewer third-party integrations.",
+      "evidence": "Retrieved content states: 'Fewer third-party integrations: Linear is an excellent alternative.'",
+      "implicationForFeature": "A cross-tool dependency layer that pulls from Linear alongside Jira/Asana/Monday addresses a gap Linear appears to leave open — but only if FlowStack ships and maintains those connectors.",
+      "source": "https://productschool.com/blog/product-fundamentals/product-management-tools"
+    },
+    {
+      "signal": "Cross-functional work is an established software sub-category.",
+      "evidence": "A dedicated roundup exists titled 'Best cross-functional project management software in 2026' naming GoodDay, Quire, Asana, Monday.com, ClickUp and Wrike.",
+      "implicationForFeature": "Buyers already search in cross-functional terms; FlowStack can enter that conversation, though 'cross-functional' and 'cross-project dependency' are not the same claim and none of the results address the latter.",
+      "source": "https://www.goodday.work/blog/best-cross-functional-project-management-software/"
+    },
+    {
+      "signal": "Agile/Scrum team fit remains the strongest single-tool proof point in the category.",
+      "evidence": "Forbes rates Jira best for Scrum teams at 4.0 stars based on its agile capabilities.",
+      "implicationForFeature": "Elena (engineering manager) and Sam (product ops lead) personas live in Scrum/quarterly-planning rituals; the dependency map should be framed as a sprint-planning and quarterly-planning input, not a general visualization.",
+      "source": "https://www.forbes.com/advisor/business/software/best-project-management-software/"
+    }
+  ],
+  "gapsAndOpportunities": [
+    "None of the 9 retrieved results describes a cross-project dependency visualization capability, a critical-path slip digest, or Slack-based dependency alerting — the specific surface FlowStack is building is absent from the retrieved evidence set.",
+    "Linear's documented weak spot is fewer third-party integrations, creating a possible wedge for a dependency layer that connects Linear with Jira/Asana/Monday.com and Notion (the latter three named explicitly in productData's planned technology filters).",
+    "The target segment (20–200 employee B2B SaaS in US/EU with multiple parallel initiatives) is named in productData but was not reachable in this run because company_search failed, so segment sizing and density remain entirely unverified.",
+    "The new-install persona Alicia (new PM at a Series A inheriting a messy roadmap, evaluating tools that show dependencies without enterprise complexity) is not reflected in any retrieved competitor positioning — no competitor in the result set is explicitly marketed as dependency-visible-but-not-enterprise.",
+    "FlowStack's own context (Series A, ~$1.8M ARR, ~15% QoQ growth, ~72% gross margin) suggests a 14-week, 2-engineer bet plus ~$3k/mo infra is affordable within a 22-month runway, but the $180,000 financial threshold implies the feature must be tied to a meaningful deal-size or retention outcome that this data cannot confirm."
+  ],
+  "risks": [
+    "Evidence base is severely thin: only 1 of 11 planned steps succeeded, and the surviving source is a generic web search whose results are primarily marketing and listicle pages, not product documentation.",
+    "No firmographic verification for Linear, Asana, Monday.com or Jira: all company_identify and company_enrich calls errored with 'Exactly one identifier must be provided,' so competitor size, funding and market posture are unconfirmed.",
+    "No account targeting data: company_search failed on an invalid filters object, so the 20–200 employee US/EU B2B SaaS segment cannot be sized or sampled.",
+    "No hiring-signal data: both job_search calls failed on the same filters validation error, removing a key proxy for buyer urgency around Head of Product, VP Engineering, Product Ops and Engineering Manager roles.",
+    "Competitive parity risk is unquantified — retrieved content shows established vendors already owning 'reduce delays and accelerate delivery' messaging, and FlowStack could ship a 14-week feature whose value is partly pre-claimed in market language.",
+    "Runway sensitivity: ~22 months remaining against ~$180k/mo burn and negative EBITDA means an under-validated 14-week, 2-engineer commitment has a real opportunity cost.",
+    "Persona evidence is unverified in this bundle: flowstack-user-interviews-summary.pdf is referenced in productData but no interview findings appear in rawBundle, so Elena/Sam/Chris/Alicia pain claims rest on the product brief alone.",
+    "Tool-parameter failures appear systematic (the same 'filters' schema error across company_search and both job_search calls), so re-running without fixing the plan may reproduce the same 10 errors."
+  ],
+  "dataLimitations": [
+    "Only 1 of 11 planned steps returned data (web_search_live). 10 steps errored, giving a 9% successful step rate for this run.",
+    "All four company_identify calls failed: 'Exactly one identifier must be provided: names, domains, professional_network_profile_urls, or crustdata_company_ids' (Linear/linear.app, Asana/asana.com, Monday.com/monday.com, Jira/atlassian.com). No company IDs resolved.",
+    "All three company_enrich calls failed with the same identifier error (asana.com, monday.com, atlassian.com). No employee counts, funding, revenue, or headquarters data.",
+    "company_search failed: \"'filters' must be either a single condition ({\\\"field\\\", \\\"type\\\", \\\"value\\\"}) or a tree ({\\\"op\\\", \\\"conditions\\\": [...]}). Received an object with neither.\" No prospect account list for the 20–200 employee US/EU software segment.",
+    "Both job_search calls failed with the identical filters-schema error. No hiring data for Head of Product, VP Engineering, Product Operations, Engineering Manager, Product Manager, or Product Designer roles.",
+    "Only 9 web results were returned and the metadata reports total_results 9 with no failed or empty pages; the result set is small and shallow (titles and snippets only, no page content retrieved).",
+    "The retrieved search results contain no coverage of cross-project dependency mapping, critical-path alerting, or Slack digest features at any competitor, so the feature's competitive differentiation cannot be assessed from this data.",
+    "No pricing, packaging, or plan-tier data was retrieved for any of the four named competitors.",
+    "No user research, interview, survey, win/loss, or CRM data appears in the raw bundle; dependency-map-spec-v2.pdf and flowstack-user-interviews-summary.pdf are named in productData but their contents are not present.",
+    "No revenue, ARR, or growth data for Linear, Asana, Monday.com or Jira is present; the only financial figures available are FlowStack's own (~$1.8M ARR, ~15% QoQ, ~72% gross margin, ~$180k/mo burn, 22 months runway).",
+    "Retrieved result dates are inconsistent and extend into 2026 (e.g., Forbes Sep 25, 2026; goodday.work Aug 2, 2026; monday.com Nov 27, 2025), so recency of the underlying market picture is uncertain.",
+    "No geography-specific evidence was retrieved to support the stated US and EU mid-market SaaS focus."
+  ],
+  "planSummary": "Executed 1 step(s); 10 error(s). Planned tools: company_identify, company_identify, company_identify, company_identify, company_enrich, company_enrich, company_enrich, company_search, job_search, job_search, web_search_live"
+}

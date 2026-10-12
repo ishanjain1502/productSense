@@ -19,6 +19,7 @@ export type ValidationSession = {
   personaFleetRunId?: number;
   financialReportId?: number | null;
   financialReportFileName?: string | null;
+  finalReportId?: number;
 };
 
 export function saveValidationSession(session: ValidationSession) {

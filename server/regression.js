@@ -8,7 +8,7 @@ import {
   ENTIRE_IO_META_NOTE,
   ENTIRE_IO_OUTLINE_BULLET,
 } from "./entire-prompt-snippet.js";
-import { writeReportFile } from "./report-storage.js";
+import { readReportFile, writeReportFile } from "./report-storage.js";
 
 const AGENT_PROMPT_OUTLINE = `
 The output must be a single prompt for a coding agent. Do not wrap it in markdown fences.
@@ -320,6 +320,35 @@ export async function getRegressionReportStatus(query) {
   }
 
   return { found: false };
+}
+
+/**
+ * @param {number} promptId
+ */
+export async function loadRegressionReportByPromptId(promptId) {
+  const status = await getRegressionReportStatus({ promptId });
+  if (!status.found || status.reportId == null) return null;
+  const row = await dbGet(
+    `SELECT report_url FROM regression_reports WHERE id = ?`,
+    [status.reportId]
+  );
+  if (!row?.report_url) return null;
+  return readReportFile(row.report_url);
+}
+
+/**
+ * @param {string} featureId
+ * @param {number} userId
+ */
+export async function loadRegressionReportByFeatureId(featureId, userId) {
+  const status = await getRegressionReportStatus({ featureId, userId });
+  if (!status.found || status.reportId == null) return null;
+  const row = await dbGet(
+    `SELECT report_url FROM regression_reports WHERE id = ?`,
+    [status.reportId]
+  );
+  if (!row?.report_url) return null;
+  return readReportFile(row.report_url);
 }
 
 export { getDemoRegressionPrompt, AGENT_PROMPT_OUTLINE, formatProductBlock };

@@ -1,16 +1,50 @@
 import multer from "multer";
-import os from "node:os";
-import path from "node:path";
 import { authMiddleware, verifyToken } from "./auth.js";
+import { publishFinancialReportToCfo } from "./cfo/publish-financial-report.js";
 import {
   deleteFinancialReport,
+  financialReportsUploadTempRoot,
   persistFinancialReport,
   resolveDemoProjectContext,
   sanitizeFinancialFilename,
 } from "./financial-reports.js";
 
+/**
+ * @param {import('express').Request} req
+ * @param {number} reportOwnerId
+ */
+function resolveCfoCredentialUserId(req, reportOwnerId) {
+  const header = req.headers.authorization;
+  const token =
+    header && header.startsWith("Bearer ") ? header.slice(7).trim() : null;
+  const user = token ? verifyToken(token) : null;
+  return user?.id ?? reportOwnerId;
+}
+
+/**
+ * @param {number} cfoUserId
+ * @param {number} reportId
+ */
+async function tryPublishToCfo(cfoUserId, reportId) {
+  try {
+    const published = await publishFinancialReportToCfo(cfoUserId, reportId);
+    return {
+      uploadedToCFO: Boolean(published.uploadedToCFO ?? published.alreadyUploaded),
+      cfoSync: published.alreadyUploaded ? "already_uploaded" : "ok",
+    };
+  } catch (err) {
+    console.error("cfo_sync_failed", reportId, err?.message ?? err);
+    const code = err?.message ?? "cfo_sync_failed";
+    return {
+      uploadedToCFO: false,
+      cfoSync: "failed",
+      cfoSyncError: code,
+    };
+  }
+}
+
 const upload = multer({
-  dest: os.tmpdir(),
+  dest: financialReportsUploadTempRoot(),
   limits: { fileSize: 25 * 1024 * 1024 },
   fileFilter(_req, file, cb) {
     const safe = sanitizeFinancialFilename(file.originalname);
@@ -102,13 +136,28 @@ export function registerFinancialReportsRoutes(app) {
           featureId,
         });
 
+        const syncRequested =
+          req.body?.syncToCfo !== "false" && req.body?.syncToCfo !== false;
+        let uploadedToCFO = false;
+        let cfoSync = "skipped";
+        let cfoSyncError = undefined;
+        if (syncRequested) {
+          const cfoUserId = resolveCfoCredentialUserId(req, userId);
+          const sync = await tryPublishToCfo(cfoUserId, result.reportId);
+          uploadedToCFO = sync.uploadedToCFO;
+          cfoSync = sync.cfoSync;
+          cfoSyncError = sync.cfoSyncError;
+        }
+
         res.status(201).json({
           reportId: result.reportId,
           location: result.location,
           originalFilename: result.originalFilename,
           projectId,
           featureId,
-          uploadedToCFO: false,
+          uploadedToCFO,
+          cfoSync,
+          ...(cfoSyncError ? { cfoSyncError } : {}),
         });
       } catch (err) {
         console.error(err);
@@ -117,6 +166,56 @@ export function registerFinancialReportsRoutes(app) {
           return;
         }
         res.status(500).json({ error: "upload_failed" });
+      }
+    }
+  );
+
+  app.post(
+    "/financial-reports/:reportId/publish-to-cfo",
+    authMiddleware,
+    async (req, res) => {
+      try {
+        const reportId = Number(req.params.reportId);
+        if (!Number.isFinite(reportId)) {
+          res.status(400).json({ error: "invalid_report_id" });
+          return;
+        }
+        const { getFinancialReportRow } = await import(
+          "./cfo/publish-financial-report.js"
+        );
+        const row = await getFinancialReportRow(reportId);
+        if (!row || row.user_id !== req.user.id) {
+          res.status(404).json({ error: "report_not_found" });
+          return;
+        }
+        const published = await publishFinancialReportToCfo(
+          req.user.id,
+          reportId
+        );
+        res.json({
+          reportId,
+          uploadedToCFO: true,
+          alreadyUploaded: Boolean(published.alreadyUploaded),
+        });
+      } catch (err) {
+        console.error(err);
+        if (err?.status === 401) {
+          res.status(401).json({ error: "cfo_needs_auth" });
+          return;
+        }
+        if (err?.status === 404) {
+          res.status(404).json({ error: "report_not_found" });
+          return;
+        }
+        if (err?.status === 409) {
+          res.status(409).json({ error: "cfo_needs_confirmation" });
+          return;
+        }
+        if (err?.status === 400) {
+          res.status(400).json({ error: err.message });
+          return;
+        }
+        res.status(500).json({ error: "cfo_publish_failed" });
       }
     }
   );

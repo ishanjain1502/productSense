@@ -1,0 +1,111 @@
+{
+  "generatedAt": "2026-10-12T10:57:54.807Z",
+  "feature": {
+    "applicationName": "LedgerLite",
+    "name": "Recurring invoice templates",
+    "description": "Let users save invoice layouts and auto-send on a schedule to repeat clients, with gentle payment reminders."
+  },
+  "fleetRecommendation": "proceed",
+  "finalVerdict": "ship_with_conditions",
+  "verdictRationale": "The persona fleet recommends proceed with a composite mean of 73.9, median 75.5, and 75% likely to adopt, led by strong template appeal, gentle reminder value, and scheduled-send importance. That supports moving forward, but not unconditional shipping: regression evidence is skipped, market evidence shows recurring billing plus reminders is already parity across recent entrants, willingness to pay is modest at mean 59, auto-send raises control concerns, and financial affordability is unclear because no CFO ledger, runway, or intake thresholds were available. The feature should ship conditionally with modest or bundled pricing, review-before-send controls, reliability safeguards, and financial validation.",
+  "executiveSummary": "LedgerLite's recurring invoice templates show strong persona-fleet pull (composite 73.9; 75% likely to adopt) led by template reuse and gentle reminders, but regression evidence is skipped and the market is crowded with recent parity entrants. Willingness to pay is modest (mean 59), auto-send raises control concerns, and financial affordability is unclear because no CFO ledger, runway, or intake thresholds were available. Ship the feature conditionally: bundle or modestly price it, include review-before-send and per-client controls, protect setup/mobile/exports/integrations reliability, and prioritize retainer and bookkeeper workflows. Confirm affordability and packaging before broad launch.",
+  "sections": {
+    "regression": {
+      "status": "skipped",
+      "summary": "Regression evidence was skipped because no regression payload was provided. The ship decision therefore cannot rely on regression results and must be based on the available market, persona-fleet, and financial evidence.",
+      "highlights": [
+        "No regression payload was supplied in the evidence bundle.",
+        "Regression status is recorded as skipped rather than available or missing."
+      ],
+      "risks": [
+        "Release readiness cannot be confirmed against regression coverage.",
+        "Unknown regressions to existing invoice, client, or scheduling flows may remain undetected."
+      ]
+    },
+    "market": {
+      "status": "available",
+      "summary": "Recurring invoice templates with auto-send and payment reminders target independent professionals and micro-businesses in the US, Canada, and UK. The available evidence shows recurring billing plus reminders is already broadly offered by small, recently founded competitors in all three target markets, including invoicesio.app, Lynkmanage, InvoSync, and Loot Invoicing. Three web sources list automated recurring invoices among core freelancer needs, and retainers are consistently named as the canonical recurring billing case. Incumbents FreshBooks and Zoho anchor the market differently through bundling, accounting channels, and regional entities. The practical implication is that recurring templates plus reminders are a parity requirement rather than a differentiator; available angles include saved-layout reuse bound to a repeat client, gentle reminder tone, export-friendly recurring records for bookkeepers, and mobile-complete scheduling.",
+      "highlights": [
+        "Recurring billing plus overdue or automated reminders is offered by invoicesio.app, Lynkmanage, InvoSync, and Loot Invoicing Pro.",
+        "Three web sources list automated recurring invoices among core freelancer needs, and retainers are consistently named as the monthly-recurring billing case.",
+        "FreshBooks positions as an all-in-one finance platform and operates a separate Accounting Partner Program.",
+        "Zoho bundles invoicing into a broad suite with 150M+ users, 55+ products, and UK and European regional entities.",
+        "Possible differentiation angles from the bundle include saved-layout reuse tied to a client record, gentle reminder tone, first-time freelancer defaults, multi-region templates, bookkeeping-ready recurring history, and mobile-complete scheduling."
+      ],
+      "risks": [
+        "Feature parity risk: recurring billing with automated reminders is offered by almost every recent entrant found in the US, Canada, and UK searches.",
+        "Incumbent bundling risk: FreshBooks and Zoho can bundle invoicing with accounting and adjacent tools in ways a one-person team cannot match.",
+        "Monetisation risk from low-cost alternatives: free tiers, free starts, no-watermark claims, and open-source alternatives are present.",
+        "Verification risk: company_enrich calls failed for named competitors, Wave could not be identified as the accounting product, and Zoho Invoice was not returned as a distinct company.",
+        "Evidence-quality risk: competitor capability claims are vendor-authored marketing copy, and the market size figure comes from a single secondary source.",
+        "Onboarding and persona risk: competitor positioning targets experienced freelancers and specific service verticals, while the new-install persona may need confidence before adopting scheduled auto-send."
+      ]
+    },
+    "personaFleet": {
+      "status": "available",
+      "summary": "The persona fleet recommends proceed. The composite mean is 73.9, median 75.5, with 75% likely to adopt. Template appeal is the strongest signal at mean 85.6, with 93 agents rating 80-100. Gentle payment reminder value is mean 81, and automatic scheduled sending importance is mean 74.7. Today's recurring invoice pain is substantial at mean 69.3. Omar leads adoption propensity at compositeMean 81.7, followed by Maya at 75.9, Priya at 74.4, and Jordan at 63.7. The central caveat is monetization: willingness to pay has a mean of 59 and no ratings in 80-100, with themes showing price sensitivity and preference for modest add-on or bundled pricing.",
+      "recommendation": "proceed",
+      "highlights": [
+        "Fleet composite mean 73.9, median 75.5, and 75% likely to adopt.",
+        "Recurring invoice template appeal mean 85.6, with 93 of 100 responses rated 80-100.",
+        "Gentle payment reminder value mean 81, with 67 responses rated 80-100.",
+        "Auto-send schedule importance mean 74.7, with 45 responses rated 80-100.",
+        "Today's recurring invoice pain severity mean 69.3.",
+        "Omar, the solo consultant segment, leads adoption propensity at compositeMean 81.7.",
+        "Willingness to pay is the clearest constraint: mean 59, median 59, IQR 54-65, and zero responses in 80-100.",
+        "Auto-send control concerns appear as a mixed theme, including review-before-send and per-client control.",
+        "Reliability, setup, and integrations are adoption gates for some, especially exports and bookkeeping workflows."
+      ]
+    },
+    "financial": {
+      "status": "available",
+      "summary": "The financial assessment recommends proceed_with_caution. Fleet context supports proceed with a composite mean of 73.9 and strong template, reminder, and scheduled-send appeal. However, willingness to pay is modest at mean 59, with no ratings in 80-100, and the intake lacks financial threshold, duration, resource, profitability, and runway data. The CFO workspace is connected and exposes one org with admin role, but scenario, memory, and page queries returned validation errors and uploadedReport is null. No ledger-level financial data is available to verify affordability, so affordability is unclear and financial validation should precede broad commitment.",
+      "recommendation": "proceed_with_caution",
+      "highlights": [
+        "Fleet composite mean 73.9 supports proceed, with caveats around willingness to pay and control concerns.",
+        "Willingness to pay mean 59, with no ratings in 80-100.",
+        "CFO workspace is connected but returned no usable scenario, memory, or page data.",
+        "uploadedReport is null and no ledger-level financial data is available.",
+        "Investment threshold, duration, resource consumption, profitability, and runway fields are blank.",
+        "Affordability verdict is unclear due to missing financial data."
+      ]
+    }
+  },
+  "crossCuttingThemes": [
+    "Recurring invoice templates and gentle reminders have strong persona appeal but are market parity rather than a unique differentiator.",
+    "Willingness to pay is the clearest constraint across persona and financial evidence, favoring modest or bundled pricing.",
+    "Auto-send needs optional review and per-client control to address variable line items, client-name risk, and audit trails.",
+    "Reliable setup, mobile experience, exports, and integrations are adoption gates, especially for bookkeeping workflows.",
+    "The strongest persona wedge is retainer-based billing, with Omar leading adoption and Priya needing exportable recurring history.",
+    "Regression evidence is skipped and financial affordability is unclear, so the ship decision should be conditional.",
+    "Market verification is limited by failed enrichment calls, vendor marketing copy, and partial research execution."
+  ],
+  "conditions": [
+    "Use a modest or bundled pricing path for recurring invoice templates rather than assuming premium willingness to pay.",
+    "Include review-before-send, per-client controls, and optional manual approval for auto-send schedules.",
+    "Ensure reliable setup, mobile scheduling, clean exports, and dependable integrations before launch.",
+    "Lead copy, defaults, and onboarding with the retainer use case and fixed monthly amounts.",
+    "Provide professional-looking template defaults for first-time freelancers such as Jordan.",
+    "Support template and tax defaults for the US, Canada, and UK without adding accounting-suite complexity.",
+    "Make recurring invoice history exportable in a stable schema for bookkeeper workflows such as Priya's.",
+    "Confirm financial affordability, runway, and resource commitment before broad rollout."
+  ],
+  "dataLimitations": [
+    "Regression section is skipped because no regression payload was provided.",
+    "All three company_enrich steps failed, so funding, headcount-growth, revenue, valuation, technology, pricing, plan-tier, review-score, churn, and customer-satisfaction data are absent for named competitors.",
+    "Wave could not be identified as the accounting product; company_identify returned 24 unrelated matches.",
+    "Zoho Invoice was not returned as a distinct company; Zoho product-level capability and pricing data are absent.",
+    "Market size data comes from a single secondary source and should be treated as low confidence.",
+    "All competitor capability statements are vendor-authored marketing copy, not tested product behavior.",
+    "Company search coverage was capped at 10 per geography, biasing toward small and very new LinkedIn-registered vendors.",
+    "Company identification results contained substantial false positives requiring manual disambiguation.",
+    "No pricing, plan-tier, conversion, retention, churn, review-score, or customer-satisfaction data for competitors is present.",
+    "Persona evidence is from a synthetic panel of 100 agents with fixed archetype counts, not observed adoption or payment behavior.",
+    "Willingness to pay is self-reported and compressed, so it should not be treated as precise price elasticity.",
+    "The PRD referenced as recurring-invoices-prd.pdf is named but its content is not present beyond the one-sentence feature description.",
+    "The job_search steps produced no usable labor-market signal.",
+    "Web search results are mostly vendor content-marketing posts, and two carry future-dated publication labels.",
+    "CFO scenario, memory, and pages calls returned validation errors; uploadedReport is null and no ledger-level financial data is available.",
+    "Intake financial threshold, duration, resource consumption, profitability, and runway fields are blank."
+  ]
+}

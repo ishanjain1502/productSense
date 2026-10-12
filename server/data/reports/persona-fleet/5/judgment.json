@@ -1,0 +1,414 @@
+{
+  "fleetRunId": 5,
+  "methodology": {
+    "agentCount": 100,
+    "aggregation": "mean_per_question; fleet_composite = mean(agent_means); recommendation from composite thresholds"
+  },
+  "feature": {
+    "name": "Recurring invoice templates",
+    "description": "Let users save invoice layouts and auto-send on a schedule to repeat clients, with gentle payment reminders."
+  },
+  "recommendation": "proceed",
+  "fleetComposite": {
+    "mean": 73.9,
+    "median": 75.5,
+    "percentLikelyAdopt": 75
+  },
+  "perQuestion": [
+    {
+      "key": "recurringInvoicePainSeverity",
+      "text": "On a scale of 0 to 100, how painful is it today for you to manually create and send repeat invoices to the same clients?",
+      "mean": 69.3,
+      "median": 72,
+      "p25": 62,
+      "p75": 78,
+      "histogram": {
+        "0-19": 0,
+        "20-39": 6,
+        "40-59": 14,
+        "60-79": 56,
+        "80-100": 24
+      }
+    },
+    {
+      "key": "recurringInvoiceTemplateAppeal",
+      "text": "On a scale of 0 to 100, how appealing is the idea of saving reusable invoice templates for recurring clients in LedgerLite?",
+      "mean": 85.6,
+      "median": 86,
+      "p25": 82,
+      "p75": 88,
+      "histogram": {
+        "0-19": 0,
+        "20-39": 0,
+        "40-59": 0,
+        "60-79": 7,
+        "80-100": 93
+      }
+    },
+    {
+      "key": "autoSendScheduleImportance",
+      "text": "On a scale of 0 to 100, how important is automatic scheduled sending of recurring invoices to your workflow?",
+      "mean": 74.7,
+      "median": 76,
+      "p25": 67.75,
+      "p75": 84.25,
+      "histogram": {
+        "0-19": 0,
+        "20-39": 2,
+        "40-59": 6,
+        "60-79": 47,
+        "80-100": 45
+      }
+    },
+    {
+      "key": "gentlePaymentReminderValue",
+      "text": "On a scale of 0 to 100, how valuable would automatic, gentle payment reminders be for reducing late payments from repeat clients?",
+      "mean": 81,
+      "median": 82,
+      "p25": 78,
+      "p75": 85,
+      "histogram": {
+        "0-19": 0,
+        "20-39": 0,
+        "40-59": 1,
+        "60-79": 32,
+        "80-100": 67
+      }
+    },
+    {
+      "key": "willingnessToPayForRecurringFeature",
+      "text": "On a scale of 0 to 100, how willing would you be to pay a higher monthly LedgerLite subscription for recurring invoice templates with auto-send and reminders?",
+      "mean": 59,
+      "median": 59,
+      "p25": 54,
+      "p75": 65,
+      "histogram": {
+        "0-19": 0,
+        "20-39": 3,
+        "40-59": 47,
+        "60-79": 50,
+        "80-100": 0
+      }
+    }
+  ],
+  "segments": [
+    {
+      "archetypeType": "persona_1",
+      "label": "Maya — freelance designer",
+      "count": 25,
+      "compositeMean": 75.9,
+      "perQuestionMeans": {
+        "recurringInvoicePainSeverity": 72.4,
+        "recurringInvoiceTemplateAppeal": 86.7,
+        "autoSendScheduleImportance": 77,
+        "gentlePaymentReminderValue": 83.8,
+        "willingnessToPayForRecurringFeature": 59.4
+      }
+    },
+    {
+      "archetypeType": "persona_2",
+      "label": "Omar — solo consultant",
+      "count": 25,
+      "compositeMean": 81.7,
+      "perQuestionMeans": {
+        "recurringInvoicePainSeverity": 83.2,
+        "recurringInvoiceTemplateAppeal": 89.6,
+        "autoSendScheduleImportance": 86.7,
+        "gentlePaymentReminderValue": 80,
+        "willingnessToPayForRecurringFeature": 68.8
+      }
+    },
+    {
+      "archetypeType": "persona_3",
+      "label": "Priya — part-time bookkeeper",
+      "count": 25,
+      "compositeMean": 74.4,
+      "perQuestionMeans": {
+        "recurringInvoicePainSeverity": 74.4,
+        "recurringInvoiceTemplateAppeal": 85.3,
+        "autoSendScheduleImportance": 75.8,
+        "gentlePaymentReminderValue": 80.1,
+        "willingnessToPayForRecurringFeature": 56.6
+      }
+    },
+    {
+      "archetypeType": "new_install",
+      "label": "Jordan — new freelancer",
+      "count": 25,
+      "compositeMean": 63.7,
+      "perQuestionMeans": {
+        "recurringInvoicePainSeverity": 47.2,
+        "recurringInvoiceTemplateAppeal": 80.6,
+        "autoSendScheduleImportance": 59.5,
+        "gentlePaymentReminderValue": 80,
+        "willingnessToPayForRecurringFeature": 51.1
+      }
+    }
+  ],
+  "quality": {
+    "agentsTotal": 100,
+    "agentsCompleted": 100,
+    "agentsMissing": 0
+  },
+  "themes": [
+    {
+      "label": "Recurring invoice templates / removing copy-paste",
+      "sentiment": "positive",
+      "approxCount": 50
+    },
+    {
+      "label": "Auto-send and scheduled sending",
+      "sentiment": "positive",
+      "approxCount": 43
+    },
+    {
+      "label": "Gentle reminders for late payments",
+      "sentiment": "positive",
+      "approxCount": 49
+    },
+    {
+      "label": "Price sensitivity / modest add-on or bundling",
+      "sentiment": "mixed",
+      "approxCount": 50
+    },
+    {
+      "label": "Quick setup, mobile reliability, integrations",
+      "sentiment": "mixed",
+      "approxCount": 21
+    },
+    {
+      "label": "Review-before-send and per-client control",
+      "sentiment": "mixed",
+      "approxCount": 12
+    },
+    {
+      "label": "Mobile invoicing between client calls",
+      "sentiment": "positive",
+      "approxCount": 25
+    },
+    {
+      "label": "Reusable templates save recurring billing time",
+      "sentiment": "positive",
+      "approxCount": 48
+    },
+    {
+      "label": "Gentle reminders reduce late-payment chasing",
+      "sentiment": "positive",
+      "approxCount": 46
+    },
+    {
+      "label": "Auto-send needs optional review/control",
+      "sentiment": "mixed",
+      "approxCount": 42
+    },
+    {
+      "label": "Price sensitivity; prefers modest or bundled cost",
+      "sentiment": "negative",
+      "approxCount": 50
+    },
+    {
+      "label": "Clean exports and reliable integrations",
+      "sentiment": "mixed",
+      "approxCount": 17
+    },
+    {
+      "label": "Quick self-serve setup without steep learning curve",
+      "sentiment": "positive",
+      "approxCount": 14
+    },
+    {
+      "label": "Professional-looking invoices for new freelancers",
+      "sentiment": "positive",
+      "approxCount": 25
+    },
+    {
+      "label": "Limited repeat clients reduce urgency",
+      "sentiment": "mixed",
+      "approxCount": 18
+    },
+    {
+      "label": "Time savings across multiple retainer clients",
+      "sentiment": "positive",
+      "approxCount": 25
+    }
+  ],
+  "representativeQuotes": [
+    {
+      "agentId": "agent_c4f7ad14cad55e54",
+      "archetypeType": "persona_1",
+      "compositeScore": 82,
+      "text": "I'd adopt recurring invoice templates if they work reliably from my phone and fit my existing workflow. Auto-send and gentle reminders would save me time between client calls and reduce awkward payment chasing, so I'd pay a modest amount more for it."
+    },
+    {
+      "agentId": "agent_b6251c1bea209670",
+      "archetypeType": "persona_1",
+      "compositeScore": 83.2,
+      "text": "I'd adopt this if the price bump is modest—recurring templates and auto-send would save me time between calls and help me get paid faster. My exec sponsor is cost-conscious, so I'd need clear ROI, but the reminder feature alone makes it worth trying."
+    },
+    {
+      "agentId": "agent_f4bcd884178799a8",
+      "archetypeType": "persona_1",
+      "compositeScore": 69.6,
+      "text": "I'd definitely use reusable templates and scheduled sends — recreating the same invoice on my phone between calls is exactly the kind of busywork I want gone, and reminders that chase late payers for me are worth real money. But as a freelancer watching every subscription line, I'd only pay more if it's a small bump, maybe a few dollars a month, otherwise I'll keep muddling through."
+    },
+    {
+      "agentId": "agent_55dfce904ececca8",
+      "archetypeType": "persona_1",
+      "compositeScore": 69.8,
+      "text": "Recurring invoice templates would be a real time-saver for me — with 3 to 8 repeat clients a month, rebuilding the same invoices from my phone between calls gets old fast, and auto-send plus polite reminders would cut chasing. But since I'm a solo designer watching every subscription line, I'd only pay a modest bump for it — bundle it into a tier I can justify or I'll keep doing it the hard way."
+    },
+    {
+      "agentId": "agent_a8562d4dc71fbc04",
+      "archetypeType": "persona_2",
+      "compositeScore": 86,
+      "text": "Omar would likely adopt recurring invoice templates because they directly eliminate the copy-paste work he dislikes for retainer clients. Auto-send and gentle reminders are valuable enough that he’d consider paying more, provided setup is fast and the price bump is reasonable."
+    },
+    {
+      "agentId": "agent_95d6f449804aae23",
+      "archetypeType": "persona_2",
+      "compositeScore": 86.8,
+      "text": "Omar would likely adopt recurring invoice templates because they directly remove the manual copy-paste burden of retainer billing and auto-send plus reminders improve cash flow. As a solo consultant, he is somewhat price-sensitive, so adoption depends on the add-on cost staying modest relative to the time saved."
+    },
+    {
+      "agentId": "agent_5403b53e8041630c",
+      "archetypeType": "persona_2",
+      "compositeScore": 75,
+      "text": "Omar would adopt recurring invoice templates with auto-send and reminders in a heartbeat — it kills the monthly copy-paste grind on his retainer clients and chases late payers for him. The catch is price: with a budget-conscious sponsor reviewing the spend, he'd push for this to be bundled into an existing tier rather than paying a meaningful premium, and would likely only upgrade if the added cost stays modest."
+    },
+    {
+      "agentId": "agent_c5982b482abfe5c7",
+      "archetypeType": "persona_2",
+      "compositeScore": 75.6,
+      "text": "Recurring retainer invoicing is a real monthly chore for me — I'm copy-pasting the same layouts and chasing the same clients, so saved templates with auto-send would genuinely save me time. I'd adopt it and push for it, but since my sponsor watches every line item, I can only justify a modest bump in the monthly subscription unless the reminders demonstrably cut my late payments."
+    },
+    {
+      "agentId": "agent_f945984e58443bc8",
+      "archetypeType": "persona_3",
+      "compositeScore": 81,
+      "text": "This feature directly solves a recurring headache in my bookkeeping work, and I'd adopt it quickly if auto-send and reminders are reliable and exports stay clean. I'd be open to paying a bit more, but only if it saves time across all five clients without adding integration headaches."
+    },
+    {
+      "agentId": "agent_d601e57dc2ef1589",
+      "archetypeType": "persona_3",
+      "compositeScore": 81.2,
+      "text": "I'd adopt recurring invoice templates if LedgerLite keeps the export and integration reliability solid. It would cut my monthly retainer billing time and help chase late payments gently, but I'd only pay a modest add-on given my part-time budget."
+    },
+    {
+      "agentId": "agent_61e245f70b91b7cc",
+      "archetypeType": "persona_3",
+      "compositeScore": 66.4,
+      "text": "Saving reusable templates would genuinely save me time across the five sets of books I keep, and automatic reminders are the part I'd value most since chasing late payers eats into my hours. Auto-sending makes me a little nervous because I need to review and export records before anything goes out, so I'd want it as a toggle rather than the default. I'd use it happily, but I'd push back on paying much more for it — my clients are small and my margins are thin."
+    },
+    {
+      "agentId": "agent_c8e9c2417d35d60c",
+      "archetypeType": "persona_3",
+      "compositeScore": 68.8,
+      "text": "Recurring invoice templates would genuinely help me — I'm rebuilding my workflow across five clients and hate re-keying the same retainer invoices every month. The auto-send is nice but I'd want to review before anything goes out under a client's name, so the reminders matter more to me than full automation. I'd adopt it if it's bundled into a plan I'm already considering, but I'm not paying much extra for it."
+    },
+    {
+      "agentId": "agent_90dca3146f4de4cc",
+      "archetypeType": "new_install",
+      "compositeScore": 71.4,
+      "text": "Jordan would likely adopt recurring invoice templates, especially to look professional and avoid manual busywork, but may hesitate on price and want careful control over auto-sending. Gentle reminders are a strong draw because they reduce awkward payment chasing, making the feature valuable once repeat clients become a regular part of the freelance workflow."
+    },
+    {
+      "agentId": "agent_b82e03021ba1f2f6",
+      "archetypeType": "new_install",
+      "compositeScore": 73,
+      "text": "As a new freelancer juggling tight deadlines, I'd love templates and auto-send to save time and look professional, and gentle reminders would help me avoid awkward payment chases. But since I'm just starting out with few repeat clients and watching costs, I'm only somewhat willing to pay extra for it right now."
+    },
+    {
+      "agentId": "agent_a56c3b7374faed5c",
+      "archetypeType": "new_install",
+      "compositeScore": 42.4,
+      "text": "I only have a couple of clients so far, so I'm not really drowning in repeat invoices yet — the manual part isn't the painful bit for me. What I do like is saving a clean, professional-looking template so every invoice looks consistent and legit, and gentle reminders sound nice because I hate chasing people for money. But auto-send on a schedule and paying extra for it feels premature — maybe once I've got real retainer clients I'd care, right now it's a nice-to-have."
+    },
+    {
+      "agentId": "agent_df6a4c4490a3ca5a",
+      "archetypeType": "new_install",
+      "compositeScore": 49.4,
+      "text": "I like the idea of saving templates because it would help me look consistent and professional with clients. But since I’m new and don’t have many repeat clients yet, auto-sending on a schedule feels less useful right now, and I’d be hesitant to pay extra for it unless it came bundled in."
+    },
+    {
+      "agentId": "agent_e53bef243c764acc",
+      "archetypeType": "persona_3",
+      "compositeScore": 73,
+      "text": "I'd likely use recurring invoice templates if setup is quick and exports cleanly, since repeat billing eats up time across my clients. Auto-send and gentle reminders are useful, but I wouldn't pay much more unless it clearly saves me hours each month without a steep learning curve."
+    },
+    {
+      "agentId": "agent_e064d2bc3876a3ce",
+      "archetypeType": "persona_1",
+      "compositeScore": 73.4,
+      "text": "I've got three retainer clients I invoice every month and rebuilding those invoices on my phone between calls is exactly the kind of busywork I want gone, so reusable templates and automatic reminders are genuinely appealing. Auto-send I'd want to review before it fires — a lot of my invoices have variable line items, so fully hands-off makes me a little nervous. I'd consider paying a bit more, but as a freelancer re-evaluating my stack I'd want it bundled into a tier I already like rather than sold as a separate add-on."
+    },
+    {
+      "agentId": "agent_4d7419a05da63328",
+      "archetypeType": "persona_1",
+      "compositeScore": 74,
+      "text": "I'd definitely use recurring templates for my retainer clients — rebuilding the same invoice every month from my phone between calls is exactly the kind of busywork I resent. The auto-reminders are a big draw too, since chasing late payers is the part of freelancing I dread most. My only hesitation is paying more: if setup takes more than a few minutes or the price jump is steep, I'll keep muddling through the way I do now."
+    },
+    {
+      "agentId": "agent_61baf6a220d9ad58",
+      "archetypeType": "persona_3",
+      "compositeScore": 74.4,
+      "text": "I’d definitely use reusable templates and scheduled sends—they’d cut down my monthly routine across five clients. The gentle reminders are a nice touch, but I’d only push for a paid upgrade if the price fits the tight budget my sponsor expects and it keeps records easy to export."
+    },
+    {
+      "agentId": "agent_a4bf899ece232028",
+      "archetypeType": "persona_1",
+      "compositeScore": 74.6,
+      "text": "Recurring templates with auto-send would save me real time between client calls, and the gentle reminders alone could fix my chronic late-payment chasing. I'd push for it, but my sponsor watches the subscription line hard, so a meaningful price bump needs a clear per-invoice time savings story before I can justify it."
+    },
+    {
+      "agentId": "agent_29d2bc4d693160e2",
+      "archetypeType": "persona_1",
+      "compositeScore": 74.8,
+      "text": "Yes, I'd adopt this — the template part alone would save me real time, since I'm rebuilding near-identical invoices for the same retainer clients every month, often one-handed between calls. Auto-send I'd want with a review-before-send option for project clients, but the gentle reminders are the sleeper win because chasing late payments is the most awkward part of my month. I'd pay a bit more, but as a solo designer my ceiling is low, so it needs to be a small add-on rather than a full tier jump."
+    },
+    {
+      "agentId": "agent_20c8b06b34283300",
+      "archetypeType": "persona_3",
+      "compositeScore": 75,
+      "text": "I'd definitely use reusable templates and scheduled auto-send if setup is self-serve, since it would save me time across multiple clients. Gentle reminders are very valuable for keeping receivables tidy, but I'd only pay a modest subscription increase given I'm cost-sensitive and manage several small accounts."
+    },
+    {
+      "agentId": "agent_df7afd49d16616c4",
+      "archetypeType": "persona_3",
+      "compositeScore": 75.4,
+      "text": "This would save me time across my retainer clients, especially if templates stay export-friendly for my records. I'd adopt it if the price increase is modest and I can control auto-send with a clear audit trail."
+    },
+    {
+      "agentId": "agent_323924badfc4dda6",
+      "archetypeType": "persona_1",
+      "compositeScore": 75.6,
+      "text": "I'd absolutely use this — I have four retainer clients and rebuilding the same invoice from my phone between calls is a genuine time suck. The reminders matter less to me because my retainer folks pay reliably, so I'd want this bundled rather than paying much extra, but if it's a few bucks more a month it's an easy yes."
+    }
+  ],
+  "executiveSummary": "LedgerLite's recurring invoice templates clear the proceed threshold with a fleet composite mean of 73.9, median 75.5, and 75% likely to adopt. The strongest signals are template appeal (mean 85.6, with 93 agents rating 80-100), gentle payment reminder value (mean 81), and automatic scheduled sending importance (mean 74.7), while today's recurring invoice pain is substantial (mean 69.3). Omar, the solo consultant segment, leads adoption propensity (count 25, compositeMean 81.7), followed by Maya (25, 75.9), Priya (25, 74.4), and Jordan (25, 63.7). The central caveat is monetization: willingness to pay has a mean of 59 and no ratings in 80-100, and the panel themes show price sensitivity plus a strong preference for modest add-on or bundled pricing. The feature should proceed, but with a modest or bundled price path, optional review-before-send controls, and reliable setup/exports/integrations.",
+  "strengths": [
+    "Template reuse is the standout: recurring invoice template appeal mean 85.6 (median 86; 93 of 100 responses 80-100), supported by positive themes around reusable templates saving recurring billing time (approx 48) and removing copy-paste (approx 50).",
+    "Gentle reminders address an emotional and operational pain: gentle payment reminder value mean 81 (median 82; 67 responses 80-100), with positive themes on reducing late-payment chasing (approx 46) and gentle reminders for late payments (approx 49).",
+    "Auto-send is important enough to matter: auto-send schedule importance mean 74.7 (median 76; 45 responses 80-100), with positive theme auto-send and scheduled sending (approx 43), though it is strongest when paired with control.",
+    "The underlying manual pain is real for core repeat-billing users: recurring invoice pain severity mean 69.3 (median 72; 80 of 100 responses 60-100), and positive themes include time savings across multiple retainer clients (approx 25) and mobile invoicing between client calls (approx 25).",
+    "There is a professionalization benefit for newer users and a self-serve adoption path: positive themes include professional-looking invoices for new freelancers (approx 25) and quick self-serve setup without steep learning curve (approx 14)."
+  ],
+  "blockers": [
+    "Willingness to pay is the clearest constraint: mean 59, median 59, IQR 54-65, with 0 responses in 80-100 and 47 in 40-59. Themes show negative price sensitivity (approx 50) and mixed preference for modest add-on or bundling (approx 50).",
+    "Auto-send can trigger control concerns: mixed theme auto-send needs optional review/control approx 42, plus review-before-send and per-client control approx 12. Panel language emphasizes variable line items, client-name risk, and audit trails, so hands-off automation should not be the only mode.",
+    "Reliability, setup, and integrations are adoption gates for some: mixed themes quick setup, mobile reliability, integrations approx 21, and clean exports/reliable integrations approx 17. Exports and integration reliability are especially important for bookkeeping workflows.",
+    "Urgency is uneven across the market: mixed theme limited repeat clients reduce urgency approx 18, and the Jordan new freelancer segment shows recurrent pain at only 47.2 and auto-send importance at 59.5. New freelancers may value templates and reminders but not scheduled auto-send or a paid upgrade yet."
+  ],
+  "segmentInsights": [
+    "Omar — solo consultant (count 25, compositeMean 81.7): highest adoption propensity. Pain 83.2, template appeal 89.6, auto-send importance 86.7, reminder value 80.0, WTP 68.8. The panel links this to retainer billing copy-paste and cash-flow improvement, but even this segment conditions adoption on a reasonable add-on cost.",
+    "Maya — freelance designer (count 25, compositeMean 75.9): strong fit. Template appeal 86.7 and reminder value 83.8, with pain 72.4, auto-send 77.0, and WTP 59.4. Mobile use between client calls and review-before-send for variable invoices are recurring qualifiers; price must stay a small add-on or bundled.",
+    "Priya — part-time bookkeeper (count 25, compositeMean 74.4): solid but operationally cautious. Pain 74.4, template appeal 85.3, auto-send 75.8, reminder value 80.1, WTP 56.6. Reminders and export-friendly records are valuable, while auto-send needs auditability and modest cost.",
+    "Jordan — new freelancer (count 25, compositeMean 63.7): weakest current fit. Template appeal 80.6 and reminder value 80.0 are healthy, but pain 47.2, auto-send 59.5, and WTP 51.1 show limited repeat-client urgency. The near-term appeal is professional-looking templates and gentle reminders, not fully automated recurring billing."
+  ],
+  "dataLimitations": [
+    "Synthetic panel of 100 agents; all 100 completed with 0 missing, but results are simulated directional judgments rather than observed adoption, payment, or retention behavior.",
+    "Segments are archetype-based with fixed counts of 25 each, not a probability sample of independent professionals and micro-businesses in North America and Western Europe; geographic and firmographic splits are not provided.",
+    "Willingness to pay is self-reported, compressed (mean 59, IQR 54-65, no 80-100), and likely sensitive to packaging; it should not be treated as precise price elasticity.",
+    "Themes and representative quotes are approximate and qualitative; they explain direction but do not prove causality or quantify feature-level conversion. Implementation details for setup, mobile reliability, exports, integrations, and review controls could materially change real-world results."
+  ],
+  "generatedAt": "2026-10-12T10:20:17.773Z"
+}

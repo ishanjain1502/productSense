@@ -10,11 +10,22 @@ import { DEMO_USER_EMAIL } from "./seed-demo-data.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPORTS_ROOT = path.join(__dirname, "data", "financial-reports");
+const UPLOAD_TMP_ROOT = path.join(__dirname, "data", "uploads", "tmp");
 
 const ALLOWED_EXT = new Set([".csv", ".xlsx", ".xls"]);
 
 export function financialReportsRoot() {
   return REPORTS_ROOT;
+}
+
+/** Multer staging dir on the same volume as stored reports (avoids cross-device rename). */
+export function financialReportsUploadTempRoot() {
+  return UPLOAD_TMP_ROOT;
+}
+
+export async function ensureFinancialReportsStorageDirs() {
+  await mkdir(UPLOAD_TMP_ROOT, { recursive: true });
+  await mkdir(REPORTS_ROOT, { recursive: true });
 }
 
 export function sanitizeFinancialFilename(name) {
@@ -113,8 +124,17 @@ export async function persistFinancialReport(input) {
   const absolutePath = path.join(userDir, storedName);
   const relativeLocation = path.relative(__dirname, absolutePath).replace(/\\/g, "/");
 
-  const { rename } = await import("node:fs/promises");
-  await rename(input.tempPath, absolutePath);
+  const { copyFile, rename, unlink } = await import("node:fs/promises");
+  try {
+    await rename(input.tempPath, absolutePath);
+  } catch (err) {
+    if (err && typeof err === "object" && "code" in err && err.code === "EXDEV") {
+      await copyFile(input.tempPath, absolutePath);
+      await unlink(input.tempPath);
+    } else {
+      throw err;
+    }
+  }
 
   await dbRun(
     `UPDATE financial_reports SET location = ? WHERE report_id = ?`,

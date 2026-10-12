@@ -1,0 +1,144 @@
+{
+  "strategy": "fixed_b",
+  "generatedAt": "2026-10-12T10:40:01.148Z",
+  "feature": {
+    "name": "Cross-project dependency map",
+    "description": "Visualize blockers across teams with live links to tasks and Slack digests when critical paths slip."
+  },
+  "executiveSummary": "FlowStack's cross-project dependency map targets B2B SaaS companies with 20-200 employees running multiple parallel initiatives - a band that sits below the tracked headcount of every enriched competitor (Linear 291, Asana 4,428, monday.com 9,455). The competitive set is well capitalized and moving fast: Linear raised a $99M secondary market round on 2026-08-26 with Accel leading and headcount up 69.2% YoY, while Asana and monday.com each acquired an AI company in mid-2026 (Stack AI announced 2026-05-27; One AI announced 2026-05-11). No enriched competitor description explicitly claims cross-project blocker visualization, so the wedge is narrow and execution-dependent rather than category-defining. The 14-week build (2 full-stack engineers, PM at 30%, designer 3 weeks, ~$3k/mo beta infra) must be weighed against a $180k financial threshold and a company at ~$1.8M ARR, ~72% gross margin, ~$180k/mo EBITDA burn and 22 months of runway. Reliability of the Jira comparison is unusable in this bundle: enrichment matched a 9-person tutorial site, not Atlassian.",
+  "competitorLandscape": [
+    {
+      "name": "Linear",
+      "positioning": "Developer-centric issue tracking and project management for high-impact product teams; fully remote since founding, positioning around UI craft and performance rather than breadth of workflow modules.",
+      "relevantMoves": [
+        "Raised a $99,000,000 secondary market round on 2026-08-26 led by Accel, with 01 Advisors, S32 and Salesforce Ventures participating - the largest of 6 rounds and the most recent capital event.",
+        "Cumulative investment of $233,200,000 across 6 rounds (seed $4.2M 2019-11-22; Series A $13M 2020-12-08; Series B $35M 2023-09-14; Series C $82M 2025-06-10; secondary $99M 2026-08-26).",
+        "Tracked headcount of 291 as of 2026-09-08, up 69.19% YoY and 32.88% over six months; engineering is 88 people (30.24% of headcount) versus 5 in product management (1.72%).",
+        "UK/Europe presence expanded from 10 (2026-08-01) to 12 (2026-09-01) in Greater London, with the UK total at 35 and EU markets (Germany, Netherlands, France, Ireland) each in single digits.",
+        "US remains the core market at 135 tracked employees (46.39% of headcount), concentrated in San Francisco Bay Area (35) and New York City metro (26)."
+      ],
+      "sources": [
+        "crustdata company enrich: Linear (crustdata_company_id 633791), funding.milestones",
+        "crustdata company enrich: Linear, headcount.by_role_absolute and by_region_absolute",
+        "crustdata company enrich: Linear, growth_percent (yoy 69.186, six_months 32.877)",
+        "crustdata company enrich: Linear, basic_info.description"
+      ]
+    },
+    {
+      "name": "Asana",
+      "positioning": "Public (NYSE/FRA) work management platform positioned for 'human + AI collaboration', built on the Work Graph and claiming more than 170,000 organizations including Accenture, Amazon and Anthropic.",
+      "relevantMoves": [
+        "Acquired Stack AI, announced 2026-05-27 - the only acquisition in its enriched record.",
+        "Tracked headcount of 4,428 (+10.15% YoY); engineering is 902 people (20.37% of headcount, +14.76% YoY), giving substantial in-house capacity to build native planning primitives.",
+        "Sales-led distribution remains dominant: 555 sales staff (12.53%) versus 106 product management (2.39%) and 147 program/project management (3.32%) - a signal that enterprise selling, not PLG feature velocity, is its center of gravity.",
+        "Last capital event is a $200,000,000 debt financing (2020-06-08) with total investment of $453,200,000 across 12 rounds and last_fundraise_date of 2020-08-15, so growth is now funded from public-market and operating cash flow rather than new equity.",
+        "Geographic mix is US-weighted (1,625 US, 889 California, 829 San Francisco Bay Area) with international hubs in Ireland (144), Germany (221), Canada (202), Poland (205) and India (266)."
+      ],
+      "sources": [
+        "crustdata company enrich: Asana (crustdata_company_id 633874), funding.acquisitions (Stack AI, 2026-05-27)",
+        "crustdata company enrich: Asana, headcount.by_role_absolute / by_role_growth_yoy_pct",
+        "crustdata company enrich: Asana, funding.milestones and funding.total_investment_usd",
+        "crustdata company enrich: Asana, headcount.by_region_absolute",
+        "crustdata company enrich: Asana, basic_info.description"
+      ]
+    },
+    {
+      "name": "monday.com",
+      "positioning": "NASDAQ-listed 'AI work platform' bundling work management, CRM, dev, service and campaigns, with AI agents (sidekick), no-code app building (vibe) and AI Blocks/Workflows; claims 250,000+ customers and 60%+ of the Fortune 500.",
+      "relevantMoves": [
+        "Acquired One AI, announced 2026-05-11 - the only acquisition in its enriched record.",
+        "Post-IPO equity raise of $150,000,000 on 2021-06-10 with Salesforce Ventures and Zoom; total investment of $384,100,000 across 7 rounds since seed ($1.5M, 2012-08-02).",
+        "Reported total headcount of 9,455 with growth_percent mom +107.16% and yoy +119.93%, but the underlying timeseries is internally inconsistent (4,564 on 2026-08-31 to 12,996 on 2026-09-02 to 5,914 on 2026-09-20), so headcount magnitude and growth rate are not reliable signals.",
+        "Regional distribution is heavily skewed to Brazil (7,099 of 9,455 by_region_absolute; 75.08% by_region_percent), followed by Israel (1,666) and the United States (1,047).",
+        "Function mix shows large sales (730) and engineering (990) organizations with comparatively small product management (229) - indicating bundling and distribution scale rather than narrow workflow depth."
+      ],
+      "sources": [
+        "crustdata company enrich: monday.com (crustdata_company_id 662376), funding.acquisitions (One AI, 2026-05-11)",
+        "crustdata company enrich: monday.com, funding.milestones (post_ipo_equity 2021-06-10)",
+        "crustdata company enrich: monday.com, headcount.timeseries and growth_percent",
+        "crustdata company enrich: monday.com, headcount.by_region_absolute / by_region_percent",
+        "crustdata company enrich: monday.com, headcount.by_role_absolute",
+        "crustdata company enrich: monday.com, basic_info.description"
+      ]
+    },
+    {
+      "name": "Jira (Atlassian) - enrichment mismatch, no usable data",
+      "positioning": "The intended competitor is Atlassian Jira, the enterprise issue-tracking incumbent. The enrichment returned 'Jira Tutorial' (jiratutorials.com), an online training site with employee_count_range 'myself only' and 9 tracked employees - not the Atlassian entity. No funding, scale or product data for the real Jira was captured in this bundle.",
+      "relevantMoves": [
+        "None usable. The matched entity's record shows no funding rounds, no investors, no acquisitions and no funds data.",
+        "Matched entity profile: Privately Held, primary domain jiratutorials.com, total tracked headcount 9 (largest_headcount_country 'IND'), skill list containing 'Zoho Projects', 'Project Management' and 'Video Editing' - consistent with a training content business, not a project management platform.",
+        "The only Jira-adjacent signal in the bundle is a competitor-domain list containing jira-admin.net, jira-club.net, go-jira.com, thejiraguy.com, apwide.com and jiraassistant.com - i.e. third-party Atlassian services and apps, not Atlassian itself."
+      ],
+      "sources": [
+        "crustdata company enrich: id 1259394, basic_info (name 'Jira Tutorial', primary_domain 'jiratutorials.com', employee_count_range 'myself only')",
+        "crustdata company enrich: id 1259394, funding (all fields null)",
+        "crustdata company enrich: id 1259394, headcount.total = 9",
+        "crustdata company identify: 'Jira' name match confidence 0.8 to Jira Tutorial; other matches are Jira Productions, Jira Preloved, JIRA-ADMIN.NET, Jira Club, go-jira, The Jira Guy, Apwide (Jira Apps)"
+      ]
+    }
+  ],
+  "marketSignals": [
+    {
+      "signal": "Capital and headcount are concentrating in dev-centric, engineering-first planning tools rather than broad work management suites.",
+      "evidence": "Linear, the smallest tracked competitor at 291 employees, raised a $99,000,000 secondary market round on 2026-08-26 (Accel lead; 01 Advisors, S32, Salesforce Ventures participating) against a cumulative $233,200,000, and grew headcount 69.19% YoY with engineering at 30.24% of the org versus 1.72% product management.",
+      "implicationForFeature": "The dependency map must read as an engineering-team-native primitive (live task links, blocker states, critical-path slippage) rather than an executive dashboard, or it will be compared unfavorably to Linear's existing surface.",
+      "source": "crustdata company enrich: Linear (633791), funding.milestones and headcount.by_role_percent"
+    },
+    {
+      "signal": "Incumbents are buying AI capability in mid-2026 instead of organically building every workflow primitive, which opens a short window for a focused wedge.",
+      "evidence": "Asana acquired Stack AI (announced 2026-05-27) and monday.com acquired One AI (announced 2026-05-11) - each company's only acquisition on record.",
+      "implicationForFeature": "A narrow, shipped-in-14-weeks dependency map can lead the category before these acquisitions are productized, but the same acquisitions are the fastest route for an incumbent to bundle an equivalent capability later.",
+      "source": "crustdata company enrich: Asana (633874) and monday.com (662376), funding.acquisitions"
+    },
+    {
+      "signal": "The competitive set is distribution-heavy at the top and engineering-heavy at the bottom, leaving product-led differentiation largely uncontested.",
+      "evidence": "Asana carries 555 sales (12.53%) and 106 product management (2.39%); monday.com carries 730 sales (7.72%) and 229 product management (2.42%); Linear carries 88 engineering (30.24%) and 5 product management (1.72%).",
+      "implicationForFeature": "A 7-person FlowStack team cannot out-distribute the incumbents; the dependency map has to be a self-serve, evaluable feature for the new-install persona rather than a sales-assisted enterprise module.",
+      "source": "crustdata company enrich: by_role_absolute and by_role_percent for 633874, 662376, 633791"
+    },
+    {
+      "signal": "Competitor hiring and presence maps onto FlowStack's stated US/EU mid-market geography.",
+      "evidence": "Linear: United States 135 (46.39%), UK 35 (12.03%), San Francisco Bay Area 35, New York metro 26, with Greater London growing 10 to 12 between 2026-08 and 2026-09. Asana: United States 1,625 (36.70%), California 889 (20.08%), Ireland 144, Germany 221, Poland 205, India 266.",
+      "implicationForFeature": "US and EU mid-market SaaS buyers will already have at least one of these tools installed, so the Slack digest and live task links must integrate rather than replace.",
+      "source": "crustdata company enrich: headcount.by_region_absolute / by_region_percent for 633791 and 633874"
+    },
+    {
+      "signal": "Published competitor headcount for monday.com is unreliable and should not be used as a demand or growth signal.",
+      "evidence": "monday.com headcount timeseries jumps from 4,564 (2026-08-31) to 12,996 (2026-09-02) then to 5,914 (2026-09-20), producing a reported mom growth of 107.16% and yoy of 119.93% against a total of 9,455 and a Brazil-only regional count of 7,099 (75.08%).",
+      "implicationForFeature": "Do not size the mid-market opportunity or competitive threat off monday.com's reported growth; treat its 250,000+ customer claim as vendor-stated marketing, not measured data.",
+      "source": "crustdata company enrich: monday.com (662376), headcount.timeseries, growth_percent, by_region_absolute; basic_info.description"
+    }
+  ],
+  "gapsAndOpportunities": [
+    "No enriched competitor description explicitly claims cross-project or cross-team blocker visualization. Asana's claimed 'Work Graph' is the closest adjacent primitive, and Linear's description is limited to issue tracking and project management. This is the clearest open wedge for the feature, but it is inferred from absence of evidence in the bundle rather than from confirmed competitor roadmaps.",
+    "The 20-200 employee target band sits below every tracked competitor's LinkedIn-derived headcount (Linear 291; Asana 4,428; monday.com 9,455), consistent with the new-install persona (Alicia, a new PM at a Series A startup who inherited a messy roadmap) being underserved by tools positioning for enterprise scale.",
+    "Slack digest on critical-path slippage is a notification-delivery mechanism not claimed anywhere in the enriched competitor descriptions, and the personas (Elena needing a pre-sprint view; Chris wanting unblock signal without chat ping-pong) point to push-to-Slack as the adoption hook rather than a new dashboard to check.",
+    "Asana's Post-IPO-era capital position (last event a $200M debt financing in 2020, last fundraise date 2020-08-15) and monday.com's last raise (post-IPO equity, 2021-06-10) suggest neither is currently optimizing for a new mid-market planning wedge the way Linear is for developer experience.",
+    "The buyer is Head of Product or VP Engineering, while the daily users are EMs, product ops and IC designers; the feature can be sold on a single buyer metric (critical-path slippage visibility before sprint planning) rather than cross-suite adoption."
+  ],
+  "risks": [
+    "Incumbent bundling: Asana (Stack AI, 2026-05-27) and monday.com (One AI, 2026-05-11) both have fresh AI acquisitions and in-house engineering depth (Asana 902 engineers, 20.37% of headcount; monday.com 990) with which to absorb dependency alerting into existing suites.",
+    "Linear's execution velocity: +69.19% YoY headcount, a $99M secondary at 2026-08-26, and an org that is 30.24% engineering and only 1.72% product management means a dependency view could ship from a direct competitor with more engineering leverage than FlowStack's 2 allocated engineers.",
+    "Unit economics of the build: ~$3k/mo extra graph/alerting infra during beta lands on a P&L already at ~$180k/mo EBITDA burn on ~$1.8M ARR and ~72% gross margin, with 22 months of runway - the feature has to justify itself against a $180k financial threshold within a 14-week window.",
+    "Competitive blind spot on the largest enterprise incumbent: Jira/Atlassian was not successfully enriched (the ID resolved to 'Jira Tutorial', a 9-employee training site), so the risk of Atlassian shipping native cross-project dependency views is entirely unquantified.",
+    "Data-quality risk in the competitive baseline: monday.com's headcount series is internally inconsistent (4,564 to 12,996 to 5,914) and its regional breakdown is dominated by a single country (Brazil, 75.08%), so any market sizing or threat model built on these numbers will be wrong.",
+    "Persona-to-buyer mismatch: the paying buyer (Head of Product / VP Engineering) is not the primary daily user among the documented personas (EM, product ops lead, IC designer, new PM), which risks adoption without budget or budget without adoption.",
+    "Graph and alerting scope creep: 'live links to tasks' implies bi-directional sync with external tools, but the bundle contains no integration architecture or public API evidence for the competitors, so cross-tool dependency accuracy is unvalidated."
+  ],
+  "dataLimitations": [
+    "The 'Jira' competitor was enriched to the wrong entity: crustdata_company_id 1259394 resolves to 'Jira Tutorial' (jiratutorials.com), described as an online Jira training platform with employee_count_range 'myself only' and 9 tracked employees. No Atlassian/Jira company data (funding, headcount, product moves) is present in this bundle.",
+    "The job market dataset is empty (rawBundle.jobs = []) and the job_search query failed with a filter validation error ('filters.conditions.0' must be either a single condition or a tree). No hiring-velocity or role-demand signals could be derived.",
+    "rawBundle.landscape is null, so no aggregated competitive landscape view was available; competitor analysis relies solely on the four enrichResult records and the company_identify name matches.",
+    "monday.com headcount data is internally inconsistent: timeseries shows 4,564 (2026-08-31) -> 12,996 (2026-09-02) -> 5,914 (2026-09-20), while growth_percent reports mom +107.16% and total 9,455. All monday.com scale and growth figures should be treated as unreliable.",
+    "monday.com regional data is skewed and overlapping (Brazil 7,099 of 9,455; Israel 1,666; United States 1,047), indicating double-counted or mis-assigned regions.",
+    "Headcount figures for all competitors are LinkedIn-derived proxies (by the presence of professional_network_url and profile_name fields), not audited headcounts; they also carry 'CURRENT_FUNCTION' and 'GEO_REGION' classifications that may not reflect actual role or location.",
+    "No pricing, packaging, win/loss, churn, NPS or customer-satisfaction data for any competitor was returned, so price-based positioning and willingness-to-pay for the dependency map cannot be assessed.",
+    "No competitor roadmap, release-note or product-page content was captured, so the claim that no competitor offers cross-project blocker visualization rests on the absence of such a claim in company descriptions (Asana mentions 'Work Graph', Linear mentions 'issue tracking and project management'), not on verified feature audits.",
+    "Asana's and monday.com's 'last_round_type'/'last_fundraise_date' fields reflect their most recent recorded capital events (Asana: undisclosed, 2020-08-15; monday.com: post_ipo_equity, 2021-06-10) and do not capture public-market performance, which is the actual funding condition for both as listed companies.",
+    "No financial statements, revenue or margin data exist for the privately held competitor (Linear); its $233.2M total_investment_usd is cumulative disclosed funding, not valuation or revenue.",
+    "The competitor domain lists returned by enrichment are broad and noisy (e.g. monday.com organic_seo lists instagram.com, facebook.com, booksy.com, fresha.com; Linear paid_seo lists shakebugs.com and posthog.com). They were not used as evidence of competitive positioning.",
+    "No raw interview transcripts or survey data were supplied: only the document names dependency-map-spec-v2.pdf and flowstack-user-interviews-summary.pdf and the persona summaries. Persona needs are asserted, not quantifiable from this bundle.",
+    "FlowStack's own internal metrics (ARR, gross margin, burn, runway) are self-reported company data and are not independently verified within this bundle."
+  ],
+  "planSummary": null
+}

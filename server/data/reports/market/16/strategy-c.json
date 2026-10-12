@@ -1,0 +1,138 @@
+{
+  "strategy": "planned_c",
+  "generatedAt": "2026-10-12T07:32:13.227Z",
+  "feature": {
+    "name": "Cross-project dependency map",
+    "description": "A FlowStack feature that visualizes blockers across teams with live links to tasks and Slack digests when critical paths slip. FlowStack is positioned as a team workflow hub connecting tasks, docs, and lightweight automations for growing product squads; the feature targets B2B SaaS companies with 20-200 employees running multiple parallel initiatives, with the Head of Product or VP Engineering as primary buyer."
+  },
+  "executiveSummary": "FlowStack is weighing a 14-week build of a cross-project dependency map (2 full-stack engineers, PM at 30%, designer 3 weeks, ~$3k/mo extra graph/alerting infra during beta) against a company position of ~$1.8M ARR, ~15% QoQ growth, ~72% gross margin, ~$180k/mo negative EBITDA and 22 months of runway. Only two of the nine planned research steps produced usable data: a Product Operations job search, an Engineering Manager job search, and a single web search. Both company_search steps and all four competitor enrichment/identify steps (linear.app, asana.com, monday.com, atlassian.com) failed on parameter validation, so no first-party competitor capability, pricing, or funding data exists in this bundle. The usable signal is market-level: portfolio and project management software is estimated in the USD 9.6-11.27B range for 2025-2026 with forecast growth to USD 17.75B by 2031 (portfolio management) and USD 32.27B by 2036 (project management overall), and a practitioner thread shows buyers currently answering the cross-project dependency question with Gantt views inside general PM tools rather than a dedicated dependency layer. Buy/sell confidence in the competitive framing is low until competitor data is collected.",
+  "competitorLandscape": [
+    {
+      "name": "Linear",
+      "positioning": "Named in the product brief as a competitor company for FlowStack. No positioning statement could be verified: the company_enrich step for linear.app failed with 'Exactly one identifier must be provided' and returned no name, employee_count, industry, funding_stage, total_funding, tech_stack, location, or description.",
+      "relevantMoves": [],
+      "sources": []
+    },
+    {
+      "name": "Asana",
+      "positioning": "Named in the product brief as a competitor company for FlowStack. No positioning statement could be verified: the company_enrich step for asana.com failed with the same parameter-validation error and returned no fields.",
+      "relevantMoves": [],
+      "sources": []
+    },
+    {
+      "name": "Monday.com",
+      "positioning": "Named in the product brief as a competitor company for FlowStack. No positioning statement could be verified: the company_enrich step for monday.com failed with the same parameter-validation error and returned no fields.",
+      "relevantMoves": [],
+      "sources": []
+    },
+    {
+      "name": "Jira (Atlassian)",
+      "positioning": "Named in the product brief as a competitor company for FlowStack. The company_identify step for atlassian.com failed with 'Exactly one identifier must be provided', so no Atlassian entity, headcount, or product data was returned.",
+      "relevantMoves": [],
+      "sources": []
+    },
+    {
+      "name": "Smartsheet",
+      "positioning": "Surfaced in the market scan (not in the product brief) as an option for companies moving off Excel that want a spreadsheet-style interface combined with PM features, in a roundup of multi-project management tools.",
+      "relevantMoves": [],
+      "sources": [
+        "https://www.planta.de/en/blog/mpm-software-solutions-2025/"
+      ]
+    },
+    {
+      "name": "ProofHub",
+      "positioning": "Surfaced in the market scan as the suggested answer to a practitioner question about managing dependencies across various projects and programs, via visual Gantt chart views rather than a dedicated cross-project dependency layer.",
+      "relevantMoves": [],
+      "sources": [
+        "https://www.projectmanagement.com/discussion-topic/68436/Is-there-any-tool-to-manage-dependencies-across-various-projects-programs--"
+      ]
+    },
+    {
+      "name": "Wrike",
+      "positioning": "Surfaced in the market scan as one of 21 evaluated project management tools compared on pricing, features, and team fit; the evaluation is self-published by Wrike.",
+      "relevantMoves": [],
+      "sources": [
+        "https://www.wrike.com/project-management-guide/faq/what-are-project-management-tools/"
+      ]
+    }
+  ],
+  "marketSignals": [
+    {
+      "signal": "Portfolio-level management software is a large, growing budget line distinct from single-project tooling.",
+      "evidence": "The project portfolio management market was valued at USD 9.79 billion in 2026 and is expected to reach USD 17.75 billion by 2031, described as driven by continuous vendor activity.",
+      "implicationForFeature": "Supports positioning the dependency map as portfolio-level visibility that can be funded from portfolio/PPM budget rather than a per-seat task-tool upgrade, which matters given FlowStack's price sensitivity at ~$1.8M ARR.",
+      "source": "https://www.marketsandmarkets.com/Market-Reports/project-portfolio-management-software-market-225932595.html"
+    },
+    {
+      "signal": "The broader project management software market is forecast to grow roughly threefold over a decade.",
+      "evidence": "The project management software market is projected to expand from USD 9.60 billion in 2026 to USD 32.27 billion by 2036.",
+      "implicationForFeature": "Confirms category tailwind for work-coordination features, but the forecast horizon (10 years) is far longer than FlowStack's 22-month runway, so it should not be used to justify the 14-week build.",
+      "source": "https://www.futuremarketinsights.com/reports/project-management-software-market"
+    },
+    {
+      "signal": "Third-party market sizing for this category is inconsistent, so any TAM claim carries estimation risk.",
+      "evidence": "A separate estimate puts the project management software systems market at USD 9.76 billion in 2025, growing to USD 11.27 billion in 2026, while another source sizes the online project management software market at USD 5.6 billion in 2023 reaching around USD 11.4 billion by 2032 at an 8.4% CAGR, and another pegs 2025 project management software at USD 9.76-10.26 billion.",
+      "implicationForFeature": "Market size should be treated as directional only; flowstack should validate willingness-to-pay with the named personas (Elena, Sam, Chris, Alicia) before committing engineering capacity.",
+      "source": "https://www.mordorintelligence.com/industry-reports/project-management-software-systems-market"
+    },
+    {
+      "signal": "Practitioners are actively asking for cross-project dependency management and are being answered with general-purpose Gantt tooling.",
+      "evidence": "A discussion thread titled 'Is there any tool to manage dependencies across various projects/programs?' recommends an online PM tool with Gantt chart software as the way to get a visual picture of projects.",
+      "implicationForFeature": "Direct evidence of the unmet need FlowStack's feature targets: today's answer is a Gantt inside a general tool, which leaves room for a dedicated dependency layer with live task links and Slack digests when critical paths slip.",
+      "source": "https://www.projectmanagement.com/discussion-topic/68436/Is-there-any-tool-to-manage-dependencies-across-various-projects-programs--"
+    },
+    {
+      "signal": "Multi-project tooling comparisons frame the buying decision around spreadsheet migration rather than dependency intelligence.",
+      "evidence": "A multi-project management software roundup positions Smartsheet as 'perfect for companies that switch from Excel' and wanting a familiar spreadsheet-based interface with powerful PM features.",
+      "implicationForFeature": "Competitive messaging for the dependency map should differentiate on cross-team blocker visibility rather than grid/spreadsheet parity, where incumbents are already entrenched.",
+      "source": "https://www.planta.de/en/blog/mpm-software-solutions-2025/"
+    },
+    {
+      "signal": "Maintaining portfolio-wide visibility is currently a dedicated headcount responsibility, not an automated capability.",
+      "evidence": "A Business Operations Lead job posting requires the hire to 'Maintain portfolio-wide visibility on project status, risks, and decisions, and track follow-ups from cross-functional meetings' across a dynamic portfolio of projects.",
+      "implicationForFeature": "Supports the Slack digest and live-link elements of the feature as labor substitution for manual chase-and-report roles like persona Sam (product ops lead) and the cross-project status work described in the product brief.",
+      "source": "https://www.linkedin.com/jobs/view/4477257829"
+    },
+    {
+      "signal": "Linear is embedded in the high-growth product teams FlowStack targets, making interop a condition of adoption.",
+      "evidence": "A QA Engineer job posting for a product with 'over 100,000 weekly active users', 'tens of millions in annual recurring revenue' and 'over 100% year-over-year growth' lists Notion, Linear, Shopify, and Snowflake as notable clients.",
+      "implicationForFeature": "Since Linear is both a named competitor and an ecosystem tool inside target accounts, the dependency map's live links to tasks must reach work items that live outside FlowStack or the map will be incomplete for engineering managers like Elena.",
+      "source": "https://www.linkedin.com/jobs/view/4477273204"
+    }
+  ],
+  "gapsAndOpportunities": [
+    "No competitor in this bundle was shown to have a dedicated cross-project dependency layer; the only concrete practitioner answer found was a Gantt view inside a general PM tool, leaving room for a purpose-built blocker map.",
+    "The pain is currently staffed, not tooled: job postings show human roles dedicated to maintaining portfolio-wide visibility of project status, risks, and decisions, which is the work the Slack digest and live links would absorb.",
+    "A new-install persona (Alicia, new PM at a Series A startup) is explicitly defined as wanting dependency visibility 'without enterprise complexity', a niche the market scan did not show incumbents addressing directly.",
+    "The 20-200 employee B2B SaaS segment is defined as the target, but zero qualifying companies were returned by either company_search step, so the segment remains hypothesis rather than validated list.",
+    "Two of the three named personas (Elena, engineering manager; Sam, product ops lead) map directly to the job families that were searched, but the returned listings were largely off-target, so hiring-demand evidence for these roles in B2B SaaS is not yet established.",
+    "Roadmap-level visibility gaps exist across team types beyond engineering: job data shows product, data, and go-to-market teams all coordinating against shared roadmaps, which supports expanding the dependency map beyond engineering-only blockers."
+  ],
+  "risks": [
+    "Competitive framing is unverified: Linear, Asana, Monday.com, and Jira are named as competitors but every enrichment and identity call for them failed, so their current dependency capabilities, pricing, and roadmap cannot be assessed from this bundle.",
+    "Affordability risk against cash position: ~$180k/mo negative EBITDA, ~$1.8M ARR and 22 months of runway against a 14-week, 2-engineer build plus ~$3k/mo beta infrastructure; the feature must convert to paid expansion before runway narrows further.",
+    "The financial threshold of $180,000 referenced in the product data is not supported by any pricing, ACV, or willingness-to-pay evidence in the raw bundle, so the revenue case for the feature is unproven.",
+    "Market sizing is inconsistent across sources (USD 5.6B to USD 11.27B for overlapping 2023-2026 periods), so any internal market-share or TAM narrative built from it is fragile.",
+    "Delivery scope risk: the feature spans a graph/visualization layer, live task links, and Slack alerting, plus net-new infrastructure and alerting spend, in a 14-week window with only 3 weeks of designer time.",
+    "The competitive set includes deeply entrenched incumbents whose comparison content already dominates buyer research (a 21-tool comparison published by one vendor), so distribution and differentiation will not be won on feature parity.",
+    "Evidence base skew: all supporting market evidence comes from secondary aggregator pages and unrelated job listings rather than from buyers in the defined 20-200 employee B2B SaaS segment, creating a real risk of building for a persona that was not directly observed."
+  ],
+  "dataLimitations": [
+    "company_search step 1 (industry B2B SaaS, 20-200 employees, US/EU, Series A/B, limit 100) failed: 'At least one of filters or search is required'. No qualifying companies returned.",
+    "company_search step 2 (same segment with tech_stack Jira/Notion/Slack, limit 100) failed with the same error. No tech-stack-qualified accounts returned.",
+    "company_enrich for linear.app failed: 'Exactly one identifier must be provided'. No Linear headcount, funding, tech stack, location, or description data.",
+    "company_enrich for asana.com failed with the same error. No Asana data.",
+    "company_enrich for monday.com failed with the same error. No Monday.com data.",
+    "company_identify for atlassian.com failed with the same error. No Atlassian/Jira entity data.",
+    "The Product Operations job_search (limit 100, US/EU, B2B SaaS) returned predominantly off-target listings (e.g. a Certified Nursing Assistant role, marketing and SEO roles, security engineering roles), providing almost no signal on product operations hiring in the target segment. The result set reports 75,300,631 total matching items, indicating the title filter was not effectively applied.",
+    "The Engineering Manager job_search returned the same off-target pattern and overlapped heavily with the Product Operations result set, so no reliable engineering-manager demand signal in 20-200 employee B2B SaaS was established.",
+    "web_search_live returned only 9 results, all secondary (market research aggregators, tool roundups, a forum thread, and a vendor-published comparison). No primary vendor documentation, pricing pages, release notes, or product feature pages for Linear, Asana, Monday.com, or Jira were captured.",
+    "No market-size figure for cross-project dependency management specifically was found; the available figures cover project management and project portfolio management categories.",
+    "The personas document (flowstack-user-interviews-summary.pdf) and feature document (dependency-map-spec-v2.pdf) are referenced by name in the product data but their contents are not present in the raw bundle, so persona needs are taken from the brief's summaries only.",
+    "Company financials (~$1.8M ARR, ~15% QoQ growth, ~72% gross margin, ~$180k/mo EBITDA burn, 22 months runway) are self-reported in productData and unverified against any external source in this bundle.",
+    "The $180,000 financialThresholdAmount and the ~$3k/mo beta infrastructure estimate are inputs from the product brief with no supporting cost model or vendor quotes in the raw data.",
+    "Job listings in the bundle are sourced from a professional network feed and include duplicated entries and unrelated industries; they should not be treated as a representative sample of the target market.",
+    "Overall: only 3 of 9 planned research steps returned usable payloads (2 job_search, 1 web_search_live); the run summary states 'Executed 3 step(s); 6 error(s).'"
+  ],
+  "planSummary": "Executed 3 step(s); 6 error(s). Planned tools: company_search, company_search, job_search, job_search, company_enrich, company_enrich, company_enrich, web_search_live, company_identify"
+}

@@ -395,14 +395,44 @@ export function PersonaFleetPage({ mode }: PersonaFleetPageProps) {
 
               {judgmentError && (
                 <Card className="border-destructive/40 bg-destructive/5">
-                  <CardContent className="py-6 text-sm text-destructive">
-                    {judgmentError}
+                  <CardContent className="flex flex-col gap-3 py-6 text-sm text-destructive">
+                    <p>{judgmentError}</p>
+                    <Button
+                      type="button"
+                      variant="outline"
+                      size="sm"
+                      className="self-start"
+                      onClick={() => {
+                        if (!fleetRunId || !session) return;
+                        judgmentRequestedRef.current = false;
+                        void composeJudgment(fleetRunId, session.data);
+                      }}
+                    >
+                      Retry judgment
+                    </Button>
                   </CardContent>
                 </Card>
               )}
 
               {judgment && !judgmentLoading && (
                 <FleetJudgmentPanel judgment={judgment} />
+              )}
+
+              {uiPhase === "completed" && (
+                <div className="flex flex-col items-end gap-2 border-t border-border/60 pt-6">
+                  {judgmentLoading && (
+                    <p className="text-xs text-muted-foreground">
+                      Final judgment still composing — you can continue to
+                      financial analysis.
+                    </p>
+                  )}
+                  <Link
+                    href={`/${mode}/financial-analysis`}
+                    className={cn(buttonVariants())}
+                  >
+                    Next: financial analysis →
+                  </Link>
+                </div>
               )}
             </div>
           )}
