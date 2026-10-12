@@ -171,56 +171,57 @@ export const DEMO_APPLICATIONS: DemoApplication[] = [
     },
   },
   {
-    id: "nimbus",
-    applicationName: "Nimbus Cloud Platform",
+    id: "flybundles",
+    applicationName: "Fly Bundles",
     applicationDescription:
-      "Enterprise multi-cloud control plane for provisioning, policy, and cost governance at scale.",
-    teamSize: 1000,
+      "Shopify app for product bundles, BOGO, frequently-bought-together, quantity breaks, and volume discounts that lift AOV without custom theme work.",
+    teamSize: 12,
     data: {
-      applicationName: "Nimbus Cloud Platform",
+      applicationName: "Fly Bundles",
       applicationDescription:
-        "Enterprise multi-cloud control plane for provisioning, policy, and cost governance at scale.",
-      teamSize: 1000,
-      featureName: "AI-assisted policy guardrails",
+        "Shopify app for product bundles, BOGO, frequently-bought-together, quantity breaks, and volume discounts that lift AOV without custom theme work.",
+      teamSize: 12,
+      featureName: "Scale plan and bundle-discount usage limits",
       featureDescription:
-        "Suggest and enforce IAM and spend policies from historical incidents, with audit-ready change logs.",
-      featureDocumentName: "ai-policy-guardrails-enterprise-brief.pdf",
+        "Keep full bundle features on the $20 Growth plan while capping eligible bundle discounts per month; add a $50 Scale plan with unlimited discounts, usage dashboard, threshold alerts (70%/90%/100%), and Shopify subscription upgrade flows—without locking core bundle types behind paywalls.",
+      featureDocumentName: "fly-bundles-pricing-prd.txt",
       targetMarket:
-        "Fortune 2000 and large regulated industries running workloads across AWS, Azure, and GCP.",
+        "Shopify merchants from small DTC brands to promotion-heavy stores doing $50k–$5M+ annual GMV, especially in fashion, beauty, supplements, and home goods.",
       personas: [
         {
-          name: "Victor — cloud architect",
+          name: "Aisha — growing DTC founder",
           description:
-            "Designs landing zones and needs policy templates that satisfy security without blocking teams.",
+            "On the $20 plan with a handful of bundles; wants every bundle type available but needs clear visibility before hitting a monthly discount allowance.",
         },
         {
-          name: "Mei — FinOps director",
+          name: "Marcus — promo-heavy store operator",
           description:
-            "Owns cloud spend accountability and wants proactive anomaly detection tied to budgets.",
+            "Runs BOGO, FBT, and volume campaigns year-round; regularly exceeds limits and will pay $50 for uninterrupted checkout discounts during peak sales.",
         },
         {
-          name: "Raj — security compliance lead",
+          name: "Lena — Shopify agency partner",
           description:
-            "Requires immutable audit trails and mapping to SOC 2 / ISO controls.",
+            "Configures bundles for clients; needs predictable billing, legacy-plan policy, and zero surprise checkout breakage when limits apply.",
         },
       ],
       newInstallPersona: {
-        name: "Diane — newly hired CISO",
+        name: "Noah — new Shopify merchant",
         description:
-          "Evaluating consolidation vendors after a merger; needs proof of cross-cloud governance fast.",
+          "Just launched on the free tier; exploring fixed bundles and quantity breaks before committing to paid plans.",
       },
-      personasDocumentName: "nimbus-enterprise-personas-and-buyers.pptx",
-      primaryBuyer: "Chief Information Security Officer or VP Cloud Infrastructure",
+      personasDocumentName: "fly-bundles-merchant-research-summary.pdf",
+      primaryBuyer: "Shopify store owner / e-commerce operator (self-serve)",
       competitorCompanies:
-        "HashiCorp, Flexera, Apptio, native cloud policy tools",
-      geography: "North America, EMEA, APAC enterprise accounts",
-      financialThresholdAmount: 2_500_000,
-      expectedDurationWeeks: 28,
+        "Bold Bundles, Bundler, Kaching Bundles, Wide Bundles, Shopify Bundles",
+      geography:
+        "Global Shopify merchants; primary adoption in United States, United Kingdom, Canada, and Australia",
+      financialThresholdAmount: 120_000,
+      expectedDurationWeeks: 16,
       expectedResourceConsumption:
-        "Dedicated squad (~8 FTE: eng, security, PM, solutions); compliance and pen-test vendors; ~$20k/mo staging cloud and model API during build.",
+        "2 full-stack engineers (Shopify billing + discount enforcement), PM ~40%, designer ~2 weeks for usage UX; builds on existing Fly Bundles app—no separate bundle-engine rebuild.",
       companyProfitabilityDetails:
-        "Public-cloud division profitable on operating income; platform gross margin ~68%. Parent balance sheet funds strategic bets without near-term fundraise pressure.",
-      runwayRemainingMonths: 48,
+        "~$9k MRR (~$108k ARR run-rate); ~70% contribution margin (~$6.3k/mo after salaries, growth, and cloud). ~1,125 revenue-equivalent merchants at ~$8/merchant/month. Reported CAC ~$4, ~4-month average retention; revamp targets +10–15% ARPPU via $20→$50 upgrades while holding paid churn within ~2pp of baseline.",
+      runwayRemainingMonths: 24,
     },
   },
 ];
