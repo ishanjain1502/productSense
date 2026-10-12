@@ -1,0 +1,236 @@
+{
+  "plan": {
+    "steps": [
+      {
+        "tool": "company_identify",
+        "params": {
+          "company_name": "FreshBooks",
+          "domain": "freshbooks.com"
+        }
+      },
+      {
+        "tool": "company_enrich",
+        "params": {
+          "company_name": "FreshBooks",
+          "domain": "freshbooks.com",
+          "fields": [
+            "name",
+            "domain",
+            "description",
+            "employee_count",
+            "employee_count_range",
+            "founded_year",
+            "headquarters",
+            "industry",
+            "specialties",
+            "technologies",
+            "funding",
+            "revenue",
+            "social_links"
+          ]
+        }
+      },
+      {
+        "tool": "company_search",
+        "params": {
+          "query": "small business accounting software",
+          "limit": 25,
+          "fields": [
+            "name",
+            "domain",
+            "description",
+            "employee_count",
+            "industry",
+            "headquarters"
+          ]
+        }
+      },
+      {
+        "tool": "company_search",
+        "params": {
+          "query": "invoicing expense tracking and financial management for small businesses",
+          "filters": {
+            "industry": "Accounting",
+            "employee_count_min": 50
+          },
+          "limit": 25,
+          "fields": [
+            "name",
+            "domain",
+            "description",
+            "employee_count",
+            "industry",
+            "headquarters",
+            "funding"
+          ]
+        }
+      },
+      {
+        "tool": "job_search",
+        "params": {
+          "company_name": "FreshBooks",
+          "limit": 30,
+          "filters": {
+            "department": [
+              "Engineering",
+              "Product",
+              "Design",
+              "Marketing",
+              "Sales",
+              "Customer Success"
+            ]
+          }
+        }
+      },
+      {
+        "tool": "job_search",
+        "params": {
+          "company_name": "FreshBooks",
+          "limit": 30,
+          "filters": {
+            "location": [
+              "Remote",
+              "Canada",
+              "United States"
+            ],
+            "posted_after": "2024-01-01"
+          }
+        }
+      },
+      {
+        "tool": "web_search_live",
+        "params": {
+          "query": "FreshBooks product updates pricing news competitors 2025",
+          "num_results": 10
+        }
+      }
+    ]
+  },
+  "results": [],
+  "errors": [
+    {
+      "step": {
+        "tool": "company_identify",
+        "params": {
+          "company_name": "FreshBooks",
+          "domain": "freshbooks.com"
+        }
+      },
+      "error": "[object Object]"
+    },
+    {
+      "step": {
+        "tool": "company_enrich",
+        "params": {
+          "company_name": "FreshBooks",
+          "domain": "freshbooks.com",
+          "fields": [
+            "name",
+            "domain",
+            "description",
+            "employee_count",
+            "employee_count_range",
+            "founded_year",
+            "headquarters",
+            "industry",
+            "specialties",
+            "technologies",
+            "funding",
+            "revenue",
+            "social_links"
+          ]
+        }
+      },
+      "error": "fetch failed"
+    },
+    {
+      "step": {
+        "tool": "company_search",
+        "params": {
+          "query": "small business accounting software",
+          "limit": 25,
+          "fields": [
+            "name",
+            "domain",
+            "description",
+            "employee_count",
+            "industry",
+            "headquarters"
+          ]
+        }
+      },
+      "error": "[object Object]"
+    },
+    {
+      "step": {
+        "tool": "company_search",
+        "params": {
+          "query": "invoicing expense tracking and financial management for small businesses",
+          "filters": {
+            "industry": "Accounting",
+            "employee_count_min": 50
+          },
+          "limit": 25,
+          "fields": [
+            "name",
+            "domain",
+            "description",
+            "employee_count",
+            "industry",
+            "headquarters",
+            "funding"
+          ]
+        }
+      },
+      "error": "[object Object]"
+    },
+    {
+      "step": {
+        "tool": "job_search",
+        "params": {
+          "company_name": "FreshBooks",
+          "limit": 30,
+          "filters": {
+            "department": [
+              "Engineering",
+              "Product",
+              "Design",
+              "Marketing",
+              "Sales",
+              "Customer Success"
+            ]
+          }
+        }
+      },
+      "error": "[object Object]"
+    },
+    {
+      "step": {
+        "tool": "job_search",
+        "params": {
+          "company_name": "FreshBooks",
+          "limit": 30,
+          "filters": {
+            "location": [
+              "Remote",
+              "Canada",
+              "United States"
+            ],
+            "posted_after": "2024-01-01"
+          }
+        }
+      },
+      "error": "[object Object]"
+    },
+    {
+      "step": {
+        "tool": "web_search_live",
+        "params": {
+          "query": "FreshBooks product updates pricing news competitors 2025",
+          "num_results": 10
+        }
+      },
+      "error": "[object Object]"
+    }
+  ]
+}

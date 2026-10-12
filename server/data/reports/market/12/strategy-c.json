@@ -1,0 +1,131 @@
+{
+  "strategy": "planned_c",
+  "generatedAt": "2026-10-12T06:52:54.560Z",
+  "feature": {
+    "name": "Cross-project dependency map",
+    "description": "Visualize blockers across teams with live links to tasks and Slack digests when critical paths slip. Spec: dependency-map-spec-v2.pdf. Target market: B2B SaaS companies with 20–200 employees running multiple parallel initiatives; primary buyer: Head of Product or VP Engineering."
+  },
+  "executiveSummary": "FlowStack proposes a Cross-project dependency map — a live view of blockers across teams with links back to source tasks and Slack digests when critical paths slip — for B2B SaaS companies of 20–200 employees running multiple parallel initiatives, sold to Heads of Product and VPs of Engineering. The retrieved data supports an expanding category: third-party tool comparisons already treat cross-project dependencies as a standard evaluation criterion, and market-sizing sources put project management software growth at roughly 8.4%–11.1% CAGR. All four named competitors are larger than FlowStack: Asana (public, NYSE; 1,001–5,000 employees; 170,000+ organizations), monday.com (public, NASDAQ; 1,001–5,000 employees; 250,000+ customers; 60%+ of the Fortune 500; 200+ countries), Atlassian (public, NASDAQ; 10,000+ employees; 300,000+ customers; 80% of the Fortune 500) and Linear (51–200 employees, founded 2019, fully remote across North America and Europe). Their public positioning is concentrated on AI agents, work graphs and enterprise scale — monday sidekick, monday vibe, AI Blocks/Workflows/agents at monday.com; the Work Graph and 'AI handles the busywork' at Asana — rather than on lightweight cross-team dependency visibility for mid-market squads. That leaves a plausible but narrow differentiation window: chat-native Slack delivery, fast time-to-value for a new PM inheriting a messy roadmap (Alicia persona), and alignment to planning rituals for engineering managers (Elena) and product ops leads (Sam). Execution is scoped at 14 weeks with two full-stack engineers, a PM at 30% and three designer weeks, plus roughly $3k/month of extra graph/alerting infra during beta, against a $180,000 financial threshold, ~$180k/month negative EBITDA, 22 months of runway and ~$1.8M ARR growing ~15% QoQ. The principal risk is bundling — every named incumbent can absorb dependency visualization into an existing platform. Note that three company-enrich, three company-search and two job-search calls failed, so competitor economics, a verified target-account list and hiring signals are absent; all market sizing is directional.",
+  "competitorLandscape": [
+    {
+      "name": "Linear",
+      "positioning": "Issue tracking and project management tool that 'combines UI elegance with world-class performance'; founded 2019; 51–200 employees; fully remote from the start with a distributed team across North America and Europe; self-described as the tool of choice for thousands of high-impact companies.",
+      "relevantMoves": [
+        "Positions on craft and speed ('relentless focus, fast execution') rather than breadth of portfolio or enterprise governance.",
+        "Serves product teams directly — the same buyer and user population (engineering managers, PMs) that FlowStack's Elena and Alicia personas represent.",
+        "No dependency-map, cross-project blocker visualization, or Slack digest capability is mentioned in the retrieved company description."
+      ],
+      "sources": [
+        "company_identify step, params {\"name\": \"Linear\"}, top-confidence match (confidence_score 1), crustdata_company_id 633791",
+        "https://linear.app",
+        "https://www.linkedin.com/company/linearapp"
+      ]
+    },
+    {
+      "name": "Asana",
+      "positioning": "Work management platform for human + AI collaboration, powered by the Work Graph; founded 2008; public company (FRA, NYSE); 1,001–5,000 employees; more than 170,000 organizations including Accenture, Amazon, Anthropic, Morningstar and Suzuki run their most critical work on Asana.",
+      "relevantMoves": [
+        "Explicit AI narrative: 'AI handles the busywork while humans stay in the loop to guide decisions'.",
+        "Uses the Work Graph as the underlying context/relationship engine — structurally adjacent to cross-project dependency mapping.",
+        "Scale and reference logos are enterprise-weighted, above FlowStack's stated 20–200 employee target market."
+      ],
+      "sources": [
+        "company_identify step, params {\"name\": \"Asana\"}, top-confidence match (confidence_score 1), crustdata_company_id 633874",
+        "http://asana.com/",
+        "https://www.linkedin.com/company/asana"
+      ]
+    },
+    {
+      "name": "monday.com",
+      "positioning": "AI work platform bringing people, workflows and AI agents together; founded 2012; public (NASDAQ); 1,001–5,000 employees; 250,000+ customers including 60%+ of the Fortune 500 across 200+ countries; offices in Tel Aviv, New York, Miami, Chicago, Denver, London, Warsaw, Sydney, Melbourne, São Paulo and Tokyo.",
+      "relevantMoves": [
+        "Shipping AI workers: 'monday sidekick is the digital worker that thinks with you, creates for you, and moves work forward'.",
+        "monday vibe lets customers build custom business software in minutes — lowers the ceiling for bespoke workflow features.",
+        "AI Blocks and AI Workflows automate at scale; monday agents described as an always-on AI workforce across departments.",
+        "Positioning spans work management, CRM, dev, service and campaigns — i.e., a bundling platform rather than a point tool."
+      ],
+      "sources": [
+        "company_identify step, params {\"name\": \"Monday.com\"}, top-confidence match (confidence_score 1), crustdata_company_id 662376",
+        "https://www.monday.com",
+        "https://www.linkedin.com/company/mondaydotcom"
+      ]
+    },
+    {
+      "name": "Atlassian (Jira)",
+      "positioning": "Collaboration and productivity software for teams (Jira, Confluence, Loom, Trello); founded 2002; public (NASDAQ); 10,000+ employees; 300,000+ global companies and 80% of the Fortune 500 rely on Atlassian products.",
+      "relevantMoves": [
+        "Portfolio breadth across issue tracking, docs and project boards — the system of record FlowStack's dependency map would need to link into.",
+        "A third-party marketplace ecosystem exists specifically to fill Jira/Confluence workflow gaps: Atlassian Solutions (consulting, integrations, custom plugins), Mindpro (apps for 'visibility, collaboration, and service delivery'), Caelor (human-centered apps for non-technical Atlassian users), Polontech (Silver Atlassian Solution Partner).",
+        "Caelor states that 'for the first time in history, non-technical teams have become the majority of Atlassian users... they get lost and overwhelmed' — evidence of an acknowledged usability gap around Atlassian for cross-functional users."
+      ],
+      "sources": [
+        "company_identify step, params {\"name\": \"Atlassian\"}, top-confidence match (confidence_score 1), crustdata_company_id 653855",
+        "https://atlassian.com/",
+        "company_identify step, params {\"name\": \"Atlassian\"}, matches: Atlassian Solutions (crustdata_company_id 9131752), Mindpro - Atlassian Apps (1085569), Caelor - Atlassian Apps (1123570), Atlassian Integrations/Polontech (2258550)"
+      ]
+    }
+  ],
+  "marketSignals": [
+    {
+      "signal": "Cross-project dependency management is already presented to buyers as a named product capability.",
+      "evidence": "Scoro's 12-tool comparison lists 'Cross-Project Dependencies: Manage shared resources and coordinate allocations across multiple projects', and thedigitalprojectmanager.com publishes a buyer guide titled '10 Best Project Management Software With Dependencies'.",
+      "implicationForFeature": "The feature will not be a novel category claim; FlowStack must compete on delivery mechanism (Slack digests, live task links) and mid-market simplicity rather than on having a dependency view at all.",
+      "source": "https://www.scoro.com/blog/best-project-management-software-list/ ; https://thedigitalprojectmanager.com/tools/best-project-management-software-with-dependencies/"
+    },
+    {
+      "signal": "Managing multiple concurrent projects is an active, content-heavy buyer theme.",
+      "evidence": "Dedicated guides and category pages exist for multi-project management, e.g. 'Best Multi-Project Management Software in 2026' (businessmap.io) and 'Best Multi Project Management Software Solutions to Test' (epicflow.com), both framed around parallel priorities, shared resources and complex dependencies.",
+      "implicationForFeature": "Searchers already use the language of FlowStack's target scenario ('multiple parallel initiatives'), so the feature maps to an existing demand vocabulary and can be messaged directly against these comparison queries.",
+      "source": "https://businessmap.io/project-management/multi-project-management-software ; https://www.epicflow.com/blog/7-multi-project-management-software-solutions-to-test/"
+    },
+    {
+      "signal": "Project management software is a large, growing market, though estimates diverge.",
+      "evidence": "market.us estimates USD 5.6B (2023) reaching ~USD 11.4B by 2032 at 8.4% CAGR; Grand View Research values the market at $7.9B in 2025 growing to $19.8B in 2033 at 11.1% CAGR; Future Market Insights projects USD 9.60B in 2026 expanding to USD 32.27B by 2036.",
+      "implicationForFeature": "The budget pool FlowStack sells into is expanding, but the spread between sources (8.4% vs 11.1% CAGR, different base years) means sizing should be treated as directional rather than as a planning input.",
+      "source": "https://market.us/report/online-project-management-software-market/ ; https://www.grandviewresearch.com/industry-analysis/project-management-software-market-report ; https://www.futuremarketinsights.com/reports/project-management-software-market"
+    },
+    {
+      "signal": "B2B SaaS is treated as a distinct PM-software buyer segment with its own vendor shortlists.",
+      "evidence": "everhour's 'The Best Project Management Software for B2B SaaS' guide (Jun 2025) names ClickUp + Everhour and Asana among the recommended stacks for B2B SaaS; soon.works publishes a parallel guide on B2B service platforms for project delivery.",
+      "implicationForFeature": "FlowStack's stated target market is a recognised segment, but buyer guides already route B2B SaaS teams to incumbent tools — FlowStack will need a displacement or integration-alongside story, not a greenfield land.",
+      "source": "https://everhour.com/blog/b2b-project-management/ ; https://soon.works/blog/7-best-b2b-saas-companies-supporting-project-based-teams"
+    },
+    {
+      "signal": "Incumbent positioning has shifted to AI agents and platform-scale 'work graphs'.",
+      "evidence": "monday.com describes monday sidekick, monday vibe, AI Blocks, AI Workflows and monday agents, with 250,000+ customers and 60%+ of the Fortune 500; Asana describes a 'Work Graph' powering human + AI collaboration where 'AI handles the busywork', with 170,000+ organizations; Atlassian cites 300,000+ customers and 80% of the Fortune 500.",
+      "implicationForFeature": "Incumbents are competing on AI capability and enterprise scale, not on lightweight cross-team dependency visibility for 20–200 employee squads — this is the whitespace FlowStack can occupy, but it is also directly exposed to bundling if incumbents extend their AI workflows to dependency detection.",
+      "source": "company_identify steps for Monday.com (crustdata_company_id 662376), Asana (633874), Atlassian (653855)"
+    }
+  ],
+  "gapsAndOpportunities": [
+    "Mid-market scale gap: every named incumbent's published proof points are enterprise-weighted — Asana 170,000+ organizations (Accenture, Amazon, Anthropic), monday.com 60%+ of the Fortune 500 across 200+ countries, Atlassian 80% of the Fortune 500. FlowStack explicitly targets 20–200 employee B2B SaaS running multiple parallel initiatives, a segment these vendors mention but do not lead with.",
+    "Slack-native delivery is not claimed by any named competitor in the retrieved data. FlowStack's Slack digests when critical paths slip are a delivery-mechanism differentiator rather than a feature-parity claim, and Slack is also one of the technologies FlowStack planned to filter target accounts on.",
+    "Multi-tool reality is unmet: Sam (product ops lead) 'runs quarterly planning and chases status updates across Notion and Jira' — the pain is cross-tool, not within one tool. A dependency map that links to tasks in place, rather than requiring migration, fits a buyer who is already running Jira plus Notion plus Slack.",
+    "New-PM onboarding wedge: Alicia (new PM at a Series A startup) inherited a messy roadmap and is 'evaluating tools that show dependencies without enterprise complexity'. This persona converts on time-to-first-useful-map, suggesting a self-serve or fast-setup packaging motion distinct from the Head of Product / VP Engineering buyer.",
+    "Planning-ritual hooks: Elena needs the view 'before each sprint planning'; Sam runs quarterly planning. Both are recurring calendar triggers that give FlowStack natural Slack-digest and report entry points tied to existing ceremonies rather than new habits.",
+    "Acknowledged usability gap at the incumbent: Caelor (an Atlassian app vendor) states that non-technical teams are now the majority of Atlassian users and 'they get lost and overwhelmed'. That, plus a visible third-party app ecosystem (Mindpro, Polontech, Caelor) built to fill Jira gaps, indicates demand for lighter cross-functional visibility layers on top of Atlassian rather than inside it."
+  ],
+  "risks": [
+    "Bundling risk: Asana already runs dependency-relevant context through its Work Graph and monday.com lets customers build custom business software in minutes via monday vibe, with AI Blocks/Workflows/agents automating at scale. A visual dependency map is absorbable into either platform without a separate purchase.",
+    "Category-commoditisation risk: cross-project dependencies are already listed as a standard capability in third-party comparison guides, so the feature alone cannot carry a pricing premium; the Slack digest and mid-market simplicity must be the defensible element.",
+    "Integration fragility: the feature depends on live links to tasks across Jira, Asana, monday.com, Linear and Notion, plus Slack for digests. No retrieved data covers these vendors' API terms, rate limits or commercial restrictions, and the company_search step that would have validated Slack/Jira adoption at target accounts failed.",
+    "Data-structure prerequisite: dependency mapping presumes multi-team initiatives are already modelled somewhere. Alicia's persona — a new PM with an inherited messy roadmap at a Series A startup — is precisely the customer least likely to have clean cross-team dependency data, creating an onboarding and empty-state risk.",
+    "Execution and runway risk: 14 weeks at 2 full-stack engineers, PM at 30%, designer 3 weeks and ~$3k/month extra graph/alerting infra during beta executes against ~$180k/month negative EBITDA, ~72% gross margin, ~$1.8M ARR (15% QoQ growth) and 22 months of runway. Scope expansion or infra cost drift compresses a finite runway with no committed revenue attached to the feature.",
+    "Competitive-intelligence risk: because company_enrich failed for Asana, monday.com and Linear, no funding, tech-stack, headcount-trend or revenue data was available to size these competitors' ability or appetite to ship a competing dependency view. Positioning decisions rest on self-published descriptions and third-party listicles.",
+    "Research-signal risk: the market-sizing sources disagree materially (8.4% vs 11.1% CAGR with different base years), so any business case that leans on category growth rates could be built on an unreliable input."
+  ],
+  "dataLimitations": [
+    "company_enrich failed for all three attempted competitors (Asana, monday.com, Linear) with 'Exactly one identifier must be provided', so no enriched firmographics — funding, revenue, headcount trend, technology stack or department data — were retrieved for any competitor.",
+    "Three company_search calls failed with malformed filter trees. No verified account list was produced for the stated ICP (20–200 employees, US/EU, Software/SaaS/IT, using Jira/Asana/Monday.com/Linear/Slack keywords and multiple-parallel-initiative keywords), so the target-market sizing in this report is unvalidated.",
+    "Two job_search calls failed. No hiring-velocity signal was retrieved for Engineering Manager, Product Operations, Technical Program Manager, Head of Product, VP Engineering or Product Manager roles at target accounts, so demand-side urgency is inferred from personas rather than from observed hiring.",
+    "No competitor product-level or pricing data on cross-project dependency capabilities was retrieved; web_search_live returned third-party listicles and blog posts only, not vendor documentation, pricing pages or analyst research.",
+    "Market-size estimates conflict across sources — USD 5.6B (2023) → 11.4B (2032) at 8.4% CAGR (market.us); $7.9B (2025) → $19.8B (2033) at 11.1% CAGR (Grand View Research); USD 9.60B (2026) → 32.27B (2036) (Future Market Insights). Treat all figures as directional.",
+    "company_identify returned substantial false-positive noise for ambiguous names (e.g. yoga studios, LED-lighting manufacturers, PPC and recruiting agencies for 'Linear' and 'Asana'; unrelated Fortune 500 firms for 'Monday'). Only top-confidence, industry-consistent matches were used in the competitor landscape, which may overstate confidence in competitor descriptions.",
+    "Personas, target market, buyer, budget threshold ($180,000), effort estimate (14 weeks), resource consumption and financials (≈$1.8M ARR, ~15% QoQ growth, ~72% gross margin, ~$180k/mo EBITDA loss, 22 months runway) come from FlowStack's own product brief and user-interview summary (flowstack-user-interviews-summary.pdf, dependency-map-spec-v2.pdf) and were not independently corroborated by retrieved market data.",
+    "No customer evidence — win/loss, churn, willingness to pay, or competitive displacement data — was retrieved for the cross-project dependency map feature or for FlowStack generally.",
+    "Notion appears in the Sam persona workflow (status updates chased across Notion and Jira), but no Notion company or product data was collected in the plan, leaving a gap in the integration landscape.",
+    "No data was retrieved on Slack digest engagement, alert-fatigue thresholds or notification preferences, which is the core differentiator claim in the feature description.",
+    "planSummary records 5 executed steps, 7 errors and 12 planned tools; the majority of planned data-collection steps did not return usable results, which materially limits the evidentiary base for this report."
+  ],
+  "planSummary": "Executed 5 step(s); 7 error(s). Planned tools: company_identify, company_identify, company_identify, company_identify, company_enrich, company_enrich, company_enrich, company_search, job_search, job_search, web_search_live, company_search"
+}

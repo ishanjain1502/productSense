@@ -1,4 +1,5 @@
 import "dotenv/config";
+import { initNeatlogs, shutdownNeatlogs } from "./neatlogs-init.js";
 import cors from "cors";
 import express from "express";
 import {
@@ -9,17 +10,34 @@ import {
   registerUser,
 } from "./auth.js";
 import { closeDb, getDb, initDb } from "./db.js";
+import { migrateProjectsSchema } from "./projects.js";
 import { migrateRegressionSchema } from "./regression.js";
 import { registerRegressionRoutes } from "./regression-routes.js";
+import { registerMarketAnalysisRoutes } from "./market-analysis-routes.js";
+import { registerPersonaFleetRoutes } from "./persona-fleet-routes.js";
+import { migratePersonaFleetSchema } from "./persona-fleet/schema.js";
+import { migrateFinancialReportsSchema } from "./financial-reports.js";
+import { registerFinancialReportsRoutes } from "./financial-reports-routes.js";
 
 const port = Number(process.env.PORT) || 1337;
 const databasePath = process.env.DATABASE_PATH || "./data/app.db";
-const clientOrigin = process.env.CLIENT_ORIGIN || "http://localhost:3000";
+const clientOrigins = (
+  process.env.CLIENT_ORIGIN || "http://localhost:3000,http://localhost:3001"
+)
+  .split(",")
+  .map((origin) => origin.trim())
+  .filter(Boolean);
 
 const app = express();
 app.use(
   cors({
-    origin: clientOrigin,
+    origin(origin, callback) {
+      if (!origin || clientOrigins.includes(origin)) {
+        callback(null, origin ?? clientOrigins[0]);
+        return;
+      }
+      callback(null, false);
+    },
     credentials: true,
   })
 );
@@ -70,6 +88,9 @@ app.post("/auth/login", async (req, res) => {
 });
 
 registerRegressionRoutes(app);
+registerMarketAnalysisRoutes(app);
+registerPersonaFleetRoutes(app);
+registerFinancialReportsRoutes(app);
 
 app.get("/auth/me", authMiddleware, async (req, res) => {
   try {
@@ -85,9 +106,13 @@ app.get("/auth/me", authMiddleware, async (req, res) => {
   }
 });
 
+await initNeatlogs();
 await initDb(databasePath);
 await migrateAuthSchema();
+await migrateProjectsSchema();
 await migrateRegressionSchema();
+await migratePersonaFleetSchema();
+await migrateFinancialReportsSchema();
 
 const server = app.listen(port, () => {
   console.log(`Server listening on http://localhost:${port}`);
@@ -97,6 +122,7 @@ function shutdown(signal) {
   console.log(`Received ${signal}, shutting down…`);
   server.close(() => {
     closeDb()
+      .then(() => shutdownNeatlogs())
       .then(() => process.exit(0))
       .catch(() => process.exit(1));
   });

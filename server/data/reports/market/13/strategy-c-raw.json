@@ -1,0 +1,369 @@
+{
+  "plan": {
+    "steps": [
+      {
+        "tool": "company_identify",
+        "params": {
+          "query": "Linear",
+          "domain": "linear.app"
+        }
+      },
+      {
+        "tool": "company_identify",
+        "params": {
+          "query": "Asana",
+          "domain": "asana.com"
+        }
+      },
+      {
+        "tool": "company_identify",
+        "params": {
+          "query": "Monday.com",
+          "domain": "monday.com"
+        }
+      },
+      {
+        "tool": "company_identify",
+        "params": {
+          "query": "Atlassian Jira",
+          "domain": "atlassian.com"
+        }
+      },
+      {
+        "tool": "company_enrich",
+        "params": {
+          "company_domain": "linear.app",
+          "fields": [
+            "name",
+            "employee_count",
+            "industry",
+            "location",
+            "funding",
+            "tech_stack",
+            "description",
+            "estimated_arr"
+          ]
+        }
+      },
+      {
+        "tool": "company_enrich",
+        "params": {
+          "company_domain": "asana.com",
+          "fields": [
+            "name",
+            "employee_count",
+            "industry",
+            "location",
+            "funding",
+            "tech_stack",
+            "description",
+            "estimated_arr"
+          ]
+        }
+      },
+      {
+        "tool": "company_enrich",
+        "params": {
+          "company_domain": "monday.com",
+          "fields": [
+            "name",
+            "employee_count",
+            "industry",
+            "location",
+            "funding",
+            "tech_stack",
+            "description",
+            "estimated_arr"
+          ]
+        }
+      },
+      {
+        "tool": "company_search",
+        "params": {
+          "filters": {
+            "industry": "Software",
+            "employee_count": {
+              "min": 20,
+              "max": 200
+            },
+            "locations": [
+              "United States",
+              "European Union"
+            ],
+            "keywords": [
+              "B2B SaaS",
+              "product teams",
+              "multiple initiatives",
+              "Jira",
+              "Notion",
+              "Slack"
+            ]
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "job_search",
+        "params": {
+          "query": "Product Operations OR Engineering Manager",
+          "filters": {
+            "company_employee_count": {
+              "min": 20,
+              "max": 200
+            },
+            "locations": [
+              "United States",
+              "European Union"
+            ],
+            "industry": "Software"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "job_search",
+        "params": {
+          "query": "dependency mapping OR cross-project dependencies OR workflow automation",
+          "filters": {
+            "company_names": [
+              "Linear",
+              "Asana",
+              "Monday.com",
+              "Atlassian"
+            ]
+          },
+          "limit": 30
+        }
+      },
+      {
+        "tool": "web_search_live",
+        "params": {
+          "query": "cross-project dependency mapping tools B2B SaaS mid-market 2025 Linear Asana Monday.com Jira"
+        }
+      }
+    ]
+  },
+  "results": [
+    {
+      "step": {
+        "tool": "web_search_live",
+        "params": {
+          "query": "cross-project dependency mapping tools B2B SaaS mid-market 2025 Linear Asana Monday.com Jira"
+        }
+      },
+      "result": {
+        "success": true,
+        "query": "cross-project dependency mapping tools B2B SaaS mid-market 2025 Linear Asana Monday.com Jira",
+        "timestamp": 1791789725392,
+        "results": [
+          {
+            "source": "web",
+            "title": "Asana vs Basecamp: 2026 comparison for teams and ...",
+            "url": "https://monday.com/blog/project-management/asana-vs-basecamp/",
+            "snippet": "27 Jan 2026 — Asana: allows custom fields and templates, Cross-project automation requires workarounds or third-party tools. Asana: Takes two to four weeks ...",
+            "position": 1
+          },
+          {
+            "source": "web",
+            "title": "Software For Project Managers: Best Solutions To Use In ...",
+            "url": "https://monday.com/blog/project-management/software-for-project-managers/",
+            "snippet": "27 Jan 2026 — Compare top tools like Asana, monday, Jira provides comprehensive agile project management capabilities tailored specifically for software ...",
+            "position": 2
+          },
+          {
+            "source": "web",
+            "title": "The 10 Best Project Management Tools in 2026 Compared",
+            "url": "https://till-freitag.com/en/blog/best-project-management-tools",
+            "snippet": "25 Feb 2026 — The 10 Best Project Management Tools in 2026 Compared · 1. monday.com – Our Winner ⭐ · 2. Asana – Strong in Portfolio Management · 3. Jira – The ...Read more",
+            "position": 3
+          },
+          {
+            "source": "web",
+            "title": "Best Project Management Software: 11 Tools Compared",
+            "url": "https://asana.com/resources/best-project-management-software",
+            "snippet": "Best project management software guide comparing 11 tools—Asana, Jira, Trello, monday.com, and more—with features, integrations, and scaling tips for teams.",
+            "position": 4
+          },
+          {
+            "source": "web",
+            "title": "Asana vs monday.com: which project management tool ...",
+            "url": "https://www.appvizer.co.uk/magazine/operations/project-management/asana-vs-monday",
+            "snippet": "5 Sept 2025 — Jira and Asana are two leaders in project management. We've tested and compared their strengths, limitations and use cases to help you decide.",
+            "position": 5
+          }
+        ],
+        "metadata": {
+          "total_results": 5,
+          "failed_pages": [],
+          "empty_pages": []
+        }
+      }
+    }
+  ],
+  "errors": [
+    {
+      "step": {
+        "tool": "company_identify",
+        "params": {
+          "query": "Linear",
+          "domain": "linear.app"
+        }
+      },
+      "error": "Exactly one identifier must be provided: names, domains, professional_network_profile_urls, or crustdata_company_ids"
+    },
+    {
+      "step": {
+        "tool": "company_identify",
+        "params": {
+          "query": "Asana",
+          "domain": "asana.com"
+        }
+      },
+      "error": "Exactly one identifier must be provided: names, domains, professional_network_profile_urls, or crustdata_company_ids"
+    },
+    {
+      "step": {
+        "tool": "company_identify",
+        "params": {
+          "query": "Monday.com",
+          "domain": "monday.com"
+        }
+      },
+      "error": "Exactly one identifier must be provided: names, domains, professional_network_profile_urls, or crustdata_company_ids"
+    },
+    {
+      "step": {
+        "tool": "company_identify",
+        "params": {
+          "query": "Atlassian Jira",
+          "domain": "atlassian.com"
+        }
+      },
+      "error": "Exactly one identifier must be provided: names, domains, professional_network_profile_urls, or crustdata_company_ids"
+    },
+    {
+      "step": {
+        "tool": "company_enrich",
+        "params": {
+          "company_domain": "linear.app",
+          "fields": [
+            "name",
+            "employee_count",
+            "industry",
+            "location",
+            "funding",
+            "tech_stack",
+            "description",
+            "estimated_arr"
+          ]
+        }
+      },
+      "error": "Exactly one identifier must be provided: names, domains, professional_network_profile_urls, or crustdata_company_ids"
+    },
+    {
+      "step": {
+        "tool": "company_enrich",
+        "params": {
+          "company_domain": "asana.com",
+          "fields": [
+            "name",
+            "employee_count",
+            "industry",
+            "location",
+            "funding",
+            "tech_stack",
+            "description",
+            "estimated_arr"
+          ]
+        }
+      },
+      "error": "Exactly one identifier must be provided: names, domains, professional_network_profile_urls, or crustdata_company_ids"
+    },
+    {
+      "step": {
+        "tool": "company_enrich",
+        "params": {
+          "company_domain": "monday.com",
+          "fields": [
+            "name",
+            "employee_count",
+            "industry",
+            "location",
+            "funding",
+            "tech_stack",
+            "description",
+            "estimated_arr"
+          ]
+        }
+      },
+      "error": "Exactly one identifier must be provided: names, domains, professional_network_profile_urls, or crustdata_company_ids"
+    },
+    {
+      "step": {
+        "tool": "company_search",
+        "params": {
+          "filters": {
+            "industry": "Software",
+            "employee_count": {
+              "min": 20,
+              "max": 200
+            },
+            "locations": [
+              "United States",
+              "European Union"
+            ],
+            "keywords": [
+              "B2B SaaS",
+              "product teams",
+              "multiple initiatives",
+              "Jira",
+              "Notion",
+              "Slack"
+            ]
+          },
+          "limit": 50
+        }
+      },
+      "error": "'filters' must be either a single condition ({\"field\", \"type\", \"value\"}) or a tree ({\"op\", \"conditions\": [...]}). Received an object with neither."
+    },
+    {
+      "step": {
+        "tool": "job_search",
+        "params": {
+          "query": "Product Operations OR Engineering Manager",
+          "filters": {
+            "company_employee_count": {
+              "min": 20,
+              "max": 200
+            },
+            "locations": [
+              "United States",
+              "European Union"
+            ],
+            "industry": "Software"
+          },
+          "limit": 50
+        }
+      },
+      "error": "'filters' must be either a single condition ({\"field\", \"type\", \"value\"}) or a tree ({\"op\", \"conditions\": [...]}). Received an object with neither."
+    },
+    {
+      "step": {
+        "tool": "job_search",
+        "params": {
+          "query": "dependency mapping OR cross-project dependencies OR workflow automation",
+          "filters": {
+            "company_names": [
+              "Linear",
+              "Asana",
+              "Monday.com",
+              "Atlassian"
+            ]
+          },
+          "limit": 30
+        }
+      },
+      "error": "'filters' must be either a single condition ({\"field\", \"type\", \"value\"}) or a tree ({\"op\", \"conditions\": [...]}). Received an object with neither."
+    }
+  ]
+}

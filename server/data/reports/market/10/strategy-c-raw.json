@@ -1,0 +1,1392 @@
+{
+  "plan": {
+    "steps": [
+      {
+        "tool": "company_enrich",
+        "params": {
+          "domain": "freshbooks.com"
+        }
+      },
+      {
+        "tool": "company_enrich",
+        "params": {
+          "domain": "waveapps.com"
+        }
+      },
+      {
+        "tool": "company_enrich",
+        "params": {
+          "domain": "zoho.com"
+        }
+      },
+      {
+        "tool": "company_search",
+        "params": {
+          "filters": {
+            "industry": [
+              "Design Services"
+            ],
+            "employee_count": {
+              "min": 1,
+              "max": 10
+            },
+            "locations": [
+              "United States",
+              "Canada",
+              "United Kingdom"
+            ]
+          },
+          "limit": 10
+        }
+      },
+      {
+        "tool": "company_search",
+        "params": {
+          "filters": {
+            "industry": [
+              "Graphic Design"
+            ],
+            "employee_count": {
+              "min": 1,
+              "max": 10
+            },
+            "locations": [
+              "United States",
+              "Canada",
+              "United Kingdom"
+            ]
+          },
+          "limit": 10
+        }
+      },
+      {
+        "tool": "company_search",
+        "params": {
+          "filters": {
+            "industry": [
+              "Management Consulting"
+            ],
+            "employee_count": {
+              "min": 1,
+              "max": 10
+            },
+            "locations": [
+              "United States",
+              "Canada",
+              "United Kingdom"
+            ]
+          },
+          "limit": 10
+        }
+      },
+      {
+        "tool": "company_search",
+        "params": {
+          "filters": {
+            "industry": [
+              "Business Consulting"
+            ],
+            "employee_count": {
+              "min": 1,
+              "max": 10
+            },
+            "locations": [
+              "United States",
+              "Canada",
+              "United Kingdom"
+            ]
+          },
+          "limit": 10
+        }
+      },
+      {
+        "tool": "company_search",
+        "params": {
+          "filters": {
+            "industry": [
+              "Accounting"
+            ],
+            "employee_count": {
+              "min": 1,
+              "max": 10
+            },
+            "locations": [
+              "United States",
+              "Canada",
+              "United Kingdom"
+            ]
+          },
+          "limit": 10
+        }
+      },
+      {
+        "tool": "company_search",
+        "params": {
+          "filters": {
+            "industry": [
+              "Bookkeeping"
+            ],
+            "employee_count": {
+              "min": 1,
+              "max": 10
+            },
+            "locations": [
+              "United States",
+              "Canada",
+              "United Kingdom"
+            ]
+          },
+          "limit": 10
+        }
+      },
+      {
+        "tool": "job_search",
+        "params": {
+          "query": "freelance designer",
+          "locations": [
+            "United States",
+            "Canada",
+            "United Kingdom"
+          ],
+          "limit": 10
+        }
+      },
+      {
+        "tool": "job_search",
+        "params": {
+          "query": "freelance consultant",
+          "locations": [
+            "United States",
+            "Canada",
+            "United Kingdom"
+          ],
+          "limit": 10
+        }
+      },
+      {
+        "tool": "web_search_live",
+        "params": {
+          "query": "invoicing software for freelancers market size trends 2025 North America Western Europe"
+        }
+      }
+    ]
+  },
+  "results": [
+    {
+      "step": {
+        "tool": "job_search",
+        "params": {
+          "query": "freelance designer",
+          "locations": [
+            "United States",
+            "Canada",
+            "United Kingdom"
+          ],
+          "limit": 10
+        }
+      },
+      "result": {
+        "job_listings": [
+          {
+            "company": {
+              "basic_info": {
+                "crustdata_company_id": 682721,
+                "industries": [
+                  "IT Services and IT Consulting",
+                  "Professional Services"
+                ],
+                "name": "Serco",
+                "primary_domain": "serco.com",
+                "professional_network_id": "3647",
+                "website": "http://www.serco.com"
+              },
+              "competitors": {
+                "websites": [
+                  "https://redseal.net",
+                  "https://www.simpro.us",
+                  "http://www.carservapp.com/",
+                  "http://www.secberus.ai",
+                  "http://sentryenterprises.com",
+                  "https://www.seragon.com/",
+                  "http://www.symphonysv.com",
+                  "https://cssenroll.com/",
+                  "http://sicomindia.com",
+                  "http://www.COMSovereign.com",
+                  "http://www.sercononline.com/",
+                  "http://www.thesecurusgroup.co.uk",
+                  "https://servy.us",
+                  "http://www.sarnova.com",
+                  "http://www.seraspec.com",
+                  "http://www.serpinstitute.org",
+                  "https://secureco.com",
+                  "http://www.Spancotele.com",
+                  "http://www.servicenow.com",
+                  "http://www.sarnoff.com",
+                  "https://www.senecagov.com/",
+                  "http://cisb.co.in",
+                  "http://www.sayari.com",
+                  "https://www.indiamart.com/sr-corporate/",
+                  "https://www.semperis.com/",
+                  "https://www.septier.com",
+                  "https://sera.com/",
+                  "https://sera.tech/",
+                  "http://www.sciera.com",
+                  "http://www.sermo.com",
+                  "http://www.serimmune.com",
+                  "http://www.sernova.com",
+                  "http://www.siroclinpharm.com",
+                  "http://www.selkirkpharma.com",
+                  "http://www.csican.com",
+                  "http://www.seraxis.com",
+                  "https://www.tambotrading.us/",
+                  "http://www.sorilinfraresources.com",
+                  "http://www.soleranetwork.com",
+                  "https://seer.bio/",
+                  "https://www.veris.com.au",
+                  "http://secur.co.in/",
+                  "http://www.serestherapeutics.com/",
+                  "http://www.eseronahealth.com",
+                  "https://inspacco.com/",
+                  "http://sanseraindia.com",
+                  "https://www.linkedin.com/redir/suspicious-page?url=https%3A%2F%2Fwww%2estatesrvcs%2ecom%2F",
+                  "http://www.sanvera.com",
+                  "http://www.ixoragroup.com"
+                ]
+              },
+              "followers": {
+                "count": 520858
+              },
+              "funding": {
+                "investors": null,
+                "last_fundraise_date": null,
+                "last_round_type": "",
+                "num_funding_rounds": null,
+                "total_investment_usd": null,
+                "valuation_usd": 0
+              },
+              "headcount": {
+                "largest_headcount_country": "GBR",
+                "range": "10001+",
+                "total": 32937
+              },
+              "locations": {
+                "city": null,
+                "country": "United Kingdom",
+                "state": "England",
+                "street_address": "16 Bartley Wood Business Park, Bartley Way Hook, Riseley, Rotherwick, Eversley, Hartley Wespall, Nately Scures, Heckfield, Hartley Wintney, Church End, West Green, Winchfield, Hook, Eversley Cross, Newnham, Hound Green, Hazeley, Dogmersfield, Bramshill, Up Nately, Mattingley, Hartfordbridge, Stratfield Turgis, Sherfield on Loddon, Turgis Green, Phoenix Green, England"
+              },
+              "revenue": {
+                "acquisition_status": null,
+                "estimated": {
+                  "lower_bound_usd": 1000000000,
+                  "upper_bound_usd": 1000000000000
+                },
+                "public_markets": {
+                  "fiscal_year_end": "",
+                  "stock_symbols": [
+                    "SERCO",
+                    "SRP"
+                  ]
+                }
+              }
+            },
+            "content": {
+              "description": "Position Description & Qualifications\n\nSerco-NA is seeking a motivated individual to serve as an IB-CHE/PMDT Developer in the Submarine Industrial Base Data Analytics Team, (IB-CHE: Industrial Base – Cloud Hosting Environment/ PMDT: Product & Manufacturing Digital Twin) supporting high-visibility initiatives that enhance the readiness, resilience, and performance of the U.S. Navy’s Submarine Industrial Base (SIB).\n\nMust be able to obtain U.S. Department of War (DoW) Secret security clearance.\n\nIn this role, you will systematically map, analyze, and plan the digital transformation efforts across all areas/departments. The core deliverable is a comprehensive portfolio that outlines current capabilities, future requirements, and strategic roadmaps for technology integration, ensuring all digital investments are aligned, and directly support mission objectives.\n\nThis position operates in a fast-paced environment requiring daily interaction with suppliers, government stakeholders, and industry partners. You must be a self-starter capable of independently identifying issues, analyzing complex datasets, developing actionable insights, and communicating performance outcomes to senior leadership.\n\nWorking remotely, you will be on the dynamic SIB Data Team providing support to the Program Manager and DRPM SUB where you will help manage a dynamic mix of in-house development teams and third-party tool integration projects to deliver solutions that support the SIB program. Bring your expertise and collaborative skills to make an impact on our military defense and safety of our sailors.\n\nProgram Overview\n\nThe Submarine Industrial Base (SIB) Program leads the U.S. Navy's effort to revitalize America's shipbuilding and repair capabilities. Established in September 2024, the program strengthens and expands the industrial base that builds and maintains surface ships, aircraft carriers, and submarines vital to national defense.\n\nhttps://www.secnav.navy.mil/rda/mib/Pages/default.aspx\n\nDRPM Subs Is Responsible For\n\nThe acquisition of COLUMBIA Class Submarines, including R&D, design, construction, Test and Evaluation (T&E), and Live Fire Test and Evaluation (LFT&E). This program is a major defense acquisition effort with significant Congressional and OSD visibility.The acquisition of VIRGINIA Class Submarines, including lifecycle management, T&E, LFT&E, and Fleet introduction, with an estimated lifecycle cost of $336B.The SSN(X) program, responsible for next-generation fast attack submarine design and acquisition, emphasizing speed, stealth, payload capacity, and operational endurance.\n\nSerco supports the US Navy as prime for SHAPM contract supporting the acquisition of submarines and surface vessels.\n\nIn This Role, You Will\n\nBuild Web Sites on Gov Cloud: Design and update website layouts and user interfaces using modern HTML, CSS, and JavaScript standards.Connect Back-End Services: Integrate and develop APIs to Gov Cloud databases and external web services.Optimize Performance: Ensure fast page loading speeds, mobile responsiveness, and cross-browser compatibility.Troubleshoot and Test: Monitor site performance, fix bugs, and run quality checks.Reviews, analyzes, and modifies programming systems including encoding, testing, debugging and documenting programsExperience with Industry 4.0., Additive Manufacturing, and Non-Destructive Testing workflows.Help fill any knowledge gap in digital requirements for Industry 4.0 to enable and then eventually sustain them beyond MVP status (includes things such as data lakes, S3 buckets, ATOs, possible IB-CHE integration dynamics, operational costs, etc).Familiar with a variety of field’s concepts, practices, and procedures.Support data ingestion, processing, and visualization workflows to deliver actionable insights to government stakeholders.Collaborate with a cross-functional team of analysts, data engineers, front-end developers, and subject matter experts to deliver mission-critical solutions.Present findings through reports, dashboards, and briefings to both technical and non-technical audiences.Performs a variety of complicated tasks.Report progress and metrics to the Data Director and other senior stakeholders.Provide program, analytical, and acquisition management support to senior level SIB executives as required.Work with the SIB team, which is spread across the United States focused on workforce development/marketing, supply chain/sustainment, and technology developments.Interact with industry and senior leadership.Contribute to the development of data-driven insights and analytic solutions that help identify, assess, and mitigate risks in complex supply chains.You will partner closely with Product Owners, the Data Director, and other stakeholders to maintain delivery cadence, transparency, and accountability.\n\nTo Be Successful In This Role, You Will Have\n\nThe ability to obtain a DoW Secret security clearance.A Bachelor’s degree in Data Science, Computer Science, Statistics, Engineering, or a related field.Minimum 5 years of hands-on experience in data science, analytics, Industry 4.0, or applied machine learning or similar/related experience.Technical Knowledge: Strong command of development languages HTML5, CSS3, and JavaScript.Programming Languages: Familiarity with backend languages or frameworks (such as PHP, Python, Ruby on Rails, or Node.js).Tools and CMS: Experience with version control tools (like Git).Gov Cloud CyberSecurity: Experience developing cybersecure and certified websites on DoW Networks. Rely on experience and judgment to plan and accomplish goals.Strong problem-solving skills and the ability to communicate technical insights clearly.Strong communication (both written and oral), facilitation, and conflict-resolution skills.A wide degree of creativity and latitude is expected. Customer-oriented team player mindset focused on mission who is self-motivated, driven and can work independently and remotely.The ability to travel 10%.\n\nIf you feel your skillset is a match to the requirements, then you should be ready to take the next step in your career path, apply today!\n\nCompany Overview\n\nSerco Inc. (Serco) is the Americas division of Serco Group, plc. In North America, Serco’s 9,000+ employees strive to make an impact every day across 100+ sites in the areas of Defense, Citizen Services, and Transportation. We help our clients deliver vital services more efficiently while increasing the satisfaction of their end customers. Serco serves every branch of the U.S. military, numerous U.S. Federal civilian agencies, the Intelligence Community, the Canadian government, state, provincial and local governments, and commercial clients. While your place may look a little different depending on your role, we know you will find yours here. Wherever you work and whatever you do, we invite you to discover your place in our world. Serco is a place you can count on and where you can make an impact because every contribution matters.\n\nTo review Serco benefits please visit: https://careers.serco-na.com/us/en/what-we-offer. If you require an accommodation with the application process please email: careers@serco-na.com or call the HR Service Desk at 800-628-6458, option 1. Please note, due to EEOC/OFCCP compliance, Serco is unable to accept resumes by email.\n\nCandidates may be asked to present proof of identity during the selection process. If requested, this will require presentation of a government-issued I.D. (with photo) with name and address that match the information entered on the application. Serco will not take possession of or retain/store the information provided as proof of identity. For more information on how Serco uses your information, please see our Applicant Privacy Policy and Notice.\n\nSerco does not accept unsolicited resumes through or from search firms or staffing agencies without being a contracted approved vendor. All unsolicited resumes will be considered the property of Serco and will not be obligated to pay a placement or contract fee. If you are interested in becoming an approved vendor at Serco, please email Agencies@serco-na.com.\n\nSerco is an equal opportunity employer. We evaluate qualified applicants without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, disability, veteran status, and other legally protected characteristics.\n\nPay Transparency\n\nOur Total Rewards package includes competitive pay, performance-based incentives, and benefits that promote well-being and work-life balance—so you can thrive both professionally and personally. Eligible employees also gain access to a wide range of benefits from comprehensive health coverage and health savings accounts to retirement plans, life and disability insurance, and time-off programs that support work-life balance. Program availability may vary based on factors such as contract type, location, hire date, and applicable collective bargaining agreements.\n\nSalary range: The range for this position can be found at the top of this posting. This range is provided as a general guideline and represents a good faith estimate across all experience levels. Actual base salary will be determined by a variety of factors, including but not limited to, the scope of the role, relevant experience, job-related knowledge, education and training, key skills, and geographic market considerations. For roles available in multiple states, the range may vary to reflect differences in local labor markets. In addition to base salary, eligible positions may include other forms of compensation such as annual bonuses or long-term incentive opportunities. Benefits – Comprehensible benefits for full-time employees (part-time employees receive a limited package tailored to their role):\n\nMedical, dental, and vision insuranceRobust vacation and sick leave benefits, and flexible work arrangements where permitted by role or contract401(k) plan that includes employer matching fundsTuition reimbursement programLife insurance and disability coverageOptional coverages that can be purchased, including pet insurance, home and auto insurance, additional life and accident insurance, critical illness insurance, group legal, ID theft protectionBirth, adoption, parental leave benefitsEmployee Assistance Plan\n\nTo review all Serco benefits please visit: https://careers.serco-na.com/us/en/about-us.\n\nSerco complies with all applicable state and local leave laws, including providing time off under the Colorado Healthy Families and Workplaces Act for eligible Colorado residents, in alignment with our policies and benefit plans. The application window for this position is for no more than 60 days. We encourage candidates to apply promptly after the posting date, as the position may close earlier if filled or if the application volume exceeds expectations. Please submit applications exclusively through Serco’s external (or internal) career site. If an applicant has any concerns with job posting compliance, please send an email to: careers@serco-na.com."
+            },
+            "job_details": {
+              "category": "Engineering",
+              "employment_type": "full_time",
+              "job_id": 8546050593813979,
+              "number_of_openings": null,
+              "reposted_job": false,
+              "source": "professional_network",
+              "title": "IB-CHE/PMDT Developer- Remote opportunity",
+              "url": "https://www.linkedin.com/jobs/view/4478358851",
+              "workplace_type": null
+            }
+          },
+          {
+            "company": {
+              "basic_info": {
+                "crustdata_company_id": 75186137,
+                "industries": null,
+                "name": null,
+                "primary_domain": null,
+                "professional_network_id": null,
+                "website": null
+              }
+            },
+            "content": {
+              "description": "Certified Nursing Assistant – Home Health Locations: North Valley, West Valley, Central Phoenix, South Phoenix, Scottsdale Schedule: M-F 8-5 Compensation - 24-26 per hour! Join Home Sweet Home as a Certified Nursing Assistant Home Sweet Home is looking for compassionate and dependable Certified Nursing Assistant to join our growing Home Health team around Maricopa County. If you're searching for a CNA opportunity that offers flexibility and meaningful one-on-one patient care, we'd love to hear from you. As a trusted Home Health provider, we help seniors and adults remain safe, comfortable, and independent in the place they call home. Our CNA's play an essential role in delivering compassionate Senior Care , supporting Community Health , and improving patients' quality of life. Why Join Home Sweet Home? One-on-one patient care in the home Competitive compensation Supportive clinical leadership and collaborative care team Flexible territories that promote work-life balance Meaningful work serving your local community Opportunities for professional growth What You'll Do As a Home Health Certified Nursing Assistant (CNA) , you will: Provide personal care, including bathing, grooming, dressing, toileting, and mobility assistance Support patients with activities of daily living (ADLs) while promoting dignity and independence Assist with safe transfers, ambulation, and light rehabilitation support as directed by the clinical team Observe and report changes in patient condition to the supervising nurse Provide companionship and emotional support to patients and families Educate caregivers on safe care techniques Follow individualized care plans and agency policies to ensure quality patient care Qualifications Active Arizona Certified Nursing Assistant (CNA) certification required Home Health, hospice, caregiver, or senior care experience preferred Compassionate, dependable, and patient-focused Strong communication and teamwork skills Valid driver's license, reliable transportation, and current auto insurance Apply Today If you're a CNA looking for a rewarding career in Home Health , Senior Care , Rehabilitation , and Community Health , we encourage you to apply today. Join Home Sweet Home and make a lasting difference by helping patients live safely and independently in the comfort of their own homes. Home Sweet Home is an Equal Opportunity Employer committed to fostering an inclusive and supportive workplace for all team members."
+            },
+            "job_details": {
+              "category": "Home Sweet Home",
+              "employment_type": null,
+              "job_id": 82943065329653,
+              "number_of_openings": null,
+              "reposted_job": null,
+              "source": "greenhouse",
+              "title": "Certified Nursing Assistant",
+              "url": "https://job-boards.greenhouse.io/homesweethomehealth/jobs/5449776008",
+              "workplace_type": null
+            }
+          },
+          {
+            "company": {
+              "basic_info": {
+                "crustdata_company_id": 91325458,
+                "industries": null,
+                "name": null,
+                "primary_domain": null,
+                "professional_network_id": null,
+                "website": null
+              }
+            },
+            "content": {
+              "description": "This is a Fully Remote Job\nAbout Our Client:The organization operates within the marketing and communications space, addressing the need for consistent brand representation, audience engagement, and support for business development and recruiting efforts. It focuses on delivering integrated marketing strategies and digital media content to enhance organizational visibility and support various internal functions.\nAbout the Opportunity:The MARKETING MANAGER leads the development and execution of corporate marketing, branding, communications, digital media, and content initiatives. This role is responsible for maintaining brand consistency, driving marketing campaigns, managing corporate communications, and producing engaging multimedia content. The position contributes significantly to strengthening audience engagement, supporting recruiting, and advancing business development goals.\nResponsibilities:Develop and implement corporate marketing and communications strategies aligned with organizational goalsManage corporate brand standards, messaging, visual identity, and collateralPlan and execute digital marketing campaigns across websites, social media, email, and other channelsCreate and oversee production of graphics, videos, presentations, infographics, and promotional materialsLead internal and external corporate communications including announcements and newslettersSupport recruiting through employment branding and targeted social media campaignsCollaborate with business development and operational teams on marketing and proposal materialsManage website content and enhance user experienceMonitor marketing metrics and recommend improvementsCoordinate external vendors and marketing projects ensuring schedule and budget adherenceDevelop and maintain marketing templates, branding guidelines, and communication standardsFoster cross-department collaboration to align marketing with organizational objectivesPerform other duties as assigned\nRequirements:Minimum 5 years experience in marketing, communications, branding, or digital mediaProven ability to develop and execute multi-channel marketing campaignsStrong knowledge of branding, corporate communications, content marketing, and digital marketing principlesExperience managing content for social media, websites, email campaigns, and marketing materialsProficiency with Microsoft Office and digital collaboration toolsExcellent verbal, written, and visual communication skillsAbility to manage multiple projects and priorities concurrentlyEffective collaboration with executives, stakeholders, and cross-functional teams\nPay Range and Compensation Package:Salary range $70,000 to $90,000 depending on experience\nBenefits & Perks:Employer paid health care plans for employees and familyRetirement plan options including 401(k) and IRALife insurance (basic, voluntary, and AD&D)Paid time off including vacation, sick leave, and public holidaysShort term and long term disability coverageTraining and development opportunitiesWellness resourcesStock option benefit\nEqual Opportunity Statement: Our client is an equal opportunity employer. They celebrate diversity and are committed to creating an inclusive environment for all employees. All qualified applicants will receive consideration for employment without regard to race, color, religion, gender, gender identity or expression, sexual orientation, or national origin.\nNote:TalentHop is a recruitment partner of this role. Please note that all employment decisions, including candidate assessment, interviews, hiring, compensation, and employment terms, are made exclusively by the hiring employer."
+            },
+            "job_details": {
+              "category": "Marketing",
+              "employment_type": "full_time",
+              "job_id": 8091248354139914,
+              "number_of_openings": null,
+              "reposted_job": false,
+              "source": "professional_network",
+              "title": "Marketing Manager",
+              "url": "https://www.linkedin.com/jobs/view/4475660783",
+              "workplace_type": "Remote"
+            }
+          },
+          {
+            "company": {
+              "basic_info": {
+                "crustdata_company_id": 91325458,
+                "industries": null,
+                "name": null,
+                "primary_domain": null,
+                "professional_network_id": null,
+                "website": null
+              }
+            },
+            "content": {
+              "description": "This is a Fully Remote Job\nAbout Our Client:This organization operates within the marketing industry, focusing on transforming marketing practices in the real estate sector. It addresses challenges in real estate marketing by delivering advanced digital marketing solutions, creative campaigns, and social media strategies to enhance client outcomes. The company has received recognition for workplace culture and marketing excellence and supports remote work across the United States. It is committed to diversity, equity, and inclusion, aiming to reflect the communities it serves.\nAbout the Opportunity:The SEO SPECIALIST role is responsible for implementing, optimizing, and managing strategic SEO campaigns to improve organic search performance for clients. This position contributes by developing and executing SEO strategies, analyzing performance data, and communicating results to clients, thereby directly impacting the success of marketing efforts and client satisfaction.\nResponsibilities:Develop competitive SEO strategies including keyword research and Google Business Profile optimizationManage backlinks, SEO-optimized content frameworks, and directory listingsStay updated on SEO trends and tools to enhance strategy effectivenessOptimize campaigns based on performance metrics and provide proactive recommendationsCommunicate SEO strategies and results effectively to clientsContribute to improving internal SEO processes\nRequirements:Minimum 2 years experience in digital marketing agency or multifamily marketingAt least 3 years of hands-on organic search experienceStrong knowledge of SEO best practices and search engine algorithmsProficient in on-page, off-page, and technical SEOAbility to leverage AI and automation for process improvementStrong writing, editing, and proofreading skillsCertifications in Google Analytics 4 and Google Tag ManagerExperience with SEO tools such as ScreamingFrog, Ahrefs, Google Search Console, and YextAdvanced skills in database management and Google SheetsExperience with custom tags in GTM is a plus\nPay Range and Compensation Package:The salary range for this role in Colorado is $51,800 to $63,000 plus bonus potentialEligible to participate in the organization's benefits plan\nBenefits & Perks:Health benefits including medical, dental, and vision insurance starting day one401(k) retirement plan with company matchStudent loan assistancePaid parental leave (maternity and paternity)Flexible work-from-home and remote work policy within the U.S.Life and disability insurance fully paid by the organizationFlexible PTO and 10 paid holidaysOptional Health Savings Account, Flexible Savings Account, and pet insuranceLeadership training and events\nEqual Opportunity Statement: Our client is an equal opportunity employer. They celebrate diversity and are committed to creating an inclusive environment for all employees. All qualified applicants will receive consideration for employment without regard to race, color, religion, gender, gender identity or expression, sexual orientation, or national origin.\nNote:TalentHop is a recruitment partner of this role. Please note that all employment decisions, including candidate assessment, interviews, hiring, compensation, and employment terms, are made exclusively by the hiring employer."
+            },
+            "job_details": {
+              "category": "Others",
+              "employment_type": "full_time",
+              "job_id": 1835969570314331,
+              "number_of_openings": null,
+              "reposted_job": false,
+              "source": "professional_network",
+              "title": "SEO Specialist",
+              "url": "https://www.linkedin.com/jobs/view/4475667461",
+              "workplace_type": "Remote"
+            }
+          },
+          {
+            "company": {
+              "basic_info": {
+                "crustdata_company_id": 91325458,
+                "industries": null,
+                "name": null,
+                "primary_domain": null,
+                "professional_network_id": null,
+                "website": null
+              }
+            },
+            "content": {
+              "description": "This is a Fully Remote Job\nAbout Our Client:This organization operates within the health IT sector, providing digital solutions that streamline administrative healthcare processes. It addresses the need for efficient, compliant management of patient information through proprietary technology that supports the entire patient information lifecycle. Established in 2006 and headquartered in Dallas, TX, the company has been recognized for rapid growth nationally and regionally.\nAbout the Opportunity:The SENIOR SECURITY ENGINEER role is responsible for protecting sensitive health information by ensuring its confidentiality, integrity, and availability. This position plays a critical role in maintaining compliance with health information regulations and strengthening cybersecurity architecture. The engineer leads efforts to assess and improve security posture, manages identity and access controls, coordinates audit responses, and guides the organization’s security operations and incident responses.\nResponsibilities:Ensure compliance with HIPAA and related safeguards for Protected Health InformationDesign, implement, and maintain cybersecurity frameworks based on HIPAA Security Rule, NIST, and other standardsAnalyze and enhance cloud and corporate security infrastructureConfigure and maintain security software, tools, and servicesCollaborate with leadership, legal, and compliance teams on security policies and proceduresManage identity, access authorization, and authentication systems with regular auditsLead security audits including SOC 2 Type 2, HITrust, and PCICoordinate responses to client security assessmentsWork with managed service providers to monitor and respond to security threatsPartner with Development and CloudOps teams to manage vulnerabilitiesProvide cybersecurity training and mentorshipMaintain documentation for security practices and incident responseDeliver metrics-based security reportingCommunicate security issues effectively to leadershipStay informed on security trends and attack methodsTroubleshoot complex issues involving key source systems\nRequirements:Bachelor’s degree in Computer Science, Engineering, or a related field, or equivalent experienceMinimum 5 years of senior-level security engineering experienceProficiency with cloud platforms such as AWS, Azure, or GCPExperience managing Microsoft Entra, Active Directory, and AWS IAMKnowledge of HIPAA, NIST, SOC2, and HITrust security controlsCurrent security certification (CISSP, CSSLP, CCFP, or CISM)Experience with Agile methodologies such as Scrum or KanbanStrong understanding of Windows operating systems and network protocolsFamiliarity with cloud security and DevSecOps practices\nPay Range and Compensation Package:The pay range and compensation package for this role will be determined based on the candidate's experience, skills, and other relevant factors.\nEqual Opportunity Statement: Our client is an equal opportunity employer. They celebrate diversity and are committed to creating an inclusive environment for all employees. All qualified applicants will receive consideration for employment without regard to race, color, religion, gender, gender identity or expression, sexual orientation, or national origin.\nNote:TalentHop is a recruitment partner of this role. Please note that all employment decisions, including candidate assessment, interviews, hiring, compensation, and employment terms, are made exclusively by the hiring employer."
+            },
+            "job_details": {
+              "category": "Engineering",
+              "employment_type": "full_time",
+              "job_id": 3192830045771729,
+              "number_of_openings": null,
+              "reposted_job": false,
+              "source": "professional_network",
+              "title": "Senior Security Engineer",
+              "url": "https://www.linkedin.com/jobs/view/4475655952",
+              "workplace_type": "Remote"
+            }
+          },
+          {
+            "company": {
+              "basic_info": {
+                "crustdata_company_id": 1218943,
+                "industries": [
+                  "Software Development",
+                  "Technology, Information and Internet",
+                  "Technology, Information and Media"
+                ],
+                "name": "Fundamental Research Labs",
+                "primary_domain": "fundamentalresearchlabs.com",
+                "professional_network_id": "100330913",
+                "website": "https://www.fundamentalresearchlabs.com"
+              },
+              "competitors": {
+                "websites": [
+                  "https://www.emperify.com",
+                  "https://www.kidaura.in",
+                  "http://www.mancorpinc.com",
+                  "http://friktionless.com",
+                  "http://www.trouw.nl",
+                  "http://www.digilands.co",
+                  "http://www.datacoginai.com",
+                  "https://www.futech.co.jp/",
+                  "http://www.ignitorlearning.com",
+                  "http://squareoffnow.com",
+                  "https://www.spocto.com",
+                  "http://www.etherealmachines.com",
+                  "https://www.augmentedbyte.com/",
+                  "https://www.nexrage.com",
+                  "http://www.gopikk.com",
+                  "https://www.touchmagix.com/",
+                  "http://moxierobot.com",
+                  "https://www.bynorth.com/",
+                  "http://www.cognirel.com",
+                  "http://www.iaugmentor.com/",
+                  "http://thenittygritty.in",
+                  "https://avegenhealth.com/",
+                  "http://www.vivant.me",
+                  "http://www.airmesh.com",
+                  "https://metaverseai.org",
+                  "http://www.HansonRobotics.com",
+                  "http://artusion.com",
+                  "https://www.humansecurity.com/",
+                  "https://1stmain.co",
+                  "http://www.quahoglife.com",
+                  "http://biodesigninnovationlabs.com",
+                  "http://www.airocorp.com",
+                  "http://www.intuitionrobotics.com",
+                  "http://www.thecreatelabs.com",
+                  "http://www.thirdleap.ai",
+                  "https://atombodies.com",
+                  "http://conzumex.com/",
+                  "https://liv.ai",
+                  "http://altersense.in",
+                  "http://www.pithsupply.com",
+                  "https://hyperhire.in",
+                  "https://www.digitate.com/",
+                  "http://www.biotz.in",
+                  "https://humane.com/",
+                  "https://www.indiandebatingleague.com/",
+                  "http://www.alethia.ai",
+                  "https://www.altem.com/",
+                  "https://chamestudio.com",
+                  "https://www.buildnext.tech/"
+                ]
+              },
+              "followers": {
+                "count": 20681
+              },
+              "funding": {
+                "investors": [
+                  "A16Z GAMES Speedrun",
+                  "Alumni Ventures",
+                  "Bob Meese",
+                  "Factorial Funds",
+                  "First Spark Ventures",
+                  "Greg Harper",
+                  "Gunderson Dettmer",
+                  "Joon Park",
+                  "Joon Sung Park",
+                  "LiquidMetal Ventures",
+                  "Mitch Lasky",
+                  "Patrick Collison",
+                  "Patron",
+                  "Prosus Ventures",
+                  "Richard Aldrich",
+                  "Stephen Lim",
+                  "VamosVentures",
+                  "Zachary Weiner"
+                ],
+                "last_fundraise_date": "2025-02-03T00:00:00",
+                "last_round_type": "series_a",
+                "num_funding_rounds": 3,
+                "total_investment_usd": 44000000,
+                "valuation_usd": 0
+              },
+              "headcount": {
+                "largest_headcount_country": "USA",
+                "range": "11-50",
+                "total": 28
+              },
+              "locations": {
+                "city": null,
+                "country": "United States",
+                "state": "California",
+                "street_address": "San Francisco, California, United States"
+              },
+              "revenue": {
+                "acquisition_status": null,
+                "estimated": {
+                  "lower_bound_usd": 500000,
+                  "upper_bound_usd": 1000000
+                },
+                "public_markets": {
+                  "fiscal_year_end": "",
+                  "stock_symbols": [
+                    "ALTERA"
+                  ]
+                }
+              }
+            },
+            "content": {
+              "description": "Shortcut is an AI platform for financial modeling, analysis, and enterprise workflows. Our products bring these capabilities into Excel, the browser, and APIs, helping teams automate complex financial work.\nWe’re looking for an experienced, hands-on contractor to own enterprise security, compliance, and technical delivery. You’ll work directly with customers’ IT and InfoSec teams, translate their requirements into practical solutions, and partner with our engineers to deliver them.\nThis role combines customer-facing technical leadership, backend and security engineering, and day-to-day ownership of our compliance program.\nWhat you’ll ownProduction reliability: Deliver safe backend and database changes, investigate production issues, and support incident response and recovery.Enterprise delivery: Turn customer requirements into clear implementation plans. Build and coordinate capabilities such as enterprise identity, access controls, customer-controlled storage, private AI integrations, and audit logging.Compliance operations: Own audit readiness, evidence collection, security documentation, and control tracking, including SOC 2 work. Coordinate with auditors, external security partners, and legal counsel.Enterprise security reviews: Lead InfoSec meetings, answer security questionnaires, explain our architecture and data flows, and drive technical follow-ups through resolution.Security improvements: Coordinate penetration testing, prioritize findings, implement fixes, and verify remediation with engineering.Ongoing ownership: Maintain accurate customer-facing security materials and keep enterprise commitments and security controls current as the platform evolves.\nRequirements5+ years of experience in backend, platform, or security engineering, including ownership of production systems.Strong backend engineering skills, with the ability to design APIs, investigate distributed systems, and ship reliable changes across services and cloud infrastructure.Experience managing production databases, including schema migrations, access controls, data integrity, and recovery.Experience responding to production incidents and participating in on-call coverage, with clear communication and follow-through on root causes.Experience working directly with enterprise customers’ IT and InfoSec teams and translating security requirements into technical delivery.Practical knowledge of authentication libraries, identity providers, authorization, cloud IAM, network security, encryption, and data isolation.Experience contributing to compliance audits, security assessments, or penetration-test remediation.Ability to manage priorities independently and carry work from requirements through implementation, verification, and documentation.Bachelor’s degree in computer science, engineering, or a related field, or equivalent practical experience.\nPreferred experienceOwnership of SOC 2 audit readiness, evidence collection, and ongoing compliance operations.Work with financial institutions or other regulated enterprises.Security and infrastructure experience with AI platforms, including model integrations and customer data controls.Familiarity with Better Auth and enterprise identity integrations such as SAML SSO and SCIM.PostgreSQL, Kubernetes, AWS or Google Cloud, and TypeScript, Python, or Go.\nEngagementThis is a contract role with ongoing ownership of enterprise security and compliance. Scope, duration, and compensation will be agreed based on experience and fit. Weekly availability, incident-response responsibilities, and any on-call coverage will be agreed as part of the contract.Please share your background, availability, and examples of enterprise security reviews, compliance programs, or technical implementations you’ve personally led."
+            },
+            "job_details": {
+              "category": "Engineering",
+              "employment_type": "contract",
+              "job_id": 8734792652178560,
+              "number_of_openings": null,
+              "reposted_job": false,
+              "source": "professional_network",
+              "title": "Enterprise Security & Compliance Engineer — Contractor",
+              "url": "https://www.linkedin.com/jobs/view/4477268652",
+              "workplace_type": "Remote"
+            }
+          },
+          {
+            "company": {
+              "basic_info": {
+                "crustdata_company_id": 91325458,
+                "industries": null,
+                "name": null,
+                "primary_domain": null,
+                "professional_network_id": null,
+                "website": null
+              }
+            },
+            "content": {
+              "description": "This is a Fully Remote Job\nAbout Our Client:The organization operates within the digital marketing industry, addressing the challenge of effectively planning, executing, and optimizing multi-channel campaigns for clients. It partners with creative and strategy teams to deliver data-driven marketing solutions that improve client outcomes.\nAbout the Opportunity:The DIGITAL MARKETING COORDINATOR role is focused on partnering with creative and strategy teams to develop and optimize multi-channel digital campaigns. This position is responsible for hands-on campaign planning, execution, and performance measurement, directly influencing client campaign success through strategic data analysis and collaboration.\nResponsibilities:Shape multi-channel campaign strategy in collaboration with creative and strategy teams.Track platform best practices and industry trends to inform strategy.Set up, test, and launch digital marketing campaigns ensuring quality and consistency.Design and run data-driven tests for ads, email, and landing pages to improve KPIs.Own campaign performance reporting and translate KPIs into actionable recommendations.Manage conversion tracking setup and maintenance to ensure reliable data.Collaborate with internal teams to align execution with client business goals.\nRequirements:Minimum 3 years of experience in digital marketing with independent campaign management.Proven ability to manage paid advertising platforms at scale (e.g., Google Ads, Meta Ads).Advanced skills in digital analytics platforms and conversion tracking (e.g., Google Analytics, HubSpot).Strong analytical skills for interpreting marketing data into strategic recommendations.Excellent communication and client partnership abilities.Bachelor’s degree in Marketing, Communications, Business, or related field; equivalent experience accepted.Preferred certifications: Google, Meta, or similar.\nPay Range and Compensation Package:The pay range and compensation package for this role will be determined based on the candidate's experience, skills, and other relevant factors.\nBenefits & Perks:Medical insuranceDental insuranceVision insuranceShort- and long-term disability insuranceFlexible time and unlimited vacation after the first 90 daysRetirement plan with employer matchTeam activities\nEqual Opportunity Statement: Our client is an equal opportunity employer. They celebrate diversity and are committed to creating an inclusive environment for all employees. All qualified applicants will receive consideration for employment without regard to race, color, religion, gender, gender identity or expression, sexual orientation, or national origin.\nNote:TalentHop is a recruitment partner of this role. Please note that all employment decisions, including candidate assessment, interviews, hiring, compensation, and employment terms, are made exclusively by the hiring employer."
+            },
+            "job_details": {
+              "category": "Marketing",
+              "employment_type": "full_time",
+              "job_id": 3961094651064220,
+              "number_of_openings": null,
+              "reposted_job": false,
+              "source": "professional_network",
+              "title": "Digital Marketing Coordinator",
+              "url": "https://www.linkedin.com/jobs/view/4475672317",
+              "workplace_type": "Remote"
+            }
+          },
+          {
+            "company": {
+              "basic_info": {
+                "crustdata_company_id": 91325458,
+                "industries": null,
+                "name": null,
+                "primary_domain": null,
+                "professional_network_id": null,
+                "website": null
+              }
+            },
+            "content": {
+              "description": "This is a Fully Remote Job\nAbout Our Client:The organization operates within the publishing and psychological sciences sector, representing a large professional community of psychologists and affiliates primarily in the U.S. and Canada. It addresses the need for authoritative and accessible psychological information and resources through its publishing programs, including APA Style, APA Books, and Magination Press Children’s Books, aiming to extend their reach and impact.\nAbout the Opportunity:The BOOKS SOCIAL MEDIA AND DIGITAL MARKETING MANAGER is responsible for developing and executing social media and digital marketing strategies to increase the visibility and sales of the organization's publishing programs. This role plays a critical part in expanding audience engagement, supporting title launches, and enhancing brand presence through targeted content and campaigns.\nResponsibilities:Develop and schedule engaging social media content tailored to different platformsPlan and execute digital campaigns, giveaways, and promotions for book launches and backlist titlesCollaborate with authors to support their social media presence and maintain brand consistencyMonitor and engage with online communities to foster positive interactions and manage reputationAnalyze social media performance metrics to refine marketing strategiesCultivate relationships with influencers to boost visibilityStay informed on social media trends and digital marketing developmentsPerform additional duties as assigned\nRequirements:Bachelor’s degreeOver five years of experience in social media or digital marketing, preferably in book marketingProficiency with MS Office Suite, social media tools like Hootsuite, and platforms including YouTube and LinkedInStrong writing and editing skillsFamiliarity with Canva is advantageousAbility to collaborate effectively in a team environmentInterest in books, publishing, and marketingUnderstanding of the organization’s mission as it relates to publishing\nPay Range and Compensation Package:Salaries are determined based on relevant experience, education, and prior related experience\nBenefits & Perks:Medical, dental, and vision insurance options401(k) with employer match up to 4%Paid personal and vacation time plus 12 paid holidaysFamily/Medical LeaveTuition assistanceEmployee Assistance ProgramShort- and long-term disability insuranceRemote work and flexible scheduling options\nEqual Opportunity Statement: Our client is an equal opportunity employer. They celebrate diversity and are committed to creating an inclusive environment for all employees. All qualified applicants will receive consideration for employment without regard to race, color, religion, gender, gender identity or expression, sexual orientation, or national origin.\nNote:TalentHop is a recruitment partner of this role. Please note that all employment decisions, including candidate assessment, interviews, hiring, compensation, and employment terms, are made exclusively by the hiring employer."
+            },
+            "job_details": {
+              "category": "Sales",
+              "employment_type": "full_time",
+              "job_id": 438936840740793,
+              "number_of_openings": null,
+              "reposted_job": false,
+              "source": "professional_network",
+              "title": "Books Social Media and Digital Marketing Manager, APA Publishing Books Sales & Marketing",
+              "url": "https://www.linkedin.com/jobs/view/4475671292",
+              "workplace_type": "Remote"
+            }
+          },
+          {
+            "company": {
+              "basic_info": {
+                "crustdata_company_id": 91325458,
+                "industries": null,
+                "name": null,
+                "primary_domain": null,
+                "professional_network_id": null,
+                "website": null
+              }
+            },
+            "content": {
+              "description": "This is a Fully Remote Job\nAbout Our Client:The organization operates within the cybersecurity sector, focusing on vulnerability management to enhance security program effectiveness. It addresses challenges related to data integrity and program performance measurement by transforming raw scan, asset, and remediation data into reliable metrics. This enables leadership and stakeholders to understand risk posture accurately and supports informed decision-making.\nAbout the Opportunity:The CYBER DATA ANALYST is responsible for managing the analytics, reporting, and data quality aspects of a vulnerability management program. This role involves developing trusted metrics and dashboards, utilizing AI-assisted tools to identify and correct data defects, and collaborating with operational teams to improve data processes. The position is impactful in shaping how the security program measures and reports on its performance and risks.\nResponsibilities:Manage monthly data-quality reporting to identify and track data-integrity issues.Design and refine AI-assisted workflows for large-scale data defect detection and correction.Maintain version-controlled libraries of prompts, scripts, and workflows for reproducibility.Reconcile business intelligence reports with authoritative vulnerability scan data.Verify and certify vulnerability and asset ownership through coordination with operational teams.Develop new reports, metrics, scoring algorithms, and dashboards based on stakeholder needs.Transition mature analytics products to operational teams with documentation and training.Collaborate with operations to trace data defects to root causes and recommend process improvements.Produce audit-ready documentation for regulatory and stakeholder review.Support additional analytical, reporting, and program improvement initiatives as assigned.\nRequirements:Minimum of 1 year experience in data analysis, data science, business intelligence, security analytics, IT operations reporting, or related fields.Ability to work with large and imperfect data sets, including data joining and reconciliation.Proficiency in building reports and dashboards with data modeling and calculated measures.Advanced Excel skills, including lookups, pivot tables, and conditional logic.Experience leveraging AI tools for analytical and data remediation tasks with sound judgment.Familiarity with cybersecurity concepts such as vulnerabilities, patching, CVEs, CVSS scoring, and risk fundamentals.Strong written and verbal communication skills for technical and leadership audiences.Proficiency with Microsoft Office tools including Word, Excel, PowerPoint, Outlook, and SharePoint.Strong organizational skills with attention to detail and ability to manage multiple tasks within deadlines.\nPay Range and Compensation Package:$55,271 - $62,808 per year, depending on experience and qualifications.\nEqual Opportunity Statement: Our client is an equal opportunity employer. They celebrate diversity and are committed to creating an inclusive environment for all employees. All qualified applicants will receive consideration for employment without regard to race, color, religion, gender, gender identity or expression, sexual orientation, or national origin.\nNote:TalentHop is a recruitment partner of this role. Please note that all employment decisions, including candidate assessment, interviews, hiring, compensation, and employment terms, are made exclusively by the hiring employer."
+            },
+            "job_details": {
+              "category": "Engineering",
+              "employment_type": "full_time",
+              "job_id": 7603909176821507,
+              "number_of_openings": null,
+              "reposted_job": false,
+              "source": "professional_network",
+              "title": "Cyber Data Analyst",
+              "url": "https://www.linkedin.com/jobs/view/4475674233",
+              "workplace_type": "Remote"
+            }
+          },
+          {
+            "company": {
+              "basic_info": {
+                "crustdata_company_id": 91325458,
+                "industries": null,
+                "name": null,
+                "primary_domain": null,
+                "professional_network_id": null,
+                "website": null
+              }
+            },
+            "content": {
+              "description": "This is a Fully Remote Job\nAbout Our Client:The organization is an integrated communications agency specializing in supporting technology and innovation companies. Since 2000, it has collaborated with various brands to enhance messaging, media relations, executive thought leadership, content marketing, social media, and creative efforts.\nAbout the Opportunity:The SOCIAL MEDIA SPECIALIST will contribute to the Content Studio by managing and creating social media content across multiple B2B client teams. This role focuses on shaping brand and executive presence on platforms such as LinkedIn and X through organic and paid strategies. The position requires turning complex technology topics into engaging social content that aligns with client objectives.\nResponsibilities:Manage social content and publishing for multiple B2B clients, focusing on LinkedIn and X, and other channels as appropriateCollaborate with client teams to select content ideas and formats per channel, and determine paid distribution strategiesDevelop and maintain social content calendars that integrate storytelling, visuals, and production plansCreate and publish social content including posts, graphics, carousels, and short videos; coordinate with designers and video editors when neededTransform announcements, interviews, reports, and executive insights into accurate, on-message social contentMonitor relevant social conversations, engage appropriately on behalf of clients, and advise on executive participationPlan and manage paid social campaigns, primarily on LinkedIn, including audience targeting, budget management, creative testing, and optimizationReport on organic and paid social performance, communicate findings to clients and internal teams, and apply insights to improve future content\nRequirements:Minimum 3 years of hands-on social media experience with B2B brands or executivesExperience managing social content calendars from ideation to publication and performance analysisStrong social copywriting skills with examples across different channels and audiences; long-form writing is a plusProficiency in creating social graphics, carousels, and short videos using tools like Canva and CapCut; ability to brief and collaborate with designers and video editorsStrong storytelling skills to craft compelling social content from various source materialsExperience running paid social campaigns on LinkedIn, including audience setup, budget control, creative testing, reporting, and optimizationAbility to measure and report on social performance and recommend improvementsProven capacity to manage multiple projects and deadlines in a fast-paced environmentStrong editorial judgment and visual storytelling sense\nPay Range and Compensation Package:$70,000 - $80,000 a year\nBenefits & Perks:Professional development program tailored to individual talents and opportunitiesFully covered health, dental, and vision benefits401(k) matchingGenerous paid family leaveFlexible vacation and rotational Fridays offSabbatical leaveWellness stipendFlexible, virtual-first work environmentIn-person team and community gatherings\nEqual Opportunity Statement: Our client is an equal opportunity employer. They celebrate diversity and are committed to creating an inclusive environment for all employees. All qualified applicants will receive consideration for employment without regard to race, color, religion, gender, gender identity or expression, sexual orientation, or national origin.\nNote:TalentHop is a recruitment partner of this role. Please note that all employment decisions, including candidate assessment, interviews, hiring, compensation, and employment terms, are made exclusively by the hiring employer."
+            },
+            "job_details": {
+              "category": "Others",
+              "employment_type": "full_time",
+              "job_id": 1585893827688268,
+              "number_of_openings": null,
+              "reposted_job": false,
+              "source": "professional_network",
+              "title": "Social Media Specialist",
+              "url": "https://www.linkedin.com/jobs/view/4475672304",
+              "workplace_type": "Remote"
+            }
+          }
+        ],
+        "next_cursor": "H4sIAP1YzGoC_xWMSw6DMAwFr4KyZmEnxJ9epapQsFOxqIrKZ4Gq3r3haZYz7xs-R13PcS7bHG5dqCix1qisBmaYULy6IehzELmYEpo4qeTiyFNOGt1BXckmLxD6LmzLurevO7IiD8QEbX2HWbJoksgkEkkeTd2XvbxGW473VXBOAJTw9wcdRVFqlgAAAA==",
+        "total_count": 75300631
+      }
+    },
+    {
+      "step": {
+        "tool": "job_search",
+        "params": {
+          "query": "freelance consultant",
+          "locations": [
+            "United States",
+            "Canada",
+            "United Kingdom"
+          ],
+          "limit": 10
+        }
+      },
+      "result": {
+        "job_listings": [
+          {
+            "company": {
+              "basic_info": {
+                "crustdata_company_id": 682721,
+                "industries": [
+                  "IT Services and IT Consulting",
+                  "Professional Services"
+                ],
+                "name": "Serco",
+                "primary_domain": "serco.com",
+                "professional_network_id": "3647",
+                "website": "http://www.serco.com"
+              },
+              "competitors": {
+                "websites": [
+                  "https://redseal.net",
+                  "https://www.simpro.us",
+                  "http://www.carservapp.com/",
+                  "http://www.secberus.ai",
+                  "http://sentryenterprises.com",
+                  "https://www.seragon.com/",
+                  "http://www.symphonysv.com",
+                  "https://cssenroll.com/",
+                  "http://sicomindia.com",
+                  "http://www.COMSovereign.com",
+                  "http://www.sercononline.com/",
+                  "http://www.thesecurusgroup.co.uk",
+                  "https://servy.us",
+                  "http://www.sarnova.com",
+                  "http://www.seraspec.com",
+                  "http://www.serpinstitute.org",
+                  "https://secureco.com",
+                  "http://www.Spancotele.com",
+                  "http://www.servicenow.com",
+                  "http://www.sarnoff.com",
+                  "https://www.senecagov.com/",
+                  "http://cisb.co.in",
+                  "http://www.sayari.com",
+                  "https://www.indiamart.com/sr-corporate/",
+                  "https://www.semperis.com/",
+                  "https://www.septier.com",
+                  "https://sera.com/",
+                  "https://sera.tech/",
+                  "http://www.sciera.com",
+                  "http://www.sermo.com",
+                  "http://www.serimmune.com",
+                  "http://www.sernova.com",
+                  "http://www.siroclinpharm.com",
+                  "http://www.selkirkpharma.com",
+                  "http://www.csican.com",
+                  "http://www.seraxis.com",
+                  "https://www.tambotrading.us/",
+                  "http://www.sorilinfraresources.com",
+                  "http://www.soleranetwork.com",
+                  "https://seer.bio/",
+                  "https://www.veris.com.au",
+                  "http://secur.co.in/",
+                  "http://www.serestherapeutics.com/",
+                  "http://www.eseronahealth.com",
+                  "https://inspacco.com/",
+                  "http://sanseraindia.com",
+                  "https://www.linkedin.com/redir/suspicious-page?url=https%3A%2F%2Fwww%2estatesrvcs%2ecom%2F",
+                  "http://www.sanvera.com",
+                  "http://www.ixoragroup.com"
+                ]
+              },
+              "followers": {
+                "count": 520858
+              },
+              "funding": {
+                "investors": null,
+                "last_fundraise_date": null,
+                "last_round_type": "",
+                "num_funding_rounds": null,
+                "total_investment_usd": null,
+                "valuation_usd": 0
+              },
+              "headcount": {
+                "largest_headcount_country": "GBR",
+                "range": "10001+",
+                "total": 32937
+              },
+              "locations": {
+                "city": null,
+                "country": "United Kingdom",
+                "state": "England",
+                "street_address": "16 Bartley Wood Business Park, Bartley Way Hook, Riseley, Rotherwick, Eversley, Hartley Wespall, Nately Scures, Heckfield, Hartley Wintney, Church End, West Green, Winchfield, Hook, Eversley Cross, Newnham, Hound Green, Hazeley, Dogmersfield, Bramshill, Up Nately, Mattingley, Hartfordbridge, Stratfield Turgis, Sherfield on Loddon, Turgis Green, Phoenix Green, England"
+              },
+              "revenue": {
+                "acquisition_status": null,
+                "estimated": {
+                  "lower_bound_usd": 1000000000,
+                  "upper_bound_usd": 1000000000000
+                },
+                "public_markets": {
+                  "fiscal_year_end": "",
+                  "stock_symbols": [
+                    "SERCO",
+                    "SRP"
+                  ]
+                }
+              }
+            },
+            "content": {
+              "description": "Position Description & Qualifications\n\nSerco-NA is seeking a motivated individual to serve as an IB-CHE/PMDT Developer in the Submarine Industrial Base Data Analytics Team, (IB-CHE: Industrial Base – Cloud Hosting Environment/ PMDT: Product & Manufacturing Digital Twin) supporting high-visibility initiatives that enhance the readiness, resilience, and performance of the U.S. Navy’s Submarine Industrial Base (SIB).\n\nMust be able to obtain U.S. Department of War (DoW) Secret security clearance.\n\nIn this role, you will systematically map, analyze, and plan the digital transformation efforts across all areas/departments. The core deliverable is a comprehensive portfolio that outlines current capabilities, future requirements, and strategic roadmaps for technology integration, ensuring all digital investments are aligned, and directly support mission objectives.\n\nThis position operates in a fast-paced environment requiring daily interaction with suppliers, government stakeholders, and industry partners. You must be a self-starter capable of independently identifying issues, analyzing complex datasets, developing actionable insights, and communicating performance outcomes to senior leadership.\n\nWorking remotely, you will be on the dynamic SIB Data Team providing support to the Program Manager and DRPM SUB where you will help manage a dynamic mix of in-house development teams and third-party tool integration projects to deliver solutions that support the SIB program. Bring your expertise and collaborative skills to make an impact on our military defense and safety of our sailors.\n\nProgram Overview\n\nThe Submarine Industrial Base (SIB) Program leads the U.S. Navy's effort to revitalize America's shipbuilding and repair capabilities. Established in September 2024, the program strengthens and expands the industrial base that builds and maintains surface ships, aircraft carriers, and submarines vital to national defense.\n\nhttps://www.secnav.navy.mil/rda/mib/Pages/default.aspx\n\nDRPM Subs Is Responsible For\n\nThe acquisition of COLUMBIA Class Submarines, including R&D, design, construction, Test and Evaluation (T&E), and Live Fire Test and Evaluation (LFT&E). This program is a major defense acquisition effort with significant Congressional and OSD visibility.The acquisition of VIRGINIA Class Submarines, including lifecycle management, T&E, LFT&E, and Fleet introduction, with an estimated lifecycle cost of $336B.The SSN(X) program, responsible for next-generation fast attack submarine design and acquisition, emphasizing speed, stealth, payload capacity, and operational endurance.\n\nSerco supports the US Navy as prime for SHAPM contract supporting the acquisition of submarines and surface vessels.\n\nIn This Role, You Will\n\nBuild Web Sites on Gov Cloud: Design and update website layouts and user interfaces using modern HTML, CSS, and JavaScript standards.Connect Back-End Services: Integrate and develop APIs to Gov Cloud databases and external web services.Optimize Performance: Ensure fast page loading speeds, mobile responsiveness, and cross-browser compatibility.Troubleshoot and Test: Monitor site performance, fix bugs, and run quality checks.Reviews, analyzes, and modifies programming systems including encoding, testing, debugging and documenting programsExperience with Industry 4.0., Additive Manufacturing, and Non-Destructive Testing workflows.Help fill any knowledge gap in digital requirements for Industry 4.0 to enable and then eventually sustain them beyond MVP status (includes things such as data lakes, S3 buckets, ATOs, possible IB-CHE integration dynamics, operational costs, etc).Familiar with a variety of field’s concepts, practices, and procedures.Support data ingestion, processing, and visualization workflows to deliver actionable insights to government stakeholders.Collaborate with a cross-functional team of analysts, data engineers, front-end developers, and subject matter experts to deliver mission-critical solutions.Present findings through reports, dashboards, and briefings to both technical and non-technical audiences.Performs a variety of complicated tasks.Report progress and metrics to the Data Director and other senior stakeholders.Provide program, analytical, and acquisition management support to senior level SIB executives as required.Work with the SIB team, which is spread across the United States focused on workforce development/marketing, supply chain/sustainment, and technology developments.Interact with industry and senior leadership.Contribute to the development of data-driven insights and analytic solutions that help identify, assess, and mitigate risks in complex supply chains.You will partner closely with Product Owners, the Data Director, and other stakeholders to maintain delivery cadence, transparency, and accountability.\n\nTo Be Successful In This Role, You Will Have\n\nThe ability to obtain a DoW Secret security clearance.A Bachelor’s degree in Data Science, Computer Science, Statistics, Engineering, or a related field.Minimum 5 years of hands-on experience in data science, analytics, Industry 4.0, or applied machine learning or similar/related experience.Technical Knowledge: Strong command of development languages HTML5, CSS3, and JavaScript.Programming Languages: Familiarity with backend languages or frameworks (such as PHP, Python, Ruby on Rails, or Node.js).Tools and CMS: Experience with version control tools (like Git).Gov Cloud CyberSecurity: Experience developing cybersecure and certified websites on DoW Networks. Rely on experience and judgment to plan and accomplish goals.Strong problem-solving skills and the ability to communicate technical insights clearly.Strong communication (both written and oral), facilitation, and conflict-resolution skills.A wide degree of creativity and latitude is expected. Customer-oriented team player mindset focused on mission who is self-motivated, driven and can work independently and remotely.The ability to travel 10%.\n\nIf you feel your skillset is a match to the requirements, then you should be ready to take the next step in your career path, apply today!\n\nCompany Overview\n\nSerco Inc. (Serco) is the Americas division of Serco Group, plc. In North America, Serco’s 9,000+ employees strive to make an impact every day across 100+ sites in the areas of Defense, Citizen Services, and Transportation. We help our clients deliver vital services more efficiently while increasing the satisfaction of their end customers. Serco serves every branch of the U.S. military, numerous U.S. Federal civilian agencies, the Intelligence Community, the Canadian government, state, provincial and local governments, and commercial clients. While your place may look a little different depending on your role, we know you will find yours here. Wherever you work and whatever you do, we invite you to discover your place in our world. Serco is a place you can count on and where you can make an impact because every contribution matters.\n\nTo review Serco benefits please visit: https://careers.serco-na.com/us/en/what-we-offer. If you require an accommodation with the application process please email: careers@serco-na.com or call the HR Service Desk at 800-628-6458, option 1. Please note, due to EEOC/OFCCP compliance, Serco is unable to accept resumes by email.\n\nCandidates may be asked to present proof of identity during the selection process. If requested, this will require presentation of a government-issued I.D. (with photo) with name and address that match the information entered on the application. Serco will not take possession of or retain/store the information provided as proof of identity. For more information on how Serco uses your information, please see our Applicant Privacy Policy and Notice.\n\nSerco does not accept unsolicited resumes through or from search firms or staffing agencies without being a contracted approved vendor. All unsolicited resumes will be considered the property of Serco and will not be obligated to pay a placement or contract fee. If you are interested in becoming an approved vendor at Serco, please email Agencies@serco-na.com.\n\nSerco is an equal opportunity employer. We evaluate qualified applicants without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, disability, veteran status, and other legally protected characteristics.\n\nPay Transparency\n\nOur Total Rewards package includes competitive pay, performance-based incentives, and benefits that promote well-being and work-life balance—so you can thrive both professionally and personally. Eligible employees also gain access to a wide range of benefits from comprehensive health coverage and health savings accounts to retirement plans, life and disability insurance, and time-off programs that support work-life balance. Program availability may vary based on factors such as contract type, location, hire date, and applicable collective bargaining agreements.\n\nSalary range: The range for this position can be found at the top of this posting. This range is provided as a general guideline and represents a good faith estimate across all experience levels. Actual base salary will be determined by a variety of factors, including but not limited to, the scope of the role, relevant experience, job-related knowledge, education and training, key skills, and geographic market considerations. For roles available in multiple states, the range may vary to reflect differences in local labor markets. In addition to base salary, eligible positions may include other forms of compensation such as annual bonuses or long-term incentive opportunities. Benefits – Comprehensible benefits for full-time employees (part-time employees receive a limited package tailored to their role):\n\nMedical, dental, and vision insuranceRobust vacation and sick leave benefits, and flexible work arrangements where permitted by role or contract401(k) plan that includes employer matching fundsTuition reimbursement programLife insurance and disability coverageOptional coverages that can be purchased, including pet insurance, home and auto insurance, additional life and accident insurance, critical illness insurance, group legal, ID theft protectionBirth, adoption, parental leave benefitsEmployee Assistance Plan\n\nTo review all Serco benefits please visit: https://careers.serco-na.com/us/en/about-us.\n\nSerco complies with all applicable state and local leave laws, including providing time off under the Colorado Healthy Families and Workplaces Act for eligible Colorado residents, in alignment with our policies and benefit plans. The application window for this position is for no more than 60 days. We encourage candidates to apply promptly after the posting date, as the position may close earlier if filled or if the application volume exceeds expectations. Please submit applications exclusively through Serco’s external (or internal) career site. If an applicant has any concerns with job posting compliance, please send an email to: careers@serco-na.com."
+            },
+            "job_details": {
+              "category": "Engineering",
+              "employment_type": "full_time",
+              "job_id": 8546050593813979,
+              "number_of_openings": null,
+              "reposted_job": false,
+              "source": "professional_network",
+              "title": "IB-CHE/PMDT Developer- Remote opportunity",
+              "url": "https://www.linkedin.com/jobs/view/4478358851",
+              "workplace_type": null
+            }
+          },
+          {
+            "company": {
+              "basic_info": {
+                "crustdata_company_id": 75186137,
+                "industries": null,
+                "name": null,
+                "primary_domain": null,
+                "professional_network_id": null,
+                "website": null
+              }
+            },
+            "content": {
+              "description": "Certified Nursing Assistant – Home Health Locations: North Valley, West Valley, Central Phoenix, South Phoenix, Scottsdale Schedule: M-F 8-5 Compensation - 24-26 per hour! Join Home Sweet Home as a Certified Nursing Assistant Home Sweet Home is looking for compassionate and dependable Certified Nursing Assistant to join our growing Home Health team around Maricopa County. If you're searching for a CNA opportunity that offers flexibility and meaningful one-on-one patient care, we'd love to hear from you. As a trusted Home Health provider, we help seniors and adults remain safe, comfortable, and independent in the place they call home. Our CNA's play an essential role in delivering compassionate Senior Care , supporting Community Health , and improving patients' quality of life. Why Join Home Sweet Home? One-on-one patient care in the home Competitive compensation Supportive clinical leadership and collaborative care team Flexible territories that promote work-life balance Meaningful work serving your local community Opportunities for professional growth What You'll Do As a Home Health Certified Nursing Assistant (CNA) , you will: Provide personal care, including bathing, grooming, dressing, toileting, and mobility assistance Support patients with activities of daily living (ADLs) while promoting dignity and independence Assist with safe transfers, ambulation, and light rehabilitation support as directed by the clinical team Observe and report changes in patient condition to the supervising nurse Provide companionship and emotional support to patients and families Educate caregivers on safe care techniques Follow individualized care plans and agency policies to ensure quality patient care Qualifications Active Arizona Certified Nursing Assistant (CNA) certification required Home Health, hospice, caregiver, or senior care experience preferred Compassionate, dependable, and patient-focused Strong communication and teamwork skills Valid driver's license, reliable transportation, and current auto insurance Apply Today If you're a CNA looking for a rewarding career in Home Health , Senior Care , Rehabilitation , and Community Health , we encourage you to apply today. Join Home Sweet Home and make a lasting difference by helping patients live safely and independently in the comfort of their own homes. Home Sweet Home is an Equal Opportunity Employer committed to fostering an inclusive and supportive workplace for all team members."
+            },
+            "job_details": {
+              "category": "Home Sweet Home",
+              "employment_type": null,
+              "job_id": 82943065329653,
+              "number_of_openings": null,
+              "reposted_job": null,
+              "source": "greenhouse",
+              "title": "Certified Nursing Assistant",
+              "url": "https://job-boards.greenhouse.io/homesweethomehealth/jobs/5449776008",
+              "workplace_type": null
+            }
+          },
+          {
+            "company": {
+              "basic_info": {
+                "crustdata_company_id": 91325458,
+                "industries": null,
+                "name": null,
+                "primary_domain": null,
+                "professional_network_id": null,
+                "website": null
+              }
+            },
+            "content": {
+              "description": "This is a Fully Remote Job\nAbout Our Client:The organization operates within the marketing and communications space, addressing the need for consistent brand representation, audience engagement, and support for business development and recruiting efforts. It focuses on delivering integrated marketing strategies and digital media content to enhance organizational visibility and support various internal functions.\nAbout the Opportunity:The MARKETING MANAGER leads the development and execution of corporate marketing, branding, communications, digital media, and content initiatives. This role is responsible for maintaining brand consistency, driving marketing campaigns, managing corporate communications, and producing engaging multimedia content. The position contributes significantly to strengthening audience engagement, supporting recruiting, and advancing business development goals.\nResponsibilities:Develop and implement corporate marketing and communications strategies aligned with organizational goalsManage corporate brand standards, messaging, visual identity, and collateralPlan and execute digital marketing campaigns across websites, social media, email, and other channelsCreate and oversee production of graphics, videos, presentations, infographics, and promotional materialsLead internal and external corporate communications including announcements and newslettersSupport recruiting through employment branding and targeted social media campaignsCollaborate with business development and operational teams on marketing and proposal materialsManage website content and enhance user experienceMonitor marketing metrics and recommend improvementsCoordinate external vendors and marketing projects ensuring schedule and budget adherenceDevelop and maintain marketing templates, branding guidelines, and communication standardsFoster cross-department collaboration to align marketing with organizational objectivesPerform other duties as assigned\nRequirements:Minimum 5 years experience in marketing, communications, branding, or digital mediaProven ability to develop and execute multi-channel marketing campaignsStrong knowledge of branding, corporate communications, content marketing, and digital marketing principlesExperience managing content for social media, websites, email campaigns, and marketing materialsProficiency with Microsoft Office and digital collaboration toolsExcellent verbal, written, and visual communication skillsAbility to manage multiple projects and priorities concurrentlyEffective collaboration with executives, stakeholders, and cross-functional teams\nPay Range and Compensation Package:Salary range $70,000 to $90,000 depending on experience\nBenefits & Perks:Employer paid health care plans for employees and familyRetirement plan options including 401(k) and IRALife insurance (basic, voluntary, and AD&D)Paid time off including vacation, sick leave, and public holidaysShort term and long term disability coverageTraining and development opportunitiesWellness resourcesStock option benefit\nEqual Opportunity Statement: Our client is an equal opportunity employer. They celebrate diversity and are committed to creating an inclusive environment for all employees. All qualified applicants will receive consideration for employment without regard to race, color, religion, gender, gender identity or expression, sexual orientation, or national origin.\nNote:TalentHop is a recruitment partner of this role. Please note that all employment decisions, including candidate assessment, interviews, hiring, compensation, and employment terms, are made exclusively by the hiring employer."
+            },
+            "job_details": {
+              "category": "Marketing",
+              "employment_type": "full_time",
+              "job_id": 8091248354139914,
+              "number_of_openings": null,
+              "reposted_job": false,
+              "source": "professional_network",
+              "title": "Marketing Manager",
+              "url": "https://www.linkedin.com/jobs/view/4475660783",
+              "workplace_type": "Remote"
+            }
+          },
+          {
+            "company": {
+              "basic_info": {
+                "crustdata_company_id": 91325458,
+                "industries": null,
+                "name": null,
+                "primary_domain": null,
+                "professional_network_id": null,
+                "website": null
+              }
+            },
+            "content": {
+              "description": "This is a Fully Remote Job\nAbout Our Client:This organization operates within the marketing industry, focusing on transforming marketing practices in the real estate sector. It addresses challenges in real estate marketing by delivering advanced digital marketing solutions, creative campaigns, and social media strategies to enhance client outcomes. The company has received recognition for workplace culture and marketing excellence and supports remote work across the United States. It is committed to diversity, equity, and inclusion, aiming to reflect the communities it serves.\nAbout the Opportunity:The SEO SPECIALIST role is responsible for implementing, optimizing, and managing strategic SEO campaigns to improve organic search performance for clients. This position contributes by developing and executing SEO strategies, analyzing performance data, and communicating results to clients, thereby directly impacting the success of marketing efforts and client satisfaction.\nResponsibilities:Develop competitive SEO strategies including keyword research and Google Business Profile optimizationManage backlinks, SEO-optimized content frameworks, and directory listingsStay updated on SEO trends and tools to enhance strategy effectivenessOptimize campaigns based on performance metrics and provide proactive recommendationsCommunicate SEO strategies and results effectively to clientsContribute to improving internal SEO processes\nRequirements:Minimum 2 years experience in digital marketing agency or multifamily marketingAt least 3 years of hands-on organic search experienceStrong knowledge of SEO best practices and search engine algorithmsProficient in on-page, off-page, and technical SEOAbility to leverage AI and automation for process improvementStrong writing, editing, and proofreading skillsCertifications in Google Analytics 4 and Google Tag ManagerExperience with SEO tools such as ScreamingFrog, Ahrefs, Google Search Console, and YextAdvanced skills in database management and Google SheetsExperience with custom tags in GTM is a plus\nPay Range and Compensation Package:The salary range for this role in Colorado is $51,800 to $63,000 plus bonus potentialEligible to participate in the organization's benefits plan\nBenefits & Perks:Health benefits including medical, dental, and vision insurance starting day one401(k) retirement plan with company matchStudent loan assistancePaid parental leave (maternity and paternity)Flexible work-from-home and remote work policy within the U.S.Life and disability insurance fully paid by the organizationFlexible PTO and 10 paid holidaysOptional Health Savings Account, Flexible Savings Account, and pet insuranceLeadership training and events\nEqual Opportunity Statement: Our client is an equal opportunity employer. They celebrate diversity and are committed to creating an inclusive environment for all employees. All qualified applicants will receive consideration for employment without regard to race, color, religion, gender, gender identity or expression, sexual orientation, or national origin.\nNote:TalentHop is a recruitment partner of this role. Please note that all employment decisions, including candidate assessment, interviews, hiring, compensation, and employment terms, are made exclusively by the hiring employer."
+            },
+            "job_details": {
+              "category": "Others",
+              "employment_type": "full_time",
+              "job_id": 1835969570314331,
+              "number_of_openings": null,
+              "reposted_job": false,
+              "source": "professional_network",
+              "title": "SEO Specialist",
+              "url": "https://www.linkedin.com/jobs/view/4475667461",
+              "workplace_type": "Remote"
+            }
+          },
+          {
+            "company": {
+              "basic_info": {
+                "crustdata_company_id": 91325458,
+                "industries": null,
+                "name": null,
+                "primary_domain": null,
+                "professional_network_id": null,
+                "website": null
+              }
+            },
+            "content": {
+              "description": "This is a Fully Remote Job\nAbout Our Client:This organization operates within the health IT sector, providing digital solutions that streamline administrative healthcare processes. It addresses the need for efficient, compliant management of patient information through proprietary technology that supports the entire patient information lifecycle. Established in 2006 and headquartered in Dallas, TX, the company has been recognized for rapid growth nationally and regionally.\nAbout the Opportunity:The SENIOR SECURITY ENGINEER role is responsible for protecting sensitive health information by ensuring its confidentiality, integrity, and availability. This position plays a critical role in maintaining compliance with health information regulations and strengthening cybersecurity architecture. The engineer leads efforts to assess and improve security posture, manages identity and access controls, coordinates audit responses, and guides the organization’s security operations and incident responses.\nResponsibilities:Ensure compliance with HIPAA and related safeguards for Protected Health InformationDesign, implement, and maintain cybersecurity frameworks based on HIPAA Security Rule, NIST, and other standardsAnalyze and enhance cloud and corporate security infrastructureConfigure and maintain security software, tools, and servicesCollaborate with leadership, legal, and compliance teams on security policies and proceduresManage identity, access authorization, and authentication systems with regular auditsLead security audits including SOC 2 Type 2, HITrust, and PCICoordinate responses to client security assessmentsWork with managed service providers to monitor and respond to security threatsPartner with Development and CloudOps teams to manage vulnerabilitiesProvide cybersecurity training and mentorshipMaintain documentation for security practices and incident responseDeliver metrics-based security reportingCommunicate security issues effectively to leadershipStay informed on security trends and attack methodsTroubleshoot complex issues involving key source systems\nRequirements:Bachelor’s degree in Computer Science, Engineering, or a related field, or equivalent experienceMinimum 5 years of senior-level security engineering experienceProficiency with cloud platforms such as AWS, Azure, or GCPExperience managing Microsoft Entra, Active Directory, and AWS IAMKnowledge of HIPAA, NIST, SOC2, and HITrust security controlsCurrent security certification (CISSP, CSSLP, CCFP, or CISM)Experience with Agile methodologies such as Scrum or KanbanStrong understanding of Windows operating systems and network protocolsFamiliarity with cloud security and DevSecOps practices\nPay Range and Compensation Package:The pay range and compensation package for this role will be determined based on the candidate's experience, skills, and other relevant factors.\nEqual Opportunity Statement: Our client is an equal opportunity employer. They celebrate diversity and are committed to creating an inclusive environment for all employees. All qualified applicants will receive consideration for employment without regard to race, color, religion, gender, gender identity or expression, sexual orientation, or national origin.\nNote:TalentHop is a recruitment partner of this role. Please note that all employment decisions, including candidate assessment, interviews, hiring, compensation, and employment terms, are made exclusively by the hiring employer."
+            },
+            "job_details": {
+              "category": "Engineering",
+              "employment_type": "full_time",
+              "job_id": 3192830045771729,
+              "number_of_openings": null,
+              "reposted_job": false,
+              "source": "professional_network",
+              "title": "Senior Security Engineer",
+              "url": "https://www.linkedin.com/jobs/view/4475655952",
+              "workplace_type": "Remote"
+            }
+          },
+          {
+            "company": {
+              "basic_info": {
+                "crustdata_company_id": 1218943,
+                "industries": [
+                  "Software Development",
+                  "Technology, Information and Internet",
+                  "Technology, Information and Media"
+                ],
+                "name": "Fundamental Research Labs",
+                "primary_domain": "fundamentalresearchlabs.com",
+                "professional_network_id": "100330913",
+                "website": "https://www.fundamentalresearchlabs.com"
+              },
+              "competitors": {
+                "websites": [
+                  "https://www.emperify.com",
+                  "https://www.kidaura.in",
+                  "http://www.mancorpinc.com",
+                  "http://friktionless.com",
+                  "http://www.trouw.nl",
+                  "http://www.digilands.co",
+                  "http://www.datacoginai.com",
+                  "https://www.futech.co.jp/",
+                  "http://www.ignitorlearning.com",
+                  "http://squareoffnow.com",
+                  "https://www.spocto.com",
+                  "http://www.etherealmachines.com",
+                  "https://www.augmentedbyte.com/",
+                  "https://www.nexrage.com",
+                  "http://www.gopikk.com",
+                  "https://www.touchmagix.com/",
+                  "http://moxierobot.com",
+                  "https://www.bynorth.com/",
+                  "http://www.cognirel.com",
+                  "http://www.iaugmentor.com/",
+                  "http://thenittygritty.in",
+                  "https://avegenhealth.com/",
+                  "http://www.vivant.me",
+                  "http://www.airmesh.com",
+                  "https://metaverseai.org",
+                  "http://www.HansonRobotics.com",
+                  "http://artusion.com",
+                  "https://www.humansecurity.com/",
+                  "https://1stmain.co",
+                  "http://www.quahoglife.com",
+                  "http://biodesigninnovationlabs.com",
+                  "http://www.airocorp.com",
+                  "http://www.intuitionrobotics.com",
+                  "http://www.thecreatelabs.com",
+                  "http://www.thirdleap.ai",
+                  "https://atombodies.com",
+                  "http://conzumex.com/",
+                  "https://liv.ai",
+                  "http://altersense.in",
+                  "http://www.pithsupply.com",
+                  "https://hyperhire.in",
+                  "https://www.digitate.com/",
+                  "http://www.biotz.in",
+                  "https://humane.com/",
+                  "https://www.indiandebatingleague.com/",
+                  "http://www.alethia.ai",
+                  "https://www.altem.com/",
+                  "https://chamestudio.com",
+                  "https://www.buildnext.tech/"
+                ]
+              },
+              "followers": {
+                "count": 20681
+              },
+              "funding": {
+                "investors": [
+                  "A16Z GAMES Speedrun",
+                  "Alumni Ventures",
+                  "Bob Meese",
+                  "Factorial Funds",
+                  "First Spark Ventures",
+                  "Greg Harper",
+                  "Gunderson Dettmer",
+                  "Joon Park",
+                  "Joon Sung Park",
+                  "LiquidMetal Ventures",
+                  "Mitch Lasky",
+                  "Patrick Collison",
+                  "Patron",
+                  "Prosus Ventures",
+                  "Richard Aldrich",
+                  "Stephen Lim",
+                  "VamosVentures",
+                  "Zachary Weiner"
+                ],
+                "last_fundraise_date": "2025-02-03T00:00:00",
+                "last_round_type": "series_a",
+                "num_funding_rounds": 3,
+                "total_investment_usd": 44000000,
+                "valuation_usd": 0
+              },
+              "headcount": {
+                "largest_headcount_country": "USA",
+                "range": "11-50",
+                "total": 28
+              },
+              "locations": {
+                "city": null,
+                "country": "United States",
+                "state": "California",
+                "street_address": "San Francisco, California, United States"
+              },
+              "revenue": {
+                "acquisition_status": null,
+                "estimated": {
+                  "lower_bound_usd": 500000,
+                  "upper_bound_usd": 1000000
+                },
+                "public_markets": {
+                  "fiscal_year_end": "",
+                  "stock_symbols": [
+                    "ALTERA"
+                  ]
+                }
+              }
+            },
+            "content": {
+              "description": "Shortcut is an AI platform for financial modeling, analysis, and enterprise workflows. Our products bring these capabilities into Excel, the browser, and APIs, helping teams automate complex financial work.\nWe’re looking for an experienced, hands-on contractor to own enterprise security, compliance, and technical delivery. You’ll work directly with customers’ IT and InfoSec teams, translate their requirements into practical solutions, and partner with our engineers to deliver them.\nThis role combines customer-facing technical leadership, backend and security engineering, and day-to-day ownership of our compliance program.\nWhat you’ll ownProduction reliability: Deliver safe backend and database changes, investigate production issues, and support incident response and recovery.Enterprise delivery: Turn customer requirements into clear implementation plans. Build and coordinate capabilities such as enterprise identity, access controls, customer-controlled storage, private AI integrations, and audit logging.Compliance operations: Own audit readiness, evidence collection, security documentation, and control tracking, including SOC 2 work. Coordinate with auditors, external security partners, and legal counsel.Enterprise security reviews: Lead InfoSec meetings, answer security questionnaires, explain our architecture and data flows, and drive technical follow-ups through resolution.Security improvements: Coordinate penetration testing, prioritize findings, implement fixes, and verify remediation with engineering.Ongoing ownership: Maintain accurate customer-facing security materials and keep enterprise commitments and security controls current as the platform evolves.\nRequirements5+ years of experience in backend, platform, or security engineering, including ownership of production systems.Strong backend engineering skills, with the ability to design APIs, investigate distributed systems, and ship reliable changes across services and cloud infrastructure.Experience managing production databases, including schema migrations, access controls, data integrity, and recovery.Experience responding to production incidents and participating in on-call coverage, with clear communication and follow-through on root causes.Experience working directly with enterprise customers’ IT and InfoSec teams and translating security requirements into technical delivery.Practical knowledge of authentication libraries, identity providers, authorization, cloud IAM, network security, encryption, and data isolation.Experience contributing to compliance audits, security assessments, or penetration-test remediation.Ability to manage priorities independently and carry work from requirements through implementation, verification, and documentation.Bachelor’s degree in computer science, engineering, or a related field, or equivalent practical experience.\nPreferred experienceOwnership of SOC 2 audit readiness, evidence collection, and ongoing compliance operations.Work with financial institutions or other regulated enterprises.Security and infrastructure experience with AI platforms, including model integrations and customer data controls.Familiarity with Better Auth and enterprise identity integrations such as SAML SSO and SCIM.PostgreSQL, Kubernetes, AWS or Google Cloud, and TypeScript, Python, or Go.\nEngagementThis is a contract role with ongoing ownership of enterprise security and compliance. Scope, duration, and compensation will be agreed based on experience and fit. Weekly availability, incident-response responsibilities, and any on-call coverage will be agreed as part of the contract.Please share your background, availability, and examples of enterprise security reviews, compliance programs, or technical implementations you’ve personally led."
+            },
+            "job_details": {
+              "category": "Engineering",
+              "employment_type": "contract",
+              "job_id": 8734792652178560,
+              "number_of_openings": null,
+              "reposted_job": false,
+              "source": "professional_network",
+              "title": "Enterprise Security & Compliance Engineer — Contractor",
+              "url": "https://www.linkedin.com/jobs/view/4477268652",
+              "workplace_type": "Remote"
+            }
+          },
+          {
+            "company": {
+              "basic_info": {
+                "crustdata_company_id": 91325458,
+                "industries": null,
+                "name": null,
+                "primary_domain": null,
+                "professional_network_id": null,
+                "website": null
+              }
+            },
+            "content": {
+              "description": "This is a Fully Remote Job\nAbout Our Client:The organization operates within the digital marketing industry, addressing the challenge of effectively planning, executing, and optimizing multi-channel campaigns for clients. It partners with creative and strategy teams to deliver data-driven marketing solutions that improve client outcomes.\nAbout the Opportunity:The DIGITAL MARKETING COORDINATOR role is focused on partnering with creative and strategy teams to develop and optimize multi-channel digital campaigns. This position is responsible for hands-on campaign planning, execution, and performance measurement, directly influencing client campaign success through strategic data analysis and collaboration.\nResponsibilities:Shape multi-channel campaign strategy in collaboration with creative and strategy teams.Track platform best practices and industry trends to inform strategy.Set up, test, and launch digital marketing campaigns ensuring quality and consistency.Design and run data-driven tests for ads, email, and landing pages to improve KPIs.Own campaign performance reporting and translate KPIs into actionable recommendations.Manage conversion tracking setup and maintenance to ensure reliable data.Collaborate with internal teams to align execution with client business goals.\nRequirements:Minimum 3 years of experience in digital marketing with independent campaign management.Proven ability to manage paid advertising platforms at scale (e.g., Google Ads, Meta Ads).Advanced skills in digital analytics platforms and conversion tracking (e.g., Google Analytics, HubSpot).Strong analytical skills for interpreting marketing data into strategic recommendations.Excellent communication and client partnership abilities.Bachelor’s degree in Marketing, Communications, Business, or related field; equivalent experience accepted.Preferred certifications: Google, Meta, or similar.\nPay Range and Compensation Package:The pay range and compensation package for this role will be determined based on the candidate's experience, skills, and other relevant factors.\nBenefits & Perks:Medical insuranceDental insuranceVision insuranceShort- and long-term disability insuranceFlexible time and unlimited vacation after the first 90 daysRetirement plan with employer matchTeam activities\nEqual Opportunity Statement: Our client is an equal opportunity employer. They celebrate diversity and are committed to creating an inclusive environment for all employees. All qualified applicants will receive consideration for employment without regard to race, color, religion, gender, gender identity or expression, sexual orientation, or national origin.\nNote:TalentHop is a recruitment partner of this role. Please note that all employment decisions, including candidate assessment, interviews, hiring, compensation, and employment terms, are made exclusively by the hiring employer."
+            },
+            "job_details": {
+              "category": "Marketing",
+              "employment_type": "full_time",
+              "job_id": 3961094651064220,
+              "number_of_openings": null,
+              "reposted_job": false,
+              "source": "professional_network",
+              "title": "Digital Marketing Coordinator",
+              "url": "https://www.linkedin.com/jobs/view/4475672317",
+              "workplace_type": "Remote"
+            }
+          },
+          {
+            "company": {
+              "basic_info": {
+                "crustdata_company_id": 91325458,
+                "industries": null,
+                "name": null,
+                "primary_domain": null,
+                "professional_network_id": null,
+                "website": null
+              }
+            },
+            "content": {
+              "description": "This is a Fully Remote Job\nAbout Our Client:The organization operates within the publishing and psychological sciences sector, representing a large professional community of psychologists and affiliates primarily in the U.S. and Canada. It addresses the need for authoritative and accessible psychological information and resources through its publishing programs, including APA Style, APA Books, and Magination Press Children’s Books, aiming to extend their reach and impact.\nAbout the Opportunity:The BOOKS SOCIAL MEDIA AND DIGITAL MARKETING MANAGER is responsible for developing and executing social media and digital marketing strategies to increase the visibility and sales of the organization's publishing programs. This role plays a critical part in expanding audience engagement, supporting title launches, and enhancing brand presence through targeted content and campaigns.\nResponsibilities:Develop and schedule engaging social media content tailored to different platformsPlan and execute digital campaigns, giveaways, and promotions for book launches and backlist titlesCollaborate with authors to support their social media presence and maintain brand consistencyMonitor and engage with online communities to foster positive interactions and manage reputationAnalyze social media performance metrics to refine marketing strategiesCultivate relationships with influencers to boost visibilityStay informed on social media trends and digital marketing developmentsPerform additional duties as assigned\nRequirements:Bachelor’s degreeOver five years of experience in social media or digital marketing, preferably in book marketingProficiency with MS Office Suite, social media tools like Hootsuite, and platforms including YouTube and LinkedInStrong writing and editing skillsFamiliarity with Canva is advantageousAbility to collaborate effectively in a team environmentInterest in books, publishing, and marketingUnderstanding of the organization’s mission as it relates to publishing\nPay Range and Compensation Package:Salaries are determined based on relevant experience, education, and prior related experience\nBenefits & Perks:Medical, dental, and vision insurance options401(k) with employer match up to 4%Paid personal and vacation time plus 12 paid holidaysFamily/Medical LeaveTuition assistanceEmployee Assistance ProgramShort- and long-term disability insuranceRemote work and flexible scheduling options\nEqual Opportunity Statement: Our client is an equal opportunity employer. They celebrate diversity and are committed to creating an inclusive environment for all employees. All qualified applicants will receive consideration for employment without regard to race, color, religion, gender, gender identity or expression, sexual orientation, or national origin.\nNote:TalentHop is a recruitment partner of this role. Please note that all employment decisions, including candidate assessment, interviews, hiring, compensation, and employment terms, are made exclusively by the hiring employer."
+            },
+            "job_details": {
+              "category": "Sales",
+              "employment_type": "full_time",
+              "job_id": 438936840740793,
+              "number_of_openings": null,
+              "reposted_job": false,
+              "source": "professional_network",
+              "title": "Books Social Media and Digital Marketing Manager, APA Publishing Books Sales & Marketing",
+              "url": "https://www.linkedin.com/jobs/view/4475671292",
+              "workplace_type": "Remote"
+            }
+          },
+          {
+            "company": {
+              "basic_info": {
+                "crustdata_company_id": 91325458,
+                "industries": null,
+                "name": null,
+                "primary_domain": null,
+                "professional_network_id": null,
+                "website": null
+              }
+            },
+            "content": {
+              "description": "This is a Fully Remote Job\nAbout Our Client:The organization operates within the cybersecurity sector, focusing on vulnerability management to enhance security program effectiveness. It addresses challenges related to data integrity and program performance measurement by transforming raw scan, asset, and remediation data into reliable metrics. This enables leadership and stakeholders to understand risk posture accurately and supports informed decision-making.\nAbout the Opportunity:The CYBER DATA ANALYST is responsible for managing the analytics, reporting, and data quality aspects of a vulnerability management program. This role involves developing trusted metrics and dashboards, utilizing AI-assisted tools to identify and correct data defects, and collaborating with operational teams to improve data processes. The position is impactful in shaping how the security program measures and reports on its performance and risks.\nResponsibilities:Manage monthly data-quality reporting to identify and track data-integrity issues.Design and refine AI-assisted workflows for large-scale data defect detection and correction.Maintain version-controlled libraries of prompts, scripts, and workflows for reproducibility.Reconcile business intelligence reports with authoritative vulnerability scan data.Verify and certify vulnerability and asset ownership through coordination with operational teams.Develop new reports, metrics, scoring algorithms, and dashboards based on stakeholder needs.Transition mature analytics products to operational teams with documentation and training.Collaborate with operations to trace data defects to root causes and recommend process improvements.Produce audit-ready documentation for regulatory and stakeholder review.Support additional analytical, reporting, and program improvement initiatives as assigned.\nRequirements:Minimum of 1 year experience in data analysis, data science, business intelligence, security analytics, IT operations reporting, or related fields.Ability to work with large and imperfect data sets, including data joining and reconciliation.Proficiency in building reports and dashboards with data modeling and calculated measures.Advanced Excel skills, including lookups, pivot tables, and conditional logic.Experience leveraging AI tools for analytical and data remediation tasks with sound judgment.Familiarity with cybersecurity concepts such as vulnerabilities, patching, CVEs, CVSS scoring, and risk fundamentals.Strong written and verbal communication skills for technical and leadership audiences.Proficiency with Microsoft Office tools including Word, Excel, PowerPoint, Outlook, and SharePoint.Strong organizational skills with attention to detail and ability to manage multiple tasks within deadlines.\nPay Range and Compensation Package:$55,271 - $62,808 per year, depending on experience and qualifications.\nEqual Opportunity Statement: Our client is an equal opportunity employer. They celebrate diversity and are committed to creating an inclusive environment for all employees. All qualified applicants will receive consideration for employment without regard to race, color, religion, gender, gender identity or expression, sexual orientation, or national origin.\nNote:TalentHop is a recruitment partner of this role. Please note that all employment decisions, including candidate assessment, interviews, hiring, compensation, and employment terms, are made exclusively by the hiring employer."
+            },
+            "job_details": {
+              "category": "Engineering",
+              "employment_type": "full_time",
+              "job_id": 7603909176821507,
+              "number_of_openings": null,
+              "reposted_job": false,
+              "source": "professional_network",
+              "title": "Cyber Data Analyst",
+              "url": "https://www.linkedin.com/jobs/view/4475674233",
+              "workplace_type": "Remote"
+            }
+          },
+          {
+            "company": {
+              "basic_info": {
+                "crustdata_company_id": 91325458,
+                "industries": null,
+                "name": null,
+                "primary_domain": null,
+                "professional_network_id": null,
+                "website": null
+              }
+            },
+            "content": {
+              "description": "This is a Fully Remote Job\nAbout Our Client:The organization is an integrated communications agency specializing in supporting technology and innovation companies. Since 2000, it has collaborated with various brands to enhance messaging, media relations, executive thought leadership, content marketing, social media, and creative efforts.\nAbout the Opportunity:The SOCIAL MEDIA SPECIALIST will contribute to the Content Studio by managing and creating social media content across multiple B2B client teams. This role focuses on shaping brand and executive presence on platforms such as LinkedIn and X through organic and paid strategies. The position requires turning complex technology topics into engaging social content that aligns with client objectives.\nResponsibilities:Manage social content and publishing for multiple B2B clients, focusing on LinkedIn and X, and other channels as appropriateCollaborate with client teams to select content ideas and formats per channel, and determine paid distribution strategiesDevelop and maintain social content calendars that integrate storytelling, visuals, and production plansCreate and publish social content including posts, graphics, carousels, and short videos; coordinate with designers and video editors when neededTransform announcements, interviews, reports, and executive insights into accurate, on-message social contentMonitor relevant social conversations, engage appropriately on behalf of clients, and advise on executive participationPlan and manage paid social campaigns, primarily on LinkedIn, including audience targeting, budget management, creative testing, and optimizationReport on organic and paid social performance, communicate findings to clients and internal teams, and apply insights to improve future content\nRequirements:Minimum 3 years of hands-on social media experience with B2B brands or executivesExperience managing social content calendars from ideation to publication and performance analysisStrong social copywriting skills with examples across different channels and audiences; long-form writing is a plusProficiency in creating social graphics, carousels, and short videos using tools like Canva and CapCut; ability to brief and collaborate with designers and video editorsStrong storytelling skills to craft compelling social content from various source materialsExperience running paid social campaigns on LinkedIn, including audience setup, budget control, creative testing, reporting, and optimizationAbility to measure and report on social performance and recommend improvementsProven capacity to manage multiple projects and deadlines in a fast-paced environmentStrong editorial judgment and visual storytelling sense\nPay Range and Compensation Package:$70,000 - $80,000 a year\nBenefits & Perks:Professional development program tailored to individual talents and opportunitiesFully covered health, dental, and vision benefits401(k) matchingGenerous paid family leaveFlexible vacation and rotational Fridays offSabbatical leaveWellness stipendFlexible, virtual-first work environmentIn-person team and community gatherings\nEqual Opportunity Statement: Our client is an equal opportunity employer. They celebrate diversity and are committed to creating an inclusive environment for all employees. All qualified applicants will receive consideration for employment without regard to race, color, religion, gender, gender identity or expression, sexual orientation, or national origin.\nNote:TalentHop is a recruitment partner of this role. Please note that all employment decisions, including candidate assessment, interviews, hiring, compensation, and employment terms, are made exclusively by the hiring employer."
+            },
+            "job_details": {
+              "category": "Others",
+              "employment_type": "full_time",
+              "job_id": 1585893827688268,
+              "number_of_openings": null,
+              "reposted_job": false,
+              "source": "professional_network",
+              "title": "Social Media Specialist",
+              "url": "https://www.linkedin.com/jobs/view/4475672304",
+              "workplace_type": "Remote"
+            }
+          }
+        ],
+        "next_cursor": "H4sIAP5YzGoC_xWMSw6DMAwFr4KyZmEnxJ9epapQsFOxqIrKZ4Gq3r3haZYz7xs-R13PcS7bHG5dqCix1qisBmaYULy6IehzELmYEpo4qeTiyFNOGt1BXckmLxD6LmzLurevO7IiD8QEbX2HWbJoksgkEkkeTd2XvbxGW473VXBOAJTw9wcdRVFqlgAAAA==",
+        "total_count": 75300631
+      }
+    },
+    {
+      "step": {
+        "tool": "web_search_live",
+        "params": {
+          "query": "invoicing software for freelancers market size trends 2025 North America Western Europe"
+        }
+      },
+      "result": {
+        "success": true,
+        "query": "invoicing software for freelancers market size trends 2025 North America Western Europe",
+        "timestamp": 1791777027409,
+        "results": [
+          {
+            "source": "web",
+            "title": "Billing and Invoicing Software Market Size, Growth | 2035",
+            "url": "https://www.marketresearchfuture.com/reports/billing-invoicing-software-market-26604",
+            "snippet": "Sep 17, 2026 — Billing and Invoicing Software industry is projected to grow from 12.06 USD Billion in 2025 to 23.69 USD Billion by 2035, compound annual ...",
+            "position": 1
+          },
+          {
+            "source": "web",
+            "title": "Invoice Processing Software Market",
+            "url": "https://www.futuremarketinsights.com/reports/invoice-processing-software-market",
+            "snippet": "Sep 2, 2025 — The invoice processing software market is projected to grow from USD 36.1 billion in 2025 to USD 189.2 billion by 2035, at a CAGR of 18.0%.Read more",
+            "position": 2
+          },
+          {
+            "source": "web",
+            "title": "Billing and Invoicing Software Market Size, Share, Growth ...",
+            "url": "https://straitsresearch.com/report/billing-and-invoicing-software-market",
+            "snippet": "The global billing and invoicing software market size was valued at USD 5.43 billion in 2025. North America dominated the billing and invoicing software market ...",
+            "position": 3
+          },
+          {
+            "source": "web",
+            "title": "Accounting Software Market Size & Share Report, 2025-2030",
+            "url": "https://www.grandviewresearch.com/industry-analysis/accounting-software-market-report",
+            "snippet": "Accounting software market size was valued at $19.4B in 2024 and is projected to grow from $22.5B in 2026 to $31.3B by 2030, at a CAGR of 8.4%",
+            "position": 4
+          },
+          {
+            "source": "web",
+            "title": "Billing and Invoicing Software Market Size,Trends",
+            "url": "https://www.businessresearchinsights.com/market-reports/billing-and-invoicing-software-market-117885",
+            "snippet": "The global Billing and Invoicing Software Market Size is set to expand from USD 6.57 billion in 2026 to USD 20.04 billion by 2035, with a CAGR of 15.23%.",
+            "position": 5
+          },
+          {
+            "source": "web",
+            "title": "Examining the Billing & Invoicing Software market growth ...",
+            "url": "https://www.linkedin.com/pulse/examining-billing-invoicing-software-market-growth-size-trends-thtzc",
+            "snippet": "Examining the Billing & Invoicing Software market growth by market size and trends using a CAGR of 13.5% between 2026 and 2033.Read more",
+            "position": 6
+          },
+          {
+            "source": "web",
+            "title": "E-Invoicing Market Size, Competitors & Forecast to 2034",
+            "url": "https://www.researchandmarkets.com/report/electronic-invoicing?srsltid=AU7gw4UFJH0Gx8-y_eODj8EwmUG-TPNvwHCx7U8Gb3djOHbReqEdrOfb",
+            "snippet": "The E-Invoicing Market, valued at USD 18.5B in 2025, is projected to reach USD 70.3B by 2034, growing at a 15.9% CAGR.",
+            "position": 7
+          },
+          {
+            "source": "web",
+            "title": "Invoice Software Market Future Growth & Size Projection",
+            "url": "https://www.htfmarketinsights.com/report/3114995-invoice-software-market",
+            "snippet": "Oct 15, 2025 — The Invoice Software market is experiencing robust growth, projected to achieve a compound annual growth rate CAGR of 9.00% during the forecast ...Read more",
+            "position": 8
+          },
+          {
+            "source": "web",
+            "title": "Invoice Processing Software Market Report 2026",
+            "url": "https://www.thebusinessresearchcompany.com/report/invoice-processing-software-global-market-report",
+            "snippet": "The Invoice Processing Software market was valued at $40.52 billion in 2025, increased to $49.04 billion in 2026, and is projected to reach $94.12 billion by ...Read more",
+            "position": 9
+          }
+        ],
+        "metadata": {
+          "total_results": 9,
+          "failed_pages": [],
+          "empty_pages": []
+        }
+      }
+    }
+  ],
+  "errors": [
+    {
+      "step": {
+        "tool": "company_enrich",
+        "params": {
+          "domain": "freshbooks.com"
+        }
+      },
+      "error": "Exactly one identifier must be provided: names, domains, professional_network_profile_urls, or crustdata_company_ids"
+    },
+    {
+      "step": {
+        "tool": "company_enrich",
+        "params": {
+          "domain": "waveapps.com"
+        }
+      },
+      "error": "Exactly one identifier must be provided: names, domains, professional_network_profile_urls, or crustdata_company_ids"
+    },
+    {
+      "step": {
+        "tool": "company_enrich",
+        "params": {
+          "domain": "zoho.com"
+        }
+      },
+      "error": "Exactly one identifier must be provided: names, domains, professional_network_profile_urls, or crustdata_company_ids"
+    },
+    {
+      "step": {
+        "tool": "company_search",
+        "params": {
+          "filters": {
+            "industry": [
+              "Design Services"
+            ],
+            "employee_count": {
+              "min": 1,
+              "max": 10
+            },
+            "locations": [
+              "United States",
+              "Canada",
+              "United Kingdom"
+            ]
+          },
+          "limit": 10
+        }
+      },
+      "error": "'filters' must be either a single condition ({\"field\", \"type\", \"value\"}) or a tree ({\"op\", \"conditions\": [...]}). Received an object with neither."
+    },
+    {
+      "step": {
+        "tool": "company_search",
+        "params": {
+          "filters": {
+            "industry": [
+              "Graphic Design"
+            ],
+            "employee_count": {
+              "min": 1,
+              "max": 10
+            },
+            "locations": [
+              "United States",
+              "Canada",
+              "United Kingdom"
+            ]
+          },
+          "limit": 10
+        }
+      },
+      "error": "'filters' must be either a single condition ({\"field\", \"type\", \"value\"}) or a tree ({\"op\", \"conditions\": [...]}). Received an object with neither."
+    },
+    {
+      "step": {
+        "tool": "company_search",
+        "params": {
+          "filters": {
+            "industry": [
+              "Management Consulting"
+            ],
+            "employee_count": {
+              "min": 1,
+              "max": 10
+            },
+            "locations": [
+              "United States",
+              "Canada",
+              "United Kingdom"
+            ]
+          },
+          "limit": 10
+        }
+      },
+      "error": "'filters' must be either a single condition ({\"field\", \"type\", \"value\"}) or a tree ({\"op\", \"conditions\": [...]}). Received an object with neither."
+    },
+    {
+      "step": {
+        "tool": "company_search",
+        "params": {
+          "filters": {
+            "industry": [
+              "Business Consulting"
+            ],
+            "employee_count": {
+              "min": 1,
+              "max": 10
+            },
+            "locations": [
+              "United States",
+              "Canada",
+              "United Kingdom"
+            ]
+          },
+          "limit": 10
+        }
+      },
+      "error": "'filters' must be either a single condition ({\"field\", \"type\", \"value\"}) or a tree ({\"op\", \"conditions\": [...]}). Received an object with neither."
+    },
+    {
+      "step": {
+        "tool": "company_search",
+        "params": {
+          "filters": {
+            "industry": [
+              "Accounting"
+            ],
+            "employee_count": {
+              "min": 1,
+              "max": 10
+            },
+            "locations": [
+              "United States",
+              "Canada",
+              "United Kingdom"
+            ]
+          },
+          "limit": 10
+        }
+      },
+      "error": "'filters' must be either a single condition ({\"field\", \"type\", \"value\"}) or a tree ({\"op\", \"conditions\": [...]}). Received an object with neither."
+    },
+    {
+      "step": {
+        "tool": "company_search",
+        "params": {
+          "filters": {
+            "industry": [
+              "Bookkeeping"
+            ],
+            "employee_count": {
+              "min": 1,
+              "max": 10
+            },
+            "locations": [
+              "United States",
+              "Canada",
+              "United Kingdom"
+            ]
+          },
+          "limit": 10
+        }
+      },
+      "error": "'filters' must be either a single condition ({\"field\", \"type\", \"value\"}) or a tree ({\"op\", \"conditions\": [...]}). Received an object with neither."
+    }
+  ]
+}

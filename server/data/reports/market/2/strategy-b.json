@@ -1,0 +1,73 @@
+{
+  "strategy": "fixed_b",
+  "generatedAt": "2026-10-12T03:22:42.290Z",
+  "feature": {
+    "name": "Recurring invoice templates",
+    "description": "Auto-send invoices — reusable invoice templates that generate and dispatch invoices automatically on a recurring schedule, for a single-person (teamSize: 1) invoicing product for freelancers, aimed at the US market."
+  },
+  "executiveSummary": "This report is constrained by a research bundle that returned no usable external data. LedgerLite is a one-person (teamSize: 1) invoicing product for US freelancers, and the feature under evaluation is recurring invoice templates with auto-send. The bundle reports three executed queries — company_identify for FreshBooks, company_identify for Wave, and a company_search — and every one of them failed with an '[object Object]' error payload. As a result the competitors array is empty, enrichResult is null, jobs is empty, and landscape is null. No competitor positioning, pricing, product move, or demand signal for recurring invoicing could be verified from the supplied material. The only defensible conclusions are structural: FreshBooks and Wave are the two named competitor companies to be researched, and the enrichment pipeline must be re-run before any competitive claim in this document is treated as evidence. All statements about positioning, demand, and differentiation below are explicitly flagged as unverified.",
+  "competitorLandscape": [
+    {
+      "name": "FreshBooks",
+      "positioning": "Unknown — no positioning data was returned. company_identify(FreshBooks) failed, so no description, segment, pricing, or feature data for this company exists in the bundle.",
+      "relevantMoves": [],
+      "sources": [
+        "queriesExecuted[0]: company_identify(FreshBooks) — status: error, payload: '[object Object]'"
+      ]
+    },
+    {
+      "name": "Wave",
+      "positioning": "Unknown — no positioning data was returned. company_identify(Wave) failed, so no description, segment, pricing, or feature data for this company exists in the bundle.",
+      "relevantMoves": [],
+      "sources": [
+        "queriesExecuted[1]: company_identify(Wave) — status: error, payload: '[object Object]'"
+      ]
+    }
+  ],
+  "marketSignals": [
+    {
+      "signal": "No market signals were retrieved for the US freelancer invoicing segment.",
+      "evidence": "The bundle's competitors array is empty, enrichResult is null, jobs is empty, and landscape is null. All three queries executed (two company_identify calls and one company_search) returned errors of the form '[object Object]'.",
+      "implicationForFeature": "There is no evidence base to confirm whether recurring invoice auto-send is a demanded, differentiated, or commoditized capability for US freelancers. Any prioritization of this feature is currently assumption-driven rather than evidence-driven.",
+      "source": "rawBundle: competitors=[], enrichResult=null, jobs=[], landscape=null, queriesExecuted (3 errors)"
+    },
+    {
+      "signal": "Named competitive set for this analysis is limited to FreshBooks and Wave as supplied in the product input.",
+      "evidence": "productData.competitorCompanies is the string 'FreshBooks, Wave'; the attempted enrichment of exactly these two companies failed.",
+      "implicationForFeature": "The addressable competitive frame for recurring invoice templates has not been validated against the wider US freelancer invoicing market, so the competitive set may be incomplete.",
+      "source": "productData.competitorCompanies; rawBundle.queriesExecuted[0..1]"
+    }
+  ],
+  "gapsAndOpportunities": [
+    "Unverified: whether FreshBooks or Wave already offer recurring invoice templates with automatic sending, and at what price tier — cannot be determined from this bundle (both company_identify calls errored).",
+    "Unverified: whether US freelancers name automatic invoice dispatch as a top pain point. No jobs data (rawBundle.jobs = []) and no landscape data (rawBundle.landscape = null) were returned.",
+    "Unverified: whether a single-person team (teamSize: 1) can sustainably maintain scheduled-delivery infrastructure (retries, deliverability, timezone handling) that an auto-send feature implies.",
+    "Data-pipeline gap: the '[object Object]' error payload on all three queries prevents diagnosis of whether failures were tool-level, credential-level, or query-level — re-running with full error serialization is a prerequisite to any further analysis.",
+    "No market-size, growth-rate, pricing, or adoption data points exist anywhere in the supplied bundle, so no market sizing or revenue opportunity can be stated for this feature."
+  ],
+  "risks": [
+    "Evidence risk (high): every external data source in the bundle failed; decisions made on this document alone would rest on zero verified competitor or demand data.",
+    "Competitive-parity risk (unverified): recurring invoicing plus auto-send is a mature pattern in accounting and invoicing software generally, and both named competitors may already ship it — this was not verified because enrichment failed.",
+    "Scope risk for a solo team (grounded in productData.teamSize = 1): auto-send introduces ongoing operational surface (scheduling, failure retries, email deliverability, refund/void handling) that is harder to support without additional headcount.",
+    "Geography-narrowing risk: the bundle covers the US only (productData.geography = 'US'), so any conclusion drawn here should not be extended to other markets without separate data.",
+    "Stakeholder risk: because planSummary is null and the bundle is empty, presenting this as a complete market analysis could create false confidence; it should be circulated as a failed-research report, not a market finding.",
+    "Competitor-set risk (unverified): limiting the field to FreshBooks and Wave was an input assumption, not a validated finding, and may omit the most direct competitors for US freelancer invoicing."
+  ],
+  "dataLimitations": [
+    "rawBundle.competitors is an empty array — no competitor records were returned.",
+    "rawBundle.enrichResult is null — no enrichment payload was produced.",
+    "rawBundle.jobs is an empty array — no job postings or demand-side signals were collected.",
+    "rawBundle.landscape is null — no market landscape data was produced.",
+    "queriesExecuted[0] company_identify(FreshBooks) failed with error '[object Object]'.",
+    "queriesExecuted[1] company_identify(Wave) failed with error '[object Object]'.",
+    "queriesExecuted[2] company_search failed with error '[object Object]'; the query terms and scope of this search are not recorded in the bundle, so its intended coverage is unknown.",
+    "Error payloads are opaque ('[object Object]'), so root causes (auth, rate limit, schema mismatch, empty result) cannot be distinguished.",
+    "No pricing, funding, headcount, traffic, review, or product-release data for any competitor is present.",
+    "No customer, survey, or interview data about freelancer invoicing behavior is present.",
+    "No market size, growth rate, or adoption statistic for recurring invoicing is present.",
+    "Only two competitor companies were named as inputs (FreshBooks, Wave); the completeness of that competitive set could not be tested because the company_search call failed.",
+    "Only the US geography is in scope; no other region is covered by any supplied data.",
+    "planSummary is null in both the product input and the raw bundle, so no plan-level context could be incorporated."
+  ],
+  "planSummary": null
+}

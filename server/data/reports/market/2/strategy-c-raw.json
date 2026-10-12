@@ -1,0 +1,246 @@
+{
+  "plan": {
+    "steps": [
+      {
+        "tool": "company_identify",
+        "params": {
+          "company_name": "FreshBooks",
+          "country": "US"
+        }
+      },
+      {
+        "tool": "company_identify",
+        "params": {
+          "company_name": "Wave",
+          "country": "US"
+        }
+      },
+      {
+        "tool": "company_enrich",
+        "params": {
+          "company_domain": "freshbooks.com",
+          "fields": [
+            "name",
+            "description",
+            "employee_count",
+            "industry",
+            "location",
+            "technologies",
+            "funding",
+            "revenue",
+            "products"
+          ]
+        }
+      },
+      {
+        "tool": "company_enrich",
+        "params": {
+          "company_domain": "waveapps.com",
+          "fields": [
+            "name",
+            "description",
+            "employee_count",
+            "industry",
+            "location",
+            "technologies",
+            "funding",
+            "revenue",
+            "products"
+          ]
+        }
+      },
+      {
+        "tool": "company_search",
+        "params": {
+          "query": "invoicing software for freelancers",
+          "filters": {
+            "country": "US",
+            "industry": "Software",
+            "employee_count": {
+              "min": 1,
+              "max": 500
+            }
+          },
+          "limit": 25
+        }
+      },
+      {
+        "tool": "company_search",
+        "params": {
+          "query": "recurring invoice automation billing software",
+          "filters": {
+            "country": "US",
+            "industry": "Software",
+            "employee_count": {
+              "min": 1,
+              "max": 1000
+            }
+          },
+          "limit": 25
+        }
+      },
+      {
+        "tool": "job_search",
+        "params": {
+          "company_domains": [
+            "freshbooks.com",
+            "waveapps.com"
+          ],
+          "query": "recurring billing OR invoicing OR payments OR subscription",
+          "location": "US",
+          "limit": 50
+        }
+      },
+      {
+        "tool": "job_search",
+        "params": {
+          "query": "product manager invoicing OR billing OR payments",
+          "location": "US",
+          "limit": 50
+        }
+      },
+      {
+        "tool": "web_search_live",
+        "params": {
+          "query": "FreshBooks Wave recurring invoice templates auto-send invoices freelancers US",
+          "limit": 10
+        }
+      }
+    ]
+  },
+  "results": [],
+  "errors": [
+    {
+      "step": {
+        "tool": "company_identify",
+        "params": {
+          "company_name": "FreshBooks",
+          "country": "US"
+        }
+      },
+      "error": "[object Object]"
+    },
+    {
+      "step": {
+        "tool": "company_identify",
+        "params": {
+          "company_name": "Wave",
+          "country": "US"
+        }
+      },
+      "error": "[object Object]"
+    },
+    {
+      "step": {
+        "tool": "company_enrich",
+        "params": {
+          "company_domain": "freshbooks.com",
+          "fields": [
+            "name",
+            "description",
+            "employee_count",
+            "industry",
+            "location",
+            "technologies",
+            "funding",
+            "revenue",
+            "products"
+          ]
+        }
+      },
+      "error": "[object Object]"
+    },
+    {
+      "step": {
+        "tool": "company_enrich",
+        "params": {
+          "company_domain": "waveapps.com",
+          "fields": [
+            "name",
+            "description",
+            "employee_count",
+            "industry",
+            "location",
+            "technologies",
+            "funding",
+            "revenue",
+            "products"
+          ]
+        }
+      },
+      "error": "[object Object]"
+    },
+    {
+      "step": {
+        "tool": "company_search",
+        "params": {
+          "query": "invoicing software for freelancers",
+          "filters": {
+            "country": "US",
+            "industry": "Software",
+            "employee_count": {
+              "min": 1,
+              "max": 500
+            }
+          },
+          "limit": 25
+        }
+      },
+      "error": "[object Object]"
+    },
+    {
+      "step": {
+        "tool": "company_search",
+        "params": {
+          "query": "recurring invoice automation billing software",
+          "filters": {
+            "country": "US",
+            "industry": "Software",
+            "employee_count": {
+              "min": 1,
+              "max": 1000
+            }
+          },
+          "limit": 25
+        }
+      },
+      "error": "[object Object]"
+    },
+    {
+      "step": {
+        "tool": "job_search",
+        "params": {
+          "company_domains": [
+            "freshbooks.com",
+            "waveapps.com"
+          ],
+          "query": "recurring billing OR invoicing OR payments OR subscription",
+          "location": "US",
+          "limit": 50
+        }
+      },
+      "error": "[object Object]"
+    },
+    {
+      "step": {
+        "tool": "job_search",
+        "params": {
+          "query": "product manager invoicing OR billing OR payments",
+          "location": "US",
+          "limit": 50
+        }
+      },
+      "error": "[object Object]"
+    },
+    {
+      "step": {
+        "tool": "web_search_live",
+        "params": {
+          "query": "FreshBooks Wave recurring invoice templates auto-send invoices freelancers US",
+          "limit": 10
+        }
+      },
+      "error": "[object Object]"
+    }
+  ]
+}

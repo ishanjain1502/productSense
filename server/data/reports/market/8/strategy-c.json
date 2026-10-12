@@ -1,0 +1,122 @@
+{
+  "strategy": "planned_c",
+  "generatedAt": "2026-10-12T03:44:47.101Z",
+  "feature": {
+    "name": "Recurring invoice templates",
+    "description": "Let users save invoice layouts and auto-send on a schedule to repeat clients, with gentle payment reminders. Target: independent professionals and micro-businesses in North America and Western Europe who bill by project or retainer."
+  },
+  "executiveSummary": "LedgerLite plans to add Recurring invoice templates for freelancers and micro-businesses in the US, Canada and UK. The available evidence supports the feature's relevance but not its differentiation: live web results show recurring invoices and automatic payment reminders already exist in Wave Invoicing ('set up recurring invoices and automatic debit' plus payment reminders, Wise) and Intuit QuickBooks ('Schedule recurring invoices with payment reminders', bloom.io). The freelance invoicing software market was projected at roughly $446M in 2025 per a Research.com snippet, with the CAGR value truncated in the captured text. FreshBooks was the only competitor confirmed as a structured entity (freshbooks.com, 201-500 employees, founded 2003), positioned explicitly for 'business owners and freelancers who want an easier way to get paid, manage finances, and deliver work all in one place.' Zoho was identified only at parent-company level (55+ products, 150M+ users). Wave (waveapps.com) was not matched by company identity resolution and appears only via third-party editorial snippets. All three company_enrich calls failed and the company_search step errored, so no employee, revenue, funding, pricing or SMB-segment sizing data exists for the competitor set. Both job_search steps returned unrelated listings rather than competitor or freelance-market signals. Confidence in the competitive picture is therefore low-to-moderate and rests largely on eight editorial web results; the strategic read is that Recurring invoice templates should be treated as a table-stakes retention feature whose differentiation must come from LedgerLite's minimalist, mobile-first execution rather than from the recurrence capability itself.",
+  "competitorLandscape": [
+    {
+      "name": "FreshBooks",
+      "positioning": "Self-described as 'designed to drive small business success—built for business owners and freelancers who want an easier way to get paid, manage finances, and deliver work all in one place.' Canada-based, privately held, founded 2003, employee range 201-500, primary domain freshbooks.com.",
+      "relevantMoves": [
+        "Listed among tools supporting multi-currency invoicing, which matters for freelancers billing internationally (jobbers.io ranking).",
+        "Operates an 'Accounting Partner Program' targeting accountants who manage SMB client books — relevant to the Priya (part-time bookkeeper) persona (crustdata_company_id 11817959, freshbooks.com/accountants).",
+        "Has an established affiliate/partner footprint, evidenced by a FreshBooks-branded Awin affiliate listing (shrsl.com) in identity results."
+      ],
+      "sources": [
+        "company_identify FreshBooks — crustdata_company_id 662598, freshbooks.com",
+        "company_identify 'FreshBooks Accounting Partner Program' — crustdata_company_id 11817959, freshbooks.com/accountants",
+        "jobbers.io — 'Best Invoicing Software for Freelancers 2026 — 12 Tools Tested and Ranked'"
+      ]
+    },
+    {
+      "name": "Zoho Invoice (Zoho Corporation)",
+      "positioning": "Parent identified as 'Zoho offers beautifully smart software to help you grow your business. With over 150M+ users worldwide, Zoho's 55+ products aid your sales and marketing, support and collaboration, finance, and recruitment needs.' Privately held, founded 1996, employee range 10001+, domain zoho.com. Zoho Invoice was not resolved as a standalone entity in this run.",
+      "relevantMoves": [
+        "Zoho Invoice is cited in editorial coverage as supporting multi-currency invoicing alongside Xero and FreshBooks (jobbers.io).",
+        "Zoho has regional corporate entities whose identities were captured (Zoho UK, Bletchley; Zoho Canada; Zoho Europe with offices in Milton Keynes, Utrecht, Essen, Lille, Valencia), indicating direct sales/support presence in two of the three target geographies."
+      ],
+      "sources": [
+        "company_identify Zoho — crustdata_company_id 1032449, zoho.com",
+        "company_identify Zoho UK — crustdata_company_id 1240064, zoho.com",
+        "company_identify Zoho Canada — crustdata_company_id 1524492, zoho.com",
+        "jobbers.io — 'Best Invoicing Software for Freelancers 2026'"
+      ]
+    },
+    {
+      "name": "Wave",
+      "positioning": "No corporate entity for Wave's accounting/invoicing product was resolved: the company_identify call for 'Wave' returned only unrelated matches (WAVE 3 News Louisville, Wave utilities UK, WaveXR, Wave mental health, Wave recruitment, wave.design, etc.) — waveapps.com does not appear anywhere in the returned matches. Positioning is therefore only available second-hand from editorial sources.",
+      "relevantMoves": [
+        "Third-party coverage states 'Wave Invoicing allows you to create personalized invoices, send clients payment reminders, and set up recurring invoices and automatic debit' — direct overlap with the planned feature (Wise blog).",
+        "Wave appears in multiple freelancer-invoicing roundups (Wise, Arc.dev), indicating strong presence in the freelancer consideration set."
+      ],
+      "sources": [
+        "wise.com — 'Best Invoicing Software for Freelancers in the US: Top 6'",
+        "arc.dev — '5+ Best Invoicing Apps & Billing Software for Freelance'",
+        "company_identify 'Wave' — no match to waveapps.com"
+      ]
+    }
+  ],
+  "marketSignals": [
+    {
+      "signal": "Freelancer invoicing software is a modest-sized software market.",
+      "evidence": "Research.com snippet: 'The global freelancer invoicing software market size 2025 is projected to reach $446 million, growing at a compound annual growth rate (CAGR) ...' — the CAGR figure itself was truncated in the captured text.",
+      "implicationForFeature": "Recurring invoice templates should be scoped as a retention/differentiation feature for an existing niche rather than justified by a large expanding TAM; keep build scope small (teamSize = 1).",
+      "source": "web_search_live result, position 6 (research.com — 'Best Billing Software For Freelancers for 2027')"
+    },
+    {
+      "signal": "Recurring scheduling and payment reminders are already shipping in incumbent freelancer tools.",
+      "evidence": "Wise: 'Wave Invoicing allows you to create personalized invoices, send clients payment reminders, and set up recurring invoices and automatic debit.' bloom.io: 'Intuit Quickbooks has extensive features to track income, receive payments, and invoicing. Schedule recurring invoices with payment reminders.'",
+      "implicationForFeature": "Auto-send and gentle reminders cannot be the headline claim. The defensible wedge is minimalism and speed (mobile-first creation for Maya) and saved layouts, not the existence of recurrence.",
+      "source": "web_search_live positions 3 (wise.com) and 7 (blog.bloom.io)"
+    },
+    {
+      "signal": "Multi-currency invoicing is a widely covered baseline among the larger tools.",
+      "evidence": "'Xero, FreshBooks, and Zoho Invoice all support multi-currency invoicing and are widely used by freelancers working globally' (jobbers.io).",
+      "implicationForFeature": "Recurring template design should not couple scheduling to currency handling assumptions; for US/CA/UK launch multi-currency can be deferred, but templates should be structured so a currency field is a parameter, not a hard-coded layout element.",
+      "source": "web_search_live position 1 (jobbers.io)"
+    },
+    {
+      "signal": "Acquisition for this category runs through a dense, comparison-driven content landscape.",
+      "evidence": "Returned result titles are almost all ranked listicles: 'Best Invoicing Software for Freelancers 2026 — 12 Tools Tested and Ranked', 'What's The Best Invoicing Software For Freelancers?', 'Best Invoicing Software for Freelancers in the US: Top 6', '5+ Best Invoicing Apps & Billing Software for Freelance', '10 Best Invoicing Software for Self Employed'.",
+      "implicationForFeature": "Positioning the feature requires a crisp, comparable claim (e.g. 'set a retainer once, never rebuild an invoice') to earn placement in third-party roundups and comparison pages.",
+      "source": "web_search_live positions 1, 2, 3, 5, 8"
+    },
+    {
+      "signal": "No competitor product-investment or hiring signal could be derived for the three named competitors.",
+      "evidence": "job_search with query 'invoicing software' and company_names ['FreshBooks','Wave','Zoho'] returned no listings from those companies; results were unrelated employers (Serco, Amazon, Blacksmith Agency, Evlo AI, RemoteHunter, etc.). total_count 75,300,631 indicates the filter did not constrain the corpus.",
+      "implicationForFeature": "Do not treat competitor roadmaps as known. Assume feature parity risk is real but unverified beyond editorial evidence.",
+      "source": "job_search step 8 (query: 'invoicing software', company_names: FreshBooks, Wave, Zoho)"
+    },
+    {
+      "signal": "The freelance-practitioner job query produced no usable labour-market signal for the target segment.",
+      "evidence": "job_search query 'freelance designer OR freelance consultant' restricted to United States/Canada/United Kingdom returned generic full-time tech, marketing and operations roles from unrelated employers, with the same total_count (75,300,631) as the prior query.",
+      "implicationForFeature": "Buyer-side demand assumptions for Maya/Omar/Priya cannot be validated from this bundle; they rest on the supplied persona research document only.",
+      "source": "job_search step 9 (locations: United States, Canada, United Kingdom)"
+    }
+  ],
+  "gapsAndOpportunities": [
+    "Speed-over-suite positioning: FreshBooks describes itself as helping freelancers 'get paid, manage finances, and deliver work all in one place', i.e. a broadening suite. LedgerLite's stated identity — 'a minimalist invoicing and expense tracker built for freelancers who hate spreadsheet chaos' — is the counter-position. Opportunity: make recurring templates a one-screen setup rather than part of an accounting configuration journey (grounded in the FreshBooks positioning statement and the LedgerLite product description).",
+    "Mobile-first recurring setup for the persona who invoices between client calls: persona Maya 'Bills 3–8 clients monthly, needs fast invoicing from her phone between client calls.' None of the captured competitor evidence describes mobile-first recurring setup; Wise/Arc.dev coverage of Wave and the other tools is feature-list oriented, not mobile-workflow oriented.",
+    "Retainer automation specifically for the copy-paste pain: persona Omar 'Tracks expenses for tax season and wants recurring retainers without manual copy-paste.' This is the clearest stated job-to-be-done matched by the planned feature.",
+    "Bookkeeper-legible recurring records: persona Priya 'Manages books for 5 small clients and needs export-friendly records.' FreshBooks already operates an Accounting Partner Program (freshbooks.com/accountants), so export formats for a bookkeeper's downstream tools are a competitive necessity, not a novelty.",
+    "First-invoice confidence for new freelancers: persona Jordan 'Just left a full-time job, first time sending professional invoices and nervous about looking legit.' Saved recurring templates plus a default professional layout directly reduce that risk — a distinct angle from incumbent feature lists.",
+    "Unoccupied evidence gap worth exploiting in messaging: no captured source discusses a review/approval step before an auto-sent invoice leaves the account, which matters to freelancers whose client or amount changes mid-retainer. 'Auto-send, but with a gentle pre-flight check' is a plausible, unclaimed claim within the raw evidence."
+  ],
+  "risks": [
+    "Commoditization risk: recurring invoices plus automatic payment reminders are already documented in Wave Invoicing and Intuit QuickBooks (Wise, bloom.io). The feature as specified does not, on the available evidence, create a capability gap.",
+    "Retention-versus-acquisition risk: the only quantified market figure captured is ~$446M for freelancer invoicing software in 2025 (research.com, CAGR truncated), and the acquisition path runs through saturated listicle/comparison content. Both point to high relative CAC for a one-person team.",
+    "Incumbent scale asymmetry: FreshBooks is a 201-500 employee company founded in 2003; Zoho is a 10001+ employee company with 55+ products, 150M+ users, and regional entities in the UK and Canada — two of the three launch geographies. Zoho's bundled-suite pricing power is unmeasured in this bundle.",
+    "Feature-scope risk against team capacity: LedgerLite teamSize = 1, while the feature implies scheduled delivery, reminder cadence, failure handling and template versioning — all reliability-bearing surfaces that fail visibly in front of the freelancer's client.",
+    "Evidence risk: all three company_enrich calls failed, the company_search step errored, and Zoho Invoice and Wave were not resolved as products. Decisions on pricing, packaging and positioning would currently rest on eight editorial web snippets.",
+    "Persona-coverage risk: the new-install persona (Jordan) is described as 'nervous about looking legit', while recurring scheduling assumes an existing repeat client. If onboarding does not first produce one good first invoice, the recurring feature has no base case to attach to.",
+    "Geographic/tax risk not addressed by any captured data: the target market spans US, Canada and UK, but no source in the bundle covers tax, VAT, or e-invoicing obligations that a scheduled auto-send must respect."
+  ],
+  "dataLimitations": [
+    "company_enrich failed for all three target domains (freshbooks.com, waveapps.com, zoho.com) with 'Exactly one identifier must be provided: names, domains, professional_network_profile_urls, or crustdata_company_ids'. No enriched firmographic, funding, revenue, headcount-trend, or technology data exists for any competitor.",
+    "company_search failed with a filter-schema error ('filters must be either a single condition ... or a tree'). No micro-business (1-10 employee) counts in Design, Consulting, Accounting or Creative Services across the US, Canada and UK were returned; the addressable segment is unsized.",
+    "company_identify for 'Wave' did not return waveapps.com or the Wave accounting/invoicing product; all matches were unrelated (WAVE 3 News, Wave utilities, WaveXR, Wave mental health, Wave recruitment, wave.design, etc.). Wave's positioning is sourced only from third-party editorial snippets.",
+    "company_identify for 'Zoho Invoice' resolved only to the parent Zoho Corporation and its regional/product sub-entities; no Zoho Invoice-specific product record, pricing, or positioning was captured.",
+    "FreshBooks identity results were heavily polluted by unrelated entities (FreshBooks-us, Kaal desktop timer for Freshbooks, freshbooks.in book retailer, Freshworks, Forestbooks, Freshfolks), so counts derived from identity matches are unreliable.",
+    "job_search for 'invoicing software' filtered to FreshBooks, Wave and Zoho returned zero listings from those companies and an unconstrained total_count of 75,300,631; no competitor hiring signal is available.",
+    "job_search for 'freelance designer OR freelance consultant' across US/Canada/UK returned generic full-time roles from unrelated employers with the same total_count (75,300,631); no freelance labour-market signal is available.",
+    "Only one live web search was executed ('recurring invoicing software for freelancers market trends 2025') and it returned 8 editorial results, all secondary/aggregator sources with no primary vendor or market-research citations.",
+    "The only market-size figure captured ($446M, 2025, freelancer invoicing software) comes from a truncated Research.com snippet; the CAGR value and the source's methodology were not captured, so the figure should be treated as indicative only.",
+    "No competitor pricing, packaging, free-tier limits, or recurring-invoice quota data was captured for FreshBooks, Wave, Zoho Invoice, Xero or QuickBooks.",
+    "No user research, review-site data, churn/retention benchmarks, or switching-behaviour data was captured; persona claims (Maya, Omar, Priya, Jordan) come solely from the supplied ledgerlite-persona-research.docx / product inputs and are not independently corroborated in this bundle.",
+    "Xero and Intuit QuickBooks surface in web results as competitors but were not in the planned competitor set and were not identified or enriched, leaving an incomplete landscape."
+  ],
+  "planSummary": "Executed 6 step(s); 4 error(s). Planned tools: company_identify, company_identify, company_identify, company_enrich, company_enrich, company_enrich, company_search, job_search, job_search, web_search_live"
+}

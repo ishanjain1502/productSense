@@ -1,0 +1,51 @@
+{
+  "strategy": "fixed_b",
+  "generatedAt": "2026-10-12T03:22:14.915Z",
+  "feature": {
+    "name": "L",
+    "description": "No feature description was provided in the input bundle. The only feature-level data available is the application name \"L\". Scope, capability set, target segment, and delivery model are undefined in the source data."
+  },
+  "executiveSummary": "No market evidence was retrieved for this analysis. The input bundle names a single competitor company (FreshBooks) but every enrichment path failed: the competitor list is empty, enrichResult is null, jobs is empty, landscape is null, and both executed queries returned errors (company_identify on FreshBooks and company_search). As a result, this report contains no verified competitor positioning, no market signals, and no evidence-backed opportunities or threats. The only defensible output is a statement of the evidence gap itself. Conclusions about how feature \"L\" should be positioned against FreshBooks cannot be drawn from the supplied data and should not be inferred. Re-running enrichment with working connectors is required before any strategic recommendation is credible.",
+  "competitorLandscape": [
+    {
+      "name": "FreshBooks",
+      "positioning": "Unknown. FreshBooks was identified as the sole competitor company of interest in the input, but no positioning data was returned. The company_identify call for FreshBooks errored and a company_search call also errored, and the landscape object in the bundle is null.",
+      "relevantMoves": [],
+      "sources": []
+    }
+  ],
+  "marketSignals": [],
+  "gapsAndOpportunities": [],
+  "risks": [
+    {
+      "risk": "Zero-evidence analysis risk",
+      "detail": "No competitor, market, or job data was returned by the enrichment pipeline (competitors: [], enrichResult: null, jobs: [], landscape: null). Any positioning, pricing, or differentiation conclusion produced now would be unsupported."
+    },
+    {
+      "risk": "Single unnamed competitor dependency",
+      "detail": "The input names only one competitor (FreshBooks) and provides no rationale for its selection. With no retrieved data, the competitive set cannot be validated as complete or relevant."
+    },
+    {
+      "risk": "Undefined feature scope",
+      "detail": "Feature \"L\" has no description in the input. Without a defined scope, market signals, even if retrievable, could not be mapped to a specific capability."
+    },
+    {
+      "risk": "Silent tool failure",
+      "detail": "Both queriesExecuted entries returned errors serialized as \"[object Object]\", meaning the underlying failure messages were not surfaced. This obscures whether the failure was configuration, rate limiting, or missing credentials, and it prevents targeted remediation."
+    }
+  ],
+  "dataLimitations": [
+    "rawBundle.competitors is an empty array — no competitor records were returned.",
+    "rawBundle.enrichResult is null — no enrichment payload was produced.",
+    "rawBundle.jobs is an empty array — no jobs-to-be-done or job data was returned.",
+    "rawBundle.landscape is null — no market landscape object was returned.",
+    "queriesExecuted[0] (tool: company_identify, name: FreshBooks) returned error \"[object Object]\" — company identity data unavailable.",
+    "queriesExecuted[1] (tool: company_search) returned error \"[object Object]\" — competitive search results unavailable.",
+    "productData contains only applicationName (\"L\") and competitorCompanies (\"FreshBooks\"); no feature description, segment, pricing, or category data.",
+    "planSummary is null in both the top-level input and the raw bundle; no planned_c plan data is available, which is why strategy is fixed_b.",
+    "No sources, URLs, dates, or document references accompany any element of the bundle, so no claim in this report can be traced to a primary source.",
+    "generatedAt reflects report generation time, not the recency of any underlying data; no data recency metadata was supplied.",
+    "Because marketSignals, gapsAndOpportunities, and relevantMoves could not be grounded in raw data, those arrays are intentionally returned empty rather than populated with speculation."
+  ],
+  "planSummary": null
+}

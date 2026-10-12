@@ -8,7 +8,7 @@ import { AuthShell } from "@/components/auth/auth-shell";
 export function LoginPageContent() {
   const searchParams = useSearchParams();
   const next = searchParams.get("next");
-  const nextPath = next && next.startsWith("/") ? next : "/full";
+  const nextPath = next && next.startsWith("/") ? next : "/";
 
   return (
     <AuthShell

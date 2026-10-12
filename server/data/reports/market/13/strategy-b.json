@@ -1,0 +1,219 @@
+{
+  "strategy": "fixed_b",
+  "generatedAt": "2026-10-12T07:21:29.012Z",
+  "feature": {
+    "name": "Cross-project dependency map",
+    "description": "Visualize blockers across teams with live links to tasks and Slack digests when critical paths slip. Target market: B2B SaaS companies with 20–200 employees running multiple parallel initiatives; primary buyer is Head of Product or VP Engineering."
+  },
+  "executiveSummary": "FlowStack's Cross-project dependency map targets B2B SaaS companies of 20–200 employees whose squads owe work to other teams — a pain articulated by the three interviewed personas (Elena, engineering manager; Sam, product ops lead; Chris, IC designer) and by the new-install persona (Alicia, new PM at a Series A startup who inherited a messy roadmap). Across the four competitors enriched in this bundle, none leads with cross-project dependency visibility as its stated positioning: Linear describes itself as 'an issue tracking and project management tool' for product teams, Asana as a 'work management platform for human + AI collaboration' powered by the Work Graph, and monday.com as an 'AI work platform' combining work management, CRM, dev, service and campaigns. That leaves a positioning gap, but not a capital gap: Linear raised a $99M secondary round announced 2026-08-26 (lead investor Accel) after an $82M Series C on 2025-06-10, Asana acquired Stack AI (announced 2026-05-27), and monday.com acquired One AI (announced 2026-05-11) — so the incumbents are funding product depth and AI capability faster than FlowStack's 14-week, ~$180k-bounded scope. FlowStack's differentiation must therefore come from mid-market simplicity and the Slack digest loop rather than graph novelty. With 22 months of runway, ~$1.8M ARR at ~15% QoQ growth, a 72% gross margin and roughly $180k/mo EBITDA burn, this feature can be absorbed, but the added ~$3k/mo graph/alerting infrastructure during beta and the 2 full-stack engineers plus PM at 30% and 3 designer weeks represent a material share of a 7-person team's capacity. This report is built on company enrichment (funding, headcount, SEO overlap) plus the FlowStack product/persona documents; no job-posting data was available and the 'Jira' competitor resolved to the wrong entity, so those gaps are recorded in dataLimitations.",
+  "competitorLandscape": [
+    {
+      "name": "Linear",
+      "positioning": "Self-described as an issue tracking and project management tool for product teams, differentiated on 'UI elegance with world-class performance'; founded 2019, privately held, fully remote from the start, distributed across North America and Europe; 291 tracked employees.",
+      "relevantMoves": [
+        "$99,000,000 secondary market round announced 2026-08-26 led by Accel, with 01 Advisors, S32 and Salesforce Ventures participating; this follows an $82,000,000 Series C on 2025-06-10 (Accel lead) and a $35,000,000 Series B on 2023-09-14 — 6 disclosed rounds totalling $233,200,000.",
+        "Headcount growth remains steep: 291 total employees with +69.2% year-over-year and +32.9% over six months (+72 absolute in six months), against +8.2% quarter-over-quarter.",
+        "Engineering is 30.2% of headcount (88 of 291) — the largest single function — with Sales at 29 and Support at 26, indicating continued investment in product depth alongside go-to-market.",
+        "Paid search footprint targets competing issue/bug-tracking demand: shakebugs.com, bugherd.com, atlassian.com, jam.dev and posthog.com; organic overlap includes tooltrust.io, linear.eu, linearstatus.com, steelsync.io and linear.fi.",
+        "No acquisitions recorded in the enrichment payload.",
+        "Investor base includes Sequoia Capital, Accel, 01 Advisors, Index Ventures, Salesforce Ventures and a long list of operator-angels (Stewart Butterfield, Dylan Field, Guillermo Rauch, Lenny Rachitsky among others)."
+      ],
+      "sources": [
+        "rawBundle.enrichResult[0].matches[0].company_data.funding.milestones (Linear, crustdata_company_id 633791)",
+        "rawBundle.enrichResult[0].matches[0].company_data.headcount.growth_percent / by_role_percent (Linear)",
+        "rawBundle.enrichResult[0].matches[0].company_data.competitors.paid_seo / organic_seo (Linear)",
+        "rawBundle.enrichResult[0].matches[0].company_data.basic_info.description (Linear)"
+      ]
+    },
+    {
+      "name": "Asana",
+      "positioning": "Public company (NYSE, FRA) positioning as 'the work management platform for human + AI collaboration', powered by the Work Graph, claiming 170,000+ organizations including Accenture, Amazon, Anthropic, Morningstar and Suzuki; 4,428 tracked employees.",
+      "relevantMoves": [
+        "Acquired Stack AI (announced 2026-05-27) — the only acquisition recorded for Asana in this bundle, reinforcing an AI-in-the-workflow roadmap.",
+        "Headcount growth has flattened relative to Linear: +10.1% year-over-year, +4.7% over six months, +1.4% quarter-over-quarter; scale is concentrated in Engineering (902), Sales (555), Administrative (328), IT (269) and Operations (264), with Product Management at 106 and Program & Project Management at 147.",
+        "Funding history totals $453,200,000 across 12 rounds, including $200M and $40M debt financings in June/April 2020; last fundraise date recorded as 2020-08-15 (undisclosed round, Unbound).",
+        "Paid search bids directly on rivals: monday.com, clickup.com, atlassian.com, aha.io and 10bestprojectmanagement.com; organic overlap with atlassian.com, projectmanager.com, wrike.com, smartsheet.com and monday.com — confirming the crowded work-management search set.",
+        "Largest headcount country is the USA (1,625), with growing presence in Warsaw/Poland (205), India (266), Canada (202) and Germany (221) — a geographic mix relevant to a US/EU mid-market ICP."
+      ],
+      "sources": [
+        "rawBundle.enrichResult[1].matches[0].company_data.funding.acquisitions (Asana, Stack AI, 2026-05-27)",
+        "rawBundle.enrichResult[1].matches[0].company_data.headcount.by_role_absolute / growth_percent (Asana)",
+        "rawBundle.enrichResult[1].matches[0].company_data.competitors.paid_seo / organic_seo (Asana)",
+        "rawBundle.enrichResult[1].matches[0].company_data.basic_info.description (Asana)"
+      ]
+    },
+    {
+      "name": "Monday.com",
+      "positioning": "Public company (NASDAQ) positioning as 'the best AI work platform', bringing people, workflows and AI agents together across work management, CRM, dev, service and campaigns; claims 250,000+ customers including over 60% of the Fortune 500 across 200+ countries; offices in Tel Aviv, New York, Miami, Chicago, Denver, London, Warsaw, Sydney, Melbourne, São Paulo and Tokyo.",
+      "relevantMoves": [
+        "Acquired One AI (announced 2026-05-11) — a direct AI capability purchase alongside productised AI features named in its description (monday sidekick, monday vibe, AI Blocks, AI Workflows, monday agents).",
+        "Total disclosed funding $384,100,000; last round was $150,000,000 post-IPO equity on 2021-06-10 with Salesforce Ventures and Zoom as investors.",
+        "Tracked headcount of 9,455 is reported with Brazil as the largest country (7,099) and Israel second (1,666); the reported quarter-over-quarter jump of +103% (including a 2026-09-02 reading of 12,996 followed by 5,914) is inconsistent with the surrounding series and should be treated as a data-quality artifact rather than real hiring.",
+        "Paid SEO is concentrated in link-in-bio / short-link domains (liinks.co, hopp.co, chirp.me, linklay.io, bitly.com) and organic overlap is with instagram.com, facebook.com, booksy.com, youtube.com and fresha.com — a footprint pointing at broad consumer and SMB demand capture, not only B2B project tooling.",
+        "Role mix skews commercial and support-heavy (Sales 730, Support 329, IT 343) rather than deep engineering relative to total headcount, consistent with a multi-product, multi-region platform motion."
+      ],
+      "sources": [
+        "rawBundle.enrichResult[2].matches[0].company_data.funding.acquisitions (monday.com, One AI, 2026-05-11)",
+        "rawBundle.enrichResult[2].matches[0].company_data.funding.milestones (post-IPO equity, 2021-06-10)",
+        "rawBundle.enrichResult[2].matches[0].company_data.headcount.timeseries / by_region_absolute (monday.com)",
+        "rawBundle.enrichResult[2].matches[0].company_data.competitors.paid_seo / organic_seo (monday.com)",
+        "rawBundle.enrichResult[2].matches[0].company_data.basic_info.description (monday.com)"
+      ]
+    },
+    {
+      "name": "Jira (entity unresolved)",
+      "positioning": "The requested 'Jira' competitor did not resolve to Atlassian. Company identification and enrichment matched crustdata_company_id 1259394, 'Jira Tutorial' — a self-employed online training site at jiratutorials.com with 9 tracked employees and no funding, acquisition or SEO data. No verified Atlassian/Jira company record exists in this bundle.",
+      "relevantMoves": [
+        "Identified entity: 'Jira Tutorial', company_type Privately Held, employee_count_range 'myself only', description limited to Jira training courses; 9 tracked employees distributed across India (2), Cameroon, Morocco, El Salvador, Vietnam, Philippines and the United States.",
+        "Funding payload is empty: no rounds, no investors, no acquisitions, no last fundraise date.",
+        "Competitor/SEO payload is empty (no all_domains, no paid_seo, no organic_seo), so no competitive search signal can be derived.",
+        "Indirect evidence that Atlassian/Jira is the incumbent in this category: atlassian.com appears in Linear's paid SEO set and in both Asana's paid and organic SEO overlaps.",
+        "No conclusions about Atlassian's dependency-mapping roadmap, pricing or Atlassian Marketplace motion can be drawn from this bundle."
+      ],
+      "sources": [
+        "rawBundle.enrichResult[3].matches[0].company_data.basic_info (Jira Tutorial, crustdata_company_id 1259394)",
+        "rawBundle.enrichResult[3].matches[0].company_data.funding (empty)",
+        "rawBundle.enrichResult[0].matches[0].company_data.competitors.paid_seo and rawBundle.enrichResult[1].matches[0].company_data.competitors.paid_seo/organic_seo (atlassian.com overlap)"
+      ]
+    }
+  ],
+  "marketSignals": [
+    {
+      "signal": "Incumbent capital formation in adjacent work-management is heavy and recent",
+      "evidence": "Linear raised a $99,000,000 secondary round announced 2026-08-26 led by Accel (with 01 Advisors, S32, Salesforce Ventures), after an $82,000,000 Series C on 2025-06-10; Linear's lifetime disclosed funding is $233,200,000 across 6 rounds. Asana's disclosed total is $453,200,000 across 12 rounds; monday.com's is $384,100,000 across 7 rounds.",
+      "implicationForFeature": "FlowStack cannot win on resource superiority; the dependency map must be defensible through workflow fit (Slack-first digests, mid-market simplicity) rather than breadth, and should be scoped to the 14-week plan rather than to parity with funded roadmaps.",
+      "source": "rawBundle.enrichResult[0..2].matches[0].company_data.funding.milestones and funding.total_investment_usd"
+    },
+    {
+      "signal": "Linear is growing engineering capacity much faster than the rest of the function mix",
+      "evidence": "Linear total tracked headcount is 291 with +69.2% YoY, +32.9% over six months and +8.2% QoQ; Engineering alone is 88 people (30.2% of headcount) versus Product Management at 5 (1.7%) and Support at 26 (8.9%). Engineering YoY growth is reported at +137.8%.",
+      "implicationForFeature": "A product-team-focused rival is deepening the exact surface (task/issue graphs) that the dependency map competes on; FlowStack should assume Linear can ship cross-team views within its planning horizon and should not depend on Linear's absence as a moat.",
+      "source": "rawBundle.enrichResult[0].matches[0].company_data.headcount.growth_percent, by_role_absolute, by_role_growth_yoy_pct (Linear)"
+    },
+    {
+      "signal": "AI capability is being bought, not only built, by the two public incumbents",
+      "evidence": "Asana acquired Stack AI (announced 2026-05-27); monday.com acquired One AI (announced 2026-05-11). monday.com's current description leads with AI agents, monday sidekick, monday vibe, AI Blocks and AI Workflows; Asana's description leads with 'human + AI collaboration' and the Work Graph.",
+      "implicationForFeature": "The dependency map should be designed as a machine-readable graph with an event stream (slip/critical-path change events) so that future AI automation and any FlowStack AI features can consume it — the graph data itself becomes the durable asset, not the visualisation.",
+      "source": "rawBundle.enrichResult[1].matches[0].company_data.funding.acquisitions; rawBundle.enrichResult[2].matches[0].company_data.funding.acquisitions; both basic_info.description fields"
+    },
+    {
+      "signal": "Search-based demand capture in this category is saturated and head-to-head",
+      "evidence": "Asana bids on monday.com, clickup.com, atlassian.com, aha.io and 10bestprojectmanagement.com while overlapping organically with atlassian.com, projectmanager.com, wrike.com, smartsheet.com and monday.com. Linear bids on shakebugs.com, bugherd.com, atlassian.com, jam.dev and posthog.com. monday.com's paid and organic footprints point at link-in-bio and consumer domains rather than B2B PM terms.",
+      "implicationForFeature": "Customer acquisition for the dependency map should not rely on generic work-management keywords; the viable channels are Slack App Directory distribution, integration-marketplace listing on the tools FlowStack already links to, and template/community plays.",
+      "source": "rawBundle.enrichResult[0].competitors.paid_seo/organic_seo (Linear); rawBundle.enrichResult[1].competitors.paid_seo/organic_seo (Asana); rawBundle.enrichResult[2].competitors.paid_seo/organic_seo (monday.com)"
+    },
+    {
+      "signal": "The public incumbents are optimised for enterprise scale, not the 20–200 employee segment",
+      "evidence": "Asana reports 4,428 tracked employees (Sales 555, Administrative 328, IT 269, Engineering 902) and claims 170,000+ organisations including Accenture, Amazon and Suzuki; monday.com reports 250,000+ customers with over 60% of the Fortune 500 and a 15-function role mix dominated by Sales (730) and Support (329).",
+      "implicationForFeature": "The 20–200 employee ICP with multiple parallel initiatives is underserved by enterprise-tuned configuration overhead; the dependency map should ship with opinionated defaults (no admin setup, no custom schema work) to match Alicia's 'dependencies without enterprise complexity' requirement.",
+      "source": "rawBundle.enrichResult[1].matches[0].company_data.basic_info.description and headcount.by_role_absolute (Asana); rawBundle.enrichResult[2].matches[0].company_data.basic_info.description (monday.com); productData.personas/newInstallPersona"
+    },
+    {
+      "signal": "No competitor in this dataset leads with cross-project dependency visibility as its headline positioning",
+      "evidence": "Linear describes itself as 'an issue tracking and project management tool that combines UI elegance with world-class performance'; Asana as 'the work management platform for human + AI collaboration', 'plan, track, and deliver work'; monday.com as an 'AI work platform' spanning work management, CRM, dev, service and campaigns. 'Dependency' does not appear in any of the three descriptions; the fourth competitor entity could not be verified.",
+      "implicationForFeature": "There is room for a focused wedge message — 'see what your squad owes other teams before sprint planning' — that maps directly to Elena's stated need and to Sam's quarterly-planning chase across Notion and Jira.",
+      "source": "rawBundle.enrichResult[0..2].matches[0].company_data.basic_info.description; productData.personas"
+    },
+    {
+      "signal": "Incumbent headcount data contains discontinuities that limit growth-rate inference",
+      "evidence": "monday.com's global timeseries moves from 4,564 (2026-08-31) to 12,996 (2026-09-02) then to 5,914 (2026-09-20), and its reported Brazil headcount of 7,099 (75.1% of total) is inconsistent with the Israel/UK/US figures in the same payload. Reported QoQ growth of +103.2% and YoY of +119.9% therefore cannot be read as organic hiring.",
+      "implicationForFeature": "Do not size the mid-market opportunity or competitor capacity from monday.com's headline growth rates; use the stable sub-series (e.g., Israel, UK, US regional rows) for directional judgement only.",
+      "source": "rawBundle.enrichResult[2].matches[0].company_data.headcount.timeseries, by_region_percent, growth_percent (monday.com)"
+    },
+    {
+      "signal": "No hiring-demand signal could be obtained for the feature area",
+      "evidence": "The job_search query in rawBundle.queriesExecuted returned an error ('filters.conditions.0' must be either a single condition or a tree) and rawBundle.jobs is an empty array. The company_identify and company_enrich queries succeeded for Linear, Asana, monday.com and the mis-resolved Jira entity.",
+      "implicationForFeature": "There is no evidence in this bundle about whether competitors are actively hiring for dependency-graph, planning or program-management roles; roadmap-timing claims about competitors must be treated as inference from funding and headcount only.",
+      "source": "rawBundle.queriesExecuted (job_search error); rawBundle.jobs (empty)"
+    }
+  ],
+  "gapsAndOpportunities": [
+    {
+      "gap": "No competitor in the enriched set positions on cross-project / cross-team dependency visibility specifically.",
+      "opportunity": "Lead the launch narrative with the blocker view rather than 'another project view': pre-sprint planning visibility for engineering managers and quarterly-planning visibility for product ops.",
+      "evidence": "Linear, Asana and monday.com descriptions contain no dependency or blocker positioning; personas Elena and Sam describe exactly these two moments (sprint planning; chasing status across Notion and Jira)."
+    },
+    {
+      "gap": "Incumbents' breadth implies configuration overhead that 20–200 employee squads cannot absorb.",
+      "opportunity": "Ship zero-setup dependency inference from existing task links, matching the new-install persona (Alicia) who inherited a messy roadmap and wants 'dependencies without enterprise complexity'.",
+      "evidence": "monday.com spans work management, CRM, dev, service and campaigns with 250,000+ customers and 60% of the Fortune 500; Asana sells to Accenture, Amazon and Suzuki with a 555-person sales organisation."
+    },
+    {
+      "gap": "Alerting on critical-path slippage is not claimed by any competitor description in this bundle; the Slack digest loop is FlowStack-specific per the feature spec.",
+      "opportunity": "Make the Slack digest the retention hook — a daily/weekly 'what you owe and what is blocking you' message — so the feature earns engagement without requiring users to open a graph view.",
+      "evidence": "featureDescription ('Slack digests when critical paths slip'); Chris's need to know when engineering dependencies unblock design QA 'without ping-pong in chat'."
+    },
+    {
+      "gap": "Competitors are consolidating AI capability through acquisitions (Asana→Stack AI, monday.com→One AI) rather than exposing raw dependency graph data.",
+      "opportunity": "Expose the dependency graph and slip events as a stable data model early, so FlowStack can add automation/AI summarisation later without re-architecting, and so the graph becomes the durable asset.",
+      "evidence": "Acquisition dates 2026-05-27 (Stack AI by Asana) and 2026-05-11 (One AI by monday.com); both companies' current descriptions lead with AI features."
+    },
+    {
+      "gap": "Search-based acquisition of this category is already bid up by at least two well-funded rivals.",
+      "opportunity": "Prioritise Slack App Directory, integration listings and template-driven adoption over paid search for the beta period.",
+      "evidence": "Asana bids on monday.com/clickup.com/atlassian.com/aha.io; Linear bids on shakebugs.com/bugherd.com/atlassian.com/jam.dev/posthog.com; atlassian.com appears in both rivals' overlap sets."
+    },
+    {
+      "gap": "The only verified replacement risk in the bundle is indirect: the actual Jira/Atlassian entity was not resolved, so its dependency-related capabilities are unknown.",
+      "opportunity": "Commission a targeted Atlassian/Jira and Atlassian Marketplace review before pricing and GTM decisions, since atlassian.com shows up in two competitors' search sets and is the presumed incumbent for engineering buyers.",
+      "evidence": "rawBundle.enrichResult[3] resolved 'Jira' to 'Jira Tutorial' (jiratutorials.com, 9 employees, no funding/SEO data); atlassian.com appears in Linear's paid_seo and Asana's paid_seo and organic_seo."
+    }
+  ],
+  "risks": [
+    {
+      "risk": "Well-funded incumbents can absorb the dependency-map concept into existing products.",
+      "severity": "high",
+      "mitigation": "Compete on time-to-value and the Slack digest loop rather than on graph features; hold a 14-week scope and avoid parity-driven scope creep.",
+      "evidence": "Linear raised $99M (announced 2026-08-26) and $82M (2025-06-10) with Engineering at 30.2% of headcount; Asana and monday.com each acquired an AI company in May 2026."
+    },
+    {
+      "risk": "Beta infrastructure cost (~$3k/mo graph/alerting) plus 2 full-stack engineers, PM at 30% and 3 designer weeks is a large commitment for a 7-person team.",
+      "severity": "medium",
+      "mitigation": "Gate the beta on a fixed participant count, cap alert fan-out per workspace, and review infra spend monthly against the $180,000 threshold.",
+      "evidence": "productData.expectedResourceConsumption ('~$3k/mo extra graph/alerting infra during beta'); productData.teamSize (7); productData.financialThresholdAmount (180000)."
+    },
+    {
+      "risk": "Alert fatigue: digests on slipping critical paths degrade into noise and drive notification muting.",
+      "severity": "medium",
+      "mitigation": "Ship digest frequency controls and a confidence/threshold model in v1; instrument mute and dismiss rates as primary quality metrics.",
+      "evidence": "featureDescription commits to 'Slack digests when critical paths slip' with no stated thresholding; personas cite ping-pong fatigue in chat as the pain being solved."
+    },
+    {
+      "risk": "Acquisition risk on paid search is high and the category is bid up.",
+      "severity": "medium",
+      "mitigation": "Route launch acquisition through Slack App Directory and integration marketplaces; treat paid search as an experiment, not a channel plan.",
+      "evidence": "Asana paid_seo includes monday.com, clickup.com, atlassian.com; Linear paid_seo includes atlassian.com, jam.dev, posthog.com."
+    },
+    {
+      "risk": "Financial capacity constrains iteration speed if the feature misses its first metric window.",
+      "severity": "medium",
+      "mitigation": "Define go/no-go checkpoints inside the 14-week plan; keep the feature behind a flag with a clean rollback path.",
+      "evidence": "productData.companyProfitabilityDetails (~$1.8M ARR, ~15% QoQ growth, ~72% gross margin, ~$180k/mo EBITDA burn); runwayRemainingMonths (22); expectedDurationWeeks (14)."
+    },
+    {
+      "risk": "Competitive intelligence in this report is incomplete, so roadmap-timing assumptions may be wrong.",
+      "severity": "high",
+      "mitigation": "Re-run competitor identification for Jira/Atlassian and re-run job search with a corrected filter schema before committing to launch sequencing.",
+      "evidence": "rawBundle.enrichResult[3] matched 'Jira Tutorial' instead of Atlassian; rawBundle.queriesExecuted job_search returned a filter-schema error and rawBundle.jobs is empty."
+    },
+    {
+      "risk": "Buyer mismatch: the primary buyer is Head of Product or VP Engineering, but the daily users are engineers, product ops and designers.",
+      "severity": "medium",
+      "mitigation": "Package the dependency map with a planning-time artefact (pre-sprint cross-team commitment view) that the buyer consumes directly, not only a live graph the ICs use.",
+      "evidence": "productData.primaryBuyer ('Head of Product or VP Engineering'); personas Elena (engineering manager), Sam (product ops lead), Chris (IC designer), Alicia (new PM)."
+    }
+  ],
+  "dataLimitations": [
+    "The 'Jira' competitor did not resolve to Atlassian: company_identify and company_enrich both matched crustdata_company_id 1259394, 'Jira Tutorial' (jiratutorials.com), a training site with 9 tracked employees, no funding data, no acquisitions and empty competitor/SEO sets. No Atlassian company record exists anywhere in this bundle.",
+    "No job-posting data was retrieved. The job_search query failed with a filter-schema error ('filters.conditions.0' must be either a single condition or a tree) and rawBundle.jobs is an empty array, so no hiring-demand signal is available for dependency, planning or program-management roles.",
+    "rawBundle.landscape is null and no third-party market-sizing, pricing or win/loss dataset was supplied; all sizing statements in this report are relative, not absolute.",
+    "monday.com's headcount series contains a discontinuity (4,564 on 2026-08-31 → 12,996 on 2026-09-02 → 5,914 on 2026-09-20) and a Brazil concentration of 7,099 (75.1% of the reported total). Reported QoQ growth of +103.2% and YoY growth of +119.9% for monday.com are therefore not usable as organic headcount signals.",
+    "Competitor positioning is drawn from self-descriptions in company profiles (basic_info.description), not from pricing pages, release notes, changelogs or product teardowns; no evidence about existing dependency-map functionality inside Linear, Asana, monday.com or Jira is present in the bundle.",
+    "Competitive search signals are limited to domain overlap lists (paid_seo / organic_seo); no keyword volumes, spend estimates or conversion data are provided.",
+    "No competitor pricing, packaging or bundling data is included, so the financial impact of a dependency-map feature on competitor plans cannot be assessed.",
+    "All persona insight is second-hand from FlowStack's own documents (flowstack-user-interviews-summary.pdf referenced in productData); the underlying interview transcripts, sample size and methodology were not provided with this bundle.",
+    "FlowStack's own retention, adoption and conversion baselines are not included, so the report cannot quantify the expected revenue impact of the dependency map.",
+    "No Slack-platform data (App Directory ranking, install velocity, competitive Slack apps) was provided, despite the Slack digest being a core part of the feature description."
+  ],
+  "planSummary": null
+}

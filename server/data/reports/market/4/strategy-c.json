@@ -1,0 +1,312 @@
+{
+  "strategy": "planned_c",
+  "generatedAt": "2026-10-12T03:31:58.018Z",
+  "feature": {
+    "name": "x",
+    "description": "The feature identifier supplied in the input bundle is the literal placeholder 'x'; no feature scope, capability set, or target user was provided. The governing product context is LedgerLite (application) in the US market, with FreshBooks named as the reference competitor. Consequently this report assesses the US small-business/freelancer accounting-software landscape around FreshBooks rather than a defined LedgerLite capability, and all feature-level implications should be treated as directional only."
+  },
+  "executiveSummary": "A planned_c research run was executed across 7 planned steps, of which 5 returned results and 2 failed. The two failures are material: company_identify and company_enrich both errored with 'Exactly one identifier must be provided', so no structured FreshBooks profile (industry, headcount, funding, tech stack, products, competitors) was retrieved. FreshBooks competitive context therefore rests entirely on a single web_search_live call returning 7 third-party comparison articles (Wise, VentureSmarter, Native Teams, Crunch, Software Advice UK, TMA Small Business Accounting, Business.com), which consistently place FreshBooks against QuickBooks Online, Xero, Zoho Books, Wave, Sage (incl. Sage 50), ZipBooks and Oracle NetSuite. The two company_search calls (accounting software, bookkeeping software, both filtered country=US) returned 50 companies, but the result set is dominated by micro-vendors (2-10 employees) and is heavily non-US in practice (Greece, Netherlands, India, Tanzania, Bangladesh, UK, Malaysia), so it is a weak proxy for the US market. The genuinely US-relevant signal in that set is a cluster of recent AI-native bookkeeping entrants (Cashflowy.ai, Flow Keeping, Prosper Finance, now.) positioned on automation, bank connectivity and accountant-ready handoff. Both job_search calls returned generic software-engineering listings from unrelated companies (Serco, Amazon, Qualcomm, Snowflake, etc.) and no FreshBooks-attributable postings, so no hiring-based product signal is available. Net: the landscape shape is directionally usable, but feature-level conclusions for the LedgerLite feature 'x' cannot be supported by this bundle.",
+  "competitorLandscape": [
+    {
+      "name": "FreshBooks",
+      "positioning": "Named in the input bundle as the competitor of record for LedgerLite in the US. Positioned by third-party comparison content as a small-business/freelancer accounting option evaluated alongside QuickBooks Online, Xero, Zoho Books, Wave, Sage and ZipBooks. One comparison source notes FreshBooks 'may add extra costs for premium features and additional support' relative to a fixed-price alternative.",
+      "relevantMoves": [
+        "Appears in at least 7 third-party 'alternatives to FreshBooks' / comparison roundups surfaced in the single live web search, indicating it is treated as a reference point in the small-business accounting category.",
+        "No FreshBooks-attributable product, funding, headcount, tech-stack or hiring move could be confirmed — company_identify and company_enrich both failed and job_search under company_name=FreshBooks returned no FreshBooks listings."
+      ],
+      "sources": [
+        "web_search_live: https://wise.com/us/hub/freshbooks/alternatives",
+        "web_search_live: https://venturesmarter.com/freshbooks-alternatives/",
+        "web_search_live: https://nativeteams.com/blog/freshbooks-alternatives",
+        "web_search_live: https://www.crunch.co.uk/what-we-do/online-accounting-software/compare/freshbooks",
+        "web_search_live: https://www.softwareadvice.co.uk/alternatives/135928/freshbooks",
+        "web_search_live: https://www.business.com/articles/freshbooks-alternatives/",
+        "errors: company_identify (FreshBooks) failed; company_enrich (freshbooks.com) failed"
+      ]
+    },
+    {
+      "name": "QuickBooks Online (Intuit)",
+      "positioning": "Named as a FreshBooks alternative/competitor in every relevant live-search source; positioned as the default incumbent in the small-business accounting comparison set.",
+      "relevantMoves": [
+        "Listed as a top FreshBooks alternative by Wise, VentureSmarter, Native Teams, Software Advice (rating 4.3) and Business.com.",
+        "Cited in a head-to-head 'QuickBooks vs Xero vs FreshBooks' comparison for small-business accounting selection."
+      ],
+      "sources": [
+        "web_search_live: https://wise.com/us/hub/freshbooks/alternatives",
+        "web_search_live: https://www.softwareadvice.co.uk/alternatives/135928/freshbooks",
+        "web_search_live: https://www.tmasmallbusinessaccounting.com/blog/business-accounting-apps-compared",
+        "web_search_live: https://www.business.com/articles/freshbooks-alternatives/"
+      ]
+    },
+    {
+      "name": "Xero",
+      "positioning": "Named as a FreshBooks alternative in every relevant live-search source; positioned as a leading cloud accounting platform for small business.",
+      "relevantMoves": [
+        "Listed by Wise, VentureSmarter, Native Teams, Software Advice (rating 4.4) and Business.com as a FreshBooks alternative.",
+        "Cited in a direct QuickBooks vs Xero vs FreshBooks comparison."
+      ],
+      "sources": [
+        "web_search_live: https://wise.com/us/hub/freshbooks/alternatives",
+        "web_search_live: https://venturesmarter.com/freshbooks-alternatives/",
+        "web_search_live: https://www.softwareadvice.co.uk/alternatives/135928/freshbooks",
+        "web_search_live: https://www.tmasmallbusinessaccounting.com/blog/business-accounting-apps-compared"
+      ]
+    },
+    {
+      "name": "Zoho Books",
+      "positioning": "Named as a FreshBooks alternative across Wise, VentureSmarter, Native Teams and Business.com; positioned as a low-cost small-business accounting option within a broader Zoho suite.",
+      "relevantMoves": [
+        "Recurring inclusion in FreshBooks alternative roundups published or updated in 2026."
+      ],
+      "sources": [
+        "web_search_live: https://wise.com/us/hub/freshbooks/alternatives",
+        "web_search_live: https://venturesmarter.com/freshbooks-alternatives/",
+        "web_search_live: https://nativeteams.com/blog/freshbooks-alternatives",
+        "web_search_live: https://www.business.com/articles/freshbooks-alternatives/"
+      ]
+    },
+    {
+      "name": "Wave",
+      "positioning": "Named as a FreshBooks alternative by Wise, VentureSmarter and Native Teams; the company_search 'bookkeeping software' result set also references Wave as a platform bookkeepers work with (BookKeeply, Assent Accounting Associates, Beck & Call Bookkeeping).",
+      "relevantMoves": [
+        "Recurring inclusion in FreshBooks alternative roundups.",
+        "Referenced as an incumbent platform that third-party US bookkeeping practices (e.g., BookKeeply, Beck & Call Bookkeeping) set up and manage for clients."
+      ],
+      "sources": [
+        "web_search_live: https://wise.com/us/hub/freshbooks/alternatives",
+        "web_search_live: https://venturesmarter.com/freshbooks-alternatives/",
+        "web_search_live: https://nativeteams.com/blog/freshbooks-alternatives",
+        "company_search (bookkeeping software): https://bookkeeply30 via LinkedIn profile listing"
+      ]
+    },
+    {
+      "name": "Sage (incl. Sage 50)",
+      "positioning": "Named as a FreshBooks alternative by Wise, Native Teams and Business.com; Sage 50 referenced in the context of established desktop/legacy accounting.",
+      "relevantMoves": [
+        "Recurring inclusion in FreshBooks alternative roundups, including Sage 50 specifically."
+      ],
+      "sources": [
+        "web_search_live: https://wise.com/us/hub/freshbooks/alternatives",
+        "web_search_live: https://nativeteams.com/blog/freshbooks-alternatives",
+        "web_search_live: https://www.business.com/articles/freshbooks-alternatives/"
+      ]
+    },
+    {
+      "name": "ZipBooks",
+      "positioning": "Listed as one of the '7 Best FreshBooks Alternatives and Competitors in 2026'.",
+      "relevantMoves": [
+        "Named in a 2026 FreshBooks alternative roundup."
+      ],
+      "sources": [
+        "web_search_live: https://venturesmarter.com/freshbooks-alternatives/"
+      ]
+    },
+    {
+      "name": "Oracle NetSuite",
+      "positioning": "Listed as a FreshBooks alternative, but positioned at the upper end (enterprise/ERP) rather than the freelancer/SMB tier FreshBooks and LedgerLite occupy.",
+      "relevantMoves": [
+        "Named in a 2026 FreshBooks alternative roundup."
+      ],
+      "sources": [
+        "web_search_live: https://www.business.com/articles/freshbooks-alternatives/"
+      ]
+    },
+    {
+      "name": "Cashflowy.ai",
+      "positioning": "Self-described 'AI bookkeeping software built exclusively for U.S. solopreneurs' — bundles bookkeeping software, a human bookkeeper and AI financial coaching in one platform for one-person service businesses (coaches, consultants, freelancers, therapists, creators).",
+      "relevantMoves": [
+        "Founded 2024; 11-50 employee range; markets include PRIVATE.",
+        "Explicitly positions away from 'bookkeeping software built for larger businesses' and away from feature bloat.",
+        "Bundles unlimited human bookkeeper access and 24/7 AI coach ('Clara AI') with no paid add-ons or premium support tier."
+      ],
+      "sources": [
+        "company_search (bookkeeping software, country=US): cashflowy.ai — crustdata_company_id 2711413"
+      ]
+    },
+    {
+      "name": "Flow Keeping",
+      "positioning": "'Modern accounting software built to help bookkeeping firms standardize their processes, automate categorization, and scale more efficiently' — firm-side rather than end-client positioning.",
+      "relevantMoves": [
+        "Founded 2024; 11-50 employee range; markets include PRIVATE.",
+        "Automated transaction categorization, enriched bank data, selling-channel connectivity, streamlined reconciliation and bulk review.",
+        "Claims thousands of CPA-reviewed categorization rules and free 30-day trial with one or two clients."
+      ],
+      "sources": [
+        "company_search (bookkeeping software, country=US): flowkeeping.com — crustdata_company_id 12513589"
+      ]
+    },
+    {
+      "name": "Prosper Finance",
+      "positioning": "'AI-native bookkeeping software for founders who hate bookkeeping' — targets solo founders, freelancers, agencies, small teams, and Shopify/ecommerce sellers.",
+      "relevantMoves": [
+        "Founded 2026; 2-10 employee range.",
+        "Positions on exception-based review ('you review the handful of exceptions instead of every line') and traceable, accountant-handoff-ready books."
+      ],
+      "sources": [
+        "company_search (bookkeeping software, country=US): prosperfinance.app — crustdata_company_id 74773384"
+      ]
+    },
+    {
+      "name": "Bookie",
+      "positioning": "Bookkeeping software for freelancers, sole traders, self-employed professionals and small businesses; positioned on removing the need to become an accounting expert.",
+      "relevantMoves": [
+        "Markets 'accountant ready reports' from one place; explicitly targets users 'tired of messy spreadsheets, chasing receipts, or trying to prepare for tax season'.",
+        "2-10 employee range."
+      ],
+      "sources": [
+        "company_search (bookkeeping software, country=US): bookie.tax — crustdata_company_id 74584085"
+      ]
+    },
+    {
+      "name": "Akaunting",
+      "positioning": "Online accounting software for small businesses and freelancers; positioned on ease of use and accessibility of financial tooling.",
+      "relevantMoves": [
+        "Founded 2017; 11-50 employee range; markets include PRIVATE.",
+        "Integrates with 20+ payment gateways (e.g., Stripe, PayPal) and offers a free account entry point."
+      ],
+      "sources": [
+        "company_search (accounting software): akaunting.com — crustdata_company_id 828424"
+      ]
+    },
+    {
+      "name": "AccountEdge",
+      "positioning": "Full-featured desktop accounting for small business on Mac or Windows; positioned on ownership of software and financial data with a lower cost of ownership ('spend hundreds not thousands').",
+      "relevantMoves": [
+        "Founded 1989; 51-200 employee range; largest headcount country USA; 3-month and 12-month headcount growth of +25% (absolute +1).",
+        "Offers optional web companion 'AccountEdge Connect' for browser-based data entry, customer portal and web tools."
+      ],
+      "sources": [
+        "company_search (accounting software): accountedge.com — crustdata_company_id 11029453"
+      ]
+    }
+  ],
+  "marketSignals": [
+    {
+      "signal": "FreshBooks is framed by third-party content as one option in a small-business accounting set dominated by QuickBooks Online and Xero, with Zoho Books, Wave, Sage and ZipBooks as recurring alternates.",
+      "evidence": "The single live web search returned 7 results, of which 6 are FreshBooks alternative/comparison pages; QuickBooks Online and Xero appear in every relevant one, Zoho Books and Wave in four, Sage in three, ZipBooks and Oracle NetSuite in one each.",
+      "implicationForFeature": "Any LedgerLite feature 'x' must be benchmarked against the QuickBooks/Xero feature set as the de facto baseline, not against FreshBooks alone.",
+      "source": "web_search_live: wise.com, venturesmarter.com, nativeteams.com, crunch.co.uk, softwareadvice.co.uk, tmasmallbusinessaccounting.com, business.com"
+    },
+    {
+      "signal": "Price transparency and add-on cost are active points of competitive attack in the category.",
+      "evidence": "Crunch positions 'clear, fixed pricing with no hidden fees' directly against FreshBooks, which it says 'may add extra costs for premium features and additional support.'",
+      "implicationForFeature": "Pricing/packaging of feature 'x' is itself a competitive surface; bundling rather than premium add-ons is being used as a wedge.",
+      "source": "web_search_live: https://www.crunch.co.uk/what-we-do/online-accounting-software/compare/freshbooks"
+    },
+    {
+      "signal": "A cluster of AI-native, US-targeted bookkeeping entrants launched between 2024 and 2026.",
+      "evidence": "company_search (bookkeeping software, country=US) returned Cashflowy.ai (founded 2024, 'AI bookkeeping software built exclusively for U.S. solopreneurs'), Flow Keeping (founded 2024, automated categorization for bookkeeping firms), Prosper Finance (founded 2026, 'AI-native bookkeeping software'), and 'now.' (connect bank accounts, automatically categorize transactions with AI, iPhone-first). AccountIn (2026) and LedgerWorks Pro (2025) also appear in the accounting software set.",
+      "implicationForFeature": "Automation/AI-assisted categorization is becoming table stakes in the US SMB bookkeeping tier; a non-automated feature 'x' would launch into a crowded field.",
+      "source": "company_search (bookkeeping software, country=US) and company_search (accounting software, country=US)"
+    },
+    {
+      "signal": "'Accountant-ready output' and handoff quality are repeatedly used as the core value proposition.",
+      "evidence": "Bookie promises 'accountant ready reports from one place'; Prosper Finance promises books 'ready for your accountant' where handoff 'stops being a cleanup job'; Flow Keeping markets a modern client experience with centralized reports and documents; LedgerlyPro markets read-only accountant access.",
+      "implicationForFeature": "Feature 'x' will be judged on whether it reduces the accountant/bookkeeper handoff burden, not only on in-app functionality.",
+      "source": "company_search (bookkeeping software, country=US): bookie.tax, prosperfinance.app, flowkeeping.com, ledgerlypro.co.uk"
+    },
+    {
+      "signal": "Bookkeepers and accounting firms are treated as a distinct, addressable buyer segment with firm-level workflow needs.",
+      "evidence": "Flow Keeping targets bookkeeping firms (bulk review, thousands of CPA-reviewed categorization rules, easy client migration); AccountsPortal offers partner, referral and white-label programs; LedgerWorks Pro is 'tailored specifically for accountants and bookkeepers'; The Bookkeeping Department specialises in Xero for its clients.",
+      "implicationForFeature": "There is an open positioning option for feature 'x': firm-side workflow efficiency versus end-client simplicity.",
+      "source": "company_search (accounting software, country=US) and company_search (bookkeeping software, country=US)"
+    },
+    {
+      "signal": "Cloud/mobile-first and bank connectivity are baseline expectations in the US bookkeeping segment.",
+      "evidence": "'now.' is a mobile-first bookkeeping app connecting bank accounts with AI categorization; Cashflowy offers unlimited connected bank accounts, credit cards, PayPal and Wise; Akaunting integrates 20+ payment gateways including Stripe and PayPal.",
+      "implicationForFeature": "Feature 'x' likely needs bank-feed connectivity and mobile access to be credible in this segment.",
+      "source": "company_search (bookkeeping software, country=US): officialnow.app, cashflowy.ai; company_search (accounting software): akaunting.com"
+    },
+    {
+      "signal": "The US-filtered company search returned a heavily international, micro-cap vendor population, indicating weak index coverage of the actual US accounting-software market.",
+      "evidence": "Of the 25 companies returned for 'accounting software' with country=US filters, return addresses/domains include Greece (accountingsoftware.gr), Netherlands (accountview.nl), India (futureaccounting.in), Tanzania (nextaccounting.co.tz), Bangladesh (accountingsoftware.com.bd), the UK (accountz.com, accountsportal.com, absolutetax.co.uk) and Malaysia (zahiraccounting.com); most list a 2-10 employee range.",
+      "implicationForFeature": "Market sizing and share conclusions for feature 'x' cannot be drawn from this result set; the country filter did not constrain results as intended.",
+      "source": "company_search (accounting software, country=US) — 25 companies returned"
+    },
+    {
+      "signal": "Compliance and localization (tax/regulatory readiness for a specific jurisdiction) is used as a differentiator by non-US and US vendors alike.",
+      "evidence": "Accounting Software SMPC markets myDATA and Greek tax compliance; Absolute Accounting Software builds MTD bridging software for HMRC; LedgerlyPro is 'UK-Centric & HMRC Ready'; NextAccounting markets taxes alongside invoicing and payroll; Cashflowy offers live US tax estimates.",
+      "implicationForFeature": "For a US launch, jurisdiction-specific tax/filing support is a credible differentiation axis, and its absence is a credible objection.",
+      "source": "company_search (accounting software) and company_search (bookkeeping software)"
+    }
+  ],
+  "gapsAndOpportunities": [
+    {
+      "gap": "No structured FreshBooks profile exists in this bundle — company_identify and company_enrich both failed with identifier errors.",
+      "opportunity": "Re-run enrichment with the correct parameter shape ('domains': ['freshbooks.com']) to obtain FreshBooks industry, headcount, funding, products and declared competitors, which would convert this report's competitor section from third-party framing to primary-source data."
+    },
+    {
+      "gap": "The feature under analysis is unnamed ('x' is a literal placeholder), so no capability-level competitive mapping is possible.",
+      "opportunity": "Confirm the actual feature scope before committing roadmap; the surrounding landscape supports several distinct wedges (AI categorization, accountant handoff, firm-side workflow, US tax readiness) that have different competitive implications."
+    },
+    {
+      "gap": "US-filtered company searches returned mostly non-US micro-vendors, so the true US competitive set is under-sampled.",
+      "opportunity": "Re-run company_search with domain- or headquarters-based constraints and higher limits, and paginate using the returned next_cursor, to build a defensible US vendor set."
+    },
+    {
+      "gap": "Job postings under company_name=FreshBooks returned no FreshBooks listings, so hiring-based product-intent signals are unavailable.",
+      "opportunity": "Retry job_search with a valid company identifier or domain to read FreshBooks' engineering/marketing hiring priorities, a leading indicator of roadmap direction."
+    },
+    {
+      "gap": "Bank-feed connectivity plus accountant-ready export is a repeated combination across new US entrants, but no single surfaced vendor combines that with a bundled human bookkeeper and AI advisor at the solopreneur price point except Cashflowy.ai.",
+      "opportunity": "A combined 'automation + human review + clean handoff' bundle remains a defensible positioning direction for a LedgerLite feature."
+    },
+    {
+      "gap": "White-label and partner/referral programs exist (AccountsPortal, Flow Keeping) but appear only among smaller vendors, not the incumbents named in the comparison content.",
+      "opportunity": "An accountant/bookkeeper channel program around feature 'x' could differentiate against QuickBooks/Xero/FreshBooks at the distribution layer rather than the feature layer."
+    }
+  ],
+  "risks": [
+    {
+      "risk": "Feature scope is undefined ('x'), so this analysis cannot validate whether the planned feature addresses a real gap.",
+      "severity": "High",
+      "basis": "productData.featureName = 'x'"
+    },
+    {
+      "risk": "The primary named competitor, FreshBooks, has zero primary-source data in the bundle; its positioning here derives entirely from third-party comparison articles that may be commercially motivated or regionally mismatched (three of the seven results are UK-oriented).",
+      "severity": "High",
+      "basis": "errors: company_identify and company_enrich failures; web_search_live results from wise.com, crunch.co.uk, softwareadvice.co.uk"
+    },
+    {
+      "risk": "The US market view is contaminated: companies returned under country=US filters are predominantly non-US, so any share or sizing assumption drawn from them would be wrong.",
+      "severity": "High",
+      "basis": "company_search results include accountingsoftware.gr (Greece), accountview.nl (Netherlands), futureaccounting.in (India), nextaccounting.co.tz (Tanzania), accountingsoftware.com.bd (Bangladesh), accountz.com and accountsportal.com (UK)"
+    },
+    {
+      "risk": "Job-market signal is absent for the competitor of record; both job_search calls returned unrelated software-engineering listings (Serco, Amazon, Qualcomm, Snowflake, TCS, Boston Scientific, etc.) with no FreshBooks postings.",
+      "severity": "Medium",
+      "basis": "job_search(company_name=FreshBooks, location=US, limit=100) returned zero FreshBooks-attributed listings"
+    },
+    {
+      "risk": "Competitive evidence rests on a single live web search with 7 results, several of which are listicles rather than primary sourcing.",
+      "severity": "Medium",
+      "basis": "web_search_live metadata: total_results = 7, one query executed"
+    },
+    {
+      "risk": "The AI-native bookkeeping tier is crowding quickly (multiple entrants founded 2024-2026 with AI categorization as the headline claim), compressing the window for a non-differentiated automation feature.",
+      "severity": "Medium",
+      "basis": "Cashflowy.ai (2024), Flow Keeping (2024), Prosper Finance (2026), CapitalBooks (2026), LedgerlyPro, LedgerWorks Pro (2025), CogniFlow Books (2025), AccountIn (2026)"
+    },
+    {
+      "risk": "Two of seven planned pipeline steps failed on the same parameter-formatting error, indicating a systemic plan-construction defect that likely affected all enrichment-dependent outputs.",
+      "severity": "Medium",
+      "basis": "errors array: both failures read 'Exactly one identifier must be provided: names, domains, professional_network_profile_urls, or crustdata_company_ids'"
+    }
+  ],
+  "dataLimitations": [
+    "company_identify failed for FreshBooks: 'Exactly one identifier must be provided: names, domains, professional_network_profile_urls, or crustdata_company_ids'. No company ID was resolved.",
+    "company_enrich failed for domain freshbooks.com: same identifier error. No FreshBooks description, industry, employee count, headquarters, country, founded year, funding, investors, revenue, tech stack, products or competitor list was returned.",
+    "Because enrichment failed, the competitorLandscape entry for FreshBooks is built only from third-party web-search snippets and contains no FreshBooks-confirmed positioning, product or corporate data.",
+    "job_search(company_name=FreshBooks, location=US, limit=100) returned no FreshBooks job listings; the result payload contains postings from unrelated organizations (Serco, Amazon, Qualcomm, Snowflake, Funded Research Labs, Blacksmith Agency, TCS, Boston Scientific and others). No FreshBooks hiring signal could be extracted.",
+    "job_search(query='accounting software', location=US, limit=100) returned the same unrelated corpus as the FreshBooks job search (identical payload), yielding no accounting-software-specific labor-market signal.",
+    "company_search results were returned with country=US and industry filters (Accounting/Software/Financial Services and Accounting/Software), but the underlying records are largely non-US and very small (2-10 employees), so the filters did not produce a clean US market set. total_count was null in both calls, so market size cannot be derived.",
+    "The company_search payloads omit the requested fields in practice — no separate 'industry', 'headquarters' or 'country' values appear per record beyond what is embedded in primary_domain, description text and headcount.largest_headcount_country. Headquarters and country fields requested in the plan are effectively absent.",
+    "Only one web search was executed, returning 7 results, three of which (crunch.co.uk, softwareadvice.co.uk, and a wise.com/hub page) are UK-oriented rather than US-specific despite the US geography target.",
+    "No data was collected on US-specific regulatory or tax requirements (IRS, state sales tax, MTD equivalents), so compliance-driven differentiation is inferred from non-US vendor behavior rather than US evidence.",
+    "No pricing data was collected for FreshBooks or any competitor beyond incidental mentions (Accountz £15/month, True North Social $75,000 salary, etc.), so price positioning for the feature cannot be assessed.",
+    "No user reviews, adoption metrics, market share, or revenue figures were captured for any competitor in the core US SMB accounting tier.",
+    "The feature itself is unnamed ('x'), so no feature-level competitive parity or gap analysis was performed; all feature-facing entries are directional inferences from the surrounding category.",
+    "The plan executed 5 of 7 steps successfully; the planSummary records 'Executed 5 step(s); 2 error(s)', and both errors are enrichment-path failures that remove the primary-competitor backbone of the analysis."
+  ],
+  "planSummary": "Executed 5 step(s); 2 error(s). Planned tools: company_identify, company_enrich, company_search, company_search, job_search, job_search, web_search_live"
+}

@@ -1,0 +1,102 @@
+{
+  "strategy": "planned_c",
+  "generatedAt": "2026-10-12T03:50:55.938Z",
+  "feature": {
+    "name": "Recurring invoice templates",
+    "description": "Let users save invoice layouts and auto-send on a schedule to repeat clients, with gentle payment reminders."
+  },
+  "executiveSummary": "LedgerLite is a 1-person-built minimalist invoicing and expense tracker for freelancers, and the proposed feature — recurring invoice templates with scheduled auto-send and gentle payment reminders — targets independent professionals and micro-businesses in the US, Canada, and UK who bill by project or retainer. The one live market-data source retrieved (web_search_live) shows the billing and invoicing software market growing at double-digit rates across multiple independent estimates (e.g., USD 5.43B in 2025 with North America dominant per Straits Research; USD 12.06B in 2025 to USD 23.69B by 2035 per Market Research Future; e-invoicing USD 18.5B in 2025 to USD 70.3B by 2034 at 15.9% CAGR per Research and Markets), which supports demand for invoicing automation. However, competitive evidence is effectively absent: all three competitor enrichment calls (FreshBooks, Wave, Zoho Invoice) failed, all six company_search calls failed, and both job_search calls returned unrelated listings (Navy subcontractor developer, CNA, marketing roles, etc.). As a result, no claim about competitor recurring-invoice capabilities can be grounded, and the report should be treated as directional market context rather than competitive intelligence.",
+  "competitorLandscape": [
+    {
+      "name": "FreshBooks",
+      "positioning": "Unknown — the company_enrich call for freshbooks.com failed with 'Exactly one identifier must be provided', so no positioning, funding, headcount, or product data was retrieved. Only known from productData.competitorCompanies.",
+      "relevantMoves": [],
+      "sources": [
+        "productData.competitorCompanies",
+        "rawBundle.errors[0]: company_enrich for domain freshbooks.com failed"
+      ]
+    },
+    {
+      "name": "Wave",
+      "positioning": "Unknown — the company_enrich call for waveapps.com failed with 'Exactly one identifier must be provided', so no positioning or product data was retrieved. Only known from productData.competitorCompanies.",
+      "relevantMoves": [],
+      "sources": [
+        "productData.competitorCompanies",
+        "rawBundle.errors[1]: company_enrich for domain waveapps.com failed"
+      ]
+    },
+    {
+      "name": "Zoho Invoice",
+      "positioning": "Unknown — the company_enrich call for zoho.com failed with 'Exactly one identifier must be provided', so no positioning or product data was retrieved. Only known from productData.competitorCompanies.",
+      "relevantMoves": [],
+      "sources": [
+        "productData.competitorCompanies",
+        "rawBundle.errors[2]: company_enrich for domain zoho.com failed"
+      ]
+    }
+  ],
+  "marketSignals": [
+    {
+      "signal": "Billing and invoicing software is a multi-billion-dollar market with North America leading adoption",
+      "evidence": "Straight Research snippet: 'The global billing and invoicing software market size was valued at USD 5.43 billion in 2025. North America dominated the billing and invoicing software market'",
+      "implicationForFeature": "Confirms a sizeable, regionally concentrated market for LedgerLite's core category; recurring invoice templates are an adjacent automation feature inside this growing category, especially for the US/Canada portion of the stated geography.",
+      "source": "https://straitsresearch.com/report/billing-and-invoicing-software-market"
+    },
+    {
+      "signal": "Billing and invoicing software is projected to roughly double over the next decade",
+      "evidence": "Market Research Future snippet: 'Billing and Invoicing Software industry is projected to grow from 12.06 USD Billion in 2025 to 23.69 USD Billion by 2035'",
+      "implicationForFeature": "A doubling TAM suggests room for differentiated niche features (like recurring templates for freelancers) rather than only competing on price at the low end.",
+      "source": "https://www.marketresearchfuture.com/reports/billing-invoicing-software-market-26604"
+    },
+    {
+      "signal": "Invoice processing software is growing faster than the broader invoicing market",
+      "evidence": "Future Market Insights snippet: 'The invoice processing software market is projected to grow from USD 36.1 billion in 2025 to USD 189.2 billion by 2035, at a CAGR of 18.0%'",
+      "implicationForFeature": "Automation of invoice creation, sending, and follow-up is a high-growth subsegment; a scheduled auto-send plus reminder feature aligns with where spend is moving.",
+      "source": "https://www.futuremarketinsights.com/reports/invoice-processing-software-market"
+    },
+    {
+      "signal": "E-invoicing is expanding rapidly across the forecast period",
+      "evidence": "Research and Markets snippet: 'The E-Invoicing Market, valued at USD 18.5B in 2025, is projected to reach USD 70.3B by 2034, growing at a 15.9% CAGR'",
+      "implicationForFeature": "Rising e-invoicing normalization supports the feature's premise that small operators increasingly expect automated, digital invoice delivery and reminders rather than manual sends.",
+      "source": "https://www.researchandmarkets.com/report/electronic-invoicing"
+    },
+    {
+      "signal": "Adjacent accounting software market is also expanding, providing ecosystem pull for invoicing features",
+      "evidence": "Grand View Research snippet: 'Accounting software market size was valued at $19.4B in 2024 and is projected to grow from $22.5B in 2026 to $31.3B by 2030, at a CAGR of 8.4%'",
+      "implicationForFeature": "Freelancer-facing accounting and invoicing tools are a growing surface; a low-friction recurring invoice feature can serve as an entry point for the broader bookkeeping and tax needs described in the persona set (e.g., Omar, Priya).",
+      "source": "https://www.grandviewresearch.com/industry-analysis/accounting-software-market-report"
+    },
+    {
+      "signal": "Multiple independent analysts disagree on the absolute size but all project double-digit CAGR",
+      "evidence": "Business Research Insights: 'global Billing and Invoicing Software Market Size is set to expand from USD 6.57 billion in 2026 to USD 20.04 billion by 2035, with a CAGR of 15.23%'; HTF Market Insights: 'Invoice Software market is experiencing robust growth, projected to achieve a compound annual growth rate CAGR of 9.00%'; LinkedIn Pulse: 'CAGR of 13.5% between 2026 and 2033'",
+      "implicationForFeature": "The direction (growth) is consistent even though the size estimates vary widely, so market sizing should be treated as directional for prioritization rather than as a precise input to forecasting.",
+      "source": "https://www.businessresearchinsights.com/market-reports/billing-and-invoicing-software-market-117885"
+    }
+  ],
+  "gapsAndOpportunities": [
+    "No retrieved data describes FreshBooks', Wave's, or Zoho Invoice's recurring-invoice capabilities, so LedgerLite cannot claim a feature gap versus these competitors from this research alone; a follow-up enrichment pass with corrected identifiers is needed.",
+    "Job search results were fully off-target (Serco Navy IB-CHE/PMDT Developer, CNA, marketing manager, SEO specialist, digital marketing coordinator, cyber data analyst, social media specialist, security engineer, and an AI financial-modeling contractor role), so no hiring-signal evidence exists for freelancer invoicing demand; job-based signal gathering should be re-scoped to invoicing, bookkeeping, or fintech roles.",
+    "Market data shows automation and e-invoicing are growing faster than basic invoicing, which supports prioritizing scheduled auto-send and reminder mechanics over purely cosmetic template saving.",
+    "Personas Maya (mobile-first, fast invoicing), Omar (recurring retainers without manual copy-paste), and newcomer Jordan (needs to look legit) all align with a recurring template feature; Jordan specifically suggests a 'first professional invoice' onboarding path could pair with saved templates.",
+    "Priya's need for export-friendly records for 5 small clients is not directly addressed by recurring invoice templates and may warrant a separate export/records capability."
+  ],
+  "risks": [
+    "Competitive risk: FreshBooks, Wave, and Zoho Invoice are already established freelancer invoicing brands per productData.competitorCompanies, and the research could not verify whether they already offer recurring invoice templates or auto-reminders.",
+    "Evidence risk: 9 of 12 planned tool steps errored (3 company_enrich, 6 company_search), so any strategic conclusion about competitor positioning is unsupported by retrieved data.",
+    "Signal-quality risk: the only successful live source was a single web search; its results are secondary market-research summaries with inconsistent market sizes (e.g., USD 5.43B vs USD 6.57B vs USD 12.06B for overlapping categories), so sizing should not be treated as precise.",
+    "Scope risk: LedgerLite is built by a team of 1, but the feature implies scheduling infrastructure, template versioning, payment reminders, and deliverability concerns (email sending, bounce handling) that may exceed a one-person team's near-term capacity.",
+    "Trust risk for the Jordan persona: auto-sent invoices and automated payment reminders can feel impersonal or aggressive if not tuned; the PRD wording 'gentle payment reminders' is not yet specified in any retrieved source.",
+    "Measurement risk: no retrieved data covers reminder cadence, deliverability, or payment-collection outcomes, so success metrics for the feature are not grounded in this bundle."
+  ],
+  "dataLimitations": [
+    "company_enrich failed for freshbooks.com, waveapps.com, and zoho.com with 'Exactly one identifier must be provided: names, domains, professional_network_profile_urls, or crustdata_company_ids' (rawBundle.errors[0..2]).",
+    "company_search failed for all six queries (Design Services, Graphic Design, Management Consulting, Business Consulting, Accounting, Bookkeeping) with \"'filters' must be either a single condition ({\\\"field\\\", \\\"type\\\", \\\"value\\\"}) or a tree ({\\\"op\\\", \\\"conditions\\\": [...]})\" (rawBundle.errors[3..8]).",
+    "job_search for 'freelance designer' returned unrelated listings (Serco Navy submarine data role, CNA, marketing/social/security roles) rather than freelance design hiring signals; the same noise pattern repeated for 'freelance consultant'.",
+    "web_search_live returned 9 results for invoicing market size, but all are third-party market-research summaries rather than primary sources such as earnings calls, regulatory filings, or survey data.",
+    "Market size estimates across retrieved sources are mutually inconsistent (e.g., USD 5.43B vs USD 12.06B vs USD 6.57B for overlapping billing/invoicing scopes), so no single figure should be used as a TAM input.",
+    "No customer interviews, win/loss data, pricing data, churn data, or usage telemetry were provided in the bundle.",
+    "Only one application name (LedgerLite) and one PRD filename (recurring-invoices-prd.pdf) were provided; the PRD contents and persona research document (ledgerlite-persona-research.docx) were not included in the raw data.",
+    "planSummary from the bundle states 'Executed 3 step(s); 9 error(s)', confirming that the majority of the planned research steps produced no usable data."
+  ],
+  "planSummary": "Executed 3 step(s); 9 error(s). Planned tools: company_enrich, company_enrich, company_enrich, company_search, company_search, company_search, company_search, company_search, company_search, job_search, job_search, web_search_live"
+}

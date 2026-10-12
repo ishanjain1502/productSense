@@ -17,6 +17,16 @@ export type ProductValidationData = {
   primaryBuyer: string;
   competitorCompanies: string;
   geography: string;
+  /** Max acceptable spend or minimum return hurdle for this feature (USD). */
+  financialThresholdAmount: number | "";
+  /** Planned calendar time to ship the feature. */
+  expectedDurationWeeks: number | "";
+  /** Who and what you expect to consume over that period (people, infra, vendors). */
+  expectedResourceConsumption: string;
+  /** Current profitability, margins, unit economics, or path to profit. */
+  companyProfitabilityDetails: string;
+  /** Cash runway at current burn (months). */
+  runwayRemainingMonths: number | "";
 };
 
 export const emptyProductValidation = (): ProductValidationData => ({
@@ -37,6 +47,11 @@ export const emptyProductValidation = (): ProductValidationData => ({
   primaryBuyer: "",
   competitorCompanies: "",
   geography: "",
+  financialThresholdAmount: "",
+  expectedDurationWeeks: "",
+  expectedResourceConsumption: "",
+  companyProfitabilityDetails: "",
+  runwayRemainingMonths: "",
 });
 
 export type DemoApplicationSummary = {
@@ -94,6 +109,13 @@ export const DEMO_APPLICATIONS: DemoApplication[] = [
       primaryBuyer: "Freelancer / solopreneur (self-serve)",
       competitorCompanies: "FreshBooks, Wave, Zoho Invoice",
       geography: "United States, Canada, United Kingdom",
+      financialThresholdAmount: 8_000,
+      expectedDurationWeeks: 4,
+      expectedResourceConsumption:
+        "Solo founder: ~60% engineering time for 4 weeks; no new paid infra; opportunity cost capped at $8k before pausing.",
+      companyProfitabilityDetails:
+        "Bootstrapped; ~$4.2k MRR, ~85% gross margin after payment fees. Founder salary drawn from revenue; no outside payroll.",
+      runwayRemainingMonths: 14,
     },
   },
   {
@@ -139,6 +161,13 @@ export const DEMO_APPLICATIONS: DemoApplication[] = [
       primaryBuyer: "Head of Product or VP Engineering",
       competitorCompanies: "Linear, Asana, Monday.com, Jira",
       geography: "Global; focus on US and EU mid-market SaaS",
+      financialThresholdAmount: 180_000,
+      expectedDurationWeeks: 14,
+      expectedResourceConsumption:
+        "2 full-stack engineers, PM at 30%, designer 3 weeks; ~$3k/mo extra graph/alerting infra during beta.",
+      companyProfitabilityDetails:
+        "Series A; ~$1.8M ARR growing ~15% QoQ. Gross margin ~72%; EBITDA negative (~$180k/mo burn) as we invest in growth.",
+      runwayRemainingMonths: 22,
     },
   },
   {
@@ -185,6 +214,13 @@ export const DEMO_APPLICATIONS: DemoApplication[] = [
       competitorCompanies:
         "HashiCorp, Flexera, Apptio, native cloud policy tools",
       geography: "North America, EMEA, APAC enterprise accounts",
+      financialThresholdAmount: 2_500_000,
+      expectedDurationWeeks: 28,
+      expectedResourceConsumption:
+        "Dedicated squad (~8 FTE: eng, security, PM, solutions); compliance and pen-test vendors; ~$20k/mo staging cloud and model API during build.",
+      companyProfitabilityDetails:
+        "Public-cloud division profitable on operating income; platform gross margin ~68%. Parent balance sheet funds strategic bets without near-term fundraise pressure.",
+      runwayRemainingMonths: 48,
     },
   },
 ];
@@ -194,6 +230,7 @@ export const VALIDATION_STEPS = [
   { id: "feature", title: "Feature", short: "Feature" },
   { id: "market", title: "Target market", short: "Market" },
   { id: "gtm", title: "Go-to-market", short: "GTM" },
+  { id: "financials", title: "Financials & resourcing", short: "Financials" },
 ] as const;
 
 export type ValidationStepId = (typeof VALIDATION_STEPS)[number]["id"];
@@ -232,6 +269,17 @@ export function isStepComplete(
         text(data.primaryBuyer) &&
         text(data.competitorCompanies) &&
         text(data.geography)
+      );
+    case "financials":
+      return (
+        typeof data.financialThresholdAmount === "number" &&
+        data.financialThresholdAmount > 0 &&
+        typeof data.expectedDurationWeeks === "number" &&
+        data.expectedDurationWeeks > 0 &&
+        text(data.expectedResourceConsumption) &&
+        text(data.companyProfitabilityDetails) &&
+        typeof data.runwayRemainingMonths === "number" &&
+        data.runwayRemainingMonths > 0
       );
     default:
       return false;

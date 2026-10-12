@@ -1,0 +1,126 @@
+{
+  "strategy": "planned_c",
+  "generatedAt": "2026-10-12T07:22:48.839Z",
+  "feature": {
+    "name": "Cross-project dependency map",
+    "description": "Visualize blockers across teams with live links to tasks and Slack digests when critical paths slip. Spec: dependency-map-spec-v2.pdf. Product: FlowStack — team workflow hub connecting tasks, docs, and lightweight automations for growing product squads."
+  },
+  "executiveSummary": "FlowStack plans to ship a Cross-project dependency map (dependency-map-spec-v2.pdf) for B2B SaaS companies with 20–200 employees running multiple parallel initiatives, targeting Heads of Product / VPs of Engineering with a stated financial threshold of $180,000. The research run executed 11 planned tool calls, but only one produced data: a web_search_live query that returned 5 results, all of them vendor or third-party comparison/listicle content (monday.com blog x2, asana.com x1, a third-party blog x2). Without exception, the four intended competitor enrichment calls (Linear, Asana, Monday.com, Atlassian Jira) failed with identifier-format errors, and the company_search and both job_search calls failed with filter-format errors. Consequently, this report contains no firmographic data (employee counts, funding, ARR, tech stack), no buyer intent signals, and no market sizing — only directional qualitative signals from 5 comparison articles. The single usable signal: a monday.com-authored comparison states that Asana's \"cross-project automation requires workarounds or third-party tools,\" which is the closest thing in the dataset to validation that cross-project dependency handling is an unaddressed pain in an adjacent incumbent. Recommended next step before committing the 14-week, 2-engineer build is to re-run the failed enrich/search steps with corrected parameters, since the current evidence base is insufficient to justify the investment against a 22-month runway and ~$180k/mo burn.",
+  "competitorLandscape": [
+    {
+      "name": "Asana",
+      "positioning": "Presented in retrieved results as strong in portfolio management and rich in custom fields/templates, but weak on cross-project automation. No firmographic or pricing data was retrieved (enrich call failed).",
+      "relevantMoves": [
+        "Maintains its own comparison/education content ('Best Project Management Software: 11 Tools Compared') that frames itself alongside Jira, Trello and monday.com — i.e., it competes on category ownership via content, not just product.",
+        "Per retrieved snippet, cross-project automation in Asana 'requires workarounds or third-party tools' — the primary documented opening for FlowStack's dependency map.",
+        "Listed as 'Strong in Portfolio Management' in a third-party 2026 tool comparison, indicating positioning one layer above task-level dependencies."
+      ],
+      "sources": [
+        "https://monday.com/blog/project-management/asana-vs-basecamp/",
+        "https://asana.com/resources/best-project-management-software",
+        "https://till-freitag.com/en/blog/best-project-management-tools"
+      ]
+    },
+    {
+      "name": "Monday.com",
+      "positioning": "Presented as the top-ranked tool ('Our Winner') in third-party 2026 comparisons and as the publisher of competitive comparison content against Asana/Basecamp. No firmographic data retrieved (enrich call failed).",
+      "relevantMoves": [
+        "Operates a high-volume project-management blog that publishes competitor comparisons (e.g., 'Asana vs Basecamp: 2026 comparison for teams'), a content-led acquisition play in exactly FlowStack's target segment.",
+        "Ranked #1 in an independent 2026 '10 Best Project Management Tools' list, indicating strong share of voice in the mid-market evaluation funnel where FlowStack would compete.",
+        "Positions itself as offering 'comprehensive agile project management capabilities' in comparison content alongside Jira and Asana."
+      ],
+      "sources": [
+        "https://monday.com/blog/project-management/asana-vs-basecamp/",
+        "https://monday.com/blog/project-management/software-for-project-managers/",
+        "https://till-freitag.com/en/blog/best-project-management-tools"
+      ]
+    },
+    {
+      "name": "Atlassian Jira",
+      "positioning": "Appears in retrieved results as the tool 'tailored specifically for software' teams and as a default head-to-head against Asana in comparison content. No firmographic data, pricing, or roadmap data retrieved (identify/enrich calls failed).",
+      "relevantMoves": [
+        "Occupies the 'software team default' position in third-party comparisons, meaning FlowStack's engineering-manager persona (Elena) and IC designer persona (Chris) most likely already live in Jira.",
+        "Third-party comparison content repeatedly pairs Jira and Asana as 'two leaders in project management,' implying the dependency-map feature must integrate with rather than replace Jira.",
+        "No retrieved evidence of a native cross-project dependency visualization move — this is an inference from absence, not a confirmed gap."
+      ],
+      "sources": [
+        "https://monday.com/blog/project-management/software-for-project-managers/",
+        "https://till-freitag.com/en/blog/best-project-management-tools",
+        "https://www.appvizer.co.uk/magazine/operations/project-management/asana-vs-monday"
+      ]
+    },
+    {
+      "name": "Linear",
+      "positioning": "Not assessed. Linear was included in the research plan (company_identify and company_enrich) but both calls failed with identifier-format errors and Linear does not appear anywhere in the 5 retrieved web results.",
+      "relevantMoves": [],
+      "sources": []
+    }
+  ],
+  "marketSignals": [
+    {
+      "signal": "Cross-project automation is a documented weak point in a leading incumbent",
+      "evidence": "Retrieved snippet: 'Asana: allows custom fields and templates, Cross-project automation requires workarounds or third-party tools.'",
+      "implicationForFeature": "Directly supports the premise of the Cross-project dependency map: the pain is real enough that a competitor's own comparison page names it as an Asana limitation. FlowStack should lead positioning with 'no workarounds, no third-party glue.'",
+      "source": "https://monday.com/blog/project-management/asana-vs-basecamp/"
+    },
+    {
+      "signal": "Incumbents compete on portfolio-level framing, not dependency-level execution",
+      "evidence": "Third-party 2026 comparison ranks 'Asana – Strong in Portfolio Management' above task-level capability discussion; Jira is framed as 'comprehensive agile project management capabilities tailored specifically for software.'",
+      "implicationForFeature": "Leaves the operational layer — what my squad owes other teams before sprint planning (persona Elena) — less explicitly claimed by incumbents, a plausible wedge for a focused dependency map aimed at 20–200 employee squads rather than enterprises.",
+      "source": "https://till-freitag.com/en/blog/best-project-management-tools"
+    },
+    {
+      "signal": "Category discovery is funneled through vendor-authored 'best tool' listicles",
+      "evidence": "Of 5 retrieved results, 2 are published on monday.com's own blog and 1 on asana.com's own site; the monday.com-authored set includes an 'Asana vs Basecamp' comparison and a listicle in which a third party names monday.com the winner.",
+      "implicationForFeature": "FlowStack's buyer research is being mediated by competitors' content. The dependency map needs a comparison-proof claim (e.g., explicit cross-project/Slack digest capability) or FlowStack will be evaluated, and dismissed, on incumbents' framing.",
+      "source": "https://monday.com/blog/project-management/asana-vs-basecamp/"
+    },
+    {
+      "signal": "The comparison content is denser on setup/onboarding time than on dependency capability",
+      "evidence": "Retrieved snippet references implementation effort: 'Asana: Takes two to four weeks…' in the context of a team-tool comparison.",
+      "implicationForFeature": "Setup friction is a live evaluation criterion in this segment, which aligns with the new-install persona (Alicia, new PM at a Series A inheriting a messy roadmap). The dependency map should be demonstrably usable on day one without a migration project.",
+      "source": "https://monday.com/blog/project-management/asana-vs-basecamp/"
+    },
+    {
+      "signal": "No feature-specific evidence surfaced for 'cross-project dependency mapping' as a category",
+      "evidence": "The single successful search — 'cross-project dependency mapping tools B2B SaaS mid-market 2025 Linear Asana Monday.com Jira' — returned only 5 generic project-management comparison articles; none addressed dependency mapping as a distinct capability or category.",
+      "implicationForFeature": "Cannot be read as proof the category is empty; it is equally consistent with weak query coverage. Treat as a hypothesis to test with corrected search parameters before sizing the opportunity.",
+      "source": "https://monday.com/blog/project-management/software-for-project-managers/"
+    }
+  ],
+  "gapsAndOpportunities": [
+    "Named gap in an adjacent incumbent: cross-project automation in Asana 'requires workarounds or third-party tools' (monday.com comparison page) — FlowStack can position the dependency map as removing third-party glue and manual workarounds.",
+    "Dependency visibility is framed by incumbents at portfolio level; the day-to-day question for the engineering-manager persona (Elena) — 'what does my squad owe other teams before sprint planning' — is not explicitly claimed in any retrieved content.",
+    "Onboarding friction ('two to four weeks' reference in comparison content) is an explicit evaluation criterion, creating an opening for a dependency map that works immediately for a new PM inheriting a messy roadmap (Alicia persona).",
+    "Slack digest alerting on critical-path slips is a distribution and stickiness opportunity: it inserts FlowStack into the daily channel where the designer persona (Chris) already waits for unblock notifications, rather than requiring a new tool-checking habit.",
+    "The 20–200 employee mid-market segment is described in FlowStack's own targeting as running multiple parallel initiatives; retrieved comparison content is oriented to either generic SMB or enterprise-portfolio framing, leaving a middle-band positioning surface — though this gap is asserted from FlowStack's brief, not verified by retrieved data.",
+    "Vendor-dominated comparison content (monday.com and asana.com publish their own listicles) indicates FlowStack cannot win discovery passively and should plan a comparison/positioning asset alongside the feature launch."
+  ],
+  "risks": [
+    "Evidence base is critically thin: 10 of 11 planned research steps failed, leaving only 5 web results — all vendor-authored or third-party listicles — as the entire external input to this report.",
+    "No competitor firmographics were retrieved (employee count, funding, tech stack, estimated ARR all failed for Linear, Asana, Monday.com and Atlassian), so no assessment can be made of relative R&D capacity or likelihood of a fast-follow.",
+    "No market sizing or demand quantification was produced (company_search failed with a filter-format error), so the 20–200 employee / US-EU mid-market opportunity is unvalidated by data.",
+    "No hiring or roadmap signals were captured (both job_search calls failed), removing the best available proxy for whether competitors are staffing up on dependency/automation work.",
+    "Linear received zero coverage in retrieved results, meaning the most product-culture-adjacent competitor in the set is entirely unassessed — a blind spot for a feature aimed at software product squads.",
+    "Feature is plausibly replicable by incumbents: the one documented gap is described as a limitation incumbents currently accept, not one they cannot address, and the map/digest concept is a surface-level layer on data incumbents already hold.",
+    "Integration dependence on Jira, Slack and Notion APIs is implied by FlowStack's own positioning ('connects tasks, docs, and lightweight automations') and by retrieved signals that Jira is the software-team default; partner API changes or access restrictions would directly degrade the Slack-digest and live-task-link promise.",
+    "Cost and runway pressure: the feature consumes 2 full-stack engineers for 14 weeks plus ~$3k/mo extra graph/alerting infra during beta, against ~$1.8M ARR, ~72% gross margin, ~$180k/mo EBITDA burn and 22 months of runway — a meaningful commitment to an evidence base this weak.",
+    "Two of three named personas (Elena, Sam) solve for planning rituals already served by Jira/Notion, so the feature risks being perceived as an additional dashboard rather than a replacement for an existing workflow.",
+    "Financial threshold of $180,000 used in the plan cannot be validated against any retrieved pricing or deal-size data; no buyer-budget evidence was collected in this run.",
+    "Source bias: half of retrieved results are published by a direct competitor (monday.com), including the single quoted claim about Asana's cross-project limitation — that claim is self-serving and should be verified independently before it is used in positioning."
+  ],
+  "dataLimitations": [
+    "company_identify failed for all 4 targets (Linear, Asana, Monday.com, Atlassian Jira) with 'Exactly one identifier must be provided' — no company identities were resolved.",
+    "company_enrich failed for all 3 attempted domains (linear.app, asana.com, monday.com) with the same identifier-format error — no employee counts, industries, locations, funding, tech stack, descriptions or estimated ARR were obtained.",
+    "company_search failed ('filters' must be a single condition or a tree) — no list of 20–200 employee US/EU B2B SaaS companies was produced, despite a planned limit of 50.",
+    "Both job_search calls failed with the same filter-format error — no Product Operations or Engineering Manager job data, and no competitor hiring signals for dependency mapping, cross-project dependencies or workflow automation.",
+    "Only 1 of 11 planned steps returned any data (web_search_live), yielding 5 results, all of which are comparison/listicle articles rather than feature-specific, buyer, or pricing sources.",
+    "No retrieved source addresses 'cross-project dependency mapping' as a named capability; the feature's competitive differentiation is inferred from a single third-party-hosted quote about Asana and from absence of contrary evidence.",
+    "No pricing, packaging, or contract-value data was retrieved for any competitor; the $180,000 financial threshold in the plan is an internally supplied figure, not a validated market input.",
+    "No geography-specific evidence: the plan targets US and EU, but retrieved sources are English-language vendor blogs with no EU-specific regulatory, localization, or buying-behavior data.",
+    "No primary research was conducted in this run; user interview material (flowstack-user-interviews-summary.pdf) and the feature spec (dependency-map-spec-v2.pdf) were supplied as inputs but were not independently verified against external evidence.",
+    "All retrieved articles are dated between Sept 2025 and Feb 2026, and the search execution timestamp (1791789725392 ms) precedes the latest article date, indicating recency claims should be treated cautiously.",
+    "No quantitative market signals were collected (TAM/SAM, growth rates, win/loss, churn, adoption) — every marketSignal in this report is qualitative and directional only."
+  ],
+  "planSummary": "Executed 1 step(s); 10 error(s). Planned tools: company_identify, company_identify, company_identify, company_identify, company_enrich, company_enrich, company_enrich, company_search, job_search, job_search, web_search_live"
+}

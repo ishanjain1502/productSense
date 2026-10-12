@@ -1,4 +1,7 @@
-import type { ProductValidationData } from "@/lib/product-validation";
+import {
+  emptyProductValidation,
+  type ProductValidationData,
+} from "@/lib/product-validation";
 
 export const VALIDATION_SESSION_KEY = "ps-validation-session";
 
@@ -6,6 +9,16 @@ export type ValidationSession = {
   mode: "demo" | "full";
   demoId: string | null;
   data: ProductValidationData;
+  promptId?: number;
+  projectId?: string;
+  featureId?: string;
+  regressionSkipped?: boolean;
+  regressionCheckPassed?: boolean;
+  marketAnalysisRunId?: number;
+  marketAnalysisReportId?: number;
+  personaFleetRunId?: number;
+  financialReportId?: number | null;
+  financialReportFileName?: string | null;
 };
 
 export function saveValidationSession(session: ValidationSession) {
@@ -16,7 +29,11 @@ export function loadValidationSession(): ValidationSession | null {
   const raw = sessionStorage.getItem(VALIDATION_SESSION_KEY);
   if (!raw) return null;
   try {
-    return JSON.parse(raw) as ValidationSession;
+    const parsed = JSON.parse(raw) as ValidationSession;
+    return {
+      ...parsed,
+      data: { ...emptyProductValidation(), ...parsed.data },
+    };
   } catch {
     return null;
   }

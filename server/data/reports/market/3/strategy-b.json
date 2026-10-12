@@ -1,0 +1,40 @@
+{
+  "strategy": "fixed_b",
+  "generatedAt": "2026-10-12T03:27:13.901Z",
+  "feature": {
+    "name": "L",
+    "description": "No feature description was supplied in the input payload. The only product-level attributes available are the application name \"L\" and the named competitor \"FreshBooks\". No positioning statement, capability list, target segment, or roadmap context accompanied the request."
+  },
+  "executiveSummary": "This report was requested under the fixed_b strategy for the product \"L\" against the named competitor FreshBooks. The analysis could not be substantiated: every data-collection step in the raw bundle returned empty or errored. Specifically, the competitor array is empty, the enrichment result is null, the jobs array is empty, the landscape object is null, and both executed queries failed — company_identify for FreshBooks returned an error object, and the company_search call returned an error object. As a result there are no competitor moves, no market signals, and no verified evidence on which to ground a landscape, opportunity, or risk assessment. The only defensible statement is the bare fact that FreshBooks was nominated as the competitor of record for product L. No positioning, feature comparison, pricing, demand signal, or strategic recommendation can be derived from this bundle without re-running collection. All downstream sections are therefore intentionally empty or null, and the failure modes are itemized in dataLimitations.",
+  "competitorLandscape": [
+    {
+      "name": "FreshBooks",
+      "positioning": "Unknown. FreshBooks is the sole competitor named in the request payload (productData.competitorCompanies). No positioning, segment, pricing, or messaging data was returned by any tool in the raw bundle, so no characterization can be grounded in evidence.",
+      "relevantMoves": [],
+      "sources": []
+    }
+  ],
+  "marketSignals": [],
+  "gapsAndOpportunities": [],
+  "risks": [
+    "Evidence-free synthesis risk: with competitors[], enrichResult, jobs[], and landscape all empty/null, any competitor comparison, opportunity sizing, or recommendation produced from this bundle would be unsupported speculation rather than grounded analysis.",
+    "Single-named-competitor bias: the payload names only FreshBooks (productData.competitorCompanies). With company_search failing, no independent discovery was possible, so the competitive set cannot be validated as complete or correct for product L.",
+    "Tool failure risk: both queries executed (company_identify, company_search) returned error objects, indicating a systemic data-collection failure rather than a genuinely empty market. Conclusions drawn from a failed pipeline may be false negatives.",
+    "Undefined feature risk: the feature object has a name (\"L\") but no description, so relevance filters for competitive moves, signals, or opportunities cannot be defined or applied.",
+    "Timestamp provenance risk: the generatedAt value in this report was not supplied by the input bundle and was set by the generator; it should not be treated as a verified collection time for the underlying data."
+  ],
+  "dataLimitations": [
+    "rawBundle.competitors is an empty array — no competitor records were collected.",
+    "rawBundle.enrichResult is null — no enrichment (firmographics, positioning, product detail) was produced.",
+    "rawBundle.jobs is empty — no job postings or hiring signals were collected.",
+    "rawBundle.landscape is null — no landscape object was generated, so no market structure or segment map exists.",
+    "queriesExecuted[0]: tool \"company_identify\" for name \"FreshBooks\" returned error \"[object Object]\" — the error payload was not serialized into a readable message, so the root cause is unknown.",
+    "queriesExecuted[1]: tool \"company_search\" returned error \"[object Object]\" with no name argument recorded — the error payload was not serialized into a readable message, so the root cause is unknown.",
+    "productData contains only applicationName (\"L\") and competitorCompanies (\"FreshBooks\"). No feature description, target segment, geography, pricing model, or time window was provided.",
+    "The feature description in this report is a statement of absence, not a substantive product definition, because none was supplied.",
+    "planSummary was null in the input and is therefore null in this output; no planning artifact could be carried forward.",
+    "No external sources, URLs, documents, or citations were included in the payload, so no source attribution is possible for any claim.",
+    "Because zero evidence items were retrieved, marketSignals, gapsAndOpportunities, and relevantMoves are returned as empty arrays rather than populated with inferred content."
+  ],
+  "planSummary": null
+}

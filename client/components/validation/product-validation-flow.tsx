@@ -6,6 +6,7 @@ import { Check, ChevronLeft, ChevronRight } from "lucide-react";
 
 import { DemoProductCards } from "@/components/validation/demo-product-cards";
 import { DocumentAttachment } from "@/components/validation/document-attachment";
+import { FinancialReportUpload } from "@/components/validation/financial-report-upload";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -46,6 +47,12 @@ export function ProductValidationFlow({ mode }: ProductValidationFlowProps) {
   const [data, setData] = useState<ProductValidationData>(
     emptyProductValidation
   );
+  const [financialReportId, setFinancialReportId] = useState<number | null>(
+    null
+  );
+  const [financialReportFileName, setFinancialReportFileName] = useState<
+    string | null
+  >(null);
 
   const currentStep = VALIDATION_STEPS[stepIndex];
   const stepComplete = isStepComplete(currentStep.id, data, mode);
@@ -73,6 +80,8 @@ export function ProductValidationFlow({ mode }: ProductValidationFlowProps) {
     if (!app) return;
     setSelectedDemoId(id);
     setData({ ...app.data });
+    setFinancialReportId(null);
+    setFinancialReportFileName(null);
     setStepIndex(0);
   };
 
@@ -88,6 +97,8 @@ export function ProductValidationFlow({ mode }: ProductValidationFlowProps) {
         mode,
         demoId: selectedDemoId,
         data,
+        financialReportId,
+        financialReportFileName,
       });
       router.push(`/${mode}/agent-prompt`);
       return;
@@ -352,6 +363,146 @@ export function ProductValidationFlow({ mode }: ProductValidationFlowProps) {
                 onChange={(e) => patch({ geography: e.target.value })}
               />
             </Field>
+          </FieldGroup>
+        );
+      case "financials":
+        return (
+          <FieldGroup>
+            <p className="text-sm font-medium">Feature investment</p>
+            <Field>
+              <FieldLabel htmlFor="financialThreshold">
+                Investment threshold (USD)
+              </FieldLabel>
+              <FieldDescription>
+                Maximum spend or minimum return hurdle for this feature before
+                you reconsider or stop.
+              </FieldDescription>
+              <Input
+                id="financialThreshold"
+                type="number"
+                min={1}
+                readOnly={readOnly}
+                value={
+                  data.financialThresholdAmount === ""
+                    ? ""
+                    : data.financialThresholdAmount
+                }
+                placeholder="e.g. 150000"
+                onChange={(e) => {
+                  const v = e.target.value;
+                  patch({
+                    financialThresholdAmount:
+                      v === "" ? "" : Math.max(0, parseInt(v, 10) || 0),
+                  });
+                }}
+              />
+            </Field>
+            <Field>
+              <FieldLabel htmlFor="expectedDurationWeeks">
+                Expected build duration (weeks)
+              </FieldLabel>
+              <FieldDescription>
+                Calendar time from kickoff to production-ready for this feature.
+              </FieldDescription>
+              <Input
+                id="expectedDurationWeeks"
+                type="number"
+                min={1}
+                readOnly={readOnly}
+                value={
+                  data.expectedDurationWeeks === ""
+                    ? ""
+                    : data.expectedDurationWeeks
+                }
+                placeholder="e.g. 12"
+                onChange={(e) => {
+                  const v = e.target.value;
+                  patch({
+                    expectedDurationWeeks:
+                      v === "" ? "" : Math.max(0, parseInt(v, 10) || 0),
+                  });
+                }}
+              />
+            </Field>
+            <Field>
+              <FieldLabel htmlFor="expectedResourceConsumption">
+                Expected resource consumption
+              </FieldLabel>
+              <FieldDescription>
+                People, infrastructure, and vendors you expect to use over that
+                period.
+              </FieldDescription>
+              <Textarea
+                id="expectedResourceConsumption"
+                value={data.expectedResourceConsumption}
+                readOnly={readOnly}
+                rows={4}
+                placeholder="e.g. 2 engineers full-time, PM 25%, $5k/mo cloud during beta…"
+                onChange={(e) =>
+                  patch({ expectedResourceConsumption: e.target.value })
+                }
+              />
+            </Field>
+            <Separator />
+            <p className="text-sm font-medium">Company financial health</p>
+            <Field>
+              <FieldLabel htmlFor="companyProfitability">
+                Profitability details
+              </FieldLabel>
+              <FieldDescription>
+                Revenue, margins, burn, unit economics, or timeline to
+                profitability.
+              </FieldDescription>
+              <Textarea
+                id="companyProfitability"
+                value={data.companyProfitabilityDetails}
+                readOnly={readOnly}
+                rows={3}
+                placeholder="e.g. $2M ARR, 70% gross margin, EBITDA negative until Q3…"
+                onChange={(e) =>
+                  patch({ companyProfitabilityDetails: e.target.value })
+                }
+              />
+            </Field>
+            <Field>
+              <FieldLabel htmlFor="runwayRemainingMonths">
+                Runway remaining (months)
+              </FieldLabel>
+              <FieldDescription>
+                Months of cash at current burn without new funding.
+              </FieldDescription>
+              <Input
+                id="runwayRemainingMonths"
+                type="number"
+                min={1}
+                readOnly={readOnly}
+                value={
+                  data.runwayRemainingMonths === ""
+                    ? ""
+                    : data.runwayRemainingMonths
+                }
+                placeholder="e.g. 18"
+                onChange={(e) => {
+                  const v = e.target.value;
+                  patch({
+                    runwayRemainingMonths:
+                      v === "" ? "" : Math.max(0, parseInt(v, 10) || 0),
+                  });
+                }}
+              />
+            </Field>
+            <Separator />
+            <FinancialReportUpload
+              mode={mode}
+              demoId={selectedDemoId}
+              reportId={financialReportId}
+              fileName={financialReportFileName}
+              readOnly={mode === "demo" && !demoFormEnabled}
+              onChange={({ reportId, fileName }) => {
+                setFinancialReportId(reportId);
+                setFinancialReportFileName(fileName);
+              }}
+            />
           </FieldGroup>
         );
       default:
