@@ -1,7 +1,25 @@
 export const AUTH_COOKIE = "ps_token";
-export const API_BASE =
-  process.env.NEXT_PUBLIC_API_URL?.replace(/\/$/, "") ||
-  "http://localhost:1337";
+
+function resolveApiBase(): string {
+  const raw = process.env.NEXT_PUBLIC_API_URL;
+  if (raw === "" || raw === "/") return "";
+  if (raw) return raw.replace(/\/$/, "");
+  return "http://localhost:1337";
+}
+
+/** Empty string = same-origin (relative `/auth/...` paths). */
+export const API_BASE = resolveApiBase();
+
+/** Browser origin for OAuth popups when API is same-origin. */
+export function apiOrigin(): string {
+  if (API_BASE) {
+    return new URL(API_BASE).origin;
+  }
+  if (typeof window !== "undefined") {
+    return window.location.origin;
+  }
+  return "";
+}
 
 export type AuthUser = {
   id: number;

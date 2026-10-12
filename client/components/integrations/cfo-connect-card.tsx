@@ -14,7 +14,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { API_BASE } from "@/lib/auth";
+import { apiOrigin } from "@/lib/auth";
 import {
   disconnectCfoIntegration,
   fetchCfoIntegrationStatus,
@@ -22,7 +22,6 @@ import {
   type CfoIntegrationStatus,
 } from "@/lib/cfo-integration-api";
 
-const API_ORIGIN = new URL(API_BASE).origin;
 
 const CFO_MESSAGE_TYPE = "productsense-cfo-connected";
 
@@ -62,7 +61,10 @@ export function CfoConnectCard() {
 
   useEffect(() => {
     function onMessage(event: MessageEvent) {
-      if (event.origin !== API_ORIGIN && event.origin !== window.location.origin) {
+      if (
+        event.origin !== window.location.origin &&
+        event.origin !== apiOrigin()
+      ) {
         return;
       }
       if (
