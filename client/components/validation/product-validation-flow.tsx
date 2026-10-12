@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
 import { Check, ChevronLeft, ChevronRight } from "lucide-react";
 
 import { DemoProductCards } from "@/components/validation/demo-product-cards";
@@ -31,6 +32,7 @@ import {
   type ProductValidationData,
   type ValidationStepId,
 } from "@/lib/product-validation";
+import { saveValidationSession } from "@/lib/validation-session";
 import { cn } from "@/lib/utils";
 
 type ProductValidationFlowProps = {
@@ -38,12 +40,12 @@ type ProductValidationFlowProps = {
 };
 
 export function ProductValidationFlow({ mode }: ProductValidationFlowProps) {
+  const router = useRouter();
   const [stepIndex, setStepIndex] = useState(0);
   const [selectedDemoId, setSelectedDemoId] = useState<string | null>(null);
   const [data, setData] = useState<ProductValidationData>(
     emptyProductValidation
   );
-  const [finished, setFinished] = useState(false);
 
   const currentStep = VALIDATION_STEPS[stepIndex];
   const stepComplete = isStepComplete(currentStep.id, data, mode);
@@ -72,7 +74,6 @@ export function ProductValidationFlow({ mode }: ProductValidationFlowProps) {
     setSelectedDemoId(id);
     setData({ ...app.data });
     setStepIndex(0);
-    setFinished(false);
   };
 
   const canGoNext = stepComplete;
@@ -83,17 +84,18 @@ export function ProductValidationFlow({ mode }: ProductValidationFlowProps) {
   const goNext = () => {
     if (!canGoNext) return;
     if (isLastStep) {
-      setFinished(true);
+      saveValidationSession({
+        mode,
+        demoId: selectedDemoId,
+        data,
+      });
+      router.push(`/${mode}/agent-prompt`);
       return;
     }
     setStepIndex((i) => i + 1);
   };
 
   const goBack = () => {
-    if (finished) {
-      setFinished(false);
-      return;
-    }
     setStepIndex((i) => Math.max(0, i - 1));
   };
 
@@ -382,7 +384,7 @@ export function ProductValidationFlow({ mode }: ProductValidationFlowProps) {
           <ol className="flex flex-wrap gap-2">
             {VALIDATION_STEPS.map((step, index) => {
               const done = isStepComplete(step.id, data, mode);
-              const active = !finished && index === stepIndex;
+              const active = index === stepIndex;
               return (
                 <li key={step.id}>
                   <Badge
@@ -406,46 +408,35 @@ export function ProductValidationFlow({ mode }: ProductValidationFlowProps) {
         </div>
 
         <Card className="border-border/60 bg-card/80 shadow-sm backdrop-blur-sm">
-          {finished ? (
-            <CardHeader className="gap-2">
-              <CardTitle>Ready for validation</CardTitle>
+          <>
+            <CardHeader className="gap-1 border-b border-border/60">
+              <CardTitle>{currentStep.title}</CardTitle>
               <CardDescription>
-                {mode === "demo"
-                  ? `Context for ${data.applicationName} is loaded. The next phase will score your feature against this market picture.`
-                  : "You've completed all steps. The next phase will analyze your feature with the details you provided."}
+                {mode === "demo" && !demoFormEnabled
+                  ? "Select a product above to continue."
+                  : mode === "full"
+                    ? "Fill in every field on this step to continue."
+                    : "Review the loaded details, then continue."}
               </CardDescription>
             </CardHeader>
-          ) : (
-            <>
-              <CardHeader className="gap-1 border-b border-border/60">
-                <CardTitle>{currentStep.title}</CardTitle>
-                <CardDescription>
-                  {mode === "demo" && !demoFormEnabled
-                    ? "Select a product above to continue."
-                    : mode === "full"
-                      ? "Fill in every field on this step to continue."
-                      : "Review the loaded details, then continue."}
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="pt-6">
-                {!demoFormEnabled ? (
-                  <p className="text-sm text-muted-foreground">
-                    Demo data will appear here after you select one of the
-                    sample products.
-                  </p>
-                ) : (
-                  renderStepContent(currentStep.id)
-                )}
-              </CardContent>
-            </>
-          )}
+            <CardContent className="pt-6">
+              {!demoFormEnabled ? (
+                <p className="text-sm text-muted-foreground">
+                  Demo data will appear here after you select one of the sample
+                  products.
+                </p>
+              ) : (
+                renderStepContent(currentStep.id)
+              )}
+            </CardContent>
+          </>
 
           <div className="flex flex-wrap items-center justify-between gap-3 border-t border-border/60 px-6 py-4">
             <Button
               type="button"
               variant="outline"
               onClick={goBack}
-              disabled={!finished && stepIndex === 0}
+              disabled={stepIndex === 0}
               className="gap-1"
             >
               <ChevronLeft className="size-4" />
@@ -454,15 +445,11 @@ export function ProductValidationFlow({ mode }: ProductValidationFlowProps) {
             <Button
               type="button"
               onClick={goNext}
-              disabled={!finished && (!demoFormEnabled || !canGoNext)}
+              disabled={!demoFormEnabled || !canGoNext}
               className="gap-1"
             >
-              {finished
-                ? "Done"
-                : isLastStep
-                  ? "Finish"
-                  : "Next step"}
-              {!finished && <ChevronRight className="size-4" />}
+              {isLastStep ? "Continue to agent prompt" : "Next step"}
+              <ChevronRight className="size-4" />
             </Button>
           </div>
         </Card>
