@@ -6,6 +6,11 @@ export type ValidationSession = {
   mode: "demo" | "full";
   demoId: string | null;
   data: ProductValidationData;
+  promptId?: number;
+  projectId?: string;
+  featureId?: string;
+  regressionSkipped?: boolean;
+  regressionCheckPassed?: boolean;
 };
 
 export function saveValidationSession(session: ValidationSession) {

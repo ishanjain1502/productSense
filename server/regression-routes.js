@@ -1,10 +1,13 @@
 import { authMiddleware, verifyToken } from "./auth.js";
 import {
+  appendRegressionSubmissionMeta,
   generateFullRegressionPrompt,
   getDemoRegressionPrompt,
+  getRegressionReportStatus,
   saveRegressionPrompt,
   saveRegressionReport,
 } from "./regression.js";
+import { createProjectAndFeature } from "./projects.js";
 
 function publicBackendUrl(req) {
   return (
@@ -28,8 +31,8 @@ export function registerRegressionRoutes(app) {
           res.status(400).json({ error: "demo_id_required" });
           return;
         }
-        const prompt = getDemoRegressionPrompt(demoId, backendUrl);
-        if (!prompt) {
+        const basePrompt = getDemoRegressionPrompt(demoId, backendUrl);
+        if (!basePrompt) {
           res.status(404).json({ error: "unknown_demo" });
           return;
         }
@@ -39,8 +42,13 @@ export function registerRegressionRoutes(app) {
           demoId,
           applicationName: productData?.applicationName,
           featureName: productData?.featureName,
-          prompt,
+          prompt: basePrompt,
         });
+        const prompt = appendRegressionSubmissionMeta(basePrompt, {
+          promptId,
+          featureId: null,
+        });
+        await dbUpdatePrompt(promptId, prompt);
         res.json({ prompt, promptId, mode: "demo", generatedBy: "constant" });
         return;
       }
@@ -61,7 +69,12 @@ export function registerRegressionRoutes(app) {
           return;
         }
 
-        const prompt = await generateFullRegressionPrompt(
+        const { projectId, featureId } = await createProjectAndFeature(
+          user.id,
+          productData
+        );
+
+        let prompt = await generateFullRegressionPrompt(
           productData,
           backendUrl
         );
@@ -72,12 +85,22 @@ export function registerRegressionRoutes(app) {
           applicationName: productData.applicationName,
           featureName: productData.featureName,
           prompt,
+          projectId,
+          featureId,
         });
+        prompt = appendRegressionSubmissionMeta(prompt, {
+          promptId,
+          featureId,
+        });
+        await dbUpdatePrompt(promptId, prompt);
+
         res.json({
           prompt,
           promptId,
           mode: "full",
           generatedBy: "commandcode",
+          projectId,
+          featureId,
         });
         return;
       }
@@ -90,6 +113,48 @@ export function registerRegressionRoutes(app) {
         error: "prompt_generation_failed",
         message: err?.message ?? "Unknown error",
       });
+    }
+  });
+
+  app.get("/regression/reports/status", async (req, res) => {
+    try {
+      const promptId = req.query.promptId
+        ? Number(req.query.promptId)
+        : undefined;
+      const featureId =
+        typeof req.query.featureId === "string"
+          ? req.query.featureId
+          : undefined;
+
+      if (promptId != null && Number.isFinite(promptId)) {
+        const result = await getRegressionReportStatus({ promptId });
+        res.json(result);
+        return;
+      }
+
+      if (featureId) {
+        const header = req.headers.authorization;
+        const token =
+          header && header.startsWith("Bearer ")
+            ? header.slice(7).trim()
+            : null;
+        const user = token ? verifyToken(token) : null;
+        if (!user) {
+          res.status(401).json({ error: "unauthorized" });
+          return;
+        }
+        const result = await getRegressionReportStatus({
+          featureId,
+          userId: user.id,
+        });
+        res.json(result);
+        return;
+      }
+
+      res.status(400).json({ error: "prompt_id_or_feature_id_required" });
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ error: "server_error" });
     }
   });
 
@@ -112,11 +177,14 @@ export function registerRegressionRoutes(app) {
         if (user) userId = user.id;
       }
 
-      const reportId = await saveRegressionReport(payload, userId);
+      const reportId = await saveRegressionReport(payload, { userId });
       res.status(201).json({ ok: true, reportId });
     } catch (err) {
       console.error(err);
-      res.status(500).json({ error: "server_error" });
+      const status = err?.status && err.status >= 400 ? err.status : 500;
+      res.status(status).json({
+        error: err?.message ?? "server_error",
+      });
     }
   });
 
@@ -145,4 +213,12 @@ export function registerRegressionRoutes(app) {
       }
     }
   );
+}
+
+async function dbUpdatePrompt(promptId, prompt) {
+  const { dbRun } = await import("./db-helpers.js");
+  await dbRun(`UPDATE regression_prompts SET prompt = ? WHERE id = ?`, [
+    prompt,
+    promptId,
+  ]);
 }

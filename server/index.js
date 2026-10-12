@@ -9,8 +9,10 @@ import {
   registerUser,
 } from "./auth.js";
 import { closeDb, getDb, initDb } from "./db.js";
+import { migrateProjectsSchema } from "./projects.js";
 import { migrateRegressionSchema } from "./regression.js";
 import { registerRegressionRoutes } from "./regression-routes.js";
+import { registerMarketAnalysisRoutes } from "./market-analysis-routes.js";
 
 const port = Number(process.env.PORT) || 1337;
 const databasePath = process.env.DATABASE_PATH || "./data/app.db";
@@ -70,6 +72,7 @@ app.post("/auth/login", async (req, res) => {
 });
 
 registerRegressionRoutes(app);
+registerMarketAnalysisRoutes(app);
 
 app.get("/auth/me", authMiddleware, async (req, res) => {
   try {
@@ -87,6 +90,7 @@ app.get("/auth/me", authMiddleware, async (req, res) => {
 
 await initDb(databasePath);
 await migrateAuthSchema();
+await migrateProjectsSchema();
 await migrateRegressionSchema();
 
 const server = app.listen(port, () => {

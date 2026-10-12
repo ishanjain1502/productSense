@@ -6,6 +6,8 @@ export type AgentPromptResponse = {
   promptId: number;
   mode: "demo" | "full";
   generatedBy: "constant" | "commandcode";
+  projectId?: string;
+  featureId?: string;
 };
 
 export async function fetchAgentPrompt(input: {
@@ -43,4 +45,38 @@ export async function fetchAgentPrompt(input: {
   }
 
   return data as AgentPromptResponse;
+}
+
+export async function checkRegressionReport(input: {
+  mode: "demo" | "full";
+  promptId?: number;
+  featureId?: string;
+}): Promise<{ found: boolean; reportId?: number }> {
+  const headers: Record<string, string> = {};
+  const token = getStoredToken();
+  if (input.mode === "full" && token) {
+    headers.Authorization = `Bearer ${token}`;
+  }
+
+  const qs =
+    input.mode === "demo" && input.promptId != null
+      ? `promptId=${input.promptId}`
+      : input.featureId
+        ? `featureId=${encodeURIComponent(input.featureId)}`
+        : "";
+
+  if (!qs) {
+    throw new Error("Missing promptId or featureId for status check");
+  }
+
+  const res = await fetch(`${API_BASE}/regression/reports/status?${qs}`, {
+    headers,
+  });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) {
+    throw new Error(
+      typeof data.error === "string" ? data.error : "Status check failed"
+    );
+  }
+  return data as { found: boolean; reportId?: number };
 }
