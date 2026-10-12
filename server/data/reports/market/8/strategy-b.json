@@ -1,0 +1,167 @@
+{
+  "strategy": "fixed_b",
+  "generatedAt": "2026-10-12T03:43:06.827Z",
+  "feature": {
+    "name": "Recurring invoice templates",
+    "description": "Let users save invoice layouts and auto-send on a schedule to repeat clients, with gentle payment reminders. Built for LedgerLite, a minimalist invoicing and expense tracker for freelancers, targeting independent professionals and micro-businesses in North America and Western Europe who bill by project or retainer."
+  },
+  "executiveSummary": "Recurring invoice templates map directly onto the retainer-billing pain named in the LedgerLite persona set: Omar (solo consultant) explicitly wants recurring retainers 'without manual copy-paste', Maya bills 3-8 clients monthly and needs fast invoicing from her phone, Priya needs export-friendly records, and Jordan (new freelancer) is 'nervous about looking legit'. The competitive set supplied (FreshBooks, Wave, Zoho Invoice) is a scale mismatch for a one-person team: FreshBooks has raised $456,869,317 across 10 rounds (latest a $125,000,000 debt financing on 2025-03-20 priced by Morgan Stanley Private Credit and Morgan Stanley Expansion Capital) and still runs 383 tracked employees, while Zoho tracks 30,944 employees with +8.23% YoY growth and no outside funding rounds. Both incumbents have bought into the invoicing category (FreshBooks acquired Facturama in 2020-09-23 and FastBill in 2021-10-06); Zoho competes as a 55+ product suite with 150M+ users. Crucially, the enriched data contains no product-level evidence of what recurring-invoicing, scheduling, or reminder capabilities these vendors ship today — so the honest read is that the feature is a defensible parity-plus play differentiated on restraint (gentle reminders, template credibility for first-time freelancers, export-clean records), not on a proven competitor gap. Two of three competitor enrichments are materially compromised (Wave resolved to a Louisville TV station; Zoho Invoice resolved to the parent corporation), so any competitor-feature conclusion below is directional and must be validated before roadmap commitment.",
+  "competitorLandscape": [
+    {
+      "name": "FreshBooks",
+      "positioning": "Canada-based privately held SMB/freelancer accounting-and-invoicing incumbent (founded 2003, employee_count_range 201-500, crustdata_company_id 662598). Self-describes as 'built for business owners and freelancers who want an easier way to get paid, manage finances, and deliver work all in one place', i.e. an all-in-one suite positioning that overlaps LedgerLite's target market but not its minimalist framing.",
+      "relevantMoves": [
+        "Raised $125,000,000 in debt_financing on 2025-03-20 (Morgan Stanley Private Credit, Morgan Stanley Expansion Capital) — the latest of 10 funding rounds totalling $456,869,317; capital is still flowing into the category.",
+        "Acquired FastBill (announced 2021-10-06) and FACTURAMA INC (announced 2020-09-23), extending invoicing footprint into Germany and Mexico — evidence of geographic expansion beyond North America.",
+        "Employee base is contracting: total tracked headcount 383 with YoY growth of -10.09% and two-year growth of -30.36% (absolute -43 YoY, -167 over two years), despite the 2025 raise.",
+        "Role mix shifting: Business Development +69.23% YoY and Marketing +15.38% YoY, while Sales -25.93% and Customer Success/Support -22.64% YoY — consistent with a self-serve/GPLG motion rather than field sales.",
+        "Engineering is the largest tracked function at 89 (23.24% of headcount) with IT at 48 (12.53%), so the team retains meaningful build capacity to respond to feature-level competition.",
+        "Buys search demand against the category: paid SEO domains include xero.com, intuit.com, waveapps.com, bill.com and invoicehome.com; organic SEO domains include intuit.com and bench.co — invoicing keywords are contested and costly."
+      ],
+      "sources": [
+        "rawBundle.enrichResult[0].matches[0].company_data.funding.milestones",
+        "rawBundle.enrichResult[0].matches[0].company_data.funding.acquisitions",
+        "rawBundle.enrichResult[0].matches[0].company_data.funding.total_investment_usd",
+        "rawBundle.enrichResult[0].matches[0].company_data.headcount.total",
+        "rawBundle.enrichResult[0].matches[0].company_data.headcount.growth_percent",
+        "rawBundle.enrichResult[0].matches[0].company_data.headcount.by_role_absolute",
+        "rawBundle.enrichResult[0].matches[0].company_data.headcount.by_role_growth_yoy_pct",
+        "rawBundle.enrichResult[0].matches[0].company_data.basic_info",
+        "rawBundle.enrichResult[0].matches[0].company_data.competitors.paid_seo",
+        "rawBundle.enrichResult[0].matches[0].company_data.competitors.organic_seo"
+      ]
+    },
+    {
+      "name": "Wave (enrichment mismatch — resolved to WAVE, wave3.com)",
+      "positioning": "The supplied company id 1892174 resolved to 'WAVE', a Louisville, Kentucky broadcast TV station (primary_domain wave3.com, founded 1948, Public Company, employee_count_range 51-200, description references WAVE 3 News and the Kentucky Derby). This is NOT Wave Financial / waveapps.com and therefore the returned positioning, headcount and growth figures cannot be used as invoicing-competitor intelligence. Wave is only corroborated as a category competitor indirectly, via FreshBooks' paid SEO list which includes waveapps.com.",
+      "relevantMoves": [
+        "Enriched entity operates in Broadcast Media Production and Distribution, not SMB accounting software — no invoicing-relevant moves can be grounded in this record.",
+        "Only usable signal: FreshBooks buys paid search against waveapps.com, indicating Wave is treated as a direct acquisition-channel rival in the invoicing/accounting category.",
+        "Enriched entity data (for completeness, not for competitive inference): 678 tracked employees, YoY headcount +25.09%, two-year +46.75%, largest headcount country USA, HQ metro Louisville."
+      ],
+      "sources": [
+        "rawBundle.enrichResult[1].matches[0].company_data.basic_info (name 'WAVE', primary_domain wave3.com, industries Broadcast Media Production and Distribution)",
+        "rawBundle.enrichResult[1].matches[0].company_data.headcount.total",
+        "rawBundle.enrichResult[1].matches[0].company_data.headcount.growth_percent",
+        "rawBundle.enrichResult[0].matches[0].company_data.competitors.paid_seo (contains waveapps.com)"
+      ]
+    },
+    {
+      "name": "Zoho Invoice (enrichment resolved to parent Zoho Corporation)",
+      "positioning": "Enrichment returned the parent, Zoho (crustdata_company_id 1032449, primary_domain zoho.com): 'beautifully smart software' spanning 55+ products across sales, marketing, support, collaboration, finance and recruitment, 150M+ users worldwide, privately held and profitable, HQ Chennai with global offices, founded 1996, employee_count_range 10001+. Positioning is thus suite-and-price bundling rather than a focused freelancer invoicing tool; no Zoho Invoice product-level data was returned.",
+      "relevantMoves": [
+        "Operating at 30,944 tracked employees with +8.23% YoY and +26.27% two-year headcount growth — a scaling, cash-generative competitor with no outside funding rounds reported (num_funding_rounds 0).",
+        "Engineering is 12,882 people (41.63% of headcount) and Information Technology 4,155 (13.43%) — capacity to ship invoicing/billing features across the suite at near-zero marginal cost.",
+        "Sales function grew +16.77% YoY to 2,284 and Business Development +12.35% YoY, while Customer Success and Support fell -22.37% YoY — consistent with a low-touch, high-volume go-to-market on software like invoicing.",
+        "Headcount remains India-concentrated (India 25,305 = 81.78%; Tamil Nadu 22,573; Chennai 10,117) with a modest US footprint of 964 (3.12%) and Texas at 245 — relevant to North America/Western Europe support coverage for a self-serve buyer.",
+        "2026-09 snapshot shows month-over-month growth of +0.28% and QoQ +0.83%, i.e. growth has decelerated sharply versus 2024-2025 trend — no evidence of category exit.",
+        "Acquired ASIMOV Robotics (announced 2025-07-02) and ePoise (announced 2019-03-07), indicating continued tuck-in M&A appetite."
+      ],
+      "sources": [
+        "rawBundle.enrichResult[2].matches[0].company_data.basic_info",
+        "rawBundle.enrichResult[2].matches[0].company_data.headcount.total",
+        "rawBundle.enrichResult[2].matches[0].company_data.headcount.growth_percent",
+        "rawBundle.enrichResult[2].matches[0].company_data.headcount.by_role_absolute",
+        "rawBundle.enrichResult[2].matches[0].company_data.headcount.by_role_growth_yoy_pct",
+        "rawBundle.enrichResult[2].matches[0].company_data.headcount.by_region_absolute",
+        "rawBundle.enrichResult[2].matches[0].company_data.funding"
+      ]
+    }
+  ],
+  "marketSignals": [
+    {
+      "signal": "Capital is still being deployed into the freelancer/SMB invoicing category by the closest named competitor.",
+      "evidence": "FreshBooks closed a $125,000,000 debt_financing on 2025-03-20 with Morgan Stanley Private Credit and Morgan Stanley Expansion Capital, bringing total reported investment to $456,869,317 across 10 rounds.",
+      "implicationForFeature": "Recurring invoice templates cannot be won on capital; LedgerLite must win on focus, restraint and time-to-value for a single-user freelancer rather than breadth.",
+      "source": "rawBundle.enrichResult[0].matches[0].company_data.funding.milestones; .total_investment_usd"
+    },
+    {
+      "signal": "Incumbent operating headcount is shrinking even as funding rises, implying efficiency-led execution and possible price competition.",
+      "evidence": "FreshBooks total tracked headcount 383 with YoY growth_percent -10.09%, two_years -30.36% (qoq -2.30%); Support -14.58% YoY and Sales -25.93% YoY, while Business Development +69.23% and Marketing +15.38% grew.",
+      "implicationForFeature": "Expect self-serve competitive packaging and aggressive trial/free-tier moves; recurring invoice templates must be monetizable inside a low-ARPU self-serve plan without added support cost.",
+      "source": "rawBundle.enrichResult[0].matches[0].company_data.headcount.growth_percent; .by_role_growth_yoy_pct"
+    },
+    {
+      "signal": "The lowest-cost alternative in the competitive set is a bundled suite, not a dedicated invoicing tool.",
+      "evidence": "Zoho parent is described as offering 55+ products to 150M+ users, privately held and profitable, with 30,944 tracked employees growing +8.23% YoY and 12,882 engineers (41.63% of headcount).",
+      "implicationForFeature": "If recurring invoicing is table stakes, Zoho can bundle it at near-zero marginal cost; LedgerLite must differentiate on the quality of the recurring workflow (scheduling reliability, reminder tone, export cleanliness) rather than feature presence alone.",
+      "source": "rawBundle.enrichResult[2].matches[0].company_data.basic_info; .headcount.by_role_absolute; .headcount.growth_percent"
+    },
+    {
+      "signal": "Acquisition-led geographic expansion is already happening in the exact invoicing markets LedgerLite targets.",
+      "evidence": "FreshBooks acquired FastBill (announced 2021-10-06) and FACTURAMA INC (announced 2020-09-23), extending its invoicing product into Europe and Latin America; its tracked headcount remains concentrated in Canada (261 = 68.15% of total, Ontario 213, Toronto 153).",
+      "implicationForFeature": "Western Europe is contested by an incumbent buying local invoicing capability; recurring templates should ship with locale-aware dates, currency and tax presentation to be usable in the target geographies.",
+      "source": "rawBundle.enrichResult[0].matches[0].company_data.funding.acquisitions; .headcount.by_region_absolute"
+    },
+    {
+      "signal": "Search acquisition in the invoicing category is contested and expensive.",
+      "evidence": "FreshBooks' paid SEO domain list includes xero.com, intuit.com, waveapps.com, bill.com and invoicehome.com; its organic SEO list includes intuit.com, zintego.com, investopedia.com, accountingtools.com and bench.co.",
+      "implicationForFeature": "LedgerLite should not plan to buy its way to freelancers on generic invoicing keywords; recurring templates should be marketed through a specific, low-cost hook (retainer billing, no-copy-paste, polite reminders) and product-led referral.",
+      "source": "rawBundle.enrichResult[0].matches[0].company_data.competitors.paid_seo; .organic_seo"
+    },
+    {
+      "signal": "Retainer/重复 billing friction is stated explicitly in the LedgerLite persona set.",
+      "evidence": "Persona Omar (solo consultant) 'wants recurring retainers without manual copy-paste'; Maya (freelance designer) bills 3-8 clients monthly and 'needs fast invoicing from her phone between client calls'.",
+      "implicationForFeature": "Auto-send scheduling plus a saved layout directly removes the copy-paste loop for Omar and shortens the invoice-creation path for Maya to a single mobile action.",
+      "source": "productData.personas[1]; productData.personas[0]; productData.featureDescription"
+    },
+    {
+      "signal": "New-freelancer credibility anxiety is an explicit, named persona trait and is unaddressed by 'minimalist' phrasing alone.",
+      "evidence": "newInstallPersona Jordan 'Just left a full-time job, first time sending professional invoices and nervous about looking legit.'",
+      "implicationForFeature": "Template saving should double as a credibility mechanism — vetted layouts, correct numbering, clear due dates and professional reminder wording that the freelancer is not embarrassed to auto-send.",
+      "source": "productData.newInstallPersona; productData.featureDescription"
+    },
+    {
+      "signal": "Export-clean, reusable records are an explicit requirement from the bookkeeper persona who sits adjacent to the self-serve buyer.",
+      "evidence": "Persona Priya 'Manages books for 5 small clients and needs export-friendly records'; primaryBuyer is the freelancer/solopreneur on self-serve.",
+      "implicationForFeature": "Recurring invoice instances must generate consistent, export-ready line items per cycle rather than free-form duplicates, so the freelancer's accountant (Priya-type) can ingest them without cleanup.",
+      "source": "productData.personas[2]; productData.primaryBuyer"
+    },
+    {
+      "signal": "No hiring-side signal is available to corroborate competitor feature investment in recurring billing.",
+      "evidence": "The job_search tool in the query bundle returned an error ('filters.conditions.0' must be either a single condition or a tree) and rawBundle.jobs is empty; rawBundle.landscape is null.",
+      "implicationForFeature": "Competitor roadmap timing for recurring invoices and reminders is unverified; plan the feature on user-value grounds and re-check competitive parity before launch messaging is finalised.",
+      "source": "rawBundle.queriesExecuted[tool=job_search].error; rawBundle.jobs; rawBundle.landscape"
+    }
+  ],
+  "gapsAndOpportunities": [
+    "Auto-send on a schedule removes the manual copy-paste retainer loop named by persona Omar — the single most directly evidenced pain point for this feature.",
+    "Saved layouts address Maya's stated constraint of invoicing from her phone between client calls, provided the template is selectable in one action on mobile.",
+    "Template saving plus professional formatting gives first-time freelancer Jordan a defensible answer to 'looking legit', converting an anxiety-driven new-install persona into an activation path.",
+    "Consistent per-cycle invoice records support Priya-type bookkeepers' need for export-friendly data, creating a secondary referral channel from accountants to freelancers.",
+    "'Gentle payment reminders' is a differentiation axis against suite competitors: the feature description emphasises tone, while no enriched competitor record documents reminder cadence, tone or fatigue controls — a restraint-based positioning LedgerLite can own without matching incumbent breadth.",
+    "FreshBooks' headcount shift toward Marketing and Business Development and away from Sales/Support (Sales -25.93% YoY, Support -14.58% YoY) suggests incumbent self-serve support depth is thinning — a small, focused product with excellent default automation can win users who would otherwise file support tickets.",
+    "Incumbent geographic concentration (FreshBooks: Canada 261 of 383, Ontario 213; Zoho: India 25,305 of 30,944 with only 964 US) leaves day-to-day North America / UK freelancer workflows comparatively underserved relative to each vendor's engineering centre of gravity.",
+    "Least-contested, cheapest acquisition hook: retainer/重复-client billing specifically, avoiding the contested generic invoicing keywords FreshBooks is bidding on (xero.com, intuit.com, waveapps.com, bill.com, invoicehome.com)."
+  ],
+  "risks": [
+    "Competitive parity risk is unverified, not absent: no product-level data on FreshBooks, Wave or Zoho Invoice recurring-invoice, scheduling or reminder capabilities was returned, so the feature may already be table stakes rather than differentiating.",
+    "Sharp scale asymmetry: LedgerLite is a team of 1 against FreshBooks (383 tracked employees, 201-500 range, $456,869,317 raised) and Zoho (30,944 tracked employees, 12,882 engineers, profitable with no outside funding).",
+    "Price/bundling pressure: Zoho competes as a 55+ product suite with 150M+ users, meaning a recurring-invoicing capability can be absorbed into an existing bundle at near-zero marginal cost to the customer.",
+    "FreshBooks' 2025-03-20 debt financing of $125,000,000 plus its acquisition history (FastBill, FACTURAMA) indicates continued willingness to buy capability and geography rather than build slowly — a fast-follower risk if recurring templates gain traction.",
+    "FreshBooks' -10.09% YoY and -30.36% two-year headcount contraction alongside rising funding suggests category unit economics are under pressure; the willingness-to-pay for an incremental invoicing feature in the self-serve freelancer segment is unproven in the data.",
+    "Auto-sending invoices and reminders on a schedule transfers client-facing communication to software; an incorrectly scheduled or wrong-template send damages the freelancer's client relationship — the highest-severity failure mode for this feature and one not mitigated by any data in the bundle.",
+    "Reminder fatigue risk: 'gentle payment reminders' is a tone promise, and there is no evidence in the bundle about recipient tolerance thresholds or opt-out expectations for repeated client-side emails.",
+    "New-freelancer credibility gain (Jordan) cuts both ways: a poorly formatted auto-sent invoice is more damaging to a first-time freelancer than one they reviewed manually.",
+    "Single-person delivery capacity versus a scheduled/queued sending subsystem, timezone handling for US/Canada/UK, and email deliverability obligations — engineering surface area that exceeds the visible scope of 'save a layout'.",
+    "Competitive intelligence foundation is unreliable: the Wave enrichment is a broadcast-TV entity and Zoho Invoice enrichment is the parent corporation, so any strategy built on those two records is unsound.",
+    "Geographic compliance exposure implied by the target market (United States, Canada, United Kingdom) — currency, tax presentation and numbering conventions for recurring invoices are not addressed anywhere in the supplied data."
+  ],
+  "dataLimitations": [
+    "Wave enrichment mismatch: crustdata_company_id 1892174 resolved to 'WAVE' (primary_domain wave3.com), a Louisville, Kentucky broadcast TV station founded 1948 — not Wave Financial (waveapps.com). All Wave headcount, region and growth figures in this report describe the broadcaster and must not be used as invoicing-competitor intelligence.",
+    "Zoho Invoice enrichment is parent-level only: crustdata_company_id 1032449 resolved to Zoho Corporation (zoho.com), the 55+ product parent. No Zoho Invoice product-level pricing, features, user counts or recurring-billing capability data was returned.",
+    "No product-level competitive feature data: the bundle contains no evidence of FreshBooks', Wave's or Zoho Invoice's recurring invoice templates, scheduling, auto-send or payment-reminder capabilities. Competitive parity claims are therefore unsupported either way.",
+    "No market sizing or demand data: no TAM/SAM, market growth rate, freelancer population counts, adoption rates, ARPU, conversion, churn or retention figures are present.",
+    "Job signal tool failed: job_search returned an error ('filters.conditions.0' must be either a single condition or a tree) and rawBundle.jobs is an empty array, so no hiring/job-posting evidence of competitor feature investment is available.",
+    "rawBundle.landscape is null — no pre-computed landscape or category map was supplied.",
+    "Source PRD content is unavailable: recurring-invoices-prd.pdf is referenced by name only; no requirements, acceptance criteria, scope or success metrics were provided.",
+    "Persona research source is unavailable: ledgerlite-persona-research.docx is referenced by name only; persona descriptions are taken verbatim from productData and cannot be verified against underlying research.",
+    "No pricing, packaging or willingness-to-pay research for LedgerLite or for the recurring invoice feature was supplied.",
+    "No customer interviews, surveys, win/loss records, support tickets or usage telemetry were supplied; pain points are inferred from persona descriptions only.",
+    "No revenue, subscriber, or install data for LedgerLite itself was supplied, so no baseline against which to size the opportunity exists.",
+    "Headcount time series include forward-dated entries (through 2026-09) and snapshot growth fields (mom/qoq/yoy/two_years) whose as-of date is not explicitly stated in the bundle; growth figures should be treated as snapshot-period estimates.",
+    "FreshBooks' 2020 private_equity and 2019 series_d/corporate_round milestones have null amount_usd, so total-investment figures understate all activity to the extent those rounds were priced.",
+    "No data exists in the bundle on email deliverability, reminder regulation (e.g. CASL, CAN-SPAM, UK PECR implications for automated client reminders), or invoicing/tax compliance requirements in the three target countries."
+  ],
+  "planSummary": null
+}

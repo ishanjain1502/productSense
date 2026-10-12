@@ -1,0 +1,114 @@
+{
+  "strategy": "fixed_b",
+  "generatedAt": "2026-10-12T03:45:38.525Z",
+  "feature": {
+    "name": "Recurring invoice templates",
+    "description": "test"
+  },
+  "executiveSummary": "FreshBooks is the clearer competitive reference point in this data: a 2003-founded, privately held small-business and freelancer finance platform with $456,869,317 in total disclosed investment, a $125,000,000 debt financing on 2025-03-20, and acquisitions of Facturama (2020-09-23) and FastBill (2021-10-06). Its tracked headcount is 383, down 10.09% year over year and down 30.36% over two years, with Engineering at 89 (23.24%) and Product Management at 15 (3.92%). The Wave query did not return the accounting-software Wave; it returned WAVE, a Kentucky TV station on wave3.com, so Wave-specific competitive conclusions cannot be made from this bundle. However, FreshBooks paid-SEO competitor data includes waveapps.com, which indicates the real Wave competes in the invoicing/accounting consideration set. The company_search landscape is crowded with free or low-friction invoice generators such as Invoice Fly, Invoodle, InvoiceKraft, Billaze, EasyInvoicePDF, InvoxaApp, InvoiceModo, and Invoice Generator, and their descriptions emphasize templates, PDF generation, GST, no signup, and mobile use rather than explicit recurring or scheduled invoicing. That creates a positioning opportunity for Recurring invoice templates, but it also means template design alone is likely commoditized. The feature should differentiate through recurring automation, reminders, payment status, and workflow integration for US freelancers and small businesses.",
+  "competitorLandscape": [
+    {
+      "name": "FreshBooks",
+      "positioning": "Privately held, Canada-based, founded 2003, 201-500 employee range, positioned as an all-in-one finance and invoicing platform for business owners and freelancers to get paid and manage finances in one place. Crustdata tracked headcount is 383, with largest country Canada at 261 employees (68.15%) and United States at 25 (6.53%).",
+      "relevantMoves": [
+        "Raised $125,000,000 debt financing on 2025-03-20 from Morgan Stanley Private Credit and Morgan Stanley Expansion Capital.",
+        "Total disclosed investment is $456,869,317 across 10 funding rounds, including a $80,750,000 Series E on 2021-08-10 and a $125,000,000 debt financing on 2022-08-03.",
+        "Acquired FACTURAMA INC on 2020-09-23 and FastBill on 2021-10-06.",
+        "FreshBooks paid-SEO competitor domains include xero.com, intuit.com, waveapps.com, bill.com, and invoicehome.com, indicating it competes directly for US invoice/accounting search demand.",
+        "FreshBooks organic-SEO competitor domains include intuit.com, zintego.com, investopedia.com, accountingtools.com, and bench.co.",
+        "Headcount declined 10.09% year over year and 30.36% over two years; Engineering is 89 (23.24%), Information Technology is 48 (12.53%), and Product Management is 15 (3.92%)."
+      ],
+      "sources": [
+        "Crustdata company enrichment, crustdata_company_id 662598",
+        "FreshBooks basic_info website: https://www.freshbooks.com/",
+        "Funding milestones from Crustdata enrichment for 662598"
+      ]
+    },
+    {
+      "name": "Wave",
+      "positioning": "The Wave match in this bundle is not the accounting/invoicing Wave. It is WAVE, a Kentucky TV station on wave3.com, founded 1948, public company, 51-200 employee range, with tracked headcount 678 and largest country United States at 211 (31.12%). Its description is local news, broadcast, and community coverage, not invoicing, accounting, or recurring invoices.",
+      "relevantMoves": [
+        "No relevant invoicing or accounting moves are present in the matched Wave record.",
+        "FreshBooks paid-SEO competitor list includes waveapps.com, which suggests the actual Wave accounting product competes, but Wave-specific product, funding, and headcount data for Wave Financial are absent from this bundle."
+      ],
+      "sources": [
+        "Crustdata company enrichment, crustdata_company_id 1892174",
+        "WAVE basic_info website: http://www.wave3.com",
+        "FreshBooks paid_seo competitor list in Crustdata enrichment for 662598"
+      ]
+    }
+  ],
+  "marketSignals": [
+    {
+      "signal": "FreshBooks remains capital-equipped but is optimizing headcount.",
+      "evidence": "FreshBooks total disclosed investment is $456,869,317, with a $125,000,000 debt financing on 2025-03-20. Tracked headcount is 383, down 10.09% year over year and 30.36% over two years.",
+      "implicationForFeature": "A recurring invoice templates feature must be high-leverage and low-complexity for FreshBooks-like incumbents, and for LedgerLite it should target clear workflow savings rather than broad accounting scope.",
+      "source": "Crustdata enrichment for crustdata_company_id 662598"
+    },
+    {
+      "signal": "FreshBooks has made invoice-adjacent acquisitions, indicating consolidation around billing and finance workflows.",
+      "evidence": "FreshBooks acquired FACTURAMA INC on 2020-09-23 and FastBill on 2021-10-06.",
+      "implicationForFeature": "Recurring invoice templates should be positioned as core billing automation, not a standalone template gallery, because incumbents have acquired capabilities in invoicing and finance operations.",
+      "source": "Funding acquisitions in Crustdata enrichment for crustdata_company_id 662598"
+    },
+    {
+      "signal": "The invoice-generator market is crowded with free or no-signup tools.",
+      "evidence": "company_search for \"Recurring invoice templates test\" returned Invoice Fly, Invoodle, InvoiceKraft, Billaze, templit, EasyInvoicePDF, InvoxaApp, Product Template Test, InvoiceModo, and Invoice Generator. Several descriptions emphasize free use, no account, no subscription, browser-based generation, PDF output, and templates.",
+      "implicationForFeature": "LedgerLite should avoid competing as another free invoice template generator. Recurring scheduling, reminders, payment tracking, and retention-oriented automation are stronger differentiators.",
+      "source": "company_search landscape in rawBundle"
+    },
+    {
+      "signal": "Template customization is already common in the adjacent landscape.",
+      "evidence": "InvoiceKraft describes customizable templates and instant PDFs. InvoiceModo lists 7 professional templates. EasyInvoicePDF lists a Stripe-style invoice template. Invoice Generator describes an attractive invoice template. Invoice Fly describes invoice template generation and customization.",
+      "implicationForFeature": "Recurring invoice templates must compete on recurrence logic, editability, branding controls, and send scheduling rather than template availability alone.",
+      "source": "company_search landscape descriptions in rawBundle"
+    },
+    {
+      "signal": "US invoice and accounting search competition is intense.",
+      "evidence": "FreshBooks paid-SEO competitor domains include xero.com, intuit.com, waveapps.com, bill.com, and invoicehome.com. Organic-SEO competitor domains include intuit.com, zintego.com, investopedia.com, accountingtools.com, and bench.co.",
+      "implicationForFeature": "Acquisition through invoicing keywords is likely expensive. Recurring invoice templates should be built for activation, retention, and expansion among existing freelancer/SMB users.",
+      "source": "FreshBooks competitors.paid_seo and competitors.organic_seo in Crustdata enrichment for 662598"
+    },
+    {
+      "signal": "FreshBooks targets freelancers and small businesses that need to get paid and manage finances.",
+      "evidence": "FreshBooks description states it is built for business owners and freelancers who want an easier way to get paid, manage finances, and deliver work in one place.",
+      "implicationForFeature": "Recurring invoice templates map to repeat-billing use cases such as retainers, subscriptions, and recurring services for the same freelancer/SMB segment.",
+      "source": "FreshBooks basic_info.description in Crustdata enrichment for 662598"
+    },
+    {
+      "signal": "Free tools show demand for fast, mobile-friendly invoice creation.",
+      "evidence": "Invoice Fly reports over 125,000 active users and a 4.8-star App Store rating, with mobile and desktop availability. Invoodle and InvoiceModo describe mobile-friendly/browser-based invoice creation.",
+      "implicationForFeature": "Recurring invoice templates should be usable on mobile and desktop, with immediate PDF/preview output and low setup friction.",
+      "source": "company_search landscape descriptions in rawBundle"
+    }
+  ],
+  "gapsAndOpportunities": [
+    "No company in the searched invoice-generator landscape explicitly describes recurring or scheduled invoice templates in the provided descriptions, creating a potential differentiation gap for LedgerLite.",
+    "Free and low-cost invoice generators have commoditized template design, PDF generation, and no-signup workflows, so recurring automation, reminders, and payment-status tracking are more defensible opportunities.",
+    "FreshBooks targets freelancers and small businesses, but its tracked headcount is declining and Product Management is only 15 people, suggesting focused automation features may be more attractive than broad feature parity.",
+    "FreshBooks paid-SEO competition includes waveapps.com, bill.com, invoicehome.com, intuit.com, and xero.com, confirming US invoicing demand but also high customer acquisition competition.",
+    "Invoice Fly's 125,000 active users and 4.8-star rating show demand for simple invoice creation, but recurring templates can target repeat-billing users rather than one-off invoice creators.",
+    "The real Wave accounting product is not covered in this bundle, so a manual benchmark of Wave's recurring invoice and subscription capabilities is an immediate research opportunity."
+  ],
+  "risks": [
+    "The Wave record is misidentified as WAVE, a Kentucky TV station, so any Wave competitive assessment from this bundle would be invalid.",
+    "The feature description is literally \"test\", so product scope, user segment, pricing, compliance, and success metrics are undefined.",
+    "The invoice-generator landscape includes free, no-signup, browser-based tools, which can pressure pricing for template-centric features.",
+    "FreshBooks is capitalized, has made acquisitions, and is a known incumbent in freelancer/SMB invoicing, making head-on feature competition difficult.",
+    "job_search failed with a malformed filter, so hiring signals for recurring billing, subscriptions, or invoicing roles are unavailable.",
+    "company_search returned only 10 visible companies and total_count is null, so the landscape may not be exhaustive.",
+    "The bundle lacks pricing pages, product documentation, customer reviews, win/loss data, and US market sizing, limiting confidence in adoption estimates.",
+    "Headcount timeseries includes future-dated observations through 2026, which may reflect estimates or projections rather than confirmed hiring."
+  ],
+  "dataLimitations": [
+    "Wave was matched to crustdata_company_id 1892174, but the returned company is WAVE, a Kentucky TV station on wave3.com, not Wave Financial or waveapps.com.",
+    "Wave funding fields are effectively empty: num_funding_rounds is 0, total_investment_usd is 0, and last_round_type is null.",
+    "The featureDescription is \"test\", providing no real product requirements.",
+    "The job_search tool call failed with error: 'filters.conditions.0' must be either a single condition ({\"field\", \"type\", \"value\"}) or a tree.",
+    "company_search total_count is null, and only the first 10 landscape companies are visible.",
+    "No pricing, packaging, product feature pages, customer interviews, win/loss, or US demand data are included in the raw bundle.",
+    "No direct evidence of recurring invoice template capabilities was found in the provided competitor or landscape descriptions.",
+    "planSummary is null because the selected strategy is fixed_b."
+  ],
+  "planSummary": null
+}

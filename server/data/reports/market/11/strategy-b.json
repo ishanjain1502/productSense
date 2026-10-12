@@ -1,0 +1,94 @@
+{
+  "strategy": "fixed_b",
+  "generatedAt": "2026-10-12T04:19:49.758Z",
+  "feature": {
+    "name": "Recurring invoice templates",
+    "description": "Let users save invoice layouts and auto-send on a schedule to repeat clients, with gentle payment reminders."
+  },
+  "executiveSummary": "FreshBooks, a key competitor, is consolidating the invoicing market through acquisitions (Facturama, FastBill) and has raised significant capital, but its engineering headcount is declining while business development grows. Zoho Corp, the parent of Zoho Invoice, is steadily growing headcount and continues to invest in engineering. Wave could not be assessed due to a data mismatch. The recurring invoice templates feature aligns well with freelancer personas who need automated billing and reminders. An opportunity exists for LedgerLite to differentiate through minimalist design and fast innovation, especially if larger competitors deprioritize feature development. However, competitive risks remain due to FreshBooks' funding and Zoho's scale.",
+  "competitorLandscape": [
+    {
+      "name": "FreshBooks",
+      "positioning": "Designed to drive small business success—built for business owners and freelancers who want an easier way to get paid, manage finances, and deliver work all in one place.",
+      "relevantMoves": [
+        "Raised $125M debt financing on 2025-03-20.",
+        "Acquired FastBill (invoicing platform) on 2021-10-06.",
+        "Acquired Facturama (invoicing platform) on 2020-09-23.",
+        "Total headcount 383, down 10.1% YoY; engineering headcount down 4.3% YoY.",
+        "Business Development headcount up 69.2% YoY."
+      ],
+      "sources": [
+        "FreshBooks funding.milestones",
+        "FreshBooks headcount"
+      ]
+    },
+    {
+      "name": "Wave",
+      "positioning": "Data matched to unrelated entity (WAVE TV station, wave3.com), not Wave accounting software. Unable to determine positioning.",
+      "relevantMoves": [],
+      "sources": [
+        "Company enrichment matched Wave to crustdata_company_id 1892174 which is WAVE TV station."
+      ]
+    },
+    {
+      "name": "Zoho Invoice",
+      "positioning": "Zoho offers beautifully smart software to help you grow your business. With over 150M+ users worldwide, Zoho's 55+ products aid your sales and marketing, support and collaboration, finance, and recruitment needs—letting you focus only on your business.",
+      "relevantMoves": [
+        "Zoho Corp acquired ASIMOV Robotics on 2025-07-02.",
+        "Zoho Corp acquired ePoise on 2019-03-07.",
+        "Total headcount 30,944, up 8.2% YoY; engineering headcount up 7.5% YoY."
+      ],
+      "sources": [
+        "Zoho funding.acquisitions",
+        "Zoho headcount"
+      ]
+    }
+  ],
+  "marketSignals": [
+    {
+      "signal": "FreshBooks is cutting engineering headcount while increasing business development.",
+      "evidence": "FreshBooks engineering headcount declined 4.3% YoY (from 93 to 89), while Business Development grew 69.2% YoY (from 13 to 22) as of latest data.",
+      "implicationForFeature": "FreshBooks may be prioritizing sales over new feature development, potentially slowing innovation in areas like recurring invoices, creating an opening for LedgerLite.",
+      "source": "FreshBooks headcount.by_role_growth_yoy_pct"
+    },
+    {
+      "signal": "FreshBooks is actively acquiring invoicing companies.",
+      "evidence": "FreshBooks acquired Facturama (2020) and FastBill (2021), both invoicing/accounting platforms.",
+      "implicationForFeature": "FreshBooks is consolidating invoicing automation capabilities, which could lead to enhanced recurring invoice features; LedgerLite must differentiate on simplicity and freelancer focus.",
+      "source": "FreshBooks funding.acquisitions"
+    },
+    {
+      "signal": "Zoho Corp is growing headcount steadily, especially in engineering.",
+      "evidence": "Zoho Corp engineering headcount grew 7.5% YoY to 12,825, and total headcount grew 8.2% YoY to 30,944.",
+      "implicationForFeature": "Zoho has resources to invest in product development, including invoicing features; competitive pressure may increase.",
+      "source": "Zoho headcount"
+    },
+    {
+      "signal": "FreshBooks raised significant debt financing despite headcount decline.",
+      "evidence": "FreshBooks raised $125M debt financing on 2025-03-20, following a $125M debt round in 2022.",
+      "implicationForFeature": "FreshBooks may use capital for acquisitions or to sustain operations, potentially funding feature development or marketing pushes.",
+      "source": "FreshBooks funding.milestones"
+    }
+  ],
+  "gapsAndOpportunities": [
+    "FreshBooks' declining engineering headcount may indicate reduced focus on new feature development, creating an opportunity for LedgerLite to innovate quickly on recurring invoice templates.",
+    "FreshBooks' acquisitions of Facturama and FastBill suggest they are targeting regional invoicing needs; LedgerLite can focus on North America and Western Europe with a minimalist freelancer-centric approach.",
+    "No product-level feature data for competitors is available in the raw data, so we cannot confirm whether they offer recurring invoice templates; this represents an opportunity to differentiate if they do not, but requires further research.",
+    "Zoho's broad suite and scale may overwhelm freelancers seeking simplicity; LedgerLite's minimalist positioning aligns with personas like Maya and Omar."
+  ],
+  "risks": [
+    "FreshBooks' large funding and acquisition strategy could enable them to bundle recurring invoices as a free feature, undercutting LedgerLite's pricing.",
+    "Zoho's scale and existing invoicing product (Zoho Invoice) may allow them to rapidly iterate and market recurring invoice features, intensifying competition.",
+    "The raw data lacks any information on Wave's invoicing product due to a data mismatch, so competitive threat from Wave is unknown.",
+    "Competitor headcount data shows FreshBooks' overall headcount declining, which could indicate market consolidation or reduced investment in the SMB invoicing space, potentially signaling a shrinking market."
+  ],
+  "dataLimitations": [
+    "Wave was incorrectly matched to WAVE TV station (crustdata_company_id 1892174), not Wave accounting software; no relevant data for Wave's invoicing product.",
+    "Zoho Invoice was matched to Zoho Corp (parent company), not the specific product; product-level moves are not available.",
+    "Job search query failed due to malformed filter, so no job posting data was retrieved.",
+    "Landscape data is null; no market landscape information provided.",
+    "No product feature or pricing data for any competitor is included in the raw bundle.",
+    "Competitor data is limited to funding, headcount, and acquisitions; no revenue, customer count, or churn data."
+  ],
+  "planSummary": null
+}

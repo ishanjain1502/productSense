@@ -1,0 +1,11 @@
+{
+  "runId": 9,
+  "status": "completed",
+  "strategyBReportUrl": "market/9/strategy-b.json",
+  "strategyCReportUrl": "market/9/strategy-c.json",
+  "strategyBRawUrl": "market/9/strategy-b-raw.json",
+  "strategyCRawUrl": "market/9/strategy-c-raw.json",
+  "errorB": null,
+  "errorC": null,
+  "createdAt": "2026-10-12 03:44:41"
+}

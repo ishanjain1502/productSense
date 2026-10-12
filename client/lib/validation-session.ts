@@ -13,6 +13,7 @@ export type ValidationSession = {
   regressionCheckPassed?: boolean;
   marketAnalysisRunId?: number;
   marketAnalysisReportId?: number;
+  personaFleetRunId?: number;
 };
 
 export function saveValidationSession(session: ValidationSession) {

@@ -136,6 +136,14 @@ export function MarketAnalysisPage({ mode }: MarketAnalysisPageProps) {
               report={result.strategyC}
               error={result.errorC}
             />
+            <div className="flex justify-end border-t border-border/60 pt-6">
+              <Link
+                href={`/${mode}/market-analysis/persona-fleet`}
+                className={cn(buttonVariants())}
+              >
+                Next: persona fleet →
+              </Link>
+            </div>
           </div>
         )}
       </div>

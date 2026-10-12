@@ -13,6 +13,8 @@ import { migrateProjectsSchema } from "./projects.js";
 import { migrateRegressionSchema } from "./regression.js";
 import { registerRegressionRoutes } from "./regression-routes.js";
 import { registerMarketAnalysisRoutes } from "./market-analysis-routes.js";
+import { registerPersonaFleetRoutes } from "./persona-fleet-routes.js";
+import { migratePersonaFleetSchema } from "./persona-fleet/schema.js";
 
 const port = Number(process.env.PORT) || 1337;
 const databasePath = process.env.DATABASE_PATH || "./data/app.db";
@@ -84,6 +86,7 @@ app.post("/auth/login", async (req, res) => {
 
 registerRegressionRoutes(app);
 registerMarketAnalysisRoutes(app);
+registerPersonaFleetRoutes(app);
 
 app.get("/auth/me", authMiddleware, async (req, res) => {
   try {
@@ -103,6 +106,7 @@ await initDb(databasePath);
 await migrateAuthSchema();
 await migrateProjectsSchema();
 await migrateRegressionSchema();
+await migratePersonaFleetSchema();
 
 const server = app.listen(port, () => {
   console.log(`Server listening on http://localhost:${port}`);

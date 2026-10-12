@@ -1,0 +1,217 @@
+{
+  "strategy": "planned_c",
+  "generatedAt": "2026-10-12T03:47:25.292Z",
+  "feature": {
+    "name": "Recurring invoice templates",
+    "description": "Reusable invoice templates for LedgerLite that can be scheduled and auto-issued on a recurring basis for retainer, subscription, and repeat-billing clients in the US market. Note: the supplied featureDescription was the placeholder string \"test\", so scope was inferred from the feature name and the competitor/market evidence in the raw bundle.",
+    "geography": "US"
+  },
+  "executiveSummary": "LedgerLite's planned 'Recurring invoice templates' feature enters a US online-invoicing market that is simultaneously mature at the top (FreshBooks, Wave) and flooding with micro-vendors at the bottom. The two named competitors both already advertise branded/customizable invoice templates plus recurring billing as core capabilities (cashflowy.ai FreshBooks-vs-Wave comparison; waveapps.com comparison page; mooninvoice.com). Meanwhile, the two company_search queries returned ~25 low-headcount vendors (most listing 'myself only' or '2-10' employees, several founded 2023-2026) and recurring invoicing appears repeatedly in their public positioning — Invoice Cave ('run recurring billing on autopilot'), Platybooks ('recurring invoices generate themselves on schedule'), Invoice Master ('automate your invoicing with recurring invoices'), Invlo (recurring invoices on the free plan), InvoSync, invoicesio.app, PayNext, Vasulify, JollyBilling. The strongest structural signal is Invlo's explicit attack: multi-currency, recurring invoices, aging reports and custom tax rates are 'locked behind paid plans on most invoicing platforms. Invlo includes them all on its free plan.' That makes 'recurring invoices' a feature-parity requirement rather than a differentiator; differentiation must come from template quality/workflow depth (recurring-native template design, automated send + reminder chains, AI-assisted drafting) and from US-relevant packaging. Confidence is materially constrained: the company_identify and company_enrich calls for freshbooks.com and waveapps.com all failed, so incumbent feature, pricing, and packaging claims rest on competitor-authored and third-party comparison pages rather than verified firmographic/product data, and job_search returned wholly irrelevant listings, producing no hiring or roadmap signal.",
+  "competitorLandscape": [
+    {
+      "name": "FreshBooks",
+      "positioning": "Incumbent US-focused cloud invoicing and accounting suite for small businesses and freelancers; positions branded invoice templates and recurring billing as core capabilities, with time tracking flowing into invoices. Listed entry price referenced in competitor comparison content: 'FreshBooks Lite $21 USD'.",
+      "relevantMoves": [
+        "Core feature set described as 'customized invoices with branded templates and recurring billing, built-in time tracking that flows directly into invoices' (cashflowy.ai comparison, Mar 2026).",
+        "Publishes its own head-to-head comparison page 'FreshBooks vs Wave' to capture competitor-comparison demand (freshbooks.com/compare).",
+        "Positioned by third parties as cheaper in practice for businesses that 'bill hourly, send proposals, or manage' more complex workflows, versus Wave being cheaper for basic invoicing (finstackk.com comparison).",
+        "FreshBooks Lite priced at $21 USD/month per the Wave-authored comparison page (waveapps.com/compare/freshbooks-vs-wave)."
+      ],
+      "sources": [
+        "https://cashflowy.ai/blog/freshbooks-vs-wave",
+        "https://www.freshbooks.com/compare/freshbooks-vs-wave-accounting",
+        "https://www.waveapps.com/compare/freshbooks-vs-wave",
+        "https://www.finstackk.com/articles/freshbooks-vs-wave"
+      ]
+    },
+    {
+      "name": "Wave",
+      "positioning": "Low-cost/free-tier invoicing and accounting alternative; positioned as 'an affordable invoicing and accounting solution, with less limits and costs compared to alternatives like FreshBooks', including customizable invoice templates within a broader financial services suite.",
+      "relevantMoves": [
+        "Owns and operates the comparison page 'FreshBooks vs Wave: Which Software is Best for Your...' to defend against switching demand (waveapps.com/compare).",
+        "Third-party coverage describes Wave as offering 'customizable invoice templates as part of its suite of financial services... invoicing, accounting, and receipt scanning' (mooninvoice.com).",
+        "Third-party bottom line positions Wave as 'cheaper if you only need basic invoicing and bookkeeping' (finstackk.com).",
+        "Compared against FreshBooks on template/recurring/online-payment basics, with both credited for handling 'everyday invoicing well... estimates and invoices, save client details, accept online payments' (invoicesimple.com, Sep 2026)."
+      ],
+      "sources": [
+        "https://www.waveapps.com/compare/freshbooks-vs-wave",
+        "https://www.mooninvoice.com/blog/freshbooks-alternatives/",
+        "https://www.invoicesimple.com/blog/compare-freshbooks-vs-wave/",
+        "https://www.finstackk.com/articles/freshbooks-vs-wave"
+      ]
+    },
+    {
+      "name": "Invoice Cave",
+      "positioning": "AI-native invoicing for freelancers, agencies and small businesses, with recurring billing framed as an automation primitive rather than a settings screen: 'run recurring billing on autopilot — with smart reminders that chase late payers for you'.",
+      "relevantMoves": [
+        "Exposes the platform through 102 MCP (Model Context Protocol) tools so an AI assistant can create, send and manage invoices (invoicecave.com).",
+        "Combines recurring billing with automated late-payment reminders and Stripe card collection.",
+        "Appears in both US-targeted company_search queries returned in this bundle, indicating it is competing on the same 'recurring + automation' keywords.",
+        "Free to start, no card required."
+      ],
+      "sources": [
+        "company_search result: 'small business billing recurring payments invoice automation' (crustdata_company_id 67816783)",
+        "https://invoicecave.com"
+      ]
+    },
+    {
+      "name": "Invlo",
+      "positioning": "Explicitly undercuts incumbents on price by making recurring invoices a free-plan feature: 'Multi-currency invoicing, recurring invoices, overdue aging reports, and custom tax rates... are locked behind paid plans on most invoicing platforms. Invlo includes them all on its free plan.'",
+      "relevantMoves": [
+        "Directly attacks the paywall around recurring invoices — the exact capability LedgerLite is planning.",
+        "Bundles adjacent differentiators at no cost: AI-drafted follow-up emails, per-invoice late-fee toggle, item photos on invoice lines, and mixed billing units (hour/km/item/flat rate) on one invoice.",
+        "Self-described as 'Self-Employed' / 'myself only' headcount, illustrating how low the barrier to entry on this feature set now is."
+      ],
+      "sources": [
+        "company_search result: 'accounting invoicing software recurring invoice templates' (crustdata_company_id 75081030)",
+        "https://invlo.me"
+      ]
+    },
+    {
+      "name": "Platybooks",
+      "positioning": "Invoicing + CRM for small businesses and freelancers, positioning recurring invoices as zero-touch: 'Recurring invoices generate themselves on schedule for repeat billing.'",
+      "relevantMoves": [
+        "Bundles recurring invoices with one-click quote-to-invoice conversion, hosted payment links that take no percentage cut, and automated overdue reminder sequences.",
+        "Differentiates on 'no hidden payment fees, ever' plus role-based team collaboration.",
+        "Targets the same freelancer/SMB segment as LedgerLite with a free tier to start."
+      ],
+      "sources": [
+        "company_search result: 'small business billing recurring payments invoice automation' (crustdata_company_id 74926901)",
+        "https://platybooks.com"
+      ]
+    },
+    {
+      "name": "Invoice Master",
+      "positioning": "Broad SMB invoicing workflow suite that treats recurring invoices as one of several automations: 'Automate your invoicing with recurring invoices and choose from multiple templates to suit your branding.'",
+      "relevantMoves": [
+        "Pairs recurring invoices with templated quotes (validity periods), product/service catalog, Stripe payment links and automated invoice/quote notifications.",
+        "Lists itself as 'Public Company' with 'myself only' headcount range, i.e. the vendor data in this bundle is not reliable for sizing.",
+        "Competes on template variety as the stated reason to choose among recurring-capable tools."
+      ],
+      "sources": [
+        "company_search result: 'accounting invoicing software recurring invoice templates' (crustdata_company_id 65804382)",
+        "https://invoicemaster.org"
+      ]
+    }
+  ],
+  "marketSignals": [
+    {
+      "signal": "Recurring billing is already table stakes at both the incumbent and long-tail tiers, not a differentiator.",
+      "evidence": "Both named competitors are described as offering templates plus recurring billing (cashflowy.ai: 'customized invoices with branded templates and recurring billing'; invoicesimple.com: both 'handle everyday invoicing well'). Recurring billing is also claimed by Invlo, Invoice Master, Invoice Cave, Platybooks, InvoSync, PayNext, Vasulify, invoicesio.app and JollyBilling within the two US company_search result sets.",
+      "implicationForFeature": "LedgerLite cannot win on 'we support recurring invoices'. The feature must be won on recurring-specific template design, scheduling UX and automation depth (auto-send, auto-remind, auto-advance dates/amounts).",
+      "source": "https://cashflowy.ai/blog/freshbooks-vs-wave; https://www.invoicesimple.com/blog/compare-freshbooks-vs-wave/; crustdata company_search results (two queries, 25 results each returned)"
+    },
+    {
+      "signal": "There is active price deflation: recurring invoices are being given away free to attack paid incumbents.",
+      "evidence": "Invlo states multi-currency invoicing, recurring invoices, overdue aging reports and custom tax rates are 'locked behind paid plans on most invoicing platforms' and 'Invlo includes them all on its free plan.' Invoice Cave, Smart Invoice, InvoiceCraftly, InvoiceKraft, InvoPilot and others advertise free/no-signup starts. FreshBooks Lite is cited at $21 USD/month (waveapps.com).",
+      "implicationForFeature": "Any US pricing gate placed specifically on recurring invoice templates will be competitively targeted. Packaging should place the paywall on scale/automation (volume, multi-entity, advanced scheduling/reminders) rather than on the existence of recurring templates.",
+      "source": "https://invlo.me (company_search result 75081030); https://www.waveapps.com/compare/freshbooks-vs-wave; https://invoicecave.com"
+    },
+    {
+      "signal": "AI-native invoicing is the newest competitive vector adjacent to recurring templates.",
+      "evidence": "Invoice Cave exposes 102 MCP tools so AI assistants can create/send/manage invoices and run recurring billing; invoices.mt turns a one-sentence prompt into a compliant invoice with recurring invoices supported; Invoculate advertises 'AI-powered line item suggestions' plus recurring invoices; Slate markets 'AI-Powered Invoicing... managing recurring billing and payment tracking'.",
+      "implicationForFeature": "Recurring template creation should be AI-assistable (suggest line items, cadence and schedule from past invoices) or the feature will read as legacy versus 2026-era 'AI-native' entrants.",
+      "source": "https://invoicecave.com; https://invoices.mt; https://invoculate.com; https://www.slate.co.il (crustdata company_search results)"
+    },
+    {
+      "signal": "Collections/reminder automation, not template creation, is where vendors claim measurable outcomes.",
+      "evidence": "Invoxera claims 'up to a 75% drop in overdue invoices' and cites '14 hours per week' spent chasing late payments, 'trusted by over 5,000 freelancers and finance teams'; PayAlerta, Quinvy, Vasulify, InvoiceGlide, Sunbay and InvoiceKit all lead with automated reminders; Invoice Cave pairs recurring billing with 'smart reminders that chase late payers'.",
+      "implicationForFeature": "Recurring invoice templates should ship with a reminder/collection chain as part of the same object (template → schedule → send → chase), since that is where competitors claim quantified value.",
+      "source": "https://www.invoxera.com; https://payalerta.com; https://invoiceglide.com; https://sunbay.io; https://invoicecave.com"
+    },
+    {
+      "signal": "The long-tail competitive field is extremely fragmented and mostly sub-10-person, suggesting low barriers and rapid feature cloning.",
+      "evidence": "Of the ~25 vendors returned per company_search query, most report employee_count_range of 'myself only' or '2-10'; several list year_founded 2024, 2025 or 2026 (InvoiCraft 2024, InvoPilot 2025, Invlo, InvoiceKraft, InvoiceCave, Platybooks, PayNext, Vasulify, invoicesio.app, InvoiceKit, Reinvoice, InvoxaApp, OyaBill, CatInvoice). Headcount totals where present are 1-2 employees.",
+      "implicationForFeature": "Feature parity on recurring templates will be achieved by competitors within weeks; LedgerLite should plan for differentiation via distribution, US tax/payment integrations, or workflow depth rather than the template object alone.",
+      "source": "crustdata company_search results for both US queries in this bundle"
+    },
+    {
+      "signal": "US comparison content around FreshBooks vs Wave is an active, content-led acquisition channel that LedgerLite could contest.",
+      "evidence": "The web_search_live result set returned 8 results, of which 6 are FreshBooks-vs-Wave or FreshBooks-alternatives comparison pages from cashflowy.ai, invoicesimple.com, waveapps.com, mooninvoice.com, freshbooks.com and finstackk.com, plus a Rippling piece on FreshBooks alternatives.",
+      "implicationForFeature": "Positioning work should target 'FreshBooks/Wave recurring invoice' comparison queries; the incumbent pair is already being disintermediated by third-party comparison content that LedgerLite can join.",
+      "source": "https://cashflowy.ai/blog/freshbooks-vs-wave; https://www.invoicesimple.com/blog/compare-freshbooks-vs-wave/; https://www.mooninvoice.com/blog/freshbooks-alternatives/; https://www.rippling.com/blog/alternatives-to-freshbooks"
+    }
+  ],
+  "gapsAndOpportunities": [
+    {
+      "gap": "Recurring invoices are universally supported but almost always described generically; no vendor in the returned data set claims recurring-native template design (cadence-aware layouts, retainer/period-labeled templates, auto-advancing dates and amounts shown on the template preview).",
+      "opportunity": "Build recurring invoice templates as a first-class object: schedule-bound templates with cadence labels (monthly retainer, quarterly, milestone), preview of the next N generated invoices, and per-template line-item defaults. This is the clearest available whitespace.",
+      "evidence": "FreshBooks and Wave are described as offering 'branded templates and recurring billing' as separate bullets (cashflowy.ai); Invoice Master competes on 'multiple templates' and recurring separately; Platybooks, Invlo, Invoice Cave each list recurring billing as a standalone bullet without template-level detail.",
+      "source": "https://cashflowy.ai/blog/freshbooks-vs-wave; https://invoicemaster.org; https://platybooks.com; https://invlo.me"
+    },
+    {
+      "gap": "Recurring invoices and collections automation are split across different products in the long tail (Invoxera, PayAlerta, Quinvy, InvoiceGlide do reminders; others do recurring billing).",
+      "opportunity": "Bind the recurring template to an automated send + reminder + escalation chain so one configured template produces invoices, delivery and follow-up. Mirror the quantified pitch competitors use (Invoxera: 75% fewer overdue invoices; 14 hours/week saved).",
+      "evidence": "Invoxera claims 'up to a 75% drop in overdue invoices' and '14 hours per week chasing late payments'; Invoice Cave separates 'recurring billing on autopilot' from 'smart reminders'; Sunbay claims '-7-15 days DSO' and '45+ hours/month saved'.",
+      "source": "https://www.invoxera.com; https://invoicecave.com; https://sunbay.io"
+    },
+    {
+      "gap": "Free-tier competitors are unbundling paid features (Invlo: recurring invoices, multi-currency, aging reports all free), leaving paid incumbents exposed at the entry level.",
+      "opportunity": "Package recurring templates generously at entry (e.g. unlimited templates, capped active schedules) and monetize on multi-seat, approval workflows, higher send volumes or accountant-ready exports instead of on the template feature itself.",
+      "evidence": "Invlo explicitly frames recurring invoices as a paywalled feature elsewhere and includes it free; FreshBooks Lite listed at $21 USD/month; Invoice Cave, Smart Invoice, InvoiceKraft and InvoiceCraftly all advertise free starts.",
+      "source": "https://invlo.me; https://www.waveapps.com/compare/freshbooks-vs-wave; https://invoicecave.com; https://smartinvoicegenerator.com"
+    },
+    {
+      "gap": "None of the US-targeted results in this bundle evidence US-specific tax/compliance handling for recurring invoices (GST/VAT/SARS/FIRS/FBR are the compliance angles claimed, and they are non-US).",
+      "opportunity": "If validated, US state sales-tax handling and 1099-adjacent reporting on recurring streams would be a defensible differentiator for US SMBs — but this gap is inferred from absence of evidence, not from positive evidence, and must be validated with US-specific research.",
+      "evidence": "Compliance claims in the company_search results are Jurisdiction-specific and non-US: GST (Invoodle, InvoSync, InvoPilot), SARS/VAT (Invoculate), FBR (Splendid Invoices), FIRS (InvoiceManager), Malta VAT (invoices.mt). No US sales-tax or 1099 claim appears in any returned record.",
+      "source": "crustdata company_search results in this bundle (e.g. invoodle.com, invoculate.com, splendidinvoices.com, invoicemanager.ng, invoices.mt)"
+    },
+    {
+      "gap": "AI-assist for recurring template setup is nascent despite 'AI-native' branding being widespread.",
+      "opportunity": "Ship recurring template creation as an AI-assisted step: suggest cadence, line items and amounts from a client's prior invoices, then let the user confirm. Directly answers Invoice Cave's MCP-driven plain-English workflow without requiring an MCP client.",
+      "evidence": "Invoice Cave: 'Create a $2,500 invoice for Acme Corp... and it's done' via 102 MCP tools; invoices.mt: 'Describe the job in one sentence'; Invoculate: 'AI-powered suggestions based on your past transactions'; Slate: 'AI-powered features... managing recurring billing'.",
+      "source": "https://invoicecave.com; https://invoices.mt; https://invoculate.com; https://www.slate.co.il"
+    }
+  ],
+  "risks": [
+    {
+      "risk": "Differentiation risk: recurring invoice templates are already a parity feature, so the launch may produce no measurable competitive separation.",
+      "evidence": "FreshBooks and Wave both cited for branded templates + recurring billing; at least nine long-tail vendors in the two US company_search result sets also advertise recurring invoicing.",
+      "severity": "high",
+      "source": "https://cashflowy.ai/blog/freshbooks-vs-wave; https://www.waveapps.com/compare/freshbooks-vs-wave; crustdata company_search results"
+    },
+    {
+      "risk": "Price/monetization risk: a free-plan competitor may make recurring invoices free, undermining any premium gate on the feature.",
+      "evidence": "Invlo: recurring invoices are 'locked behind paid plans on most invoicing platforms. Invlo includes them all on its free plan.' Invoice Cave and multiple others offer free starts with no card required.",
+      "severity": "high",
+      "source": "https://invlo.me; https://invoicecave.com"
+    },
+    {
+      "risk": "Incumbent response risk: FreshBooks and Wave have established US SMB distribution and dedicated comparison-content pages that capture buyer intent.",
+      "evidence": "Both vendors operate their own FreshBooks-vs-Wave comparison pages (freshbooks.com/compare, waveapps.com/compare), and third-party comparison coverage around the pair dominates the 8-result web search returned.",
+      "severity": "medium",
+      "source": "https://www.freshbooks.com/compare/freshbooks-vs-wave-accounting; https://www.waveapps.com/compare/freshbooks-vs-wave"
+    },
+    {
+      "risk": "Evidence risk: the four enrichment calls for the two named competitors failed, so incumbent capability, pricing and packaging claims rely on vendor-authored and third-party comparison pages that may be stale or biased.",
+      "evidence": "errors: company_identify for freshbooks.com and waveapps.com both returned 'Exactly one identifier must be provided'; company_enrich for both domains returned the same error. planSummary: 'Executed 5 step(s); 4 error(s).'",
+      "severity": "high",
+      "source": "rawBundle.errors; rawBundle.planSummary"
+    },
+    {
+      "risk": "Scope risk: the feature description supplied was the placeholder string 'test', so effort may be estimated against an undefined requirement.",
+      "evidence": "productData.featureDescription = \"test\".",
+      "severity": "medium",
+      "source": "productData.featureDescription"
+    },
+    {
+      "risk": "US-only compliance gap risk: competitors' differentiation in the returned data is built on non-US tax compliance, so a US-first launch may under-serve the tax/regulatory angle that vendors use to justify pricing.",
+      "evidence": "Compliance positioning in results is GST/SARS/FBR/FIRS/Malta-VAT based; no US sales-tax or 1099 positioning appears anywhere in the returned records.",
+      "severity": "medium",
+      "source": "crustdata company_search results (invoodle.com, invoculate.com, splendidinvoices.com, invoicemanager.ng, invoices.mt)"
+    }
+  ],
+  "dataLimitations": [
+    "All four incumbent-intelligence calls failed: company_identify for FreshBooks (freshbooks.com) and Wave (waveapps.com) each returned 'Exactly one identifier must be provided: names, domains, professional_network_profile_urls, or crustdata_company_ids', and both company_enrich calls failed identically. No verified firmographics, product catalog, pricing, employee count, location or verified competitor list exists for FreshBooks or Wave in this bundle; planSummary records 'Executed 5 step(s); 4 error(s).'",
+    "Neither job_search returned relevant results for its target company. The 'FreshBooks' job_search and the 'Wave' job_search returned byte-identical result sets that contain no FreshBooks or Wave roles (results include Serco, Amazon, Tata Consultancy Services, marketing/SEO/security roles at unnamed companies), and both report total_count 75300631, indicating the query was not filtered to the named company. No hiring, roadmap or org signal can be derived.",
+    "company_search returned vendors but almost no quantitative sizing data: headcount total is null for the majority of the ~50 returned records, employee_count_range is frequently 'myself only' or '2-10', and no result includes revenue, funding or US market share. The bundles also include non-US vendors (South Africa, Malta, Nigeria, Israel, Pakistan, India, Poland, UAE) despite a geography filter of 'US'.",
+    "web_search_live returned only 8 results, all of which are comparison/blog pages about FreshBooks vs Wave or FreshBooks alternatives. No market sizing, adoption, pricing benchmark, buyer-survey or analyst data is present to size the US recurring-invoicing opportunity.",
+    "No first-party LedgerLite data was provided: no current feature set, pricing, ICP, installed base, win/loss, or usage data. Competitive positioning is therefore relative to external vendors only.",
+    "The feature description supplied was the literal string 'test', so the intended scope, acceptance criteria and success metrics for 'Recurring invoice templates' are unknown and were inferred.",
+    "The US tax/compliance gap noted in gapsAndOpportunities is an inference from the absence of any US-specific compliance claim in the returned records; it is not supported by positive evidence that US SMBs demand it.",
+    "Timestamps: the web_search_live result timestamp (1791776778094 ms) was used to derive generatedAt; no other authoritative generation timestamp was supplied.",
+    "No page content was fetched from any competitor website; competitor claims are taken from search snippets and from vendor/third-party self-descriptions in Crustdata company records, which are marketing copy and may overstate capabilities."
+  ],
+  "planSummary": "Executed 5 step(s); 4 error(s). Planned tools: company_identify, company_identify, company_enrich, company_enrich, company_search, company_search, job_search, job_search, web_search_live"
+}
