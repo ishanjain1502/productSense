@@ -78,6 +78,39 @@ export async function fetchMarketAnalysisReportStatus(input: {
   return data as { found: boolean; reportId?: number };
 }
 
+const TERMINAL_STATUSES = new Set(["completed", "partial", "failed"]);
+
+function marketAnalysisAuthHeaders(
+  mode: "demo" | "full"
+): Record<string, string> {
+  const headers: Record<string, string> = {};
+  const token = getStoredToken();
+  if (mode === "full" && token) {
+    headers.Authorization = `Bearer ${token}`;
+  }
+  return headers;
+}
+
+export async function fetchMarketAnalysisRun(
+  runId: number,
+  mode: "demo" | "full"
+): Promise<MarketAnalysisRunResponse> {
+  const res = await fetch(`${API_BASE}/market-analysis/runs/${runId}`, {
+    headers: marketAnalysisAuthHeaders(mode),
+  });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) {
+    throw new Error(
+      typeof data.error === "string" ? data.error : "Could not load market run"
+    );
+  }
+  return data as MarketAnalysisRunResponse;
+}
+
+function sleep(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 export async function runMarketAnalysis(body: {
   mode: "demo" | "full";
   demoId: string | null;
@@ -87,11 +120,8 @@ export async function runMarketAnalysis(body: {
 }): Promise<MarketAnalysisRunResponse> {
   const headers: Record<string, string> = {
     "Content-Type": "application/json",
+    ...marketAnalysisAuthHeaders(body.mode),
   };
-  const token = getStoredToken();
-  if (body.mode === "full" && token) {
-    headers.Authorization = `Bearer ${token}`;
-  }
 
   const res = await fetch(`${API_BASE}/market-analysis/run`, {
     method: "POST",
@@ -114,5 +144,30 @@ export async function runMarketAnalysis(body: {
     );
   }
 
-  return data as MarketAnalysisRunResponse;
+  const started = data as MarketAnalysisRunResponse;
+  if (TERMINAL_STATUSES.has(started.status)) {
+    return started;
+  }
+
+  const runId = started.runId;
+  if (!runId) {
+    throw new Error("Market analysis did not return a run id");
+  }
+
+  for (let attempt = 0; attempt < 240; attempt += 1) {
+    await sleep(attempt < 5 ? 2000 : 3000);
+    const run = await fetchMarketAnalysisRun(runId, body.mode);
+    if (TERMINAL_STATUSES.has(run.status)) {
+      if (run.status === "failed" && !run.strategyB && !run.strategyC) {
+        throw new Error(
+          run.errorB || run.errorC || "Market analysis failed"
+        );
+      }
+      return run;
+    }
+  }
+
+  throw new Error(
+    "Market analysis is still running. Refresh this page in a minute to check again."
+  );
 }
