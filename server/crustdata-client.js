@@ -1,4 +1,25 @@
 const BASE = process.env.CRUSTDATA_API_BASE || "https://api.crustdata.com";
+const API_VERSION =
+  process.env.CRUSTDATA_API_VERSION || "2025-11-01";
+
+/**
+ * @param {unknown} data
+ * @param {string} statusText
+ */
+function crustdataErrorMessage(data, statusText) {
+  if (!data || typeof data !== "object") return statusText;
+  if (typeof data.message === "string") return data.message;
+  if (typeof data.error === "string") return data.error;
+  const nested = data.error;
+  if (nested && typeof nested === "object" && typeof nested.message === "string") {
+    return nested.message;
+  }
+  try {
+    return JSON.stringify(data);
+  } catch {
+    return statusText;
+  }
+}
 
 /**
  * @param {string} path
@@ -12,11 +33,15 @@ export async function crustdataPost(path, body) {
     throw err;
   }
 
+  const authScheme =
+    process.env.CRUSTDATA_AUTH_SCHEME === "token" ? "Token" : "Bearer";
+
   const res = await fetch(`${BASE}${path}`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Token ${key}`,
+      Authorization: `${authScheme} ${key}`,
+      "x-api-version": API_VERSION,
     },
     body: JSON.stringify(body),
   });
@@ -30,9 +55,7 @@ export async function crustdataPost(path, body) {
   }
 
   if (!res.ok) {
-    const err = new Error(
-      (data && (data.message || data.error)) || res.statusText
-    );
+    const err = new Error(crustdataErrorMessage(data, res.statusText));
     err.status = res.status;
     err.data = data;
     throw err;

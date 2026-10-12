@@ -1,0 +1,11 @@
+{
+  "runId": 1,
+  "status": "failed",
+  "strategyBReportUrl": null,
+  "strategyCReportUrl": null,
+  "strategyBRawUrl": null,
+  "strategyCRawUrl": null,
+  "errorB": "COMMANDCODE_API_KEY is not set",
+  "errorC": "COMMANDCODE_API_KEY is not set",
+  "createdAt": "2026-10-12 03:37:29"
+}

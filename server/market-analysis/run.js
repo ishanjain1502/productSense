@@ -1,4 +1,5 @@
 import { dbRun, dbGet } from "../db-helpers.js";
+import { saveMarketAnalysisReportFromRun } from "../market-analysis-reports.js";
 import { writeReportFile } from "../report-storage.js";
 import { runStrategyB } from "./strategy-b.js";
 import { runStrategyC } from "./strategy-c.js";
@@ -74,8 +75,11 @@ export async function runMarketAnalysis(ctx) {
     [urlB, urlC, rawUrlB, rawUrlC, status, errorB, errorC, runId]
   );
 
+  const { reportId } = await saveMarketAnalysisReportFromRun(runId);
+
   return {
     runId,
+    reportId,
     status,
     strategyB: reportB,
     strategyC: reportC,

@@ -16,12 +16,23 @@ import { registerMarketAnalysisRoutes } from "./market-analysis-routes.js";
 
 const port = Number(process.env.PORT) || 1337;
 const databasePath = process.env.DATABASE_PATH || "./data/app.db";
-const clientOrigin = process.env.CLIENT_ORIGIN || "http://localhost:3000";
+const clientOrigins = (
+  process.env.CLIENT_ORIGIN || "http://localhost:3000,http://localhost:3001"
+)
+  .split(",")
+  .map((origin) => origin.trim())
+  .filter(Boolean);
 
 const app = express();
 app.use(
   cors({
-    origin: clientOrigin,
+    origin(origin, callback) {
+      if (!origin || clientOrigins.includes(origin)) {
+        callback(null, origin ?? clientOrigins[0]);
+        return;
+      }
+      callback(null, false);
+    },
     credentials: true,
   })
 );

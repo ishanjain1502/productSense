@@ -19,6 +19,7 @@ import {
 import { runMarketAnalysis } from "@/lib/market-analysis-api";
 import {
   loadValidationSession,
+  saveValidationSession,
   type ValidationSession,
 } from "@/lib/validation-session";
 import { cn } from "@/lib/utils";
@@ -58,6 +59,13 @@ export function MarketAnalysisPage({ mode }: MarketAnalysisPageProps) {
           featureId: loaded.featureId,
         });
         setResult(data);
+        const updated: ValidationSession = {
+          ...loaded,
+          marketAnalysisRunId: data.runId,
+          marketAnalysisReportId: data.reportId,
+        };
+        saveValidationSession(updated);
+        setSession(updated);
       } catch (err) {
         setError(
           err instanceof Error ? err.message : "Market analysis could not run."

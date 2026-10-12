@@ -1,0 +1,270 @@
+{
+  "plan": {
+    "steps": [
+      {
+        "tool": "company_identify",
+        "params": {
+          "query": "FreshBooks",
+          "limit": 5
+        }
+      },
+      {
+        "tool": "company_enrich",
+        "params": {
+          "company_name": "FreshBooks",
+          "fields": [
+            "name",
+            "domain",
+            "description",
+            "industry",
+            "employee_count",
+            "headquarters",
+            "founded_year",
+            "funding_total",
+            "investors",
+            "linkedin_url",
+            "twitter_url",
+            "revenue_range",
+            "technologies",
+            "specialties"
+          ]
+        }
+      },
+      {
+        "tool": "company_search",
+        "params": {
+          "query": "accounting and invoicing software for small businesses",
+          "filters": {
+            "industry": [
+              "Software",
+              "Information Technology"
+            ],
+            "employee_count_min": 50,
+            "employee_count_max": 5000
+          },
+          "limit": 25
+        }
+      },
+      {
+        "tool": "company_search",
+        "params": {
+          "query": "cloud bookkeeping and expense management platform",
+          "filters": {
+            "industry": [
+              "Software",
+              "Financial Services"
+            ],
+            "country": [
+              "US",
+              "CA",
+              "GB"
+            ]
+          },
+          "limit": 25
+        }
+      },
+      {
+        "tool": "company_enrich",
+        "params": {
+          "company_name": "FreshBooks",
+          "fields": [
+            "competitors",
+            "similar_companies",
+            "web_traffic",
+            "app_downloads",
+            "pricing_plans",
+            "product_features"
+          ]
+        }
+      },
+      {
+        "tool": "job_search",
+        "params": {
+          "company_name": "FreshBooks",
+          "query": "engineering OR product OR growth",
+          "limit": 50
+        }
+      },
+      {
+        "tool": "company_enrich",
+        "params": {
+          "company_name": "FreshBooks",
+          "fields": [
+            "recent_news",
+            "press_releases",
+            "partnerships",
+            "acquisitions",
+            "executives"
+          ]
+        }
+      },
+      {
+        "tool": "job_search",
+        "params": {
+          "query": "accounting software OR invoicing OR bookkeeping",
+          "filters": {
+            "department": [
+              "Sales",
+              "Marketing",
+              "Engineering"
+            ]
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "web_search_live",
+        "params": {
+          "query": "FreshBooks market position competitors small business accounting software 2024 2025"
+        }
+      }
+    ]
+  },
+  "results": [],
+  "errors": [
+    {
+      "step": {
+        "tool": "company_identify",
+        "params": {
+          "query": "FreshBooks",
+          "limit": 5
+        }
+      },
+      "error": "[object Object]"
+    },
+    {
+      "step": {
+        "tool": "company_enrich",
+        "params": {
+          "company_name": "FreshBooks",
+          "fields": [
+            "name",
+            "domain",
+            "description",
+            "industry",
+            "employee_count",
+            "headquarters",
+            "founded_year",
+            "funding_total",
+            "investors",
+            "linkedin_url",
+            "twitter_url",
+            "revenue_range",
+            "technologies",
+            "specialties"
+          ]
+        }
+      },
+      "error": "[object Object]"
+    },
+    {
+      "step": {
+        "tool": "company_search",
+        "params": {
+          "query": "accounting and invoicing software for small businesses",
+          "filters": {
+            "industry": [
+              "Software",
+              "Information Technology"
+            ],
+            "employee_count_min": 50,
+            "employee_count_max": 5000
+          },
+          "limit": 25
+        }
+      },
+      "error": "[object Object]"
+    },
+    {
+      "step": {
+        "tool": "company_search",
+        "params": {
+          "query": "cloud bookkeeping and expense management platform",
+          "filters": {
+            "industry": [
+              "Software",
+              "Financial Services"
+            ],
+            "country": [
+              "US",
+              "CA",
+              "GB"
+            ]
+          },
+          "limit": 25
+        }
+      },
+      "error": "[object Object]"
+    },
+    {
+      "step": {
+        "tool": "company_enrich",
+        "params": {
+          "company_name": "FreshBooks",
+          "fields": [
+            "competitors",
+            "similar_companies",
+            "web_traffic",
+            "app_downloads",
+            "pricing_plans",
+            "product_features"
+          ]
+        }
+      },
+      "error": "[object Object]"
+    },
+    {
+      "step": {
+        "tool": "job_search",
+        "params": {
+          "company_name": "FreshBooks",
+          "query": "engineering OR product OR growth",
+          "limit": 50
+        }
+      },
+      "error": "[object Object]"
+    },
+    {
+      "step": {
+        "tool": "company_enrich",
+        "params": {
+          "company_name": "FreshBooks",
+          "fields": [
+            "recent_news",
+            "press_releases",
+            "partnerships",
+            "acquisitions",
+            "executives"
+          ]
+        }
+      },
+      "error": "[object Object]"
+    },
+    {
+      "step": {
+        "tool": "job_search",
+        "params": {
+          "query": "accounting software OR invoicing OR bookkeeping",
+          "filters": {
+            "department": [
+              "Sales",
+              "Marketing",
+              "Engineering"
+            ]
+          },
+          "limit": 50
+        }
+      },
+      "error": "[object Object]"
+    },
+    {
+      "step": {
+        "tool": "web_search_live",
+        "params": {
+          "query": "FreshBooks market position competitors small business accounting software 2024 2025"
+        }
+      },
+      "error": "[object Object]"
+    }
+  ]
+}

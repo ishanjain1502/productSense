@@ -24,12 +24,59 @@ export type MarketReport = {
 
 export type MarketAnalysisRunResponse = {
   runId: number;
+  reportId: number;
   status: string;
   strategyB: MarketReport | null;
   strategyC: MarketReport | null;
   errorB: string | null;
   errorC: string | null;
 };
+
+export type MarketAnalysisReportIndex = {
+  runId: number;
+  status: string;
+  strategyBReportUrl: string | null;
+  strategyCReportUrl: string | null;
+  strategyBRawUrl: string | null;
+  strategyCRawUrl: string | null;
+  errorB: string | null;
+  errorC: string | null;
+  createdAt?: string;
+};
+
+export async function fetchMarketAnalysisReportStatus(input: {
+  mode: "demo" | "full";
+  runId?: number;
+  featureId?: string;
+}): Promise<{ found: boolean; reportId?: number }> {
+  const headers: Record<string, string> = {};
+  const token = getStoredToken();
+  if (input.mode === "full" && token) {
+    headers.Authorization = `Bearer ${token}`;
+  }
+
+  const qs =
+    input.runId != null
+      ? `runId=${input.runId}`
+      : input.featureId
+        ? `featureId=${encodeURIComponent(input.featureId)}`
+        : "";
+
+  if (!qs) {
+    throw new Error("Missing runId or featureId for status check");
+  }
+
+  const res = await fetch(`${API_BASE}/market-analysis/reports/status?${qs}`, {
+    headers,
+  });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) {
+    throw new Error(
+      typeof data.error === "string" ? data.error : "Status check failed"
+    );
+  }
+  return data as { found: boolean; reportId?: number };
+}
 
 export async function runMarketAnalysis(body: {
   mode: "demo" | "full";

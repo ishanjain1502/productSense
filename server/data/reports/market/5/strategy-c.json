@@ -1,0 +1,182 @@
+{
+  "strategy": "planned_c",
+  "generatedAt": "2026-10-12T03:33:59.975Z",
+  "feature": {
+    "name": "Recurring invoice templates",
+    "description": "Let users save invoice layouts and auto-send on a schedule to repeat clients, with gentle payment reminders. Owned by a 1-person team at LedgerLite (minimalist invoicing and expense tracker for freelancers), targeting independent professionals and micro-businesses in the US, Canada and UK, sold self-serve to the freelancer/solopreneur buyer."
+  },
+  "executiveSummary": "LedgerLite is a one-person product adding recurring invoice templates for freelancers and micro-businesses in the US, Canada and UK. This bundle supports two conclusions. First, the need is real and retainer-style repeat billing is an established workflow: one search snippet puts the global freelancer invoicing software market at $446 million in 2025, and every directly comparable vendor surfaced - incumbent or micro-SaaS - already advertises recurring invoices, reminders and payment links. Second, that same evidence means recurring scheduling alone cannot be the wedge. The gap visible in this data is narrower: saved, genuinely branded layouts; phone-first creation and sending; reminder tone that preserves the client relationship rather than chasing it; and non-locking exports. FreshBooks (privately held, founded 2003, 201-500 employees, Canada-based) and Zoho (10,001+ employees, 55+ products, 150M+ users, with Zoho UK in Bletchley and Zoho Europe offices) are the scaled comparators; Wave could not be resolved at all in this run, and no enriched firmographic data was returned for any competitor because all three company_enrich steps failed. Twenty small vendors surfaced across two bounded company searches, at least six founded 2024-2026, which validates demand while warning of a crowded, free-tier-heavy acquisition environment. Recommendation: ship recurring templates as a quality-and-confidence feature - best-looking saved layout, fastest mobile send, gentlest reminder that still gets paid - and set pricing against the free tiers in this set before committing roadmap capacity.",
+  "competitorLandscape": [
+    {
+      "name": "FreshBooks",
+      "positioning": "Self-described as 'designed to drive small business success - built for business owners and freelancers who want an easier way to get paid, manage finances, and deliver work all in one place'; privately held, Canada-based, founded 2003, employee range 201-500.",
+      "relevantMoves": [
+        "Core company record: crustdata_company_id 662598, freshbooks.com, privately held, founded 2003, employee_count_range 201-500, industries Software Development / Technology, Information and Internet (company_identify, confidence 1.0).",
+        "Runs a separate 'FreshBooks Accounting Partner Program' (freshbooks.com/accountants, confidence 0.8, 501-1000 employee range) aimed at accountants whose clients need books, invoices and reports - a channel into small-business clients rather than direct freelancers.",
+        "Operates 'Facturama by Freshbooks' (facturama.mx, confidence 0.8, founded 2012, 11-50 employees), a Mexican e-invoicing platform stating 'Mas de 25000 clientes' and offering an invoicing API for integration - evidence of expanding invoicing footprint beyond North American English markets.",
+        "Name resolution was noisy: other name matches included an affiliate page on awin.com, a bookseller at freshbooks.in, 'Freshbooks & Lern' and a third-party MacOS timer (kaal.app), none of which are the invoicing company.",
+        "No hiring signal: the job_search for 'recurring billing OR recurring invoice' restricted to FreshBooks/Wave/Zoho Invoice returned no FreshBooks listings."
+      ],
+      "sources": [
+        "company_identify: FreshBooks (crustdata_company_id 662598, confidence 1.0)",
+        "https://www.freshbooks.com/",
+        "https://www.freshbooks.com/accountants",
+        "https://facturama.mx/",
+        "job_search: 'recurring billing OR recurring invoice' (no relevant listings)"
+      ]
+    },
+    {
+      "name": "Wave",
+      "positioning": "Named in the product brief as a competitor, but this run produced no verified company or product record for a Wave freelancer-accounting entity; company_identify on waveapps.com did not match.",
+      "relevantMoves": [
+        "company_identify for name 'Wave' / domain 'waveapps.com' returned 30+ unrelated entities named Wave, including a Kentucky broadcast station (wave3.com), a UK business water retailer (wave-utilities.co.uk), a VR platform (wavexr.com), a mental-health provider (wavelife.io), a recruitment marketing platform (wave-rs.co.uk), an e-bike operator and multiple marketing agencies. None matched waveapps.com.",
+        "company_enrich for waveapps.com failed, so there is no pricing, feature, headcount or hiring evidence for Wave in this bundle."
+      ],
+      "sources": [
+        "company_identify: Wave (no waveapps.com match; 30+ unrelated 'Wave' entities returned)",
+        "company_enrich: waveapps.com (failed)"
+      ]
+    },
+    {
+      "name": "Zoho Invoice",
+      "positioning": "A product inside Zoho Corporation's suite - 'beautifully smart software to help you grow your business' - spanning 55+ products across sales and marketing, support and collaboration, finance, and recruitment; privately held and profitable, HQ Chennai with US base in Austin, Texas, 10,001+ employees and 150M+ users worldwide.",
+      "relevantMoves": [
+        "company_identify matched 'Zoho Invoice' to the parent entity Zoho (zoho.com) at confidence 0.6: crustdata_company_id 1032449, founded 1996, employee_count_range 10,001+, 55+ products, 150M+ users, and an explicit stance that 'Zoho respects user privacy and does not have an ad-revenue model in any part of its business, including its free products.'",
+        "Regional footprints inside LedgerLite's target geography: Zoho UK (office in Bletchley) and Zoho Europe (European offices in Milton Keynes, Utrecht, Essen, Lille and Valencia), both listed at 10,001+ employees.",
+        "Breadth signal: roughly twenty further Zoho product pages (Recruit, Commerce, POS, Mail, Workplace, Backstage, Learn, IoT, PageSense, Apptics, Workerly) matched at 0.6 confidence, showing invoicing is bundled inside a much larger portfolio rather than sold as a focused freelancer tool.",
+        "Zoho Africa record claims 130 million global users in 190+ countries and describes selling products 'under one single integrated suite, Zoho One'.",
+        "No product-level data for Zoho Invoice itself (pricing, template or recurring-billing features) was returned; company_enrich on zoho.com/invoice failed."
+      ],
+      "sources": [
+        "company_identify: Zoho Invoice -> Zoho (crustdata_company_id 1032449, confidence 0.6)",
+        "https://www.zoho.com/",
+        "https://www.zoho.com/invoice/ (enrich failed)",
+        "Zoho UK and Zoho Europe regional company records"
+      ]
+    },
+    {
+      "name": "Lynkmanage",
+      "positioning": "Invoicing software for freelancers, consultants and small agencies built around speed and payment collection: 'Create branded invoices in 30 seconds', start free with 5 invoices / 10 clients / 3 estimates per month, 'no feature bloat, no accounting-suite complexity you'll never use', custom domain on Pro and full white-label on Business.",
+      "relevantMoves": [
+        "Explicit repeat-billing positioning that overlaps LedgerLite's feature: 'Put retainer clients on recurring autopilot, and let smart reminders chase overdue invoices so you don't have to.'",
+        "Collects payment through Stripe, PayPal or Wise; offers 'full CSV, JSON, and PDF export, anytime' and positions data ownership ('Your data stays yours') and branding ('Your brand, not ours') as differentiators.",
+        "Directory record: privately held, 2-10 employees, founded 2026, active."
+      ],
+      "sources": [
+        "company_search: 'invoicing software for freelancers' (lynkmanage.com)",
+        "https://lynkmanage.com"
+      ]
+    },
+    {
+      "name": "JollyBilling",
+      "positioning": "Invoicing and billing for freelancers and small service businesses - 'the coaches, tutors, music teachers, therapists, consultants, and crews who bill for their time' - turning logged sessions into a branded invoice in one click, in browser and on iOS and Android.",
+      "relevantMoves": [
+        "Recurring billing for repeat clients: 'Set up recurring invoices for ongoing clients, turn estimates into contracts without re-typing a thing.'",
+        "AI-assisted admin: receipt OCR for expense tracking and smart session-to-invoice generation; free to start with no credit card, plans that scale from side gig to established practice.",
+        "Claims paid-faster outcomes as the headline customer result: 'average time-to-paid dropping from weeks to days, Sunday nights handed back, billing that finally feels professional instead of patched together.'",
+        "Directory record: privately held, founded 2024, 11-50 employees, active."
+      ],
+      "sources": [
+        "company_search: 'invoicing software for freelancers' (jollybilling.com)",
+        "https://jollybilling.com"
+      ]
+    },
+    {
+      "name": "Direct micro-SaaS challengers (Invocrest, DevInvoice, InvoiceFeed, Reinvoice, Bundlify, InvoiceLab, invoxify, Invoizer, trackem, Track and Invoice)",
+      "positioning": "1-50 person vendors returned by the bounded US/CA/UK search, all pitching freelancer or solo-service invoicing with recurring schedules, reminders, exports, payment links and lightweight expense tracking - the immediate competitive set LedgerLite's self-serve buyer will compare against.",
+      "relevantMoves": [
+        "Invocrest: 'set recurring schedules, send overdue reminders, record payments manually' plus estimates, client-view links and revenue/receivables/tax tracking; 2-10 employees.",
+        "Reinvoice: 'send reminders, schedule invoice emails, export PDFs and CSVs, issue credit memos, collect digital signatures' with self-employment tax built in; founded 2026.",
+        "trackem: SaaS for small businesses with 'Recurring invoices and payment reminders' plus estimates, customer records, expense tracking, reporting and multi-currency; founded 2026, 2-10 employees.",
+        "DevInvoice: 'Create professional, branded invoices in seconds ... without the bloat of traditional accounting tools', claiming 'Trusted by 1,500+ freelancers and developers worldwide'; founded 2025.",
+        "Bundlify: 'brandable, client-managing, invoice-tracking, and payment-processing software for freelancers that you connect to Stripe and run on your domain'; founded 2018.",
+        "Invoizer: 'Customize stunning invoice and quotation templates with your brand's colours, logos, and preferred layout' plus one-click quote-to-invoice conversion and 'send auto-reminders for pending payments'; founded 2025.",
+        "Track and Invoice: time, item/expense and invoice tracking for service trades (designers, contractors, coaches, trainers), positioning explicitly against general accounting platforms.",
+        "Expense-side neighbours from the second search: ExpenWise (OCR receipts, 'Recurring Expenses', CSV export), ExpenseMonkey ('specifically designed to meet the needs of freelancers and small businesses'), Falcon Expenses ('Rated by TheBalance.com as top 3 in its category'), ai2fin (sole-trader bookkeeping and tax)."
+      ],
+      "sources": [
+        "company_search: 'invoicing software for freelancers' (invocrest.com, devinvoice.io, invoicefeed.com, reinvoice.co, bundlify.com, invoicelab.io, invoxify.in, invoizer, trackem)",
+        "company_search: 'expense tracking for small business' (expenwise.com, expensemonkey.io, falconexpenses.com, trackandinvoice.com)"
+      ]
+    }
+  ],
+  "marketSignals": [
+    {
+      "signal": "Recurring invoicing is already table stakes in this category, not a differentiator.",
+      "evidence": "Forbes Advisor's best-invoicing roundup (dated Aug 7, 2026) states 'Invoice Ninja is the best invoicing software for freelancers, All plans also come with auto billing and recurring invoices'. Vendors in the same week's results advertise the same capability: Lynkmanage 'recurring autopilot', JollyBilling 'recurring invoices for ongoing clients', Invocrest 'recurring schedules', Reinvoice 'schedule invoice emails', trackem 'Recurring invoices and payment reminders'.",
+      "implicationForFeature": "LedgerLite should treat scheduling as a baseline requirement and compete on saved template quality, mobile send speed and reminder tone rather than on the existence of recurring billing.",
+      "source": "web_search_live (Forbes Advisor, https://www.forbes.com/advisor/business/software/best-invoicing-software/); company_search results (lynkmanage.com, jollybilling.com, invocrest.com, reinvoice.co, trackem)"
+    },
+    {
+      "signal": "The addressable category is real but small relative to incumbent scale.",
+      "evidence": "One search result states: 'The global freelancer invoicing software market size 2025 is projected to reach $446 million, growing at a compound annual growth rate (CAGR) ...' (snippet truncated; CAGR figure not captured).",
+      "implicationForFeature": "A sub-$500M category populated by free-tier entrants limits how aggressively FreshBooks (201-500 employees) or Zoho (10,001+ employees, 150M+ users) will defend niche features, but a solo self-serve product must keep acquisition and support cost per account very low.",
+      "source": "web_search_live (https://research.com/software/billing-software-for-freelancers)"
+    },
+    {
+      "signal": "Invoice templates are being repositioned as intelligent, compliance-relevant assets rather than static documents.",
+      "evidence": "Industry piece dated Sep 26, 2025: 'No longer static documents, invoice templates are now intelligent, customizable, and globally adaptable - making them indispensable for ...' (snippet truncated). Reinforcing this, Invoizer sells template customisation ('your brand's colours, logos, and preferred layout') and QuickBooks offers a free 'customizable, and printable freelance invoice template'.",
+      "implicationForFeature": "Saved layouts should be framed as smart, branded, tax-and-numbering-aware artifacts, not cosmetic skins. Note: this bundle contains no data on invoicing mandates or tax-format requirements in the US, Canada or UK.",
+      "source": "web_search_live (https://azbigmedia.com/business/invoice-templates-in-2025-driving-professionalism-compliance-and-faster-payments-across-businesses-worldwide/); company_search (invoizer); https://quickbooks.intuit.com/r/invoicing/freelance-invoice-template/"
+    },
+    {
+      "signal": "Chasing late payments is the dominant pain narrative, and vendors sell on time-to-paid.",
+      "evidence": "JollyBilling: 'talented people losing their evenings to spreadsheets, chasing late payments' and 'average time-to-paid dropping from weeks to days'. Lynkmanage: 'let smart reminders chase overdue invoices so you don't have to'. Invoizer: 'send auto-reminders for pending payments'. Invocrest: 'send overdue reminders'. quickbooks.intuit.com: 'QuickBooks can even send recurring invoices'.",
+      "implicationForFeature": "'Gentle payment reminders' is a defensible tone differentiator only if it does not sacrifice the promised outcome; reminder effectiveness should be measurable (time-to-paid) and likely needs a firmer escalation step that the user can switch on.",
+      "source": "company_search (jollybilling.com, lynkmanage.com, invoizer, invocrest.com); https://quickbooks.intuit.com/r/invoicing/freelance-invoice-template/"
+    },
+    {
+      "signal": "Supply is crowding fast with 2024-2026 vintage micro-vendors.",
+      "evidence": "A single bounded company_search ('invoicing software for freelancers'; US/CA/UK; Software/FinTech/SaaS; 1-50 employees) returned 10 vendors, several solo or 2-10 employees and several newly founded: Lynkmanage (founded 2026), Reinvoice (2026), trackem (2026), DevInvoice (2025), Invoizer (2025), JollyBilling (2024), InvoiceFeed (2024). DevInvoice claims '1,500+ freelancers and developers'.",
+      "implicationForFeature": "Demand for lightweight freelancer billing is being validated by new entrants, but at this density distribution and sharp positioning - not feature parity or depth - will decide survival.",
+      "source": "company_search: 'invoicing software for freelancers' (US/CA/UK, 1-50 employees)"
+    },
+    {
+      "signal": "Mobile-first sending and non-locking exports are now baseline expectations.",
+      "evidence": "JollyBilling: 'It works in your browser and on iOS and Android, so you can log a session and send an invoice from anywhere'. Lynkmanage: 'full CSV, JSON, and PDF export, anytime'. Reinvoice: 'export PDFs and CSVs'. ExpenWise: 'CSV Export - Export expenses, budgets, and projects for accounting software'.",
+      "implicationForFeature": "Phone-first template editing and sending (persona Maya, invoicing between client calls) and open exports (persona Priya, bookkeeping for five clients) need to ship in the same release as templates; deferring either is an immediate comparison-table loss.",
+      "source": "company_search (jollybilling.com, lynkmanage.com, reinvoice.co, expenwise.com)"
+    },
+    {
+      "signal": "No hiring investment in recurring billing or invoicing product management was detectable at the three named incumbents.",
+      "evidence": "job_search 'recurring billing OR recurring invoice' filtered to FreshBooks/Wave/Zoho Invoice, and job_search 'product manager invoicing OR billing' in the US/CA/UK, both returned no relevant postings. Results were unrelated roles (Serco submarine industrial-base data analytics, home-health nursing, marketing/social/SEO, security engineering) despite reported total_count of 75,300,631.",
+      "implicationForFeature": "There is no evidence in this bundle that incumbents are staffing specifically against this feature, which is a mild timing argument for LedgerLite - but the same queries returning noise means this is weak evidence and should not anchor the roadmap.",
+      "source": "job_search: 'recurring billing OR recurring invoice' (companies: FreshBooks, Wave, Zoho Invoice) - no relevant listings; job_search: 'product manager invoicing OR billing' - no relevant listings"
+    }
+  ],
+  "gapsAndOpportunities": [
+    "Saved-layout quality is under-served relative to scheduling. Competitors advertise recurring billing but describe templates generically ('Create branded invoices in 30 seconds', 'Customize stunning invoice ... templates'); a genuinely high-quality, reusable layout library is a narrower and more defensible wedge than recurring scheduling itself.",
+    "Reminder tone is uncontested. Every surfaced vendor uses chase/dunning language ('let smart reminders chase overdue invoices', 'send overdue reminders', 'auto-reminders for pending payments'); none claims reminders that protect a retainer relationship. 'Gentle' is an available position if it still measurably reduces time-to-paid.",
+    "Phone-first invoicing between client calls is thinly served. Only JollyBilling among the surfaced set explicitly claims native iOS and Android; persona Maya bills 3-8 clients monthly and invoices from her phone.",
+    "Retainer billing-cycle variety looks like an unmet need. A practitioner playbook result covers 'the five types of recurring invoicing, how to set up billing cycles that collect payment before work begins' - retainer users need cycles (prepaid, milestone, monthly) rather than a single auto-send toggle. Evidence is snippet-level only.",
+    "Bookkeeper-ready exports are a compatibility requirement, not a differentiator: Lynkmanage, Reinvoice and ExpenWise all advertise CSV/JSON/PDF export, and persona Priya manages books for five clients - LedgerLite must match this at launch.",
+    "First-time-invoicer confidence is unaddressed. Persona Jordan (new freelancer, nervous about looking legit) is not spoken to by any competitor description in this bundle; saved recurring templates double as a proof-of-professionalism onboarding artifact.",
+    "Incumbent channel structure leaves a self-serve gap. FreshBooks routes small-business relationships through its Accounting Partner Program, and Zoho sells invoicing inside a 55+ product suite; neither record shows a focused, phone-first freelancer billing experience."
+  ],
+  "risks": [
+    "Feature commoditization: recurring invoices are offered by both scaled incumbents (per Forbes' roundup, all Invoice Ninja plans include auto billing and recurring invoices) and at least six surfaced micro-tools, so the feature may not be a purchase driver on its own.",
+    "Incumbent bundling and capacity asymmetry: Zoho's record shows 55+ products, 150M+ users, 10,001+ employees and a deliberate free-product, no-ad-revenue posture; FreshBooks operates at 201-500 employees. LedgerLite has a team size of 1.",
+    "Auto-send correctness risk: a scheduled invoice sent with a stale amount or broken layout damages the freelancer's client relationship, which is exactly the trust the feature is meant to build; templates and schedules need safeguards this bundle cannot specify.",
+    "Reminder-tone trade-off: positioning reminders as 'gentle' may under-serve users whose core pain is cash timing, while competitors explicitly market 'get paid faster' and 'average time-to-paid dropping from weeks to days'.",
+    "Free-tier pricing pressure: Lynkmanage offers 5 invoices/10 clients/3 estimates free with no trial countdown and JollyBilling is 'free to start, no credit card needed', in a category a snippet sizes at $446M in 2025 - low willingness to pay is a plausible outcome for a solo self-serve product.",
+    "Multi-country exposure without compliance data: the target geography spans the US, Canada and the UK, yet this bundle contains no information on invoicing mandates, tax line requirements or data residency, while one market signal describes templates becoming 'globally adaptable' for compliance reasons.",
+    "Weak evidentiary base for roadmap decisions: no competitor pricing, no product-level feature sets, no churn, conversion or willingness-to-pay data, and no primary research with the named personas were captured in this run.",
+    "Single-person operating capacity: with team size 1, supporting scheduled sending, reminder delivery and three-country expectations simultaneously risks reliability incidents that a self-serve user will silently churn on."
+  ],
+  "dataLimitations": [
+    "All three company_enrich calls failed with the error 'Exactly one identifier must be provided: names, domains, professional_network_profile_urls, or crustdata_company_ids' (for freshbooks.com, waveapps.com and zoho.com/invoice), so no enriched firmographic data - deeper headcount, funding, revenue or location detail - was returned for any competitor.",
+    "Wave could not be resolved: company_identify on waveapps.com returned 30+ unrelated entities named 'Wave' (broadcast, utilities, VR, mental health, recruitment, marketing, e-bike) and no Wave Financial record, so Wave is listed as a competitor with no verified positioning or moves.",
+    "Zoho Invoice matched the parent company Zoho at confidence 0.6 only; no product-level data (pricing, feature list, user counts, recurring-billing specifics) exists in this bundle.",
+    "FreshBooks has one high-confidence company record (crustdata_company_id 662598); other FreshBooks-named matches (Accounting Partner Program, Facturama by Freshbooks, Kaal, awin affiliate page, freshbooks.in) are confidence 0.4-0.8 and may not be the same legal entity or may be partner/marketplace surfaces.",
+    "Both job_search calls returned no relevant listings despite large reported total_count values; job-market signals from those steps should be treated as absent, not as negative evidence.",
+    "No pricing data was captured for any competitor, including the incumbents and the micro-SaaS set.",
+    "The market-size figure ($446 million, 2025) comes from a single truncated search snippet with the CAGR cut off; it is not independently verified.",
+    "web_search_live returned only 8 results and only snippets; no full pages were retrieved (failed_pages and empty_pages were both empty), and several result dates are forward-dated or inconsistent (2025-2027), so recency claims should be used cautiously.",
+    "No primary customer research was conducted in this run; the personas (Maya, Omar, Priya, Jordan) and target-market framing come from the supplied product context and persona document, not from market data in this bundle.",
+    "No regulatory, tax or e-invoicing compliance data for the United States, Canada or the United Kingdom was collected, despite the feature sending client-facing invoices in all three.",
+    "No data on conversion, retention, churn or willingness to pay specifically for recurring invoice functionality.",
+    "Company search results are directory description snippets that vendors write about themselves; claims such as '1,500+ freelancers' or 'average time-to-paid dropping from weeks to days' are vendor assertions and were not verified.",
+    "Plan reconciliation: the plan listed 11 tool steps and the run reports 8 executed steps with 3 errors; the three failures were all company_enrich, meaning the competitor-intelligence phase is the weakest part of this bundle."
+  ],
+  "planSummary": "Executed 8 step(s); 3 error(s). Planned tools: company_identify, company_identify, company_identify, company_enrich, company_enrich, company_enrich, company_search, company_search, job_search, job_search, web_search_live"
+}

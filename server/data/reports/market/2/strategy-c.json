@@ -1,0 +1,53 @@
+{
+  "strategy": "planned_c",
+  "generatedAt": "2026-10-12T03:23:31.112Z",
+  "feature": {
+    "name": "Recurring invoice templates",
+    "description": "Auto-send invoices for freelancers using LedgerLite. Planned capability lets a solo freelancer define a reusable invoice template and have LedgerLite automatically send invoices on a recurring schedule. Context: invoicing product for freelancers, team size 1, target geography US."
+  },
+  "executiveSummary": "This report was produced under a planned_c strategy: a 9-step research plan was defined but none of it returned data. All 9 steps failed (2x company_identify, 2x company_enrich, 2x company_search, 2x job_search, 1x web_search_live), yielding 0 results and 9 errors. As a result, no evidence was collected on FreshBooks, Wave, the wider US freelancer invoicing market, competitor product moves, or competitor hiring signals around recurring billing and payments. The only grounded inputs are the product brief itself (LedgerLite, invoicing for freelancers, team size 1, US market, feature = recurring invoice templates with auto-send) and the record of the failed plan. Every competitive and market claim that a normal analysis would make here is unsupported and has been withheld rather than estimated. The single defensible conclusion is process-level: the evidence base for a go/no-go or a differentiation decision on recurring invoice templates does not yet exist and must be rebuilt before this feature is scoped, priced, or sequenced.",
+  "competitorLandscape": [
+    {
+      "name": "FreshBooks",
+      "positioning": "Named by the requester as a competitor in US freelancer invoicing. No positioning, pricing, segment, or product detail was retrieved: company_identify and company_enrich for freshbooks.com both errored, and no company_search, job_search, or web_search_live result referenced FreshBooks. Positioning is therefore unverified.",
+      "relevantMoves": [],
+      "sources": []
+    },
+    {
+      "name": "Wave",
+      "positioning": "Named by the requester as a competitor in US freelancer invoicing. No positioning, pricing, segment, or product detail was retrieved: company_identify and company_enrich for waveapps.com both errored, and no company_search, job_search, or web_search_live result referenced Wave. Positioning is therefore unverified.",
+      "relevantMoves": [],
+      "sources": []
+    }
+  ],
+  "marketSignals": [],
+  "gapsAndOpportunities": [
+    "No evidence was collected on whether FreshBooks or Wave already offer recurring invoice templates with auto-send, so it is unknown whether this feature is table-stakes parity or a differentiator. This gap must be closed first; it determines whether the feature is a growth lever or a defensive requirement.",
+    "The two company_search steps intended to size the US freelancer invoicing and recurring-billing vendor set (1-500 and 1-1000 employees) returned nothing, so the total addressable competitive set for LedgerLite beyond the two named competitors is unknown.",
+    "The two job_search steps intended to detect competitor investment in recurring billing, invoicing, payments, subscription, and PM hiring returned nothing. Hiring velocity in these areas would have been the cleanest available proxy for competitor roadmap direction on auto-send and recurring billing; that proxy is currently unavailable.",
+    "Because LedgerLite is a 1-person team, any opportunity assessment must weigh build cost directly against the founder's only resource: time. That tradeoff cannot be evaluated without the missing competitor cost/feature baseline.",
+    "No US-specific signal (willingness to pay, churn drivers, freelancer invoicing cadence, payment rail preferences) was gathered, so geographic-specific opportunity hypotheses for the US market remain untested."
+  ],
+  "risks": [
+    "Evidence risk (realized): all 9 planned research steps failed with '[object Object]' errors and returned 0 results. Proceeding to scope or build recurring invoice templates on this basis would mean committing a 1-person team's capacity to a feature with zero competitive or demand validation.",
+    "Competitive-parity risk: if FreshBooks or Wave already ship recurring templates with auto-send, LedgerLite is behind on a baseline expectation for freelancer invoicing rather than ahead on a differentiator. This is currently unmeasured.",
+    "Differentiation risk: freelancer invoicing is a crowded, low-price category, and auto-send alone is a thin differentiator if incumbents offer it at no incremental cost. No pricing or packaging data was retrieved to test this.",
+    "Trust and deliverability risk: automatically sending invoices on a freelancer's behalf is an irreversible customer-facing action. Errors in scheduling, amounts, or recipients damage the freelancer's client relationship, not just their tooling experience. No data was gathered on how competitors handle send confirmation, cancellation windows, or failure handling.",
+    "Single-operator execution risk: with team size 1, the recurring-scheduling, email-delivery, retry, and timezone edge cases of auto-send are disproportionately expensive to build and support relative to the feature's likely price contribution.",
+    "Instrumentation/tooling risk: the uniform '[object Object]' error across five different tool types (identify, enrich, search, job_search, web_search_live) points to a systemic integration or credential fault rather than isolated tool failures. Re-running the same plan without fixing the root cause will likely reproduce the same empty result set."
+  ],
+  "dataLimitations": [
+    "Zero of nine planned steps returned results: results array is empty and 9 errors are recorded. No raw evidence exists for this report.",
+    "company_identify failed for both FreshBooks (US) and Wave (US); competitor legal identity, aliases, and domains are unconfirmed beyond the names supplied by the requester.",
+    "company_enrich failed for freshbooks.com and waveapps.com for all requested fields (name, description, employee_count, industry, location, technologies, funding, revenue, products). No firmographic, funding, revenue, technology-stack, or product-catalog data is available for either competitor.",
+    "company_search failed for both queries ('invoicing software for freelancers' with US/Software/1-500 employees, limit 25; and 'recurring invoice automation billing software' with US/Software/1-1000 employees, limit 25). No long-tail competitor set was discovered.",
+    "job_search failed for both queries (competitor-domain hiring on recurring billing/invoicing/payments/subscription, and US product manager roles in invoicing/billing/payments). No hiring-based roadmap signal was obtained.",
+    "web_search_live failed for the combined FreshBooks/Wave/recurring invoice/auto-send/freelancer/US query. No public web, pricing-page, changelog, or review-site evidence was obtained.",
+    "All 9 errors are recorded only as '[object Object]', so the underlying cause (authentication, rate limit, schema mismatch, upstream outage) is not determinable from this bundle.",
+    "marketSignals is returned empty by necessity, not by finding: no signal met the evidence bar of a retrievable source.",
+    "competitorLandscape entries carry no relevantMoves and no sources; the two competitors are listed solely because the requester named them, and their inclusion is not an endorsement or a validated competitive set.",
+    "No data exists on US freelancer pricing sensitivity, invoice volume per client, payment method mix, or churn, so no market sizing, willingness-to-pay, or revenue-attribution claim can be made for recurring invoice templates.",
+    "Recommended remediation before any decision: fix the tool-layer fault, then re-run company_enrich for both domains, both company_search queries, and web_search_live, adding direct retrieval of FreshBooks and Wave pricing and feature pages."
+  ],
+  "planSummary": "Executed 0 step(s); 9 error(s). Planned tools: company_identify, company_identify, company_enrich, company_enrich, company_search, company_search, job_search, job_search, web_search_live"
+}

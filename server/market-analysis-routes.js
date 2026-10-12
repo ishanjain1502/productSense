@@ -1,6 +1,10 @@
 import { verifyToken } from "./auth.js";
 import { assertFeatureOwnedByUser } from "./projects.js";
 import { readReportFile } from "./report-storage.js";
+import {
+  getMarketAnalysisReportIndex,
+  getMarketAnalysisReportStatus,
+} from "./market-analysis-reports.js";
 import { getMarketAnalysisRun, runMarketAnalysis } from "./market-analysis/run.js";
 
 /**
@@ -61,6 +65,89 @@ export function registerMarketAnalysisRoutes(app) {
         error: "market_analysis_failed",
         message: err?.message ?? "Unknown error",
       });
+    }
+  });
+
+  app.get("/market-analysis/reports/status", async (req, res) => {
+    try {
+      const runId = req.query.runId ? Number(req.query.runId) : undefined;
+      const featureId =
+        typeof req.query.featureId === "string"
+          ? req.query.featureId
+          : undefined;
+
+      if (runId != null && Number.isFinite(runId)) {
+        const result = await getMarketAnalysisReportStatus({ runId });
+        res.json(result);
+        return;
+      }
+
+      if (featureId) {
+        const header = req.headers.authorization;
+        const token =
+          header && header.startsWith("Bearer ")
+            ? header.slice(7).trim()
+            : null;
+        const user = token ? verifyToken(token) : null;
+        if (!user) {
+          res.status(401).json({ error: "unauthorized" });
+          return;
+        }
+        const result = await getMarketAnalysisReportStatus({
+          featureId,
+          userId: user.id,
+        });
+        res.json(result);
+        return;
+      }
+
+      res.status(400).json({ error: "run_id_or_feature_id_required" });
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ error: "server_error" });
+    }
+  });
+
+  app.get("/market-analysis/reports/:id", async (req, res) => {
+    try {
+      const reportId = Number(req.params.id);
+      if (!Number.isFinite(reportId)) {
+        res.status(400).json({ error: "invalid_id" });
+        return;
+      }
+
+      const row = await getMarketAnalysisReportIndex(reportId);
+      if (!row) {
+        res.status(404).json({ error: "not_found" });
+        return;
+      }
+
+      const runRow = await getMarketAnalysisRun(row.runId);
+      if (runRow?.feature_id) {
+        const header = req.headers.authorization;
+        const token =
+          header && header.startsWith("Bearer ")
+            ? header.slice(7).trim()
+            : null;
+        const user = token ? verifyToken(token) : null;
+        if (!user) {
+          res.status(401).json({ error: "unauthorized" });
+          return;
+        }
+        const owned = await assertFeatureOwnedByUser(
+          runRow.feature_id,
+          user.id
+        );
+        if (!owned) {
+          res.status(403).json({ error: "forbidden" });
+          return;
+        }
+      }
+
+      res.json(row);
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ error: "server_error" });
     }
   });
 

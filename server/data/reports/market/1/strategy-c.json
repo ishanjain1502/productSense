@@ -1,0 +1,49 @@
+{
+  "strategy": "planned_c",
+  "generatedAt": "2026-10-12T03:23:19.047Z",
+  "feature": {
+    "name": "L",
+    "description": "Not specified in the provided raw data. The input identifies only an application name of \"L\" and names FreshBooks as the competitor company. No product description, target segment, pricing model, or capability set was supplied, and no research step returned data that could characterize the feature."
+  },
+  "executiveSummary": "No market findings can be reported. The planned research bundle for feature \"L\" comprised 7 tool steps (company_identify, company_enrich, two company_search calls, two job_search calls, and one web_search_live call), and all 7 failed, returning zero results. The planSummary confirms \"Executed 0 step(s); 7 error(s).\" Consequently, no competitor positioning, market signals, gaps, opportunities, or risks can be grounded in evidence. The only usable facts in the raw data are (1) the application is named \"L\" and (2) FreshBooks is the designated competitor company. Every analytical section below is therefore empty, and the failure modes are recorded in dataLimitations so the plan can be re-run with corrected inputs or credentials. No directional conclusion about the competitive landscape or product strategy should be drawn from this report.",
+  "competitorLandscape": [],
+  "marketSignals": [],
+  "gapsAndOpportunities": [],
+  "risks": [
+    {
+      "risk": "Decision-making on insufficient evidence",
+      "detail": "Because zero of the 7 planned research steps returned results, any competitive conclusion drawn now would be unsupported. Acting on this report as if it were a completed analysis is the primary risk.",
+      "severity": "high"
+    },
+    {
+      "risk": "Competitor coverage limited to a single named company",
+      "detail": "The input names only FreshBooks as a competitor company. No company_search step completed, so no additional or adjacent competitors were surfaced. The true competitive set is unknown.",
+      "severity": "high"
+    },
+    {
+      "risk": "Unknown product scope for feature \"L\"",
+      "detail": "The raw data contains no description, segment, or capability information for application \"L\", so the relevance of any competitor or market signal could not be assessed even if data had been retrieved.",
+      "severity": "medium"
+    },
+    {
+      "risk": "Tooling and data-access reliability",
+      "detail": "company_enrich failed with a network-level error (\"fetch failed\"), while the remaining six steps failed with opaque [object Object] errors, indicating error serialization is also broken. Root causes cannot be distinguished from the raw data.",
+      "severity": "medium"
+    }
+  ],
+  "dataLimitations": [
+    "All 7 planned research steps failed; the bundle returned results: [] and errors: [7 entries]. planSummary: \"Executed 0 step(s); 7 error(s).\"",
+    "company_identify (company_name=FreshBooks, domain=freshbooks.com) failed with error \"[object Object]\" — no company identity record was returned.",
+    "company_enrich (company_name=FreshBooks, domain=freshbooks.com; requested fields included name, domain, description, employee_count, employee_count_range, founded_year, headquarters, industry, specialties, technologies, funding, revenue, social_links) failed with error \"fetch failed\" — no enrichment attributes for FreshBooks are available.",
+    "company_search (query=\"small business accounting software\", limit=25) failed with error \"[object Object]\" — no competitor set was discovered.",
+    "company_search (query=\"invoicing expense tracking and financial management for small businesses\", filters: industry=Accounting, employee_count_min=50, limit=25) failed with error \"[object Object]\" — no filtered competitor set was discovered.",
+    "job_search (company_name=FreshBooks, limit=30, departments Engineering/Product/Design/Marketing/Sales/Customer Success) failed with error \"[object Object]\" — no hiring-signal data is available.",
+    "job_search (company_name=FreshBooks, limit=30, locations Remote/Canada/United States, posted_after=2024-01-01) failed with error \"[object Object]\" — no location or recency-based hiring-signal data is available.",
+    "web_search_live (query=\"FreshBooks product updates pricing news competitors 2025\", num_results=10) failed with error \"[object Object]\" — no news, pricing, or product-update signals are available.",
+    "Error payloads were returned as \"[object Object]\" for 6 of 7 steps, so failure causes (authentication, rate limiting, schema mismatch, upstream outage) cannot be determined from the raw data.",
+    "No product description, target customer segment, pricing model, geography, or differentiation thesis for application \"L\" was provided in the input.",
+    "No time series, historical data, or prior-period baselines were supplied, so no trend claims can be made.",
+    "No first-party data (usage, revenue, win/loss, customer feedback) was supplied; the bundle contained only planned third-party research steps, none of which executed successfully."
+  ],
+  "planSummary": "Executed 0 step(s); 7 error(s). Planned tools: company_identify, company_enrich, company_search, company_search, job_search, job_search, web_search_live"
+}

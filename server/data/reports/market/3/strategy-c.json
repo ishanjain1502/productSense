@@ -1,0 +1,48 @@
+{
+  "strategy": "planned_c",
+  "generatedAt": "2026-10-12T03:27:43.055Z",
+  "feature": {
+    "name": "L",
+    "description": "No feature description was supplied in the input. The only product attribute available is productData.applicationName = \"L\". The feature's functionality, target user, and differentiation goals are unknown and are recorded in dataLimitations."
+  },
+  "executiveSummary": "No substantive market analysis could be produced. The planned research bundle contained 9 steps (company_identify, three company_enrich calls on FreshBooks, two company_search calls, two job_search calls, and one web_search_live query), and all 9 steps returned errors with 0 results. The results array is empty, so there is no evidence to ground a competitor landscape, market signals, gaps, or opportunities. The single fact available is an input assertion from productData: FreshBooks is listed as a competitor company for the product \"L\". This report therefore records that competitor name, explicitly marks all positioning and move-level claims as unsupported, and lists the data limitations and risks that follow from executing a plan that returned nothing. Any downstream decision made on the basis of this report would be made without primary market evidence.",
+  "competitorLandscape": [
+    {
+      "name": "FreshBooks",
+      "positioning": "Unknown. FreshBooks is identified as a competitor only because productData.competitorCompanies lists it. No positioning, segment, pricing, or feature data was returned by any enrichment or search step, so no positioning claim can be grounded. This entry should be treated as a placeholder pending successful data collection.",
+      "relevantMoves": [],
+      "sources": [
+        "productData.competitorCompanies (input assertion, not independently verified in this run)"
+      ]
+    }
+  ],
+  "marketSignals": [],
+  "gapsAndOpportunities": [],
+  "risks": [
+    "Evidence-free analysis: 9 of 9 planned steps failed and 0 results were returned, so every strategic conclusion beyond the input-supplied competitor name would be unsupported speculation.",
+    "Single-competitor framing: the only competitor identified is FreshBooks, supplied by productData. The two company_search steps intended to broaden the competitive set (accounting/invoicing SMB software; cloud bookkeeping and expense management) both failed, so the true competitive set for product \"L\" is unmeasured.",
+    "Positioning blind spot: the FreshBooks enrichment steps for description, industry, employee count, funding, competitors, web traffic, app downloads, pricing plans, and product features all failed. Pricing and packaging moves by the named competitor are therefore invisible.",
+    "Blind spot on competitor momentum: both job_search steps (FreshBooks engineering/product/growth hiring, and accounting/invoicing/bookkeeping roles across Sales, Marketing, Engineering) failed, removing a leading indicator of competitor investment priorities.",
+    "Blind spot on corporate activity: the recent_news, press_releases, partnerships, acquisitions, and executives enrichment failed, so no signal is available on competitor strategy shifts, M&A, or leadership changes.",
+    "Absence of current market context: the single web_search_live query on FreshBooks market position and SMB accounting software for 2024-2025 failed, so no third-party or published market view is available.",
+    "Unknown feature scope: because the feature description for product \"L\" is empty, even successful market data could not have been mapped to a concrete feature decision without further input.",
+    "Re-run risk: the identical plan shape produced a 0% success rate, so re-executing it unchanged is unlikely to yield different results; the failure mode (all tools erroring) points to a systemic issue rather than query-specific gaps."
+  ],
+  "dataLimitations": [
+    "All 9 planned steps returned errors; the results array is empty (0 results).",
+    "company_identify (query: \"FreshBooks\", limit 5) failed — no entity resolution performed.",
+    "company_enrich for FreshBooks (name, domain, description, industry, employee_count, headquarters, founded_year, funding_total, investors, linkedin_url, twitter_url, revenue_range, technologies, specialties) failed — no firmographic data available.",
+    "company_search (\"accounting and invoicing software for small businesses\", Software/Information Technology, 50-5000 employees, limit 25) failed — no adjacent competitor discovery.",
+    "company_search (\"cloud bookkeeping and expense management platform\", Software/Financial Services, US/CA/GB, limit 25) failed — no geographic or category competitor discovery.",
+    "company_enrich for FreshBooks (competitors, similar_companies, web_traffic, app_downloads, pricing_plans, product_features) failed — no competitive positioning, traffic, download, pricing, or feature data.",
+    "job_search (FreshBooks; engineering OR product OR growth; limit 50) failed — no hiring-signal data for the named competitor.",
+    "company_enrich for FreshBooks (recent_news, press_releases, partnerships, acquisitions, executives) failed — no corporate-activity or leadership data.",
+    "job_search (accounting software OR invoicing OR bookkeeping; Sales, Marketing, Engineering; limit 50) failed — no cross-market hiring-signal data.",
+    "web_search_live (\"FreshBooks market position competitors small business accounting software 2024 2025\") failed — no external published market context.",
+    "No feature name or description for product \"L\" was provided; only applicationName is known.",
+    "No pricing, packaging, customer segment, geography, or go-to-market inputs were provided for product \"L\".",
+    "Error payloads were returned as \"[object Object]\" with no message, code, or retry detail, so the root cause of the failures cannot be diagnosed from this bundle.",
+    "marketSignals, gapsAndOpportunities, and relevantMoves are intentionally empty rather than populated with ungrounded content."
+  ],
+  "planSummary": "Executed 0 step(s); 9 error(s). Planned tools: company_identify, company_enrich, company_search, company_search, company_enrich, job_search, company_enrich, job_search, web_search_live"
+}

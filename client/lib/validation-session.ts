@@ -11,6 +11,8 @@ export type ValidationSession = {
   featureId?: string;
   regressionSkipped?: boolean;
   regressionCheckPassed?: boolean;
+  marketAnalysisRunId?: number;
+  marketAnalysisReportId?: number;
 };
 
 export function saveValidationSession(session: ValidationSession) {

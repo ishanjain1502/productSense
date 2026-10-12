@@ -1,0 +1,17 @@
+{
+  "competitors": [],
+  "enrichResult": null,
+  "jobs": [],
+  "landscape": null,
+  "queriesExecuted": [
+    {
+      "tool": "company_identify",
+      "name": "FreshBooks",
+      "error": "[object Object]"
+    },
+    {
+      "tool": "company_search",
+      "error": "[object Object]"
+    }
+  ]
+}

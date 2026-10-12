@@ -191,7 +191,6 @@ export function AgentPromptPage({ mode }: AgentPromptPageProps) {
         )}
 
         {prompt && session && (
-          <>
             <Card className="border-border/60 bg-card/80 shadow-sm backdrop-blur-sm">
               <CardHeader className="gap-2 border-b border-border/60">
                 <div className="flex flex-wrap items-center gap-2">
@@ -224,16 +223,19 @@ export function AgentPromptPage({ mode }: AgentPromptPageProps) {
                 <CopyablePromptBlock value={prompt} />
               </CardContent>
             </Card>
+        )}
 
-            <Card className="border-border/60 bg-card/80">
-              <CardHeader>
-                <CardTitle className="text-base">Next: market analysis</CardTitle>
-                <CardDescription>
-                  After the agent POSTs a regression report, click Check. Skip
-                  if you want to continue without a report (testing only).
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="flex flex-wrap items-center gap-3">
+        {session && (
+          <Card className="border-border/60 bg-card/80">
+            <CardHeader>
+              <CardTitle className="text-base">Next: market analysis</CardTitle>
+              <CardDescription>
+                After the agent POSTs a regression report, click Check. Use Skip
+                below to continue without a report (demo and full mode).
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="flex flex-wrap items-center gap-3">
                 <Button
                   type="button"
                   variant="outline"
@@ -256,17 +258,22 @@ export function AgentPromptPage({ mode }: AgentPromptPageProps) {
                 >
                   Go ahead to market analysis
                 </Button>
-                <Button type="button" variant="ghost" onClick={handleSkip}>
+              </div>
+              <div className="border-t border-border/60 pt-4">
+                <Button
+                  type="button"
+                  variant="outline"
+                  className="w-full sm:w-auto"
+                  onClick={handleSkip}
+                >
                   Skip regression
                 </Button>
-              </CardContent>
+              </div>
               {checkMessage && (
-                <CardContent className="pt-0 text-sm text-muted-foreground">
-                  {checkMessage}
-                </CardContent>
+                <p className="text-sm text-muted-foreground">{checkMessage}</p>
               )}
-            </Card>
-          </>
+            </CardContent>
+          </Card>
         )}
       </div>
     </ValidationPageShell>

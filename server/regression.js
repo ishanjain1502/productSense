@@ -145,6 +145,21 @@ export async function migrateRegressionSchema() {
       created_at TEXT NOT NULL DEFAULT (datetime('now'))
     )
   `);
+
+  await dbRun(`
+    CREATE TABLE IF NOT EXISTS market_analysis_reports (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      user_id INTEGER,
+      project_id TEXT,
+      feature_id TEXT,
+      demo_id TEXT,
+      run_id INTEGER NOT NULL,
+      market_analysis_report_submitted INTEGER NOT NULL DEFAULT 1,
+      report_url TEXT NOT NULL,
+      created_at TEXT NOT NULL DEFAULT (datetime('now')),
+      FOREIGN KEY (run_id) REFERENCES market_analysis_runs(id)
+    )
+  `);
 }
 
 /**
