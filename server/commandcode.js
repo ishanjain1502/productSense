@@ -1,3 +1,5 @@
+import { trace } from "neatlogs";
+
 const COMMANDCODE_BASE =
   process.env.COMMANDCODE_BASE_URL ||
   "https://api.commandcode.ai/provider/v1";
@@ -25,38 +27,66 @@ export async function commandCodeChat(messages, options = {}) {
   }
 
   const model = options.model ?? DEFAULT_MODEL;
-  const res = await fetch(`${COMMANDCODE_BASE}/chat/completions`, {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      model,
-      messages,
-      temperature: options.temperature ?? 0.2,
-    }),
+
+  return trace({ name: "commandcode_chat", kind: "LLM" }, async (activeSpan) => {
+    activeSpan.setAttribute("neatlogs.llm.model_name", model);
+    activeSpan.setAttribute("neatlogs.llm.provider", "commandcode");
+
+    const res = await fetch(`${COMMANDCODE_BASE}/chat/completions`, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        model,
+        messages,
+        temperature: options.temperature ?? 0.2,
+      }),
+    });
+
+    const body = await res.json().catch(() => ({}));
+
+    if (!res.ok) {
+      const message =
+        body?.error?.message ||
+        body?.message ||
+        `CommandCode request failed (${res.status})`;
+      const err = new Error(message);
+      err.status = res.status;
+      err.body = body;
+      throw err;
+    }
+
+    const usage = body?.usage;
+    if (usage && typeof usage === "object") {
+      if (usage.prompt_tokens != null) {
+        activeSpan.setAttribute(
+          "neatlogs.llm.token_count.prompt",
+          usage.prompt_tokens
+        );
+      }
+      if (usage.completion_tokens != null) {
+        activeSpan.setAttribute(
+          "neatlogs.llm.token_count.completion",
+          usage.completion_tokens
+        );
+      }
+      if (usage.total_tokens != null) {
+        activeSpan.setAttribute(
+          "neatlogs.llm.token_count.total",
+          usage.total_tokens
+        );
+      }
+    }
+
+    const content = body?.choices?.[0]?.message?.content;
+    if (!content || typeof content !== "string") {
+      throw new Error("CommandCode returned an empty completion");
+    }
+
+    return content.trim();
   });
-
-  const body = await res.json().catch(() => ({}));
-
-  if (!res.ok) {
-    const message =
-      body?.error?.message ||
-      body?.message ||
-      `CommandCode request failed (${res.status})`;
-    const err = new Error(message);
-    err.status = res.status;
-    err.body = body;
-    throw err;
-  }
-
-  const content = body?.choices?.[0]?.message?.content;
-  if (!content || typeof content !== "string") {
-    throw new Error("CommandCode returned an empty completion");
-  }
-
-  return content.trim();
 }
 
 export { DEFAULT_MODEL, getApiKey };

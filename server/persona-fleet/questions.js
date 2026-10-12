@@ -54,6 +54,11 @@ export async function generateMarketResearchQuestions(productData) {
     targetMarket: productData.targetMarket,
     primaryBuyer: productData.primaryBuyer,
     geography: productData.geography,
+    financialThresholdAmount: productData.financialThresholdAmount,
+    expectedDurationWeeks: productData.expectedDurationWeeks,
+    expectedResourceConsumption: productData.expectedResourceConsumption,
+    companyProfitabilityDetails: productData.companyProfitabilityDetails,
+    runwayRemainingMonths: productData.runwayRemainingMonths,
   });
 
   try {

@@ -1,6 +1,14 @@
 import { randomUUID } from "node:crypto";
 import { dbGet, dbRun } from "./db-helpers.js";
 
+async function addColumnIfMissing(table, column, ddl) {
+  try {
+    await dbRun(`ALTER TABLE ${table} ADD COLUMN ${column} ${ddl}`);
+  } catch (err) {
+    if (!String(err?.message).includes("duplicate column")) throw err;
+  }
+}
+
 export async function migrateProjectsSchema() {
   await dbRun(`
     CREATE TABLE IF NOT EXISTS projects (
@@ -29,6 +37,67 @@ export async function migrateProjectsSchema() {
       FOREIGN KEY (project_id) REFERENCES projects(id)
     )
   `);
+  await addColumnIfMissing("projects", "demo_id", "TEXT");
+  await addColumnIfMissing(
+    "projects",
+    "financial_threshold_amount",
+    "REAL"
+  );
+  await addColumnIfMissing("projects", "expected_duration_weeks", "INTEGER");
+  await addColumnIfMissing(
+    "projects",
+    "expected_resource_consumption",
+    "TEXT"
+  );
+  await addColumnIfMissing("projects", "profitability_details", "TEXT");
+  await addColumnIfMissing("projects", "runway_remaining_months", "INTEGER");
+  await dbRun(`
+    CREATE UNIQUE INDEX IF NOT EXISTS idx_projects_demo_id
+    ON projects(demo_id) WHERE demo_id IS NOT NULL
+  `);
+  // Legacy columns (no longer written on new rows)
+  await addColumnIfMissing(
+    "features",
+    "financial_threshold_amount",
+    "REAL"
+  );
+  await addColumnIfMissing("features", "expected_duration_weeks", "INTEGER");
+  await addColumnIfMissing(
+    "features",
+    "expected_resource_consumption",
+    "TEXT"
+  );
+}
+
+/**
+ * @param {Record<string, unknown>} productData
+ */
+export function parseProjectFinancials(productData) {
+  const teamSize =
+    productData.teamSize === "" || productData.teamSize == null
+      ? null
+      : Number(productData.teamSize);
+  const financialThreshold =
+    productData.financialThresholdAmount === "" ||
+    productData.financialThresholdAmount == null
+      ? null
+      : Number(productData.financialThresholdAmount);
+  const durationWeeks =
+    productData.expectedDurationWeeks === "" ||
+    productData.expectedDurationWeeks == null
+      ? null
+      : Number(productData.expectedDurationWeeks);
+  const runwayMonths =
+    productData.runwayRemainingMonths === "" ||
+    productData.runwayRemainingMonths == null
+      ? null
+      : Number(productData.runwayRemainingMonths);
+  return {
+    teamSize,
+    financialThreshold,
+    durationWeeks,
+    runwayMonths,
+  };
 }
 
 /**
@@ -38,16 +107,16 @@ export async function migrateProjectsSchema() {
 export async function createProjectAndFeature(userId, productData) {
   const projectId = randomUUID();
   const featureId = randomUUID();
-  const teamSize =
-    productData.teamSize === "" || productData.teamSize == null
-      ? null
-      : Number(productData.teamSize);
+  const { teamSize, financialThreshold, durationWeeks, runwayMonths } =
+    parseProjectFinancials(productData);
 
   await dbRun(
     `INSERT INTO projects (
       id, user_id, application_name, application_description, team_size,
-      target_market, geography, primary_buyer, competitor_companies
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      target_market, geography, primary_buyer, competitor_companies,
+      financial_threshold_amount, expected_duration_weeks,
+      expected_resource_consumption, profitability_details, runway_remaining_months
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
     [
       projectId,
       userId,
@@ -58,6 +127,11 @@ export async function createProjectAndFeature(userId, productData) {
       productData.geography ?? null,
       productData.primaryBuyer ?? null,
       productData.competitorCompanies ?? null,
+      financialThreshold,
+      durationWeeks,
+      productData.expectedResourceConsumption ?? null,
+      productData.companyProfitabilityDetails ?? null,
+      runwayMonths,
     ]
   );
 

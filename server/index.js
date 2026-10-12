@@ -1,4 +1,5 @@
 import "dotenv/config";
+import { initNeatlogs, shutdownNeatlogs } from "./neatlogs-init.js";
 import cors from "cors";
 import express from "express";
 import {
@@ -102,6 +103,7 @@ app.get("/auth/me", authMiddleware, async (req, res) => {
   }
 });
 
+await initNeatlogs();
 await initDb(databasePath);
 await migrateAuthSchema();
 await migrateProjectsSchema();
@@ -116,6 +118,7 @@ function shutdown(signal) {
   console.log(`Received ${signal}, shutting down…`);
   server.close(() => {
     closeDb()
+      .then(() => shutdownNeatlogs())
       .then(() => process.exit(0))
       .catch(() => process.exit(1));
   });

@@ -1,3 +1,4 @@
+import { trace } from "neatlogs";
 import { dbGet, dbRun } from "../db-helpers.js";
 import { runPersonaAgent } from "./agent.js";
 import { buildPersonaFleet } from "./personas.js";
@@ -58,7 +59,10 @@ export async function startPersonaFleetRun(ctx) {
     throw err;
   }
 
-  const questions = await generateMarketResearchQuestions(ctx.productData);
+  const questions = await trace(
+    { name: "persona-fleet-questions", kind: "WORKFLOW" },
+    async () => generateMarketResearchQuestions(ctx.productData)
+  );
   const personas = buildPersonaFleet(ctx.productData, n);
 
   const insert = await dbRun(
@@ -101,6 +105,7 @@ export async function startPersonaFleetRun(ctx) {
  * @param {Array<{ key: string; text: string }>} questions
  */
 async function processAgentBatches(fleetRunId, productData, personas, questions) {
+  await trace({ name: "persona-fleet-agents", kind: "WORKFLOW" }, async () => {
   const row = await dbGet(`SELECT * FROM agent_fleet_runs WHERE id = ?`, [
     fleetRunId,
   ]);
@@ -160,4 +165,5 @@ async function processAgentBatches(fleetRunId, productData, personas, questions)
       [String(err?.message ?? err), fleetRunId]
     );
   }
+  });
 }

@@ -1,3 +1,4 @@
+import { trace } from "neatlogs";
 import { dbRun, dbGet } from "../db-helpers.js";
 import { saveMarketAnalysisReportFromRun } from "../market-analysis-reports.js";
 import { writeReportFile } from "../report-storage.js";
@@ -14,6 +15,7 @@ import { runStrategyC } from "./strategy-c.js";
  * }} ctx
  */
 export async function runMarketAnalysis(ctx) {
+  return trace({ name: "market-analysis", kind: "WORKFLOW" }, async () => {
   const insert = await dbRun(
     `INSERT INTO market_analysis_runs (user_id, project_id, feature_id, demo_id, status)
      VALUES (?, ?, ?, ?, 'pending')`,
@@ -86,6 +88,7 @@ export async function runMarketAnalysis(ctx) {
     errorB,
     errorC,
   };
+  });
 }
 
 /**

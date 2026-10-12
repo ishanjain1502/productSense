@@ -1,3 +1,4 @@
+import { trace } from "neatlogs";
 import { commandCodeChat } from "./commandcode.js";
 import { dbRun, dbGet } from "./db-helpers.js";
 import { getDemoRegressionPrompt } from "./demo-regression-prompts.js";
@@ -62,6 +63,11 @@ function formatProductBlock(productData) {
     `Primary buyer: ${productData.primaryBuyer ?? ""}`,
     `Competitors: ${productData.competitorCompanies ?? ""}`,
     `Geography: ${productData.geography ?? ""}`,
+    `Investment threshold (USD): ${productData.financialThresholdAmount ?? "unknown"}`,
+    `Expected build duration (weeks): ${productData.expectedDurationWeeks ?? "unknown"}`,
+    `Expected resource consumption: ${productData.expectedResourceConsumption ?? ""}`,
+    `Company profitability: ${productData.companyProfitabilityDetails ?? ""}`,
+    `Runway remaining (months): ${productData.runwayRemainingMonths ?? "unknown"}`,
   ].join("\n");
 }
 
@@ -167,6 +173,7 @@ export async function migrateRegressionSchema() {
  * @param {string} backendUrl
  */
 export async function generateFullRegressionPrompt(productData, backendUrl) {
+  return trace({ name: "regression-agent-prompt", kind: "WORKFLOW" }, async () => {
   const reportsUrl = `${backendUrl.replace(/\/$/, "")}/regression/reports`;
   const userMessage = `Write one coding-agent prompt for feature regression analysis.
 
@@ -188,6 +195,7 @@ ${AGENT_WINDOW_FALLBACK_META_NOTE}`;
     { role: "system", content: META_WRITER_SYSTEM },
     { role: "user", content: userMessage },
   ]);
+  });
 }
 
 export async function saveRegressionPrompt({
