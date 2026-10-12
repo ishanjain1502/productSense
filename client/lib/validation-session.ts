@@ -17,6 +17,8 @@ export type ValidationSession = {
   marketAnalysisRunId?: number;
   marketAnalysisReportId?: number;
   personaFleetRunId?: number;
+  financialReportId?: number | null;
+  financialReportFileName?: string | null;
 };
 
 export function saveValidationSession(session: ValidationSession) {

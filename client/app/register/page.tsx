@@ -9,7 +9,7 @@ export default function RegisterPage() {
       title="Get started"
       description="Create a free account in seconds—email and password only."
     >
-      <AuthForm mode="register" nextPath="/full" />
+      <AuthForm mode="register" nextPath="/" />
     </AuthShell>
   );
 }

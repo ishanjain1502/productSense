@@ -1,0 +1,104 @@
+{
+  "strategy": "fixed_b",
+  "generatedAt": "2026-10-12T07:20:41.218Z",
+  "feature": {
+    "name": "Recurring invoice templates",
+    "description": "Let users save invoice layouts and auto-send on a schedule to repeat clients, with gentle payment reminders."
+  },
+  "executiveSummary": "LedgerLite's recurring invoice templates feature enters a market where FreshBooks is the most direct competitor with recent debt financing ($125M in 2025) but declining headcount (-10.09% YoY). Zoho offers a vast, profitable suite with 30,944 employees, while Wave's data is unreliable but appears as a competitor in FreshBooks' paid SEO. The feature is table stakes; differentiation lies in simplicity, mobile-first UX, and gentle reminders tailored to freelancers like Maya and Omar. Key risks include competitor bundling and lack of direct feature usage data.",
+  "competitorLandscape": [
+    {
+      "name": "FreshBooks",
+      "positioning": "Designed to drive small business success—built for business owners and freelancers who want an easier way to get paid, manage finances, and deliver work all in one place.",
+      "relevantMoves": [
+        "Raised $125M debt financing on 2025-03-20",
+        "Acquired Facturama on 2020-09-23",
+        "Acquired FastBill on 2021-10-06",
+        "Total funding $456.9M across 10 rounds",
+        "Headcount declined 10.09% YoY to 383 as of 2026-09"
+      ],
+      "sources": [
+        "rawBundle.enrichResult[0].matches[0].company_data.funding.milestones[0]",
+        "rawBundle.enrichResult[0].matches[0].company_data.funding.acquisitions",
+        "rawBundle.enrichResult[0].matches[0].company_data.headcount.growth_percent.yoy"
+      ]
+    },
+    {
+      "name": "Wave",
+      "positioning": "Competitor in invoicing; exact positioning not available from raw data due to incorrect enrichment.",
+      "relevantMoves": [
+        "Listed in FreshBooks' paid SEO as waveapps.com"
+      ],
+      "sources": [
+        "rawBundle.competitors.paid_seo"
+      ]
+    },
+    {
+      "name": "Zoho Invoice",
+      "positioning": "Part of Zoho's 55+ product suite; Zoho is privately held, profitable, and serves 150M+ users.",
+      "relevantMoves": [
+        "Zoho acquired ASIMOV Robotics on 2025-07-02",
+        "Zoho acquired ePoise on 2019-03-07",
+        "Zoho headcount 30,944 as of 2026-09, +8.23% YoY"
+      ],
+      "sources": [
+        "rawBundle.enrichResult[2].matches[0].company_data.funding.acquisitions",
+        "rawBundle.enrichResult[2].matches[0].company_data.headcount.total"
+      ]
+    }
+  ],
+  "marketSignals": [
+    {
+      "signal": "FreshBooks raised significant debt financing",
+      "evidence": "$125M debt financing on 2025-03-20",
+      "implicationForFeature": "Competitor has capital to invest in product development, potentially enhancing recurring invoicing features.",
+      "source": "rawBundle.enrichResult[0].matches[0].company_data.funding.milestones[0]"
+    },
+    {
+      "signal": "FreshBooks headcount is declining",
+      "evidence": "YoY decline of 10.09% and two-year decline of 30.36%",
+      "implicationForFeature": "May indicate cost-cutting or restructuring, possibly slowing feature innovation.",
+      "source": "rawBundle.enrichResult[0].matches[0].company_data.headcount.growth_percent.yoy"
+    },
+    {
+      "signal": "Zoho operates at massive scale and is profitable",
+      "evidence": "30,944 total headcount, 8.23% YoY growth, no external funding, 150M+ users.",
+      "implicationForFeature": "Zoho can bundle invoicing with other products and may compete on price; LedgerLite must differentiate on focus and UX.",
+      "source": "rawBundle.enrichResult[2].matches[0].company_data.headcount.total, rawBundle.enrichResult[2].matches[0].company_data.basic_info.description"
+    },
+    {
+      "signal": "FreshBooks acquired invoicing competitors",
+      "evidence": "Acquired Facturama (2020) and FastBill (2021).",
+      "implicationForFeature": "FreshBooks is expanding invoicing capabilities, likely to include recurring features.",
+      "source": "rawBundle.enrichResult[0].matches[0].company_data.funding.acquisitions"
+    },
+    {
+      "signal": "Wave is a recognized competitor in invoicing",
+      "evidence": "Wave appears in FreshBooks' paid SEO list as waveapps.com.",
+      "implicationForFeature": "Wave likely offers invoicing with recurring capabilities; monitor their feature releases.",
+      "source": "rawBundle.competitors.paid_seo"
+    }
+  ],
+  "gapsAndOpportunities": [
+    "Mobile-first recurring invoice creation and management",
+    "Gentle payment reminders as a differentiator",
+    "Simplified onboarding for new freelancers (Jordan persona)",
+    "Export-friendly records for bookkeepers (Priya persona)",
+    "Focus on project-based billing workflows (Maya persona)"
+  ],
+  "risks": [
+    "Recurring invoices are likely table stakes; competitors may already offer them",
+    "FreshBooks' recent funding could accelerate feature development",
+    "Zoho's scale and profitability allow aggressive pricing and bundling",
+    "Data limitations prevent accurate assessment of Wave's feature set",
+    "Lack of direct market data on demand for recurring invoice templates"
+  ],
+  "dataLimitations": [
+    "Wave enrichment data (crustdata_company_id 1892174) corresponds to WAVE TV station (wave3.com), not Wave accounting software (waveapps.com).",
+    "Job search tool failed, so no hiring signals available.",
+    "No direct data on recurring invoice feature adoption or user demand.",
+    "No financial thresholds, runway, or resource consumption provided for LedgerLite.",
+    "Competitor landscape only includes three companies; other relevant competitors may exist."
+  ],
+  "planSummary": null
+}

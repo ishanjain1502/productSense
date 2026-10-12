@@ -7,6 +7,7 @@ import {
   saveRegressionPrompt,
   saveRegressionReport,
 } from "./regression.js";
+import { linkFinancialReportToProject } from "./financial-reports.js";
 import { createProjectAndFeature } from "./projects.js";
 
 function publicBackendUrl(req) {
@@ -23,7 +24,7 @@ function publicBackendUrl(req) {
 export function registerRegressionRoutes(app) {
   app.post("/regression/agent-prompt", async (req, res) => {
     try {
-      const { mode, demoId, productData } = req.body ?? {};
+      const { mode, demoId, productData, financialReportId } = req.body ?? {};
       const backendUrl = publicBackendUrl(req);
 
       if (mode === "demo") {
@@ -73,6 +74,18 @@ export function registerRegressionRoutes(app) {
           user.id,
           productData
         );
+
+        if (
+          financialReportId != null &&
+          Number.isFinite(Number(financialReportId))
+        ) {
+          await linkFinancialReportToProject(
+            user.id,
+            Number(financialReportId),
+            projectId,
+            featureId
+          );
+        }
 
         let prompt = await generateFullRegressionPrompt(
           productData,

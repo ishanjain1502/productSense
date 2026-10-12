@@ -64,6 +64,7 @@ export function AgentPromptPage({ mode }: AgentPromptPageProps) {
           mode: loaded.mode,
           demoId: loaded.demoId,
           productData: loaded.data,
+          financialReportId: loaded.financialReportId,
         });
         setPrompt(result.prompt);
         setMeta({

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Loader2 } from "lucide-react";
+import { toast } from "sonner";
 
 import { useAuth } from "@/components/auth/auth-provider";
 import { Button } from "@/components/ui/button";
@@ -27,7 +28,7 @@ type AuthFormProps = {
   nextPath?: string;
 };
 
-export function AuthForm({ mode, nextPath = "/full" }: AuthFormProps) {
+export function AuthForm({ mode, nextPath = "/" }: AuthFormProps) {
   const router = useRouter();
   const { signIn } = useAuth();
   const [email, setEmail] = useState("");
@@ -46,6 +47,9 @@ export function AuthForm({ mode, nextPath = "/full" }: AuthFormProps) {
         ? await login(email, password)
         : await register(email, password);
       signIn(result.token, result.user);
+      toast.success(
+        isLogin ? "Signed in successfully" : "Account created successfully"
+      );
       router.push(nextPath);
     } catch (err) {
       const data =

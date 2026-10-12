@@ -65,4 +65,5 @@ initial product context (before agent prompt / validation pipeline):
         feature investment: threshold (USD), build duration (weeks), expected resource consumption
         company financial health: profitability details (margins, burn, path to profit), runway remaining (months)
     all financial fields live on `projects`: financial_threshold_amount, expected_duration_weeks, expected_resource_consumption, profitability_details, runway_remaining_months; demo cards also use `demo_id` on projects
+    optional financial workbook upload on Financials step (CSV/Excel) → `financial_reports` table: report_id, user_id, project_id, feature_id, location, uploaded_to_cfo (default false); demo uploads link to seeded demo project; full mode uploads link when project is created at agent-prompt
     seed: from `server/`, run `npm run seed:demo` — creates demo user (DEMO_USER_EMAIL / DEMO_USER_PASSWORD) and projects `demo-project-{ledgerlite|flowstack|nimbus}` with features `demo-feature-*`, all owned by that user

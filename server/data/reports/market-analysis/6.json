@@ -1,0 +1,11 @@
+{
+  "runId": 14,
+  "status": "partial",
+  "strategyBReportUrl": "market/14/strategy-b.json",
+  "strategyCReportUrl": null,
+  "strategyBRawUrl": "market/14/strategy-b-raw.json",
+  "strategyCRawUrl": null,
+  "errorB": null,
+  "errorC": "Expected ',' or '}' after property value in JSON at position 14160 (line 157 column 106)",
+  "createdAt": "2026-10-12 07:19:56"
+}

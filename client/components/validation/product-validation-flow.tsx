@@ -6,6 +6,7 @@ import { Check, ChevronLeft, ChevronRight } from "lucide-react";
 
 import { DemoProductCards } from "@/components/validation/demo-product-cards";
 import { DocumentAttachment } from "@/components/validation/document-attachment";
+import { FinancialReportUpload } from "@/components/validation/financial-report-upload";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -46,6 +47,12 @@ export function ProductValidationFlow({ mode }: ProductValidationFlowProps) {
   const [data, setData] = useState<ProductValidationData>(
     emptyProductValidation
   );
+  const [financialReportId, setFinancialReportId] = useState<number | null>(
+    null
+  );
+  const [financialReportFileName, setFinancialReportFileName] = useState<
+    string | null
+  >(null);
 
   const currentStep = VALIDATION_STEPS[stepIndex];
   const stepComplete = isStepComplete(currentStep.id, data, mode);
@@ -73,6 +80,8 @@ export function ProductValidationFlow({ mode }: ProductValidationFlowProps) {
     if (!app) return;
     setSelectedDemoId(id);
     setData({ ...app.data });
+    setFinancialReportId(null);
+    setFinancialReportFileName(null);
     setStepIndex(0);
   };
 
@@ -88,6 +97,8 @@ export function ProductValidationFlow({ mode }: ProductValidationFlowProps) {
         mode,
         demoId: selectedDemoId,
         data,
+        financialReportId,
+        financialReportFileName,
       });
       router.push(`/${mode}/agent-prompt`);
       return;
@@ -480,6 +491,18 @@ export function ProductValidationFlow({ mode }: ProductValidationFlowProps) {
                 }}
               />
             </Field>
+            <Separator />
+            <FinancialReportUpload
+              mode={mode}
+              demoId={selectedDemoId}
+              reportId={financialReportId}
+              fileName={financialReportFileName}
+              readOnly={mode === "demo" && !demoFormEnabled}
+              onChange={({ reportId, fileName }) => {
+                setFinancialReportId(reportId);
+                setFinancialReportFileName(fileName);
+              }}
+            />
           </FieldGroup>
         );
       default:

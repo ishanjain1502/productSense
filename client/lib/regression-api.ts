@@ -14,6 +14,7 @@ export async function fetchAgentPrompt(input: {
   mode: "demo" | "full";
   demoId: string | null;
   productData: ProductValidationData;
+  financialReportId?: number | null;
 }): Promise<AgentPromptResponse> {
   const token = getStoredToken();
   const headers: Record<string, string> = {
@@ -30,6 +31,7 @@ export async function fetchAgentPrompt(input: {
       mode: input.mode,
       demoId: input.demoId,
       productData: input.productData,
+      financialReportId: input.financialReportId ?? undefined,
     }),
   });
 
