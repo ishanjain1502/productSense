@@ -58,6 +58,7 @@ enter demo mode:
 
         once done we will show on frontend that insights have been gatherer
         this process will be done in batches of 5 subagents at once, and as the progress takes place here, we will have to update that on frontend as well in terms of percent, using batch wise progress
+        after fleet completion, server composes a final judgment (aggregate + synthesis) and the client caches it in localStorage for 4 hours — see `docs/superpowers/specs/2026-10-12-market-analysis-step2-persona-fleet-judgment-design.md`
 
 initial product context (before agent prompt / validation pipeline):
     steps: Product → Feature → Market → GTM → Financials

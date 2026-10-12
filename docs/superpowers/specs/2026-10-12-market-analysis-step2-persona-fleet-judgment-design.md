@@ -265,4 +265,4 @@ type FleetJudgmentCache = {
 
 - `discussionDocs/guide.md` — persona fleet product intent
 - `docs/superpowers/specs/2026-10-12-market-analysis-step1-design.md` — Crustdata step (Step 1)
-- Implementation plan: to be created via `writing-plans` skill after spec review
+- Implementation plan: `docs/superpowers/plans/2026-10-12-market-analysis-step2-persona-fleet-judgment.md`
