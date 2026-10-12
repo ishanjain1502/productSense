@@ -165,11 +165,6 @@ export function MarketAnalysisPage({ mode }: MarketAnalysisPageProps) {
               {result.runId ? ` · Run #${result.runId}` : ""}
             </p>
             <MarketReportSection
-              title="Strategy B — fixed queries"
-              report={result.strategyB}
-              error={result.errorB}
-            />
-            <MarketReportSection
               title="Strategy C — LLM-planned queries"
               report={result.strategyC}
               error={result.errorC}
