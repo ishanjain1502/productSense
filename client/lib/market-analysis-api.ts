@@ -101,12 +101,16 @@ export async function runMarketAnalysis(body: {
 
   const data = await res.json().catch(() => ({}));
   if (!res.ok) {
+    const code = typeof data.error === "string" ? data.error : undefined;
+    if (code === "feature_id_required") {
+      throw new Error(
+        "This run is missing a feature id. Open the regression step again and wait for the prompt to finish loading before continuing."
+      );
+    }
     throw new Error(
       typeof data.message === "string"
         ? data.message
-        : typeof data.error === "string"
-          ? data.error
-          : "Market analysis failed"
+        : code ?? "Market analysis failed"
     );
   }
 

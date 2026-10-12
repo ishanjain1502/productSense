@@ -1,0 +1,141 @@
+{
+  "strategy": "planned_c",
+  "generatedAt": "2026-10-12T13:09:11.285Z",
+  "feature": {
+    "name": "Pricing Change",
+    "description": "Current pricing tiers are $0 (limited use case) and $20 (full access). The change moves to $20 (full access with limits on total discounts) and $50 (full access plus no limits on discounts). The $0 limited-use tier is not explicitly addressed in the feature description or PRD excerpt provided."
+  },
+  "executiveSummary": "Fly Upsell & Cross Sell (Fly Bundles) is repricing its paid tiers: full access with limits on total discounts moves into the existing $20 tier, and a new $50 tier offers full access with no discount limits. The intent is to monetize the app's high-volume promotional users — the BFCM Campaign Power User and the Promotion Strategist personas — whose stated upgrade triggers are forecasting usage beyond a monthly allowance and running more campaigns and combinations than an allowance permits. Internal economics support the move: blended revenue per merchant is $8/month against a $20 full-access list price, with CAC of $4, retention of 4 months and LTV of $40, so there is substantial headroom to lift ARPU if even a small share of the base moves to $50. Competitor evidence gathered shows a paid bundle-app price band of roughly $14–$60/month (Kaching Bundles at $15 Starter / $30 Scale; a $14.99–$59.99 range cited for the category), placing the new $50 tier at the top of the observed band. The dominant risks are the reduction in value for existing $20 subscribers (both the Efficient Small-Scale Merchant and the new-install Stable, Low-Change Merchant persona resist changed setups and recurring cost), the absence of any verified Shopify Advanced/Plus merchant population sizing, and competitor pricing that comes only from third-party listicles rather than official pricing pages. With 4-month retention, a botched transition compresses an already short customer lifetime.",
+  "competitorLandscape": [
+    {
+      "name": "Rapid Bundles (rapi)",
+      "positioning": "Shopify bundle app positioned on revenue lift: 'Boost your Shopify revenue with Rapid Bundle. Create product bundles mix and match offers volume discounts and upsells. Rapi Bundle is the best bundle app.' Overlaps directly with Fly's fixed bundle, quantity break / volume discount and upsell feature set.",
+      "relevantMoves": [
+        "Shopify App Store listing at apps.shopify.com/rapi markets product bundles, mix-and-match offers, volume discounts and upsells (web_search_live result 1).",
+        "No CrustData company record, pricing page or funding/headcount data was retrieved for this competitor — company_identify for 'rapi bundles' errored.",
+        "Ranked first in the live web search for Shopify bundle app pricing/bundle-app queries (web_search_live result 1)."
+      ],
+      "sources": [
+        "web_search_live result 1: apps.shopify.com/rapi",
+        "rawBundle errors: company_identify 'rapi bundles' failed (invalid identifier parameter)"
+      ]
+    },
+    {
+      "name": "Fast Bundle (fastbundle.co)",
+      "positioning": "Self-described 'go-to Shopify app for seamless product bundling, designed to increase sales and enhance the customer experience,' with customizable bundles to boost average order value. Third-party comparisons position it for storefront presentation.",
+      "relevantMoves": [
+        "CrustData record: privately held, founded 2020, headcount 5 (range 2–10), largest headcount country Canada, flat 0% headcount growth over 1m/3m/6m/12m.",
+        "Cited as free for development stores only (Oxify listicle), i.e. it uses a development-store free tier rather than an open free plan.",
+        "Publishes its own competitive content — a 'Best Shopify Bundle App 2026' comparison page on fastbundle.co.",
+        "Category pricing cited as 'Basic runs $14–$24 a month and Plus $149–$...' in a third-party comparison, where Fast Bundle is grouped with Kaching Bundles."
+      ],
+      "sources": [
+        "CrustData company_search (bundle-app query) — Fast Bundle record, crustdata_company_id 3646182",
+        "web_search_live result 6: fastbundle.co/blog/best-shopify-bundle-apps",
+        "web_search_live result 4: maestra.io best Shopify bundle apps",
+        "web_search_live result 8: oxify.app best Shopify bundle apps"
+      ]
+    },
+    {
+      "name": "Kaching Bundles",
+      "positioning": "'Kaching Bundles App & Upsells - Boost AOV with quantity ... Increase your average order value with offering bundles, free gifts, custom upsells and applying volume discount!' — near-identical feature claims to Fly's bundle, free gift and volume discount messaging.",
+      "relevantMoves": [
+        "App Store listing (apps.shopify.com/bundle-deals) leads on bundles, free gifts, custom upsells and volume discount.",
+        "Three paid plans cited: Starter at $15/month, Scale at $30/month, plus a Pro plan (Shopify blog, Nov 4 2024).",
+        "Positioned by third-party content specifically for quantity breaks, and compared head-to-head against Shopify's native Bundles app.",
+        "Best-fit competitor to watch on price: its $15–$30 band sits below and around Fly's new $20 tier and well below the new $50 tier."
+      ],
+      "sources": [
+        "web_search_live result 2: apps.shopify.com/bundle-deals",
+        "web_search_live result 3: shopify.com/blog/bundle-app (Kaching Bundle plan pricing)",
+        "web_search_live result 4: maestra.io",
+        "web_search_live result 9: shopsidek.com Kaching Bundles vs Shopify Bundles"
+      ]
+    },
+    {
+      "name": "Shopify Bundles (native / platform-provided)",
+      "positioning": "First-party bundling referenced as the comparison baseline against which paid apps such as Kaching Bundles are evaluated; its 'limits' are explicitly discussed in third-party content.",
+      "relevantMoves": [
+        "Third-party content frames the buying decision as 'Kaching Bundles vs Shopify Bundles: When Is the Paid [option worth it]', i.e. the native option is a free substitute for some merchant segments.",
+        "No pricing or adoption data for the native app appears in the retrieved data."
+      ],
+      "sources": [
+        "web_search_live result 9: shopsidek.com",
+        "web_search_live result 3: shopify.com/blog/bundle-app"
+      ]
+    }
+  ],
+  "marketSignals": [
+    {
+      "signal": "The paid Shopify bundle-app market sits in an observed band of roughly $14–$60 per month.",
+      "evidence": "Kaching Bundle 'offers three paid plans starting at $15 per month for the Starter plan, with the Scale plan at $30 per month, and a Pro plan'; a category comparison states 'Basic runs $14–$24 a month and Plus $149–$...'; another states '$14.99 to $59.99/mo, 7-day trial, no free plan.'",
+      "implicationForFeature": "The new $50 tier is priced at the top of the observed band. It is defensible only if 'no limits on total discounts' is the headline justification, otherwise merchants will compare it against $15–$30 plans that already advertise bundles, free gifts and volume discounts.",
+      "source": "web_search_live results 3, 4, 8"
+    },
+    {
+      "signal": "Competitor feature claims are already at parity with Fly's core value proposition.",
+      "evidence": "Kaching Bundles markets 'bundles, free gifts, custom upsells and applying volume discount'; Rapid Bundles markets 'product bundles mix and match offers volume discounts and upsells'; Fast Bundle markets AOV through 'flexible bundle strategies.'",
+      "implicationForFeature": "Since bundles, free gifts, upsells and volume/quantity breaks are commoditised, the price change converts an unbounded-usage promise into the primary differentiator. The exact definition and visibility of 'limits on total discounts' therefore carries the entire pricing story.",
+      "source": "web_search_live results 1, 2, 6"
+    },
+    {
+      "signal": "Competitors use free or development-store tiers as an acquisition lever rather than a permanent free plan.",
+      "evidence": "'Fast Bundle and Koala Bundles are free for development stores only. $14.99 to $59.99/mo, 7-day trial, no free plan.'",
+      "implicationForFeature": "Fly currently has a $0 limited-use tier; the PRD excerpt is ambiguous about its fate. Retaining a $0 or development-store tier preserves the top of a funnel whose CAC is only $4, while removing it risks pushing price-sensitive installs to the free Shopify native option.",
+      "source": "web_search_live results 8, 9"
+    },
+    {
+      "signal": "Discount-driven promotional activity peaks seasonally, and merchants plan it in advance.",
+      "evidence": "The BFCM Campaign Power User 'plans aggressive offers across the holiday shopping period' and its upgrade trigger is 'preparing for BFCM or forecasting usage beyond the monthly allowance'; the Promotion Strategist 'has a deliberate promotional calendar rather than occasional sales.'",
+      "implicationForFeature": "An unlimited-discount $50 tier converts best when merchants are planning peak campaigns, but if discount limits trip mid-BFCM the support and churn cost lands during the highest-stakes week of the merchant's year.",
+      "source": "productData.personas"
+    },
+    {
+      "signal": "Shopify Plus merchants operate on a platform price an order of magnitude above the app price.",
+      "evidence": "'Shopify Plus starts at $2300/month, while Advanced is more affordable'; Shopify Advanced 'contains all the features of the Basic plan and the Grow plan.'",
+      "implicationForFeature": "For the target Plus segment, $50/month is roughly 2% of platform spend, so price elasticity is low and the unlimited tier can be positioned as a rounding-error add-on; the Advanced segment carries the real price-sensitivity risk.",
+      "source": "web_search_live results 5, 7; productData.targetMarket"
+    },
+    {
+      "signal": "Blended revenue per merchant is far below the current full-access list price.",
+      "evidence": "Company profitability details state revenue per merchant per month of $8 while the full-access tier is priced at $20; CAC is $4, retention 4 months, average LTV $40, MRR $9k, 70% margins, burn $0.",
+      "implicationForFeature": "The $8 blended ARPU against a $20 list price implies a material share of the install base sits on the $0 tier or discounted plans. The pricing change's largest financial lever is therefore converting or removing the free/low tier, not upselling $20 subscribers to $50.",
+      "source": "productData.companyProfitabilityDetails, productData.featureDescription"
+    }
+  ],
+  "gapsAndOpportunities": [
+    "Usage forecasting and limit visibility: the BFCM Campaign Power User's stated trigger is 'forecasting usage beyond the monthly allowance' and the Promotion Strategist's is 'consistently exceeding the allowance.' Neither persona can act on an invisible counter, so surfacing projected discount usage before it is exhausted is the highest-leverage conversion mechanism for the $50 tier (productData.personas).",
+    "Seasonal unlimited pass: an explicitly BFCM-scoped or peak-season unlimited upgrade maps directly to the Power User value proposition of 'unlimited discount usage during the most commercially important period of the year' and avoids asking low-change merchants to re-price permanently (productData.personas).",
+    "Grandfathering and migration design: the Efficient Small-Scale Merchant and the Stable, Low-Change Merchant both adopt a status-quo posture ('My current plan does everything I need' / 'I don't need another subscription decision'). With retention of only 4 months and LTV of $40, protecting the existing $20 cohort's trust is worth more than the near-term uplift from imposing limits on them (productData.personas; productData.companyProfitabilityDetails).",
+    "Plus-segment packaging: at $2,300+/month platform cost, Plus merchants can absorb $50 far more easily than Advanced merchants; a Plus-specific framing or annual billing option addresses the segment with the lowest price elasticity (web_search_live results 5, 7; productData.targetMarket).",
+    "Price and limit experimentation: no evidence exists on where the merchant base's actual discount-usage distribution sits, so the limit threshold, the $50 price point and the upgrade prompts should be shipped as testable parameters rather than fixed constants (no usage data present in rawBundle).",
+    "Entry-tier decision: competitors keep development-store free tiers but not open free plans ($14.99–$59.99/mo, 7-day trial, no free plan). Fly's $0 tier status is unresolved in the feature description, and resolving it explicitly is a precondition for the $20/$50 structure (web_search_live result 8; productData.featureDescription).",
+    "Pricing-change support readiness: the plan already allocates 20% of the support team 'as more queries will come along for pricing', so canned messaging, in-app limit explanations and a migration FAQ should be treated as part of the release scope, not follow-up work (productData.expectedResourceConsumption)."
+  ],
+  "risks": [
+    "Value reduction on the existing paid tier: introducing 'limits on total discounts' at the same $20 price point takes functionality away from current subscribers. Both the Efficient Small-Scale Merchant ('My current plan does everything I need. Why pay more?') and the Stable, Low-Change Merchant ('I don't need another subscription decision') describe exactly this friction, making churn from the $20 cohort the primary downside.",
+    "Churn compresses short lifetimes fast: with retention of only 4 months and LTV of $40, losing a $20 subscriber costs months of margin before a $50 upgrade elsewhere offsets it; at $8 blended revenue per merchant, retention loss is the dominant economic risk of a mis-executed change.",
+    "Price positioning above the observed competitor band: Kaching Bundles at $15/$30 and a cited $14.99–$59.99 category range place $50 at the top of the market for features competitors already advertise (bundles, free gifts, volume discounts), so the unlimited-discount claim must be verifiable and prominently communicated.",
+    "The $0 tier's fate is unresolved in the feature description, creating a communication risk: if the limited-use tier is removed or silently eroded, free-tier merchants — who plausibly dominate a blended $8 ARPU — have the Shopify native Bundles app and free development-store competitor tiers as immediate substitutes.",
+    "Discount-limit interruptions at peak: the Power User explicitly 'cannot afford discount interruptions during peak shopping days.' A limit that trips during BFCM produces refunds, escalations and public reviews, at the moment support is least able to absorb them despite the 20% support allocation.",
+    "Delivery risk against scope: enforcement of discount limits, a new billing tier, migration of existing subscribers and pricing communications are being delivered by 1 engineer at 20% occupancy in a 1-week window, leaving limited capacity for edge cases in billing and inventory/discount sync.",
+    "Evidence base is too thin to validate willingness to pay: no merchant-level discount-usage data, no churn-by-price data and no verified competitor pricing pages were obtained, so both the limit threshold and the $50 price are currently unvalidated assumptions.",
+    "Financial context argues against a rushed change: MRR $9k, 70% margins, $0 burn and 18 months of runway mean the business is not forced to reprice immediately; the reform is a growth lever, so the downside is self-inflicted rather than defensive."
+  ],
+  "dataLimitations": [
+    "Only 2 of 12 planned research steps returned data. 10 steps errored: 2x company_search (Shopify Advanced and Shopify Plus merchant searches rejected with \"limit: Ranked search supports at most 100 results per page\"), 3x company_identify (rapi bundles / fast bundles / kaching bundles rejected with \"Exactly one identifier must be provided\"), 3x company_enrich (rejected for the same identifier-parameter reason), and 2x job_search (rejected with \"'filters' must be either a single condition ... or a tree\").",
+    "No Shopify Advanced or Shopify Plus merchant population counts were retrieved, so total addressable market, segment sizing and the $10,000 financial threshold cannot be tested against a quantified market.",
+    "No hiring signals exist for competitors or target accounts because both job_search calls failed; demand-side signals were therefore not available.",
+    "No competitor firmographic enrichment (revenue, employee count, funding, technologies, location, pricing fields) was obtained because all company_enrich calls errored.",
+    "Competitor pricing is sourced only from third-party listicles and blog snippets, not from official pricing pages, and the figures are inconsistent ($14–$24 vs $14.99–$59.99 vs $15 Bulk-tier/$30 Scale plan). The $149+ 'Plus' figure in one snippet is truncated and unverified.",
+    "The CrustData record matching 'Kaching' is kachingcashback.com — a white-label bank cashback company (51–200 employees, founded 2011, 3m/6m headcount growth 7.7%, 12m 16.7%) — not the Shopify Kaching Bundles app at apps.shopify.com/bundle-deals. The firmographic competitor data is therefore mismatched to the actual competitor.",
+    "The bundle-app company search returned predominantly unrelated companies (packaging, logistics, cable and printing firms such as Rapid Packages, Rapid Pack, Rapid Packaging, Fast Cables, CourierGuru). Fast Bundle (fastbundle.co) is the only confirmed Shopify bundling app in the returned company records; Rapid Bundles and Kaching Bundles have no matching CrustData company records.",
+    "No pricing, positioning or firmographic data was retrieved for Rapid Bundles beyond its Shopify App Store tagline.",
+    "No internal usage data was provided: there is no distribution of discount counts per merchant, no count of merchants who would exceed the new 'limits on total discounts', and no split of the base between the $0 and $20 tiers. The blended $8 revenue per merchant is the only signal about tier mix, and it is an inference, not a measured figure.",
+    "The feature description is ambiguous about whether the $0 limited-use tier is retained, modified or removed; the PRD excerpt provided ('which we are not changing to...') is grammatically unclear and no pricing page data was retrieved to confirm.",
+    "No customer research, win/loss data or churn-by-price evidence is present; the four personas are supplied as PRD assumptions with quoted motivations, not validated survey or interview results.",
+    "No adoption, pricing or limit data was retrieved for the Shopify native Bundles app, which appears in the data only as a comparison headline.",
+    "No data was retrieved on the mechanics behind 'limits on total discounts' (per-order, per-month, per-campaign or fair-use), so the feature's operational definition could not be assessed against competitor packaging."
+  ],
+  "planSummary": "Executed 2 step(s); 10 error(s). Planned tools: company_search, company_search, company_search, company_identify, company_identify, company_identify, company_enrich, company_enrich, company_enrich, job_search, job_search, web_search_live"
+}

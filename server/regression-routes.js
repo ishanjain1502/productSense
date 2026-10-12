@@ -4,11 +4,15 @@ import {
   generateFullRegressionPrompt,
   getDemoRegressionPrompt,
   getRegressionReportStatus,
+  loadFullRegressionPromptById,
   saveRegressionPrompt,
   saveRegressionReport,
 } from "./regression.js";
 import { linkFinancialReportToProject } from "./financial-reports.js";
-import { createProjectAndFeature } from "./projects.js";
+import {
+  resolveProjectAndFeatureForAgentPrompt,
+  updateProjectAndFeatureFromProductData,
+} from "./projects.js";
 
 function publicBackendUrl(req) {
   return (
@@ -24,7 +28,15 @@ function publicBackendUrl(req) {
 export function registerRegressionRoutes(app) {
   app.post("/regression/agent-prompt", async (req, res) => {
     try {
-      const { mode, demoId, productData, financialReportId } = req.body ?? {};
+      const {
+        mode,
+        demoId,
+        productData,
+        financialReportId,
+        projectId: sessionProjectId,
+        featureId: sessionFeatureId,
+        promptId: sessionPromptId,
+      } = req.body ?? {};
       const backendUrl = publicBackendUrl(req);
 
       if (mode === "demo") {
@@ -70,21 +82,67 @@ export function registerRegressionRoutes(app) {
           return;
         }
 
-        const { projectId, featureId } = await createProjectAndFeature(
-          user.id,
-          productData
-        );
+        let { projectId, featureId } =
+          await resolveProjectAndFeatureForAgentPrompt(user.id, productData, {
+            projectId:
+              typeof sessionProjectId === "string" ? sessionProjectId : undefined,
+            featureId:
+              typeof sessionFeatureId === "string" ? sessionFeatureId : undefined,
+            financialReportId:
+              financialReportId != null &&
+              Number.isFinite(Number(financialReportId))
+                ? Number(financialReportId)
+                : null,
+          });
 
         if (
           financialReportId != null &&
           Number.isFinite(Number(financialReportId))
         ) {
-          await linkFinancialReportToProject(
+          const linked = await linkFinancialReportToProject(
             user.id,
             Number(financialReportId),
             projectId,
             featureId
           );
+          if (
+            linked.projectId !== projectId ||
+            linked.featureId !== featureId
+          ) {
+            projectId = linked.projectId;
+            featureId = linked.featureId;
+            await updateProjectAndFeatureFromProductData(
+              projectId,
+              featureId,
+              productData
+            );
+          }
+        }
+
+        const reusePromptId =
+          sessionPromptId != null && Number.isFinite(Number(sessionPromptId))
+            ? Number(sessionPromptId)
+            : null;
+        if (reusePromptId != null) {
+          const cached = await loadFullRegressionPromptById(
+            user.id,
+            reusePromptId
+          );
+          if (
+            cached?.prompt &&
+            cached.project_id === projectId &&
+            cached.feature_id === featureId
+          ) {
+            res.json({
+              prompt: cached.prompt,
+              promptId: cached.id,
+              mode: "full",
+              generatedBy: "commandcode",
+              projectId,
+              featureId,
+            });
+            return;
+          }
         }
 
         let prompt = await generateFullRegressionPrompt(

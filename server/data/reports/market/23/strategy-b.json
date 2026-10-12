@@ -1,0 +1,147 @@
+{
+  "strategy": "fixed_b",
+  "generatedAt": "2026-10-12T13:06:41.897Z",
+  "feature": {
+    "name": "Pricing Change",
+    "description": "Move from the current tiers of $0 limited use case and $20 full access to $20 full access with limits on total discounts and $50 full access with no limits."
+  },
+  "executiveSummary": "Fly Upsell & Cross Sell is considering a pricing change that replaces the free limited tier and $20 full-access tier with a $20 limited-discount tier and a $50 unlimited-discount tier. The product targets Shopify Advanced and Plus merchants that use bundles, BOGO, quantity breaks, free gifts, and cross-sells to raise average order value. The supplied raw bundle shows three competitor inputs: Rapi, Fast Bundle, and KACHING KACHING. Rapi is a small but growing Shopify bundling app with 8 employees and 100% year-over-year headcount growth. Fast Bundle is an established Shopify bundling app founded in 2020 with a stable 5-person team. KACHING KACHING appears to be a mismatch for a Shopify bundling competitor and is a public company with 1001-5000 employees. The personas indicate that BFCM and promotion-heavy merchants have strong seasonal and campaign-driven discount needs, while efficient and low-change merchants are cost-sensitive and may resist upgrading. The company has 9k MRR, 70% margins, $8 revenue per merchant per month, $4 CAC, 4-month retention, $40 average LTV, zero burn, and 18 months of runway. The pricing change can improve ARPU and LTV if it converts high-usage merchants to the $50 plan, but it also risks churn among existing $20 full-access merchants and may increase support queries.",
+  "competitorLandscape": [
+    {
+      "name": "Rapi",
+      "positioning": "Shopify app that helps merchants boost average order value with product bundles.",
+      "relevantMoves": [
+        "Total headcount is 8 as of 2026-04-01.",
+        "Six-month headcount growth is 33.3% and year-over-year growth is 100%.",
+        "Customer Success and Support headcount increased from 2 in 2026-01 to 3 in 2026-02 and remained at 3 through 2026-04.",
+        "Organic SEO competitor domains include wix.com, hubspot.com, mailchimp.com, oberlo.com, and bigcommerce.com.",
+        "Paid SEO competitor domains include wix.com, squarespace.com, godaddy.com, squareup.com, and thepennyhoarder.com."
+      ],
+      "sources": [
+        "crustdata company id 16402024",
+        "basic_info.name = Rapi, website = https://apps.shopify.com/rapi, description = We help you boost your AOV with product bundles.",
+        "headcount.total = 8, headcount.growth_percent.yoy = 100, headcount.growth_percent.six_months = 33.33",
+        "headcount.by_function_timeseries.CURRENT_FUNCTION.Customer Success and Support",
+        "competitors.organic_seo, competitors.paid_seo"
+      ]
+    },
+    {
+      "name": "Fast Bundle",
+      "positioning": "Shopify app for seamless product bundling, designed to increase sales and enhance customer experience.",
+      "relevantMoves": [
+        "Founded in 2020.",
+        "Total headcount is 5 and has been flat over the last six months and year over year.",
+        "Headcount geography includes Canada 2, Netherlands 2, and China 1 in the latest available snapshots.",
+        "Organic SEO competitor domains include widebundle.com, keficommerce.com, discounty.ai, bogos.io, and simplebundles.com.",
+        "Paid SEO competitor domains include bluestarplm.de, coddin.nl, dig.at, profitkoala.com, and designandproduct.co.uk.",
+        "No funding rounds, funds, or total investment are recorded."
+      ],
+      "sources": [
+        "crustdata company id 3646182",
+        "basic_info.name = Fast Bundle, primary_domain = fastbundle.co, year_founded = 2020, description = Fast Bundle is the go-to Shopify app for seamless product bundling.",
+        "headcount.total = 5, headcount.growth_percent.six_months = 0, headcount.growth_percent.yoy = 0",
+        "headcount.by_region_absolute",
+        "competitors.organic_seo, competitors.paid_seo",
+        "funding.num_funding_rounds = 0, funding.total_investment_usd = 0"
+      ]
+    },
+    {
+      "name": "KACHING KACHING",
+      "positioning": "Matched to the input name kaching bundles, but the raw data describes a public company with 1001-5000 employees and an e-commerce/platform description, not a clearly identified Shopify bundling app.",
+      "relevantMoves": [
+        "Company type is Public Company.",
+        "Employee count range is 1001-5000.",
+        "Total tracked headcount is 17, all in the United States.",
+        "Headcount growth is 0% over six months, year over year, and two years.",
+        "Functional headcount is concentrated in Business Development 8, Sales 4, Marketing 2, and Program and Project Management 1.",
+        "No paid or organic SEO competitor domains are recorded."
+      ],
+      "sources": [
+        "crustdata company id 5565741",
+        "basic_info.name = KACHING KACHING, primary_domain = mykachingkaching.com, company_type = Public Company, employee_count_range = 1001-5000",
+        "headcount.total = 17, headcount.growth_percent.six_months = 0, headcount.growth_percent.yoy = 0",
+        "headcount.by_role_absolute",
+        "competitors.paid_seo = [], competitors.organic_seo = []"
+      ]
+    }
+  ],
+  "marketSignals": [
+    {
+      "signal": "Direct bundling competitors are small teams, but at least one is growing quickly.",
+      "evidence": "Rapi has 8 employees, 33.3% six-month headcount growth, and 100% year-over-year headcount growth. Fast Bundle has 5 employees and flat headcount over the same periods.",
+      "implicationForFeature": "The pricing change should be simple to communicate and support with a small team. A $50 unlimited tier may be easier to sell and support than complex usage-based pricing.",
+      "source": "rawBundle.enrichResult headcount for company ids 16402024 and 3646182"
+    },
+    {
+      "signal": "Competitor search visibility competes with broad e-commerce platforms and bundle alternatives.",
+      "evidence": "Fast Bundle organic SEO competitors include widebundle.com, keficommerce.com, discounty.ai, bogos.io, and simplebundles.com. Rapi organic SEO competitors include wix.com, hubspot.com, mailchimp.com, oberlo.com, and bigcommerce.com.",
+      "implicationForFeature": "Pricing pages and upgrade prompts need to convert existing merchants because discovery is contested. The $50 unlimited plan should be positioned around avoiding discount interruptions, not just more features.",
+      "source": "rawBundle.enrichResult competitors.organic_seo for company ids 3646182 and 16402024"
+    },
+    {
+      "signal": "BFCM and seasonal campaigns create concentrated high-usage periods.",
+      "evidence": "Persona The BFCM Campaign Power User expects a significant temporary increase in discount activity, needs to test and deploy multiple campaign variations, and cannot afford discount interruptions during peak shopping days.",
+      "implicationForFeature": "A $50 no-limits tier directly addresses a seasonal upgrade trigger. Messaging should emphasize unlimited discount usage during Black Friday and Cyber Monday.",
+      "source": "productData.personas[0]"
+    },
+    {
+      "signal": "Promotion-heavy merchants view discount limits as friction.",
+      "evidence": "Persona The Promotion Strategist runs bundles, cross-sells, quantity breaks, and free gift promotions throughout the year and sees usage limits as friction when expanding successful campaigns.",
+      "implicationForFeature": "The $50 full-access no-limits plan fits merchants with a deliberate promotional calendar. The $20 limited-discount plan creates a natural upgrade path when campaigns scale.",
+      "source": "productData.personas[1]"
+    },
+    {
+      "signal": "Cost-sensitive merchants may not upgrade and may resist new limits on the $20 plan.",
+      "evidence": "Persona The Efficient Small-Scale Merchant has little friction with the current $20 plan, does not need unlimited discount usage, and is sensitive to recurring software costs. Persona The Stable, Low-Change Merchant does not want to change a working setup and may perceive a pricing change as unnecessary complexity.",
+      "implicationForFeature": "Adding discount limits to the $20 plan risks churn or negative sentiment among existing full-access customers. Migration and communication planning is required.",
+      "source": "productData.personas[2] and productData.newInstallPersona"
+    },
+    {
+      "signal": "Current unit economics are thin, so ARPU expansion is material.",
+      "evidence": "MRR is 9k USD, margin is 70%, burn is 0, revenue per merchant per month is $8, CAC is $4, retention is 4 months, average LTV is $40, and runway is 18 months.",
+      "implicationForFeature": "Moving merchants from $8 average revenue toward $20 or $50 per month could improve unit economics, but higher churn from a pricing change could offset gains given the short 4-month retention.",
+      "source": "productData.companyProfitabilityDetails"
+    },
+    {
+      "signal": "The pricing change is expected to increase support queries.",
+      "evidence": "Expected resource consumption lists 1 engineer at 20% occupancy and support team at 20% because more queries will come along for pricing.",
+      "implicationForFeature": "Support macros, pricing FAQs, and upgrade/downgrade flows should be prepared before launch to protect retention.",
+      "source": "productData.expectedResourceConsumption"
+    }
+  ],
+  "gapsAndOpportunities": [
+    "No competitor pricing data is present in the raw bundle, so the $20 limited and $50 unlimited tiers cannot be benchmarked against Rapi, Fast Bundle, or any valid Kaching bundle product.",
+    "The free $0 limited-use tier appears to be removed or changed, creating an opportunity to convert free users to the $20 plan but also a risk that free users churn.",
+    "The $50 no-limits plan is a clear upgrade path for BFCM and Promotion Strategist personas who need unlimited discount usage during peak campaigns.",
+    "The $20 plan with discount limits can act as a usage-based upgrade trigger if the product surfaces limit status clearly and prompts upgrades before campaigns are interrupted.",
+    "The expected implementation resource is 1 engineer at 20% and support at 20%, which is low relative to the $10,000 financial threshold stated in productData.",
+    "Competitor SEO data suggests that bundle-related search is contested by adjacent tools and platforms, so pricing launch messaging should include comparison and migration content.",
+    "The KACHING KACHING match appears to be a false positive for a Shopify bundling competitor, leaving a gap in understanding the actual Kaching Bundles product."
+  ],
+  "risks": [
+    "Existing $20 full-access customers may churn or complain if their plan gains discount limits without grandfathering or clear value justification.",
+    "The Efficient Small-Scale Merchant and Stable Low-Change Merchant personas are explicitly sensitive to recurring software costs and may reject the $50 plan.",
+    "The $50 price point is 6.25x the current $8 average revenue per merchant per month, so sales and support must clearly demonstrate value to justify the increase.",
+    "Retention is only 4 months and average LTV is $40, so any churn caused by the pricing change can quickly erode LTV gains from higher-tier upgrades.",
+    "BFCM is seasonal. Merchants may upgrade for BFCM and downgrade or cancel after the season, reducing annualized revenue per account.",
+    "Support load is expected to rise by 20% for pricing queries, which may strain a team of 4 unless documentation and self-service are prepared.",
+    "Competitors may respond with simpler or lower-priced unlimited plans, but the raw data does not include competitor pricing to assess this risk quantitatively.",
+    "The Kaching Bundles competitive picture is unreliable because the raw bundle matched KACHING KACHING, a public company with 1001-5000 employees and no recorded bundle-app positioning.",
+    "No customer usage distribution is provided, so it is unknown how many merchants would hit the $20 discount limit and upgrade to $50.",
+    "No job postings data was retrieved because the job_search query failed, limiting visibility into competitor hiring and expansion plans."
+  ],
+  "dataLimitations": [
+    "The job_search tool failed with a filter condition error, so no job postings were analyzed for competitors or the company.",
+    "No pricing data for Rapi, Fast Bundle, or any valid Kaching bundle product is present in the raw data.",
+    "No Shopify App Store install counts, review counts, ratings, or revenue estimates are provided for any competitor.",
+    "Kaching Bundles was matched to KACHING KACHING, a Public Company with 1001-5000 employees; this is likely a false positive and does not clearly represent a Shopify bundling app.",
+    "Funding data is null for Rapi and KACHING KACHING, and Fast Bundle shows zero funding rounds and zero total investment.",
+    "No internal data is provided on current free-tier usage, discount usage distribution, upgrade rates, downgrade rates, or churn by plan.",
+    "No forecast is provided for the revenue impact of moving from $0/$20 to $20/$50.",
+    "Expected resource consumption provides percentages but no fully loaded labor cost, so budget fit against the $10,000 threshold cannot be precisely calculated.",
+    "Persona descriptions are qualitative and may not represent actual customer segments or willingness to pay.",
+    "Competitor headcount data is based on Crustdata snapshots and may lag actual hiring or contractor usage.",
+    "Geography is listed as worldwide, but competitor headcount data is concentrated in specific countries and may not reflect global competitive intensity."
+  ],
+  "planSummary": null
+}

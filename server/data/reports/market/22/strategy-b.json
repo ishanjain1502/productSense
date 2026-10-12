@@ -1,0 +1,131 @@
+{
+  "strategy": "fixed_b",
+  "generatedAt": "2026-10-12T13:06:51.595Z",
+  "feature": {
+    "name": "Pricing Change",
+    "description": "Repackaging of Fly Upsell & Cross Sell pricing. Today the app offers a $0 limited-use tier and a $20 full-access tier. Under the change, the $20 tier remains 'full access with limits on total discounts' and a new $50 tier provides 'full access + no limits'. Target market is Shopify stores on the Advanced and Plus plans, worldwide. Planned effort: one week, one engineer at 20% occupancy, support at 20% occupancy to absorb additional pricing queries (per test-prd.txt)."
+  },
+  "executiveSummary": "Fly Upsell & Cross Sell is repositioning from a two-tier $0/$20 structure to a $20 (full access with discount limits) and $50 (full access, unlimited discounts) structure, aimed at Shopify Advanced and Plus merchants worldwide. The monetization logic is that heavy promotional users - the BFCM Campaign Power User and the Promotion Strategist personas defined in the PRD - will pay for unlimited discount capacity, while the Efficient Small-Scale Merchant and the new-install Stable, Low-Change Merchant personas are explicitly expected to stay on the lower tier. Competitor data from the raw bundle is thin but directionally useful: Rapi grew from 1 to 8 employees between Oct 2023 and Feb 2026 (+100% YoY, +33.3% six-month growth) while Fast Bundle has held roughly flat at 5 employees, suggesting the bundling category is expanding but not being consolidated by a dominant player. The core risk is not the $50 tier itself but the introduction of discount limits inside the existing $20 tier, which degrades a plan that the Efficient Small-Scale Merchant persona currently reports 'little friction' with - given a 4-month retention and $40 average LTV against a $4 CAC, any avoidable churn on the paid base is expensive relative to the incremental $30 ARPU. Data on competitor pricing, willingness to pay for $50, and the share of merchants who would hit a discount cap is not present in the supplied material and is listed under dataLimitations.",
+  "competitorLandscape": [
+    {
+      "name": "Rapi (\"rapi bundles\")",
+      "positioning": "Shopify product-bundling app positioned purely on AOV: 'We help you boost your AOV with product bundles.' Directly overlaps with Fly's bundle/upsell value proposition.",
+      "relevantMoves": [
+        "Headcount grew from 1 employee (Oct 2023) to 8 (Feb 2026), with 100% YoY growth and 33.3% six-month growth (growth_percent: yoy 100, six_months 33.33), indicating active scaling in the bundling category.",
+        "Support-weighted org: 3 of 8 people in Customer Success and Support (37.5%), and Customer Success and Support grew 50% over six months - the same function Fly plans to staff at 20% occupancy for pricing queries.",
+        "Skill inventory includes Shopify (2 people, 25%) and Customer Service / Online Support, consistent with a support-led retention motion rather than a low-touch one.",
+        "Organic SEO peer set is generic (wix.com, hubspot.com, mailchimp.com, oberlo.com, bigcommerce.com) rather than other bundling apps, suggesting limited head-to-head SEO competition against Fly.",
+        "Geo distribution is dispersed (Benin 2, plus single employees in Indonesia, Colombia, DR Congo, Morocco, United States, with a Bogotá cluster of 2 in late 2025), i.e. a distributed, low-cost operating base."
+      ],
+      "sources": [
+        "rawBundle.enrichResult match 16402024, company_data.basic_info (name 'Rapi', website https://apps.shopify.com/rapi, description 'We help you boost your AOV with product bundles.', employee_count_range 2-10)",
+        "rawBundle.enrichResult match 16402024, company_data.headcount (total 8, growth_percent yoy 100 / six_months 33.33, by_role_absolute Support 3 = 37.5%, by_skill_absolute Shopify 2 = 25%)",
+        "rawBundle.enrichResult match 16402024, company_data.competitors.organic_seo",
+        "https://www.linkedin.com/company/tryrapi"
+      ]
+    },
+    {
+      "name": "Fast Bundle (\"fast bundles\")",
+      "positioning": "Explicitly self-described as 'the go-to Shopify app for seamless product bundling, designed to increase sales and enhance the customer experience... boosting average order value and driving growth.' Founded 2020; the most directly comparable AOV-bundling competitor in the set.",
+      "relevantMoves": [
+        "Headcount essentially flat at 5 employees since mid-2024 (total 5; growth_percent mom/qoq/six_months/yoy all 0; two_years 25%, i.e. +1 person), with the 2024-06 to 2024-08 dip to 4 employees fully recovered - no evidence of an aggressive land-grab.",
+        "Role mix is evenly spread (Product Management, Business Development, Sales, Support, IT, Marketing each 20%), with Marketing down 50% over six months and Business Development down 50% over six months - a possible pullback in growth spend.",
+        "Translation (3 people, 60%), Python (3, 60%), Data Analysis (3, 60%), Stakeholder Management (3, 60%) and English (3, 60%) dominate the skill graph, plus Shopify (2, 40%) and E-Commerce (2, 40%).",
+        "Organic SEO competitor set is entirely other bundling/discount apps - widebundle.com, keficommerce.com, discounty.ai, bogos.io, simplebundles.com - which is the real competitive frame Fly is entering; paid SEO points at unrelated PLM/agency domains.",
+        "Geo footprint skews Canada/Netherlands/China, contrasting with Rapi's Africa/Asia/LatAm distribution."
+      ],
+      "sources": [
+        "rawBundle.enrichResult match 3646182, company_data.basic_info (name 'Fast Bundle', fastbundle.co, year_founded 2020, employee_count_range 2-10, description quoted above)",
+        "rawBundle.enrichResult match 3646182, company_data.headcount (total 5; growth_percent all 0 except two_years 25; by_role_percent; by_role_growth_6m_pct Marketing -50, Business Development -50; by_skill_percent)",
+        "rawBundle.enrichResult match 3646182, company_data.competitors.organic_seo and .paid_seo",
+        "http://fastbundle.co"
+      ]
+    },
+    {
+      "name": "Kaching Bundles (matched entity: KACHING KACHING)",
+      "positioning": "The enrichment returned 'KACHING KACHING' (mykachingkaching.com), described as an e-commerce company founded by a husband-and-wife team, company_type 'Public Company', employee_count_range '1001-5000', industries Advertising Services / Professional Services. This does not read as the Shopify bundling app implied by the input name 'kaching bundles'; it is treated here as an unverified match.",
+      "relevantMoves": [
+        "Reported headcount of 17 with zero growth across mom, qoq, six_months, yoy and two_years (all 0%), concentrated in the United States (18 in the US series; 17 total in by_role_absolute) - profile is inconsistent with a 2-10 person Shopify app.",
+        "Role mix is Business Development 8 (47.1%), Sales 4 (23.5%), Marketing 2 (11.8%), Program and Project Management 1 (5.9%); no engineering or support roles reported.",
+        "No SEO competitor domains returned (both paid_seo and organic_seo empty), so no bundling-category signal can be extracted from this record.",
+        "A more plausible Shopify-app candidate, 'Kaching Appz' (kachingappz.com, 'Developing Shopify apps to help eCommerce thrive.', crustdata_company_id 2641811), appeared in the company_identify name search results for 'kaching bundles' but was not enriched - see dataLimitations."
+      ],
+      "sources": [
+        "rawBundle.enrichResult match 5565741, company_data.basic_info (name 'KACHING KACHING', mykachingkaching.com, 'Public Company', employee_count_range '1001-5000')",
+        "rawBundle.enrichResult match 5565741, company_data.headcount (total 17, growth_percent all 0, by_role_percent)",
+        "rawBundle.queriesExecuted[2] company_identify 'kaching bundles' name-match list including 'Kaching Appz' (crustdata_company_id 2641811, kachingappz.com)"
+      ]
+    }
+  ],
+  "marketSignals": [
+    {
+      "signal": "The bundling category is still adding headcount, but only modestly, and from a very small base.",
+      "evidence": "Rapi grew 1 -> 8 employees between Oct 2023 and Feb 2026 (yoy +100%, six_months +33.3%); Fast Bundle has held flat at 5 employees since mid-2024 with 0% mom/qoq/six-month/YoY growth and only +1 person over two years; both operate in the 2-10 employee band.",
+      "implicationForFeature": "There is no evidence of a rival out-spending Fly into the upsell/bundle niche, so a packaging (price/limit) change is a defensible competitive lever rather than a capability arms race. It also means competitors likely cannot undercut on service depth, so Fly's differentiation must be in offer flexibility and support.",
+      "source": "rawBundle.enrichResult, crustdata_company_id 16402024 and 3646182, company_data.headcount growth_percent / growth_absolute"
+    },
+    {
+      "signal": "Rival support capacity is growing while Fly plans to run pricing-related support at only 20% occupancy.",
+      "evidence": "Rapi's Customer Success and Support function grew 50% over six months (2 -> 3 people, 37.5% of an 8-person org) and Support/Customer Service is its joint-largest skill cluster; Fly's PRD allocates support at 20% occupancy because 'more queries will come along for pricing'.",
+      "implicationForFeature": "Pricing changes generate a measurable support tail - both in the existing base (limit confusion, billing questions) and in new installs. Fly should budget for in-app messaging, FAQ and upgrade-flow self-service to offset the 20% support commitment, or the 1-week timeline will slip.",
+      "source": "rawBundle.enrichResult 16402024 headcount.by_role_growth_6m_pct {'Customer Success and Support': 50} and by_role_absolute Support 3; productData.expectedResourceConsumption"
+    },
+    {
+      "signal": "The real competitive set is broader than the three named apps - it is the long tail of bundle/discount apps ranking on the same terms.",
+      "evidence": "Fast Bundle's organic SEO competitor domains are widebundle.com, keficommerce.com, discounty.ai, bogos.io and simplebundles.com; a name search also surfaced FoxSell Bundles (foxsell.com, 'elevating merchants' Average Order Values') and Kaching Appz (kachingappz.com, Shopify apps).",
+      "implicationForFeature": "Merchants evaluating an upgrade have many substitutable bundle apps at similar or unknown price points. The $50 unlimited-discount tier must be framed around outcome (campaign headroom) rather than feature count, or switching risk rises.",
+      "source": "rawBundle.enrichResult 3646182 company_data.competitors.organic_seo; rawBundle.queriesExecuted[2] name-match results (FoxSell Bundles crustdata_company_id 1149435; Kaching Appz 2641811)"
+    },
+    {
+      "signal": "Discount-driven campaign intensity is seasonal and campaign-shaped, not flat.",
+      "evidence": "The PRD's lead persona is 'The BFCM Campaign Power User', who expects 'a significant temporary increase in discount activity' and 'cannot afford discount interruptions during peak shopping days'; the second persona runs 'a deliberate promotional calendar rather than occasional sales'.",
+      "implicationForFeature": "A static $20/$50 split under-serves the burst pattern. A time-boxed unlimited pass sold into the BFCM window matches the buying trigger these personas describe and monetizes peak capacity without permanently moving price-sensitive merchants to $50.",
+      "source": "productData.personas[0] ('The BFCM Campaign Power User', upgrade trigger: 'Preparing for BFCM or forecasting usage beyond the monthly allowance') and productData.personas[1] ('The Promotion Strategist')"
+    },
+    {
+      "signal": "Fly's unit economics are thin per merchant, so tier mix - not headcount or volume - is the primary lever.",
+      "evidence": "MRR is $9,000, revenue per merchant per month is $8, 30% of revenue goes to salaries, growth and cloud (consistent with the 70% margin), CAC $4, retention 4 months, average LTV $40, runway 18 months, burn reported as 0.",
+      "implicationForFeature": "At $8 blended revenue per merchant against a $20 stated full-access price, a large share of the base is effectively on the $0 tier. The pricing change therefore has to convert or upsell free/low-usage merchants into the $20/$50 tiers rather than only taxing the existing payers - and the $50 tier must add at least ~$30 ARPU on a meaningful subset to move MRR materially.",
+      "source": "productData.companyProfitabilityDetails (MRR 9k USD, margins 70%, burn 0, revenue per merchant per month 8$, 30% of revenue in salaries/growth/cloud, CAC 4$, retention 4 months, avg LTV 40$, runway 18 months); productData.featureDescription ($20/$50 tiers)"
+    },
+    {
+      "signal": "No hiring signal was retrievable, so competitor intent cannot be read from job postings.",
+      "evidence": "The job_search query returned an execution error ('filters.conditions.0' must be either a single condition or a tree) and rawBundle.jobs is an empty array.",
+      "implicationForFeature": "Any inference that competitors are or are not building pricing/discount-limit features is unsupported. Pricing decisions should be validated with merchant research rather than assumed from competitor hiring.",
+      "source": "rawBundle.jobs = []; rawBundle.queriesExecuted[3] tool 'job_search' error"
+    }
+  ],
+  "gapsAndOpportunities": [
+    "Seasonal unlimited pass: sell a time-boxed 'unlimited discounts' bundle around BFCM and other peak windows to the BFCM Campaign Power User and Promotion Strategist personas, capturing $50-tier economics only for the weeks those merchants actually need headroom.",
+    "Protect the existing $20 base from a value regression: the Efficient Small-Scale Merchant persona states 'My current plan does everything I need. Why pay more?' and reports 'little friction with the current $20 plan'. Introduce discount limits for new installs or with a generous allowance, and grandfather or clearly credit existing $20 subscribers, so retention is not damaged for a $30 incremental ARPU.",
+    "Self-serve usage visibility: an in-app meter showing discount usage against the allowance is the natural upgrade trigger for 'forecasting usage beyond the monthly allowance' (BFCM persona) and 'consistently exceeding the allowance' (Promotion Strategist persona), and it deflects the additional support queries Fly expects at 20% occupancy.",
+    "Annual/quarterly billing to repair LTV: with 4-month retention and $40 LTV, an annual $50-tier commitment priced below 12x monthly would lift LTV and cash collection immediately, which matters at $9k MRR and an 18-month runway.",
+    "Positioning against the real competitive set found in Fast Bundle's organic SEO peers (widebundle.com, keficommerce.com, discounty.ai, bogos.io, simplebundles.com) and against the newly surfaced FoxSell Bundles and Kaching Appz, all of which sit in the same Shopify bundling shelf with unverified pricing.",
+    "Target the Advanced/Plus segment explicitly: the stated target market is Shopify Advanced and Plus merchants, and the $50 tier's numeric jump is proportionally small against those merchants' subscription spend - the $50 tier can be socialised as a 'Plus-grade' commercial tier rather than a doubling of price.",
+    "Retain a clearly-labelled entry path: the PRD keeps a $0 'limited use case' tier, which preserves top-of-funnel acquisition at a $4 CAC while the $20 tier's discount limits become the natural upgrade prompt from $0."
+  ],
+  "risks": [
+    "Churn from within the existing $20 base: applying 'limits on total discounts' to the tier that the Efficient Small-Scale Merchant persona currently finds friction-free is a value reduction, not a price increase, and may trigger downgrades or uninstalls during the 4-month retention window.",
+    "ARPU math may not clear: with average revenue per merchant at $8 versus a $20 list price, the base is heavily weighted to the $0 tier; if few merchants convert to $50, the change adds support cost and goodwill risk without moving the $9k MRR.",
+    "Price anchoring against competitors is unverified: no pricing data for Rapi, Fast Bundle, Kaching Bundles, or the wider set (widebundle.com, keficommerce.com, discounty.ai, bogos.io, simplebundles.com, FoxSell) exists in the raw data, so a $50 ceiling may be above or below category norms.",
+    "Timeline undersized: one week with a single engineer at 20% occupancy is the stated plan, while entitlements, usage metering, limit enforcement, plan migration and messaging all need to ship coherently - and the support org is only at 20% occupancy despite the PRD acknowledging more pricing queries will arrive.",
+    "Peak-season fragility: the BFCM persona explicitly cannot tolerate 'discount interruptions during peak shopping days'; a bug in limit enforcement during BFCM would be disproportionately damaging to the highest-value segment.",
+    "COMPETITIVE ANALYSIS IS PARTIALLY INVALID: the 'kaching bundles' input resolved to KACHING KACHING (a 'Public Company', 1001-5000 employees, advertising services, zero growth), which is almost certainly the wrong entity for a Shopify bundling app, so the third competitor is effectively unassessed.",
+    "Margin constraint limits mitigation: 30% of revenue is already committed to salaries, growth and cloud on $9k MRR, leaving little room to absorb a retention dip or fund win-back offers if the pricing change underperforms.",
+    "Runway contradiction: burn is stated as 0 yet runway is stated as 18 months; if the true burn is non-zero, the tolerance for a pricing experiment that dampens near-term conversion is lower than the PRD implies."
+  ],
+  "dataLimitations": [
+    "No competitor pricing data: the raw bundle contains no price points, plan structure, or discount-limit policies for Rapi, Fast Bundle, Kaching Bundles or any of the adjacent apps (widebundle.com, keficommerce.com, discounty.ai, bogos.io, simplebundles.com, FoxSell Bundles, Kaching Appz). The $20/$50 structure cannot be benchmarked.",
+    "Competitor identity mismatch: the input 'kaching bundles' was enriched against KACHING KACHING (crustdata_company_id 5565741, mykachingkaching.com, 'Public Company', employee_count_range '1001-5000', industries Advertising Services/Professional Services), which is inconsistent with a Shopify bundling app in the 2-10 employee band and should not be treated as validated competitor intelligence. A more plausible candidate, Kaching Appz (crustdata_company_id 2641811, kachingappz.com, 'Developing Shopify apps to help eCommerce thrive.'), appeared in the name-match results but was never enriched.",
+    "No job posting data: the job_search tool errored ('filters.conditions.0' must be either a single condition or a tree) and rawBundle.jobs is empty, so no hiring-based competitor signals could be assessed.",
+    "rawBundle.landscape is null, so no pre-computed market landscape was available and all landscape framing in this report is derived from company-level enrichment only.",
+    "No product-level metrics for the app itself: install counts, review counts, ratings, active merchant counts, tier mix (share of merchants on $0 vs $20), average discounts consumed per merchant per month, and the discount volume at which limits would bind are all absent.",
+    "No churn or cohort data: there is no information on churn by plan, upgrade/downgrade history, or price-change sensitivity from prior experiments, so the retention impact of adding discount limits to the $20 tier is unquantified.",
+    "No customer research: there is no willingness-to-pay evidence for the $50 tier, no win/loss data, and no validation of the persona-derived upgrade triggers beyond the PRD's own assertions.",
+    "Financial inconsistencies in companyProfitabilityDetails: 'burn: 0' alongside 'runwayRemainingMonths: 18' is internally inconsistent, and the 30% cost split is stated as a share of revenue without an absolute figure, so incremental-margin math for the pricing change cannot be computed reliably.",
+    "No cost estimate for the change: the PRD states a 1-week duration, 1 engineer at 20% occupancy and support at 20% occupancy, but no cost figure is provided, so the change cannot be tested against the stated financial threshold of $10,000.",
+    "Competitor headcount timeseries contain dates extending to Aug/Sep 2026 and one gap (Fast Bundle jumps from 2026-07-27 to 2026-09-23), so recent-trend readings from those series are approximate.",
+    "No geographic breakdown for Fly's own merchant base, so the 'worldwide' target market claim cannot be cross-checked against where revenue or demand actually sits."
+  ],
+  "planSummary": null
+}

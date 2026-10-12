@@ -1,0 +1,2123 @@
+{
+  "plan": {
+    "steps": [
+      {
+        "tool": "company_search",
+        "params": {
+          "query": "Shopify Advanced merchants worldwide ecommerce",
+          "filters": {
+            "industry": "E-commerce",
+            "technologies": [
+              "Shopify Advanced"
+            ],
+            "geography": "Worldwide"
+          },
+          "limit": 200
+        }
+      },
+      {
+        "tool": "company_search",
+        "params": {
+          "query": "Shopify Plus merchants worldwide ecommerce",
+          "filters": {
+            "industry": "E-commerce",
+            "technologies": [
+              "Shopify Plus"
+            ],
+            "geography": "Worldwide"
+          },
+          "limit": 200
+        }
+      },
+      {
+        "tool": "company_search",
+        "params": {
+          "query": "rapi bundles OR fast bundles OR kaching bundles",
+          "filters": {
+            "industry": "E-commerce",
+            "type": "App"
+          },
+          "limit": 50
+        }
+      },
+      {
+        "tool": "company_identify",
+        "params": {
+          "company_name": "rapi bundles"
+        }
+      },
+      {
+        "tool": "company_identify",
+        "params": {
+          "company_name": "fast bundles"
+        }
+      },
+      {
+        "tool": "company_identify",
+        "params": {
+          "company_name": "kaching bundles"
+        }
+      },
+      {
+        "tool": "company_enrich",
+        "params": {
+          "company_domain": "{{step1.results[0].domain}}",
+          "fields": [
+            "name",
+            "domain",
+            "employee_count",
+            "revenue",
+            "technologies",
+            "funding",
+            "location",
+            "shopify_plan"
+          ]
+        }
+      },
+      {
+        "tool": "company_enrich",
+        "params": {
+          "company_domain": "{{step2.results[0].domain}}",
+          "fields": [
+            "name",
+            "domain",
+            "employee_count",
+            "revenue",
+            "technologies",
+            "funding",
+            "location",
+            "shopify_plan"
+          ]
+        }
+      },
+      {
+        "tool": "company_enrich",
+        "params": {
+          "company_domain": "{{step4.results[0].domain}}",
+          "fields": [
+            "name",
+            "domain",
+            "employee_count",
+            "revenue",
+            "technologies",
+            "funding",
+            "location",
+            "pricing"
+          ]
+        }
+      },
+      {
+        "tool": "job_search",
+        "params": {
+          "query": "ecommerce marketing OR Shopify OR promotions",
+          "filters": {
+            "company_domain": [
+              "{{step1.results[0].domain}}",
+              "{{step2.results[0].domain}}"
+            ],
+            "posted_date": "last_90_days"
+          },
+          "limit": 100
+        }
+      },
+      {
+        "tool": "job_search",
+        "params": {
+          "query": "bundle OR upsell OR cross-sell OR ecommerce",
+          "filters": {
+            "company_domain": [
+              "{{step4.results[0].domain}}",
+              "{{step5.results[0].domain}}",
+              "{{step6.results[0].domain}}"
+            ],
+            "posted_date": "last_90_days"
+          },
+          "limit": 100
+        }
+      },
+      {
+        "tool": "web_search_live",
+        "params": {
+          "query": "Shopify Advanced Plus merchant count 2024 bundle app pricing rapi bundles fast bundles kaching bundles BFCM"
+        }
+      }
+    ]
+  },
+  "results": [
+    {
+      "step": {
+        "tool": "company_search",
+        "params": {
+          "query": "rapi bundles OR fast bundles OR kaching bundles",
+          "filters": {
+            "industry": "E-commerce",
+            "type": "App"
+          },
+          "limit": 50
+        }
+      },
+      "result": {
+        "companies": [
+          {
+            "crustdata_company_id": 3646182,
+            "basic_info": {
+              "name": "Fast Bundle",
+              "crustdata_company_id": 3646182,
+              "primary_domain": "fastbundle.co",
+              "all_domains": [
+                "fastbundle.co"
+              ],
+              "website": "http://fastbundle.co",
+              "professional_network_url": "https://www.linkedin.com/company/fast-bundle",
+              "professional_network_id": "104335181",
+              "profile_name": "Fast Bundle",
+              "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/6f7b8955a7564d4bfb92abe8a62228769f32d5f03d4c312eede8d6cf65782cf7.jpg",
+              "description": "Fast Bundle is the go-to Shopify app for seamless product bundling, designed to increase sales and enhance the customer experience. The intuitive platform allows for easy creation and management of customizable bundles, boosting average order value and driving growth.",
+              "company_type": "Privately Held",
+              "status": "active",
+              "year_founded": 2020,
+              "employee_count_range": "2-10",
+              "markets": [
+                "PRIVATE"
+              ]
+            },
+            "headcount": {
+              "total": 5,
+              "largest_headcount_country": "CAN",
+              "growth_percent": {
+                "1m": 0,
+                "3m": 0,
+                "6m": 0,
+                "12m": 0
+              },
+              "growth_absolute": {
+                "1m": 0,
+                "3m": 0,
+                "6m": 0,
+                "12m": 0
+              }
+            }
+          },
+          {
+            "crustdata_company_id": 20073060,
+            "basic_info": {
+              "name": "Rapid Packages",
+              "crustdata_company_id": 20073060,
+              "primary_domain": "rapidpackages.com",
+              "all_domains": [
+                "rapidpackages.com"
+              ],
+              "website": "http://www.rapidpackages.com",
+              "professional_network_url": "https://www.linkedin.com/company/rapidpackages",
+              "professional_network_id": "105090965",
+              "profile_name": "Rapid Packages",
+              "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/4ad351c10aae81472a5e9597ff6dafa6b2ed3754ab004cfe41c70fc7743eec3e.jpg",
+              "description": "At Rapid Packages, we specialize in innovative and high-quality printing and packaging solutions. With a commitment to setting new industry trends and adhering to strict SOPs, we strive to deliver excellence in every project. Our mission is to redefine standards, empower professionals, and offer tailored services that meet the unique needs of businesses, helping them stand out in the competitive marketplace.",
+              "company_type": "Partnership",
+              "status": "active",
+              "year_founded": 2018,
+              "employee_count_range": "11-50",
+              "markets": [
+                "PRIVATE"
+              ]
+            },
+            "headcount": {
+              "total": 2,
+              "largest_headcount_country": "PAK",
+              "growth_percent": {
+                "1m": 0,
+                "3m": 0,
+                "6m": 0,
+                "12m": 0
+              },
+              "growth_absolute": {
+                "1m": 0,
+                "3m": 0,
+                "6m": 0,
+                "12m": 0
+              }
+            }
+          },
+          {
+            "crustdata_company_id": 908828,
+            "basic_info": {
+              "name": "Kaching",
+              "crustdata_company_id": 908828,
+              "primary_domain": "kachingcashback.com",
+              "all_domains": [
+                "kachingcashback.com"
+              ],
+              "website": "https://www.kachingcashback.com",
+              "professional_network_url": "https://www.linkedin.com/company/kachingcashback",
+              "professional_network_id": "2261492",
+              "profile_name": "Kaching",
+              "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/4619df04414ace10d6de2e42a447464e654fa2cfc00141df82ac436218e7b6df.jpg",
+              "description": "White label Cashback for Banks!Key features of Kaching include:1.Enhanced Engagement: Our cashback solutions are designed to captivate and engage customers by offering attractive incentives and rewards. By incorporating our platform into banking services, we create a seamless and interactive experience that keeps customers coming back for more.2.Customer experience:Our seamless cashback solution offers customers the benefit of effortless earning and redemption of rewards directly within their existing digital banking experience, eliminating the need for separate platforms or complex procedures. This enhances the customer experience by providing convenience, instant gratification, and personalized rewards, fostering a sense of value, satisfaction, and loyalty.3.Personalization: Our advanced algorithms analyze customer behavior and preferences, enabling banks to offer tailor-made rewards and cashback incentives that resonate with individual customers.4.Loyalty and Retention: By rewarding customers for their engagement, spending, and loyalty, banks can nurture long-lasting relationships and foster brand advocacy, resulting in increased customer retention and revenue growth.",
+              "company_type": "Privately Held",
+              "status": "active",
+              "year_founded": 2011,
+              "employee_count_range": "51-200",
+              "markets": [
+                "PRIVATE"
+              ]
+            },
+            "headcount": {
+              "total": 14,
+              "largest_headcount_country": "",
+              "growth_percent": {
+                "1m": 0,
+                "3m": 7.6923076923076925,
+                "6m": 7.6923076923076925,
+                "12m": 16.666666666666664
+              },
+              "growth_absolute": {
+                "1m": 0,
+                "3m": 1,
+                "6m": 1,
+                "12m": 2
+              }
+            }
+          },
+          {
+            "crustdata_company_id": 32540263,
+            "basic_info": {
+              "name": "Bundle Around",
+              "crustdata_company_id": 32540263,
+              "primary_domain": "bundlearound.com",
+              "all_domains": [
+                "bundlearound.com"
+              ],
+              "website": "https://bundlearound.com/",
+              "professional_network_url": "https://www.linkedin.com/company/bundle-around",
+              "professional_network_id": "119364232",
+              "profile_name": "Bundle Around",
+              "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/7222677e96a71b3222967ff41a9c291dcc6985c201efcfae6897b0dcb41520d7.jpg",
+              "description": "We create clothing bundles for babies aged 0–24 months, with selected high-quality brands in natural fabrics.Borrow them, swap sizes as your little one grows, and skip the stress of keeping up with your baby's wardrobe.",
+              "company_type": "Privately Held",
+              "status": "active",
+              "year_founded": null,
+              "employee_count_range": "2-10",
+              "markets": [
+                "PRIVATE"
+              ]
+            },
+            "headcount": {
+              "total": 2,
+              "largest_headcount_country": "",
+              "growth_percent": {
+                "1m": 0,
+                "3m": 100,
+                "6m": 0,
+                "12m": 0
+              },
+              "growth_absolute": {
+                "1m": 0,
+                "3m": 1,
+                "6m": 0,
+                "12m": 0
+              }
+            }
+          },
+          {
+            "crustdata_company_id": 19931956,
+            "basic_info": {
+              "name": "Rapid Pack",
+              "crustdata_company_id": 19931956,
+              "primary_domain": "rapidpack.net",
+              "all_domains": [
+                "rapidpack.net"
+              ],
+              "website": "http://www.rapidpack.net",
+              "professional_network_url": "https://www.linkedin.com/company/rapid-pack",
+              "professional_network_id": "3122363",
+              "profile_name": "Rapid Pack",
+              "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/26e6ef52799e78789562c66c72183664a76006924c28040c7387afa489f69689.jpg",
+              "description": "Rapid PackLa linea de productos de carton corrugado Rapid Pack fue conceptuada para el consumidor que necesita adquirir rápidamente un empaque para embalar cualquier tipo de producto. Contamos con diferentes tamaños y resistencias, ademas de productos afines.Somos una linea panameña que cuenta con el respaldo de Empaques de Colón, S.A., con mas de 30 años de experiencia en fabricación de productos de carton de la mas alta calidad.",
+              "company_type": "Partnership",
+              "status": "active",
+              "year_founded": 2006,
+              "employee_count_range": "11-50",
+              "markets": [
+                "PRIVATE"
+              ]
+            },
+            "headcount": {
+              "total": 15,
+              "largest_headcount_country": "BGD",
+              "growth_percent": {
+                "1m": 0,
+                "3m": 0,
+                "6m": 0,
+                "12m": 0
+              },
+              "growth_absolute": {
+                "1m": 0,
+                "3m": 0,
+                "6m": 0,
+                "12m": 0
+              }
+            }
+          },
+          {
+            "crustdata_company_id": 8222408,
+            "basic_info": {
+              "name": "bunDL (OSLabs)",
+              "crustdata_company_id": 8222408,
+              "primary_domain": "bundl.dev",
+              "all_domains": [
+                "bundl.dev"
+              ],
+              "website": "https://www.bundl.dev",
+              "professional_network_url": "https://www.linkedin.com/company/bundldev",
+              "professional_network_id": "100188208",
+              "profile_name": "bunDL (OSLabs)",
+              "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/b6798debf68364f2326fd044f767d1e9aa5e167e63181a20a70fc8037fb575e8.jpg",
+              "description": "A lightweight caching tool designed to intercept GraphQL queries, providing real-time monitoring all powered by Bun.Medium Article: https://medium.com/@apwicker/bun-appetit-feasting-on-fast-with-bundl-c634a8a36823",
+              "company_type": "Nonprofit",
+              "status": "active",
+              "year_founded": 2023,
+              "employee_count_range": "2-10",
+              "markets": [
+                "PRIVATE"
+              ]
+            },
+            "headcount": {
+              "total": 1,
+              "largest_headcount_country": "USA",
+              "growth_percent": {
+                "1m": 0,
+                "3m": 0,
+                "6m": 0,
+                "12m": 0
+              },
+              "growth_absolute": {
+                "1m": 0,
+                "3m": 0,
+                "6m": 0,
+                "12m": 0
+              }
+            }
+          },
+          {
+            "crustdata_company_id": 69141329,
+            "basic_info": {
+              "name": "Bun Bundles",
+              "crustdata_company_id": 69141329,
+              "primary_domain": "bunbundles.com",
+              "all_domains": [
+                "bunbundles.com"
+              ],
+              "website": "https://bunbundles.com/",
+              "professional_network_url": "https://www.linkedin.com/company/bun-bundles",
+              "professional_network_id": "110665478",
+              "profile_name": "Bun Bundles",
+              "logo_permalink": "",
+              "description": "A free Shopify app for baking high-converting bundles, boosting AOV, and watching the dough rise. 🍞",
+              "company_type": "Privately Held",
+              "status": "active",
+              "year_founded": null,
+              "employee_count_range": "2-10",
+              "markets": []
+            },
+            "headcount": {
+              "total": null,
+              "largest_headcount_country": "",
+              "growth_percent": null,
+              "growth_absolute": null
+            }
+          },
+          {
+            "crustdata_company_id": 612530,
+            "basic_info": {
+              "name": "RapiDels - Local Delivery Guy",
+              "crustdata_company_id": 612530,
+              "primary_domain": "rapidels.com",
+              "all_domains": [
+                "rapidels.com"
+              ],
+              "website": "https://www.rapidels.com",
+              "professional_network_url": "https://www.linkedin.com/company/rapidel",
+              "professional_network_id": "10357754",
+              "profile_name": "RapiDels - Local Delivery Guy",
+              "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/8f8d9a9e4047cb78ae2abb7b7f1e326388c320d56a865c6d747734095292beca.jpg",
+              "description": "RapiDels is here to maximize the potential of your business; days of worrying about intracity logistics are over with the support of RapiDel. With an integrated platform and the use of common resources to solve every complex problem, we bring cost-effectiveness and efficiency to your business.Anything which is urgent and important and needs immediate attention and delivery, RapiDel is a one-stop solution. None of our solutions/services is standard in nature; it takes shape as the requirement of the customer.We are a B2B service provider and hence not any specific product is that we service. From spare parts to medicine to food to documents to garments to electronic items and anything and everything which is tagged as important (urgent as well) has a solution at RapiDels.Our services are available in Mumbai, Pune, Delhi NCR, Ahmedabad, Hyderabad and Banglore.And by financial year-end, we will be in Chennai, Coimbatore, Chandigarh-Baddi and Lucknow.",
+              "company_type": "Privately Held",
+              "status": "active",
+              "year_founded": 2015,
+              "employee_count_range": "2-10",
+              "markets": [
+                "PRIVATE"
+              ]
+            },
+            "headcount": {
+              "total": 2,
+              "largest_headcount_country": "ZAF",
+              "growth_percent": {
+                "1m": 0,
+                "3m": 100,
+                "6m": 100,
+                "12m": 100
+              },
+              "growth_absolute": {
+                "1m": 0,
+                "3m": 1,
+                "6m": 1,
+                "12m": 1
+              }
+            }
+          },
+          {
+            "crustdata_company_id": 69221202,
+            "basic_info": {
+              "name": "CourierGuru",
+              "crustdata_company_id": 69221202,
+              "primary_domain": "",
+              "all_domains": [],
+              "website": "",
+              "professional_network_url": "https://www.linkedin.com/company/courierguru",
+              "professional_network_id": "110361996",
+              "profile_name": "CourierGuru",
+              "logo_permalink": "",
+              "description": "Choosing the right logistics partner is the most critical decision for any business aiming to succeed in Karachi's competitive landscape. CourierGuru provides a comprehensive suite of services that are not just fast, but smart, affordable, and perfectly tailored for the local Karachi to Karachi courier corridor.Whether you require the urgency of KHI Rapid's Same Day Delivery Karachi, the value of MetroLink's Affordable Next Day Delivery KHI, or the precision of FlexiTime's Scheduled Delivery, we have the solution. We empower Karachi's entrepreneurs and established businesses alike by offering unparalleled reliability and customer focus.#Logistics #SupplyChain #Transportation #LastMileDelivery #CourierServices #FreightForwarding #KarachiBusiness #PakistanEconomy #EntrepreneurshipPakistan #SmallBusinessPK #SupportLocalBusiness #BusinessGrowth #InnovationInLogistics #DigitalTransformation #StartupPakistan #CourierGuru #KHIRapid #MetroLink #FlexiTime",
+              "company_type": "Self-Employed",
+              "status": "active",
+              "year_founded": 2022,
+              "employee_count_range": "2-10",
+              "markets": []
+            },
+            "headcount": {
+              "total": null,
+              "largest_headcount_country": "",
+              "growth_percent": null,
+              "growth_absolute": null
+            }
+          },
+          {
+            "crustdata_company_id": 63205545,
+            "basic_info": {
+              "name": "FasterPDF",
+              "crustdata_company_id": 63205545,
+              "primary_domain": "",
+              "all_domains": [],
+              "website": "",
+              "professional_network_url": "https://www.linkedin.com/company/fasterpdf",
+              "professional_network_id": "29113361",
+              "profile_name": "FasterPDF",
+              "logo_permalink": "",
+              "description": "",
+              "company_type": "",
+              "status": "active",
+              "year_founded": null,
+              "employee_count_range": "",
+              "markets": []
+            },
+            "headcount": {
+              "total": null,
+              "largest_headcount_country": "",
+              "growth_percent": null,
+              "growth_absolute": null
+            }
+          },
+          {
+            "crustdata_company_id": 10708205,
+            "basic_info": {
+              "name": "Fast Communications",
+              "crustdata_company_id": 10708205,
+              "primary_domain": "fast-communications.com",
+              "all_domains": [
+                "fast-communications.com"
+              ],
+              "website": "https://fast-communications.com/",
+              "professional_network_url": "https://www.linkedin.com/company/fastcomfiber",
+              "professional_network_id": "78544346",
+              "profile_name": "Fast Communications",
+              "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/777644f0a6e18da379ad9563087db075eb6db10bd037cebf0156fd6e49a4b615.jpg",
+              "description": "We are the Best internet Service Providers in Market.Bundle phone TV internet .",
+              "company_type": "Partnership",
+              "status": "active",
+              "year_founded": null,
+              "employee_count_range": "51-200",
+              "markets": [
+                "PRIVATE"
+              ]
+            },
+            "headcount": {
+              "total": 12,
+              "largest_headcount_country": "PAK",
+              "growth_percent": {
+                "1m": 0,
+                "3m": 0,
+                "6m": 0,
+                "12m": 9.090909090909092
+              },
+              "growth_absolute": {
+                "1m": 0,
+                "3m": 0,
+                "6m": 0,
+                "12m": 1
+              }
+            }
+          },
+          {
+            "crustdata_company_id": 64184664,
+            "basic_info": {
+              "name": "Vista Bundles",
+              "crustdata_company_id": 64184664,
+              "primary_domain": "",
+              "all_domains": [],
+              "website": "https://apps.shopify.com/vista-bundles",
+              "professional_network_url": "https://www.linkedin.com/company/vista-bundles",
+              "professional_network_id": "112528096",
+              "profile_name": "Vista Bundles",
+              "logo_permalink": "",
+              "description": "Vista Bundles helps create product bundle offers without messing up SKUs or inventory. Boost your B2B wholesale and other store sales with a quantity break discount and a fixed bundle app! Avoid overselling by automating bundle inventory management & automatic cart handling. Easily display bundle deals on specific products, collections, or across your store with exclusion rules. Offer flexible product bundles with fixed, flat, or percentage discounts to increase average order value.- Quantity Break Discount Bundles & Deals- Fixed Product Bundles, Tiered Discounts & Volume Discounts- Variant support with real time inventory sync- Option to add fixed or percentage bundle discounts- Exclude bundles on selected products and collections",
+              "company_type": "Self-Employed",
+              "status": "active",
+              "year_founded": null,
+              "employee_count_range": "2-10",
+              "markets": []
+            },
+            "headcount": {
+              "total": null,
+              "largest_headcount_country": "",
+              "growth_percent": null,
+              "growth_absolute": null
+            }
+          },
+          {
+            "crustdata_company_id": 70479776,
+            "basic_info": {
+              "name": "fastnet it",
+              "crustdata_company_id": 70479776,
+              "primary_domain": "",
+              "all_domains": [],
+              "website": "",
+              "professional_network_url": "https://www.linkedin.com/company/fastnet-it",
+              "professional_network_id": "18396297",
+              "profile_name": "fastnet it",
+              "logo_permalink": "",
+              "description": "",
+              "company_type": "",
+              "status": "active",
+              "year_founded": null,
+              "employee_count_range": "",
+              "markets": []
+            },
+            "headcount": {
+              "total": null,
+              "largest_headcount_country": "",
+              "growth_percent": null,
+              "growth_absolute": null
+            }
+          },
+          {
+            "crustdata_company_id": 72157547,
+            "basic_info": {
+              "name": "Bundlebox",
+              "crustdata_company_id": 72157547,
+              "primary_domain": "getbundlebox.com",
+              "all_domains": [
+                "getbundlebox.com"
+              ],
+              "website": "https://getbundlebox.com",
+              "professional_network_url": "https://www.linkedin.com/company/getbundlebox",
+              "professional_network_id": "77695824",
+              "profile_name": "Bundlebox",
+              "logo_permalink": "",
+              "description": "Increase Your Sales by 100%, Your Profit Margin by 20%, Your Conversion Rate by 25%, Your Average Order Value by 30% with 1 click!!!Bundlebox is Your 1-Click Amazon Multipack Strategy.Get early access to Bundlebox here -> https://getbundlebox.comWhy Bundlebox?Higher sales price with lower FBA fees = more profit than the competition⬇ 1-pack FBA • $20 price • $4.50 FBA fees (22.5% of revenue)⬆️ 2-pack FBM • $40 price • $5.00 FBA fees (12.5% of revenue) • +$2.00 extra profit.⬆️ 3-pack FBM • $60 price • $5.50 FBA fees (9.1% of revenue) • +$2.70 extra profit.Higher average order value = Higher organic rankingAmazon rewards you when your product has a higher revenue-per customer than other products. (If someone buys $10 from other sellers, but they bought $50 from you, then they'll rank you higher.)A/B testing bulk-pack is just 1-click away!You are selling 1-pack of a product and you want to A/B test if your customers would also like bulk packs (2-packs, 3-packs) without adding any additional inventory. Bundlebox is Your 1-Click Amazon Multipack Strategy.Get early access to Bundlebox here -> https://getbundlebox.com",
+              "company_type": "Privately Held",
+              "status": "active",
+              "year_founded": 2021,
+              "employee_count_range": "2-10",
+              "markets": []
+            },
+            "headcount": {
+              "total": null,
+              "largest_headcount_country": "",
+              "growth_percent": null,
+              "growth_absolute": null
+            }
+          },
+          {
+            "crustdata_company_id": 3284751,
+            "basic_info": {
+              "name": "Rapid Pack (Pvt) Ltd.",
+              "crustdata_company_id": 3284751,
+              "primary_domain": "rapidpackltd.com",
+              "all_domains": [
+                "rapidpackltd.com"
+              ],
+              "website": "http://rapidpackltd.com/",
+              "professional_network_url": "https://www.linkedin.com/company/rapid-pack-pvt-ltd",
+              "professional_network_id": "69871886",
+              "profile_name": "Rapid Pack (Pvt) Ltd.",
+              "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/d256ffa7526dce9df7e0b90e5d073ef561bc4f19c27fdffbc83171c09862f8e2.jpg",
+              "description": "Rapid Pack (Pvt) Ltd. feels pleasure in introducing itself as one of the leading best quality printers of take away and paper bags with handles, kraft paper bags.Rapid Pack (Pvt) Ltd. is working with high reputed private companies and organizations. We are very competitive in rates without compromising quality.Customer - Our First Priority:We take pride in being able to anticipate and meet customer needs. We maintain strong relationship with our customer and focus our work on their total satisfaction.Mission:Our mission is to provide highest quality products. We are providing safe and secured working environment for our staff. We seek to design our products to be safe to use, to minimize their use of energy and natural resources. Our mission can be summed up in three words.Vision: Our vision is to persistently seeking ways to improve production efficiency and quality. Our strength lies in personlized skills and close monitoring of the requirements of our varied range of customers & we believe in quality production, timely delivery and customer satisfaction.",
+              "company_type": "Privately Held",
+              "status": "active",
+              "year_founded": 2019,
+              "employee_count_range": "51-200",
+              "markets": [
+                "PRIVATE"
+              ]
+            },
+            "headcount": {
+              "total": 4,
+              "largest_headcount_country": "IND",
+              "growth_percent": {
+                "1m": 0,
+                "3m": -20,
+                "6m": -20,
+                "12m": -20
+              },
+              "growth_absolute": {
+                "1m": 0,
+                "3m": -1,
+                "6m": -1,
+                "12m": -1
+              }
+            }
+          },
+          {
+            "crustdata_company_id": 71696288,
+            "basic_info": {
+              "name": "Bundle Universe",
+              "crustdata_company_id": 71696288,
+              "primary_domain": "",
+              "all_domains": [],
+              "website": "https://Bundle.contactin.bio",
+              "professional_network_url": "https://www.linkedin.com/company/bundle-universe",
+              "professional_network_id": "71429311",
+              "profile_name": "Bundle Universe",
+              "logo_permalink": "",
+              "description": "Bundle is all about offering you even more convenience and ease ✔️You are a busy person 🏃♀️ Shopping for the same recurring items month after month should not eat into your valuable time or money 💰Instead - automate these purchases on Bundle 💡 Get your recurring purchases delivered straight to your door each month 📦Save your money, Save your Time with Bundle ⏱️",
+              "company_type": "Privately Held",
+              "status": "active",
+              "year_founded": null,
+              "employee_count_range": "2-10",
+              "markets": []
+            },
+            "headcount": {
+              "total": null,
+              "largest_headcount_country": "",
+              "growth_percent": null,
+              "growth_absolute": null
+            }
+          },
+          {
+            "crustdata_company_id": 17815160,
+            "basic_info": {
+              "name": "X-FAST",
+              "crustdata_company_id": 17815160,
+              "primary_domain": "x-fast.net",
+              "all_domains": [
+                "x-fast.net"
+              ],
+              "website": "http://www.x-fast.net",
+              "professional_network_url": "https://www.linkedin.com/company/x-fast",
+              "professional_network_id": "82315399",
+              "profile_name": "X-FAST",
+              "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/9bdc606c2ad4bc377a6ac49e02cc99dcf166e43ee83579e380be065bca11f459.jpg",
+              "description": "We supply fully automatic small strapping machines with glue-free strapping tapes, twist tying machine. The application is very wide, for vegetables, flowers, paper pieces, books, boxes, bags, cards, ham sausages any kind of the products you need to bundle together.Now this Fully automatic strapping machine is more used in the bundling of vegetables in supermarkets, the product bundling of promotional activities, vegetable planting bases, and vegetable distribution centers and the needs of various paper industries, labels, and some small processing plants for their suitable items.With the rise of e-commerce, there are more and more small merchants. They need such small machines, which will save a lot of material and labor costs for their packaging, and also improve the beauty of the products.The strapping tape used has no glue, no residue, environmental protection and non-toxicity. Free your hands, reduce costs, and make strapping easily.",
+              "company_type": "Partnership",
+              "status": "active",
+              "year_founded": 2018,
+              "employee_count_range": "2-10",
+              "markets": [
+                "PRIVATE"
+              ]
+            },
+            "headcount": {
+              "total": 2,
+              "largest_headcount_country": "",
+              "growth_percent": {
+                "1m": 0,
+                "3m": 0,
+                "6m": 0,
+                "12m": 0
+              },
+              "growth_absolute": {
+                "1m": 0,
+                "3m": 0,
+                "6m": 0,
+                "12m": 0
+              }
+            }
+          },
+          {
+            "crustdata_company_id": 63921060,
+            "basic_info": {
+              "name": "Wolfpack Bundles",
+              "crustdata_company_id": 63921060,
+              "primary_domain": "",
+              "all_domains": [],
+              "website": "https://apps.shopify.com/wolfpack-product-bundles-1?search_id=117dfbb8-1cd7-4223-92e0-016a14f1c8bc&surface_detail=bundle+builder&surface_inter_position=1&surface_intra_position=23&surface_type=search",
+              "professional_network_url": "https://www.linkedin.com/company/wolfpack-bundles",
+              "professional_network_id": "110935321",
+              "profile_name": "Wolfpack Bundles",
+              "logo_permalink": "",
+              "description": "Wolfpack Bundle Builder is a flexible Shopify app that enables merchants to create high-converting product bundles with full control over pricing, discounts, and storefront design.The app supports Product Page Bundles as well as Full Page Bundles, allowing merchants to bundle products exactly where it makes the most commercial sense. Bundles are powered by Shopify Cart Transform and native discount logic, ensuring compatibility with Shopify checkout, analytics, and reporting.",
+              "company_type": "Public Company",
+              "status": "active",
+              "year_founded": 2025,
+              "employee_count_range": "2-10",
+              "markets": []
+            },
+            "headcount": {
+              "total": 2,
+              "largest_headcount_country": "",
+              "growth_percent": {
+                "1m": 0,
+                "3m": 0,
+                "6m": 0,
+                "12m": 100
+              },
+              "growth_absolute": {
+                "1m": 0,
+                "3m": 0,
+                "6m": 0,
+                "12m": 1
+              }
+            }
+          },
+          {
+            "crustdata_company_id": 3605398,
+            "basic_info": {
+              "name": "Rapid Action Packaging (RAP) Ireland",
+              "crustdata_company_id": 3605398,
+              "primary_domain": "proampac.com",
+              "all_domains": [
+                "rapuk.com",
+                "proampac.com"
+              ],
+              "website": "https://rapuk.com",
+              "professional_network_url": "https://www.linkedin.com/company/rapid-action-packaging-rap-ireland",
+              "professional_network_id": "27162706",
+              "profile_name": "Rapid Action Packaging (RAP) Ireland",
+              "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/7f682e064e37768793abfa86a2393700dfa52dd3db79fbafcc82379589dcaf7e.jpg",
+              "description": "What Makes RAP DifferentWe combine our three pillars of success...1. Intelligent Design2. Excellence in Manufacture3. Exceptional Service... to create and manufacture revolutionary food packaging that delights and influences consumers. Our inspiring, environmentally responsible food packaging products offer valuable branding opportunities to convert at the point of sale.In addition to being functional and attractive, our systems are generally more economical than alternatives because we understand the needs of the market. Our most recent solutions enable just one process from manufacturer to customer display, and our flat pack designs reduce distribution and storage costs for significant margin improvements.Pioneers in Food-to-go PackagingFounded in 1997 to realise the packaging designs of Julian Money, RAP has become the market leader in food-to-go packaging. A truly global organisation, we are headquartered in London with our design and technical centre. We also have manufacturing capabilities in Ireland, South Korea and Malaysia and the ability to distribute on a global basis.Our Commitment to Research and DevelopmentWe’ve invested heavily to develop new features that add value for both brands and consumers. Many of these features are patent-protected, and represent some of the most game-changing breakthroughs in fresh food packaging in recent years.The latest developments have been made possible due to a recent €6,000,000 investment in our manufacturing facility in Ireland. We’re now a leading supplier to some of the world’s best-known retailers and coffee shops.With year-on-year growth at over double the industry rate, and a range that includes several world-firsts, we provide packaging solutions that help you optimise shelf life, improve sustainability and streamline your supply chain.RAPID ACTION PACKAGING (R.A.P) IRELANDGweedore Business Park, Derrybeg, Co. Donegal, F92 F44A, Ireland.Phone: + 353 0()74 953 2790",
+              "company_type": "Privately Held",
+              "status": "active",
+              "year_founded": 1997,
+              "employee_count_range": "201-500",
+              "markets": [
+                "PRIVATE"
+              ]
+            },
+            "headcount": {
+              "total": 9,
+              "largest_headcount_country": "IRL",
+              "growth_percent": {
+                "1m": 0,
+                "3m": 0,
+                "6m": 0,
+                "12m": 0
+              },
+              "growth_absolute": {
+                "1m": 0,
+                "3m": 0,
+                "6m": 0,
+                "12m": 0
+              }
+            }
+          },
+          {
+            "crustdata_company_id": 15699492,
+            "basic_info": {
+              "name": "konzentrik Gmbh",
+              "crustdata_company_id": 15699492,
+              "primary_domain": "konzentrik.de",
+              "all_domains": [
+                "konzentrik.de"
+              ],
+              "website": "https://www.konzentrik.de",
+              "professional_network_url": "https://www.linkedin.com/company/konzentrik-gmbh",
+              "professional_network_id": "12867121",
+              "profile_name": "konzentrik Gmbh",
+              "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/de1dc981610ff3373387b12c1ca40838e4af0f7e1df58ac40857165d0f89d5c4.jpg",
+              "description": "FAST ConsultingWe help you with the best strategies to start and grow your streaming architecture.SaaS SolutionsOur own SaaS solutions RapidStream can improve your advertising revenue with personalized ads and targeted audiences.",
+              "company_type": "Public Company",
+              "status": "active",
+              "year_founded": 2007,
+              "employee_count_range": "2-10",
+              "markets": [
+                "PRIVATE"
+              ]
+            },
+            "headcount": {
+              "total": 4,
+              "largest_headcount_country": "DEU",
+              "growth_percent": {
+                "1m": 0,
+                "3m": 0,
+                "6m": 0,
+                "12m": 0
+              },
+              "growth_absolute": {
+                "1m": 0,
+                "3m": 0,
+                "6m": 0,
+                "12m": 0
+              }
+            }
+          },
+          {
+            "crustdata_company_id": 70993670,
+            "basic_info": {
+              "name": "FastPatch Systems",
+              "crustdata_company_id": 70993670,
+              "primary_domain": "",
+              "all_domains": [],
+              "website": "",
+              "professional_network_url": "https://www.linkedin.com/company/fastpatch-systems",
+              "professional_network_id": "18322726",
+              "profile_name": "FastPatch Systems",
+              "logo_permalink": "",
+              "description": "",
+              "company_type": "",
+              "status": "active",
+              "year_founded": null,
+              "employee_count_range": "",
+              "markets": []
+            },
+            "headcount": {
+              "total": null,
+              "largest_headcount_country": "",
+              "growth_percent": null,
+              "growth_absolute": null
+            }
+          },
+          {
+            "crustdata_company_id": 2460005,
+            "basic_info": {
+              "name": "Bundles srl",
+              "crustdata_company_id": 2460005,
+              "primary_domain": "bundles.it",
+              "all_domains": [
+                "bundles.it"
+              ],
+              "website": "http://www.bundles.it",
+              "professional_network_url": "https://www.linkedin.com/company/bundles-srl",
+              "professional_network_id": "2132212",
+              "profile_name": "Bundles srl",
+              "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/237b1fcef7be4d0e20262a89173933c8914a7fc320fd843d12e0640f24bbab2f.jpg",
+              "description": "Natural stones from all over the World ! We sell blocks, slabs, tiles and cut-to-size projects. We can ship wherever you need, Ex-Factory or C&F basis. You can check our website www.bundles.it for more details and contact  us  for more questions and inquiries.",
+              "company_type": "Privately Held",
+              "status": "active",
+              "year_founded": 2006,
+              "employee_count_range": "2-10",
+              "markets": [
+                "PRIVATE"
+              ]
+            },
+            "headcount": {
+              "total": 6,
+              "largest_headcount_country": "ITA",
+              "growth_percent": {
+                "1m": 0,
+                "3m": 20,
+                "6m": 20,
+                "12m": 20
+              },
+              "growth_absolute": {
+                "1m": 0,
+                "3m": 1,
+                "6m": 1,
+                "12m": 1
+              }
+            }
+          },
+          {
+            "crustdata_company_id": 1714616,
+            "basic_info": {
+              "name": "Rapid Packaging Corporation",
+              "crustdata_company_id": 1714616,
+              "primary_domain": "rapidpkg.us",
+              "all_domains": [
+                "rapidpkg.us"
+              ],
+              "website": "http://www.rapidpkg.us",
+              "professional_network_url": "https://www.linkedin.com/company/rapid-packaging-corporation",
+              "professional_network_id": "28606407",
+              "profile_name": "Rapid Packaging Corporation",
+              "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/bd226905dbcddc542d88054a8953b7654a2a0ca13c759d769ab34568a70e3af2.jpg",
+              "description": "Paperboard folding carton manufacturer.",
+              "company_type": "Privately Held",
+              "status": "active",
+              "year_founded": 1961,
+              "employee_count_range": "11-50",
+              "markets": [
+                "PRIVATE"
+              ]
+            },
+            "headcount": {
+              "total": 16,
+              "largest_headcount_country": "USA",
+              "growth_percent": {
+                "1m": 0,
+                "3m": 0,
+                "6m": 0,
+                "12m": 0
+              },
+              "growth_absolute": {
+                "1m": 0,
+                "3m": 0,
+                "6m": 0,
+                "12m": 0
+              }
+            }
+          },
+          {
+            "crustdata_company_id": 2017239,
+            "basic_info": {
+              "name": "Rapid Packaging Inc.",
+              "crustdata_company_id": 2017239,
+              "primary_domain": "rapidpackaging.com",
+              "all_domains": [
+                "rapidpackaging.com"
+              ],
+              "website": "http://www.rapidpackaging.com",
+              "professional_network_url": "https://www.linkedin.com/company/rapid-packaging-inc-",
+              "professional_network_id": "349308",
+              "profile_name": "Rapid Packaging Inc.",
+              "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/b0a98e69f571d0ed5dafebfd96e846420f2c3df32c7525c9f27b4f27e991e028.jpg",
+              "description": "Rapid Packaging has been providing packaging solutions since 1976. Since that time, Rapid Packaging has grown into one of the Midwest's premier providers of packaging systems, supplies, technical service and automated solutions. With over 40 years of providing packaging solutions, we have distinguished ourselves as Packaging System Specialists. We pride ourselves as being the supplier of choice when it comes to solving your most difficult packaging challenges. With our systems approach to end-of-line packaging, our customers expect and receive the lowest cost of total ownership for all their packaging needs..In order to offer our customers the very best packaging materials and equipment, we have partnered with the leading Packaging Manufacturers in the industry:  3M, Intertape, Malpack, Wulftec, BestPack, Wexxar, Combi, Pregis, Polyair, Better Packages and more.We service and sell new and used packaging machinery for the following applications: Stretch Wrappers, Shrink Wrappers, Carton Erectors, Case Sealers, Case Packers, Ink Jet Printers, Label Equipment, Tray Formers, Skin Packaging, Blister Packaging, Strapping Equipment, Air Cushioning, Bagging Equipment and more.Our Service Technicians and Parts department personnel are second to none. They understand how important it is for your equipment to be up and running at peak performance.• Factory Trained Technicians• One Phone Call Service• Comprehensive Parts Inventory• Operator Training• Preventive Maintenance Programs• We Sell New & Used Equipment• In-House Rebuild Division• We will buy your used surplus packaging machinery",
+              "company_type": "Privately Held",
+              "status": "active",
+              "year_founded": 1976,
+              "employee_count_range": "51-200",
+              "markets": [
+                "PRIVATE"
+              ]
+            },
+            "headcount": {
+              "total": 85,
+              "largest_headcount_country": "USA",
+              "growth_percent": {
+                "1m": 1.1904761904761905,
+                "3m": 0,
+                "6m": 2.4096385542168677,
+                "12m": 6.25
+              },
+              "growth_absolute": {
+                "1m": 1,
+                "3m": 0,
+                "6m": 2,
+                "12m": 5
+              }
+            }
+          },
+          {
+            "crustdata_company_id": 14463842,
+            "basic_info": {
+              "name": "Electronic Bundles",
+              "crustdata_company_id": 14463842,
+              "primary_domain": "",
+              "all_domains": [],
+              "website": "https://www.ebay.com/usr/electronicbundles",
+              "professional_network_url": "https://www.linkedin.com/company/electronic-bundles",
+              "professional_network_id": "107747719",
+              "profile_name": "Electronic Bundles",
+              "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/d5510b622c20065d9e91e6351040e92a2370d58d15df195dda6e492b6f31d008.jpg",
+              "description": "",
+              "company_type": "Self-Employed",
+              "status": "active",
+              "year_founded": null,
+              "employee_count_range": "myself only",
+              "markets": [
+                "PRIVATE"
+              ]
+            },
+            "headcount": {
+              "total": 1,
+              "largest_headcount_country": "",
+              "growth_percent": {
+                "1m": 0,
+                "3m": 0,
+                "6m": 0,
+                "12m": 0
+              },
+              "growth_absolute": {
+                "1m": 0,
+                "3m": 0,
+                "6m": 0,
+                "12m": 0
+              }
+            }
+          },
+          {
+            "crustdata_company_id": 30087907,
+            "basic_info": {
+              "name": "Aakash Wires",
+              "crustdata_company_id": 30087907,
+              "primary_domain": "",
+              "all_domains": [],
+              "website": "https://www.indiamart.com/company/46533/",
+              "professional_network_url": "https://www.linkedin.com/company/aakash-wires",
+              "professional_network_id": "33695746",
+              "profile_name": "Aakash Wires",
+              "logo_permalink": "",
+              "description": "Supplier of telephone cables, power cable, aerial bunched cables, compacted conductors and cables.",
+              "company_type": "",
+              "status": "active",
+              "year_founded": null,
+              "employee_count_range": "myself only",
+              "markets": [
+                "PRIVATE"
+              ]
+            },
+            "headcount": {
+              "total": 2,
+              "largest_headcount_country": "IND",
+              "growth_percent": {
+                "1m": 0,
+                "3m": 0,
+                "6m": 0,
+                "12m": 0
+              },
+              "growth_absolute": {
+                "1m": 0,
+                "3m": 0,
+                "6m": 0,
+                "12m": 0
+              }
+            }
+          },
+          {
+            "crustdata_company_id": 5678857,
+            "basic_info": {
+              "name": "Verpacking.com (RAPIDPACK GmbH)",
+              "crustdata_company_id": 5678857,
+              "primary_domain": "verpacking.com",
+              "all_domains": [
+                "verpacking.com"
+              ],
+              "website": "https://www.verpacking.com/",
+              "professional_network_url": "https://www.linkedin.com/company/verpackingcom-rapidpack-gmbh",
+              "professional_network_id": "80038399",
+              "profile_name": "Verpacking.com (RAPIDPACK GmbH)",
+              "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/bccd604c30b047459b33d052761cc1a183b5c016625905d4d06ef4a142746d64.jpg",
+              "description": "Die RAPIDPACK GmbH wurde im Jahr 2013 in Berlin als kleines Familienunternehmen gegründet. Seitdem haben wir uns erfolgreich als Spezialist im Bereich Verpackungsmaterialien und Bürobedarf fest am Markt etabliert und zählen zahlreiche namhafte Firmen zu unseren Stammkunden. Als dynamisches Unternehmen beobachten wir aufmerksam das Marktgeschehen und verfolgen stets aktuelle Trends, um diese zeitnah für Sie in unserem Portfolio abzubilden. Im Versandhandel sollte man nichts dem Zufall überlassen. Wir als RAPIDPACK stehen Ihnen als verlässlicher und verantwortungsvoller Partner zur Seite. Wir lieben, was wir tun und leben, was wir lieben. Diese Leidenschaft geben wir jeden Tag an Sie weiter.Der Erfolg gibt uns Recht: Wir befinden uns seit Jahren in einem stetigen Wachstumsprozess. Heutzutage erwirtschaftet die RAPIDPACK GmbH als mittelständisches Unternehmen einen Jahresumsatz im zweistelligen Millionenbereich und beschäftigt 28 festangestellte Mitarbeiter.Verpacking steht für hochwertige und passgenaue Verpackungstechnik sowie für individuelle Versandlösungen. In unserem Sortiment finden Sie eine große Auswahl an Kartons und Verpackungen für unterschiedlichste Zwecke. Weiterhin finden Sie Büro- und Lagerzubehör, Polster- und Füllmaterialien, um Ihnen die Versandarbeit zu erleichtern.",
+              "company_type": "Public Company",
+              "status": "active",
+              "year_founded": 2013,
+              "employee_count_range": "11-50",
+              "markets": [
+                "PRIVATE"
+              ]
+            },
+            "headcount": {
+              "total": 4,
+              "largest_headcount_country": "DEU",
+              "growth_percent": {
+                "1m": -20,
+                "3m": -20,
+                "6m": -20,
+                "12m": -20
+              },
+              "growth_absolute": {
+                "1m": -1,
+                "3m": -1,
+                "6m": -1,
+                "12m": -1
+              }
+            }
+          },
+          {
+            "crustdata_company_id": 68773066,
+            "basic_info": {
+              "name": "",
+              "crustdata_company_id": 68773066,
+              "primary_domain": "",
+              "all_domains": [],
+              "website": "",
+              "professional_network_url": "",
+              "professional_network_id": "8614574",
+              "profile_name": "",
+              "logo_permalink": "",
+              "description": "",
+              "company_type": "",
+              "status": "deleted",
+              "year_founded": null,
+              "employee_count_range": "",
+              "markets": []
+            },
+            "headcount": {
+              "total": null,
+              "largest_headcount_country": "",
+              "growth_percent": null,
+              "growth_absolute": null
+            }
+          },
+          {
+            "crustdata_company_id": 1049759,
+            "basic_info": {
+              "name": "Fast Cables",
+              "crustdata_company_id": 1049759,
+              "primary_domain": "fast-cables.com",
+              "all_domains": [
+                "fast-cables.com"
+              ],
+              "website": "http://www.fast-cables.com",
+              "professional_network_url": "https://www.linkedin.com/company/fast-cables-limited",
+              "professional_network_id": "3602069",
+              "profile_name": "Fast Cables",
+              "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/0d424464fd7f83299c0a8ff1f1e03b04adba07ba723fe8932ef053ad10cb9cac.jpg",
+              "description": "FAST's journey began nearly four decades ago with a mission to promote industrialization in Pakistan and contribute towards the socio-economic uplift of fellow citizens. Initially, our focus was on the manufacturing of electrical Cables and Conductors under the Fast Cables brand, which has become a household name due to its premium (“REAL”) quality and reliability. The confidence reposed by architects, engineers, and end users in the FAST brand, led to our expansion in the Metals, PVC, and Lights business verticals. Today, we are the leading and most innovative manufacturer of electric cables and conductors, catering to various industries, commercial entities, and consumer needs. The growing demand for our products also prompted us to integrate Metal and PVC plants with our existing production facilities, thus enhancing our existing production capacity and meeting external customer requirements. Further, our commitment to promoting indigenous products inspired us to venture into the LED lighting business. After extensive research and development, we launched FAST Lights to add sparkle into our valued customers' lives. At FAST, our customers are at the forefront of our operations. We are committed to delivering superior quality products and exceptional pre-and post-sales services. With a passion for excellence driving us forward, our commitment to delivering ‘Real Quality’ products to our customers will continue to remain our guiding principle, as we look towards the future.",
+              "company_type": "Public Company",
+              "status": "active",
+              "year_founded": 1985,
+              "employee_count_range": "1001-5000",
+              "markets": [
+                "PRIVATE",
+                "PSX"
+              ]
+            },
+            "headcount": {
+              "total": 591,
+              "largest_headcount_country": "PAK",
+              "growth_percent": {
+                "1m": 0,
+                "3m": 0.1694915254237288,
+                "6m": 0.1694915254237288,
+                "12m": -1.8272425249169437
+              },
+              "growth_absolute": {
+                "1m": 0,
+                "3m": 1,
+                "6m": 1,
+                "12m": -11
+              }
+            }
+          },
+          {
+            "crustdata_company_id": 62052066,
+            "basic_info": {
+              "name": "RAPID Albro Technologies",
+              "crustdata_company_id": 62052066,
+              "primary_domain": "rapidgranulator.fr",
+              "all_domains": [
+                "rapidgranulator.fr"
+              ],
+              "website": "http://www.rapidgranulator.fr",
+              "professional_network_url": "https://www.linkedin.com/company/inno-plast-74",
+              "professional_network_id": "18704557",
+              "profile_name": "RAPID Albro Technologies",
+              "logo_permalink": "",
+              "description": "RAPIDConstructeur de déchiqueteurs, broyeurs à vitesse lente, rapide pour le secteur de l'injection, l'extrusion profil, l'extrusion pipe, l'extrusion film, blow-moulding , thermoformage.Toutes les solutions pour la maîtrise du recyclage de vos déchets post industriels.",
+              "company_type": "Public Company",
+              "status": "active",
+              "year_founded": 1956,
+              "employee_count_range": "2-10",
+              "markets": []
+            },
+            "headcount": {
+              "total": null,
+              "largest_headcount_country": "",
+              "growth_percent": null,
+              "growth_absolute": null
+            }
+          },
+          {
+            "crustdata_company_id": 13847922,
+            "basic_info": {
+              "name": "Fast Pro Bags and Textiles, Inc.",
+              "crustdata_company_id": 13847922,
+              "primary_domain": "fastprobags.com",
+              "all_domains": [
+                "fastprobags.com"
+              ],
+              "website": "http://www.fastprobags.com",
+              "professional_network_url": "https://www.linkedin.com/company/fastprobags",
+              "professional_network_id": "106619294",
+              "profile_name": "Fast Pro Bags and Textiles, Inc.",
+              "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/de57dbd9a7ceec7b49a901b403336a74a3a004a0b04be9d7287f6024a360e3be.jpg",
+              "description": "FAST: FIBCs, Bulk Bags, and TextilesPRO: Nearshore Manufacturing and Engineering Services Fast Pro Bags and Textiles, Inc., FIBC pioneer, provides you with the Complete Package – products and services that address your bulk packaging and textile needs at all levels, with the best bulk packaging products and services available to enhance customer productivity and reduce overall packaging costs throughout the supply chain. Fast Pro Bags and Textiles, Inc. is committed to delivering the same high standards of quality, safety, innovation, and operational efficiency that our customers have come to expect from us. New Inquiries: info@fastprobags.com",
+              "company_type": "Privately Held",
+              "status": "active",
+              "year_founded": 1969,
+              "employee_count_range": "51-200",
+              "markets": [
+                "PRIVATE"
+              ]
+            },
+            "headcount": {
+              "total": 13,
+              "largest_headcount_country": "MEX",
+              "growth_percent": {
+                "1m": 0,
+                "3m": -7.142857142857142,
+                "6m": 8.333333333333332,
+                "12m": -7.142857142857142
+              },
+              "growth_absolute": {
+                "1m": 0,
+                "3m": -1,
+                "6m": 1,
+                "12m": -1
+              }
+            }
+          },
+          {
+            "crustdata_company_id": 60765625,
+            "basic_info": {
+              "name": "",
+              "crustdata_company_id": 60765625,
+              "primary_domain": "",
+              "all_domains": [],
+              "website": "",
+              "professional_network_url": "",
+              "professional_network_id": "6129863",
+              "profile_name": "",
+              "logo_permalink": "",
+              "description": "",
+              "company_type": "",
+              "status": "deleted",
+              "year_founded": null,
+              "employee_count_range": "",
+              "markets": []
+            },
+            "headcount": {
+              "total": null,
+              "largest_headcount_country": "",
+              "growth_percent": null,
+              "growth_absolute": null
+            }
+          },
+          {
+            "crustdata_company_id": 62182923,
+            "basic_info": {
+              "name": "",
+              "crustdata_company_id": 62182923,
+              "primary_domain": "",
+              "all_domains": [],
+              "website": "",
+              "professional_network_url": "",
+              "professional_network_id": "6050071",
+              "profile_name": "",
+              "logo_permalink": "",
+              "description": "",
+              "company_type": "",
+              "status": "deleted",
+              "year_founded": null,
+              "employee_count_range": "",
+              "markets": []
+            },
+            "headcount": {
+              "total": null,
+              "largest_headcount_country": "",
+              "growth_percent": null,
+              "growth_absolute": null
+            }
+          },
+          {
+            "crustdata_company_id": 26143810,
+            "basic_info": {
+              "name": "Rapid Air Systems",
+              "crustdata_company_id": 26143810,
+              "primary_domain": "rapidairsystems.gr",
+              "all_domains": [
+                "rapidairsystems.gr"
+              ],
+              "website": "https://www.rapidairsystems.gr/",
+              "professional_network_url": "https://www.linkedin.com/company/rapid-air-systems",
+              "professional_network_id": "106643737",
+              "profile_name": "Rapid Air Systems",
+              "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/4bd0ed339d1532a451f2102ccb6a6e810169e5b70437683556ab081e2d2d8aa2.jpg",
+              "description": "Η Rapid air systems είναι η μεγαλύτερη αποθήκη καινούργιων & μεταχειρισμένων επαγγελματικών προϊόντων εστίασης στην Ελλάδα .",
+              "company_type": "Sole Proprietorship",
+              "status": "active",
+              "year_founded": 2005,
+              "employee_count_range": "2-10",
+              "markets": [
+                "PRIVATE"
+              ]
+            },
+            "headcount": {
+              "total": 3,
+              "largest_headcount_country": "GRC",
+              "growth_percent": {
+                "1m": 0,
+                "3m": 50,
+                "6m": 50,
+                "12m": 50
+              },
+              "growth_absolute": {
+                "1m": 0,
+                "3m": 1,
+                "6m": 1,
+                "12m": 1
+              }
+            }
+          },
+          {
+            "crustdata_company_id": 26209684,
+            "basic_info": {
+              "name": "PT Avenue Fintech Indonesia",
+              "crustdata_company_id": 26209684,
+              "primary_domain": "avenuefintech.id",
+              "all_domains": [
+                "avenuefintech.id"
+              ],
+              "website": "http://avenuefintech.id/",
+              "professional_network_url": "https://www.linkedin.com/company/pt-avenue-fintech-indonesia",
+              "professional_network_id": "14380833",
+              "profile_name": "PT Avenue Fintech Indonesia",
+              "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/c6b38e209fac35aefc5e4256c648d6daed252fa1214b3a9bbb585be3843e01ff.jpg",
+              "description": "Rupiah Fast adalah salah satu platform kredit tanpa jaminan di Indonesia dimana pengguna mengoperasikan sepenuhnya melalui aplikasi ponsel. Visi dan misi kami adalah untuk memberikan pinjaman yang aman dan nyaman kepada pengguna layanan kami. Rupiah Fast menjunjung tinggi konsep \"pinjaman cepat,mudah dan aman\", dengan mengandalkan analisa data yang cepat dan pengalaman luas dari tim kami di bidang manajemen risiko, mendukung inovasi keuangan yang didorong oleh perkembangan teknologi, membangun jaringan platform yang aman, nyaman, mudah, dan transparan untuk customer yang membutuhkan pinjaman.Rupiah Fast berkomitmen untuk menjamin dan melindungi semua privasi konsumen dan tidak akan memberikan informasi apapun yang berkaitan dengan konsumen tanpa adanya persetujuan dari konsumen. Rupiah Fast untuk melayanani pinjaman tunai secara otomatis, pengguna hanya membutuhkan ponsel dan mereka dapat menyelesaikan seluruh proses pengajuan, pencairan pinjaman, dan pengembalian pinjaman. Tidak memerlukan jaminan, tidak perlu tanda tangan kontrak, hanya butuh KTP dan anda dapat mengajukan pinjaman. Perusahaan kami juga berkomitmen agar pelayanan pinjaman berjalan cepat dan mudah. Pinjaman kami telah menggunakan sistem yang solid dan review manual sebagai pendukung, sehingga dapat mengeluarkan pinjaman secepatnya, bahkan dibawah 30 menit. Kami menyediakan layanan pinjaman tunai mulai dari Rp. 600.000 sampai Rp. 1.000.000 dan dengan jangka waktu jatuh tempo 14 hari.Rupiah Fast berkomitmen untuk memberikan solusi bagi masalah keuangan masyarakat Indonesia. Tanpa perlu menghabiskan banyak waktu dan proses yang rumit untuk mendapatkan pinjaman di bank yang rumit dan lama. Rupiah Fast akan menyelesaikan masalah keuangan untuk masyarakat di wilayah perkotaan, memberikan mereka kehidupan yang lebih baik, dan memecahkan masalah dompet kosong di akhir bulan. Rupiah Fast dioperasikan oleh PT. Avenue Fintech Indonesia.",
+              "company_type": "Nonprofit",
+              "status": "active",
+              "year_founded": 2018,
+              "employee_count_range": "11-50",
+              "markets": [
+                "PRIVATE"
+              ]
+            },
+            "headcount": {
+              "total": 2,
+              "largest_headcount_country": "IDN",
+              "growth_percent": {
+                "1m": 0,
+                "3m": 0,
+                "6m": 0,
+                "12m": 0
+              },
+              "growth_absolute": {
+                "1m": 0,
+                "3m": 0,
+                "6m": 0,
+                "12m": 0
+              }
+            }
+          },
+          {
+            "crustdata_company_id": 65381652,
+            "basic_info": {
+              "name": "FBT (Fast Building Technologies)",
+              "crustdata_company_id": 65381652,
+              "primary_domain": "",
+              "all_domains": [],
+              "website": "",
+              "professional_network_url": "https://www.linkedin.com/company/fbt-fast-building-technologies-",
+              "professional_network_id": "10039184",
+              "profile_name": "FBT (Fast Building Technologies)",
+              "logo_permalink": "",
+              "description": "",
+              "company_type": "",
+              "status": "active",
+              "year_founded": null,
+              "employee_count_range": "",
+              "markets": []
+            },
+            "headcount": {
+              "total": null,
+              "largest_headcount_country": "",
+              "growth_percent": null,
+              "growth_absolute": null
+            }
+          },
+          {
+            "crustdata_company_id": 60494930,
+            "basic_info": {
+              "name": "Rapid Indexer",
+              "crustdata_company_id": 60494930,
+              "primary_domain": "rapid-indexer.com",
+              "all_domains": [
+                "rapid-indexer.com"
+              ],
+              "website": "https://rapid-indexer.com",
+              "professional_network_url": "https://www.linkedin.com/company/rapid-indexer",
+              "professional_network_id": "110412579",
+              "profile_name": "Rapid Indexer",
+              "logo_permalink": "",
+              "description": "Rapid Indexer is a high-performance link indexing service built to help Google discover and index URLs as fast as possible, especially for parasite SEO and time-sensitive campaigns.In modern SEO, speed is often the difference between ranking and missing the window entirely. This is especially true for parasite SEO, where pages need to be discovered and indexed immediately to capitalize on authority, trends, and short-lived opportunities. Unfortunately, many URLs sit undiscovered for days, or never get indexed at all.Rapid Indexer was built specifically to solve this problem with a speed-first approach to indexing.Using a proprietary indexing system, Rapid Indexer is able to index links in some cases in under 30 seconds, dramatically reducing the time it takes for Google to discover new URLs.What we offer:• Ultra-fast Google indexing with VIP Que• Ideal for parasite SEO & authority placements• Bulk URL submissions at scale• Live indexing status tracking• Smart retry logic for hard-to-index URLs• Simple setup with no technical overheadRapid Indexer is trusted by SEOs, affiliate marketers, agencies, SaaS companies, and growth teams who depend on rapid visibility for parasite pages, backlinks, launches, and updates.Whether you’re deploying parasite pages, building links, or fixing indexing bottlenecks, Rapid Indexer helps ensure your URLs get discovered before the opportunity is gone.",
+              "company_type": "Privately Held",
+              "status": "active",
+              "year_founded": 2025,
+              "employee_count_range": "2-10",
+              "markets": []
+            },
+            "headcount": {
+              "total": 1,
+              "largest_headcount_country": "",
+              "growth_percent": {
+                "1m": 0,
+                "3m": 0,
+                "6m": 0,
+                "12m": 0
+              },
+              "growth_absolute": {
+                "1m": 0,
+                "3m": 0,
+                "6m": 0,
+                "12m": 0
+              }
+            }
+          },
+          {
+            "crustdata_company_id": 66198757,
+            "basic_info": {
+              "name": "Kaizen Packaging Solution",
+              "crustdata_company_id": 66198757,
+              "primary_domain": "kaizenpackaging.in",
+              "all_domains": [
+                "kaizenpackaging.in"
+              ],
+              "website": "http://www.kaizenpackaging.in",
+              "professional_network_url": "https://www.linkedin.com/company/kaizen-packaging-solution",
+              "professional_network_id": "33881640",
+              "profile_name": "Kaizen Packaging Solution",
+              "logo_permalink": "",
+              "description": "Kaizen Packaging Solution is engaged in the design development production and marketing of all types of bags including woven bags Non-woven bags pp bags duffle bags travel bags Coffee Bags Wine and Cold Drink Bags etc. it also customize design the bags as per the requirements of the Customer if customer needs unique identity..Brand Name &lsquo;KAIZEN is taken from Japanese vocabulary it stands for Continual Improvement.The companys Regd. Office is at 236/10A Vrindavan Yojna Raebareli Road Lucknow and its corporate cum Head office is located at 61/10 Acharya Dwivedi Nagar Raebareli UP.The Company at its Lucknow works has a well established set up for the design and development of the bags supported with the set up of CAD machines and proEngineers. Which deals with the new and innovative design of the specific and customize bags.",
+              "company_type": "",
+              "status": "active",
+              "year_founded": null,
+              "employee_count_range": "myself only",
+              "markets": []
+            },
+            "headcount": {
+              "total": 1,
+              "largest_headcount_country": "",
+              "growth_percent": {
+                "1m": 0,
+                "3m": 0,
+                "6m": 0,
+                "12m": 0
+              },
+              "growth_absolute": {
+                "1m": 0,
+                "3m": 0,
+                "6m": 0,
+                "12m": 0
+              }
+            }
+          },
+          {
+            "crustdata_company_id": 4603967,
+            "basic_info": {
+              "name": "Rapid Pack Engineering Pvt. Ltd.",
+              "crustdata_company_id": 4603967,
+              "primary_domain": "rapidpack.com",
+              "all_domains": [
+                "rapidpack.com"
+              ],
+              "website": "http://www.rapidpack.com",
+              "professional_network_url": "https://www.linkedin.com/company/rapid-pack-engineering-pvt-ltd",
+              "professional_network_id": "13428235",
+              "profile_name": "Rapid Pack Engineering Pvt. Ltd.",
+              "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/71b260fe3e77480da3067e3f6ad65458b1bb5584287eec77e7a8240e1d4eddf9.jpg",
+              "description": "Rapid Pack Engineering Pvt. Ltd., is one of the reputed companies, serving the pharmaceutical industry from last 3 decades and established in the corporate arena as one of the largest producers of Blister Packing Machines from India.Rapid pack has Blister packing machines and Cartonators in its product range specifically designed for pharmaceutical industry.Rapid Pack’s Customers are in four continents Europe, America , Asia , Africa“We Retain Product Integrity With Our Innovative And Integrated Packaging Technology”\"We Engineer Solutions\"",
+              "company_type": "Privately Held",
+              "status": "active",
+              "year_founded": 1991,
+              "employee_count_range": "51-200",
+              "markets": [
+                "PRIVATE"
+              ]
+            },
+            "headcount": {
+              "total": 61,
+              "largest_headcount_country": "IND",
+              "growth_percent": {
+                "1m": 0,
+                "3m": 0,
+                "6m": 1.6666666666666667,
+                "12m": -3.1746031746031744
+              },
+              "growth_absolute": {
+                "1m": 0,
+                "3m": 0,
+                "6m": 1,
+                "12m": -2
+              }
+            }
+          },
+          {
+            "crustdata_company_id": 2944904,
+            "basic_info": {
+              "name": "RAPID INDUSTRIAL FASTENERS LIMITED",
+              "crustdata_company_id": 2944904,
+              "primary_domain": "",
+              "all_domains": [],
+              "website": "http://www.rapidfast.co.uk/",
+              "professional_network_url": "https://www.linkedin.com/company/rapid-industrial-fasteners-limited",
+              "professional_network_id": "6255951",
+              "profile_name": "RAPID INDUSTRIAL FASTENERS LIMITED",
+              "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/b2bd82f3a26c799670dad0d9de05c9e45608b0e5a974b0ce62c4082d6fef3e32.jpg",
+              "description": "RAPID INDUSTRIAL FASTENERS LIMITED is a building materials company.",
+              "company_type": "",
+              "status": "active",
+              "year_founded": 1980,
+              "employee_count_range": "2-10",
+              "markets": [
+                "PRIVATE"
+              ]
+            },
+            "headcount": {
+              "total": 14,
+              "largest_headcount_country": "GBR",
+              "growth_percent": {
+                "1m": 0,
+                "3m": 0,
+                "6m": 0,
+                "12m": 0
+              },
+              "growth_absolute": {
+                "1m": 0,
+                "3m": 0,
+                "6m": 0,
+                "12m": 0
+              }
+            }
+          },
+          {
+            "crustdata_company_id": 64306473,
+            "basic_info": {
+              "name": "rapid",
+              "crustdata_company_id": 64306473,
+              "primary_domain": "rapiddatatech.com",
+              "all_domains": [
+                "rapiddatatech.com"
+              ],
+              "website": "http://www.rapiddatatech.com",
+              "professional_network_url": "https://www.linkedin.com/company/rapiddatatech",
+              "professional_network_id": "67976076",
+              "profile_name": "rapid",
+              "logo_permalink": "",
+              "description": "",
+              "company_type": "Privately Held",
+              "status": "active",
+              "year_founded": null,
+              "employee_count_range": "myself only",
+              "markets": []
+            },
+            "headcount": {
+              "total": null,
+              "largest_headcount_country": "",
+              "growth_percent": null,
+              "growth_absolute": null
+            }
+          },
+          {
+            "crustdata_company_id": 70714736,
+            "basic_info": {
+              "name": "",
+              "crustdata_company_id": 70714736,
+              "primary_domain": "",
+              "all_domains": [],
+              "website": "",
+              "professional_network_url": "",
+              "professional_network_id": "9161969",
+              "profile_name": "",
+              "logo_permalink": "",
+              "description": "",
+              "company_type": "",
+              "status": "deleted",
+              "year_founded": null,
+              "employee_count_range": "",
+              "markets": []
+            },
+            "headcount": {
+              "total": null,
+              "largest_headcount_country": "",
+              "growth_percent": null,
+              "growth_absolute": null
+            }
+          },
+          {
+            "crustdata_company_id": 66191419,
+            "basic_info": {
+              "name": "",
+              "crustdata_company_id": 66191419,
+              "primary_domain": "",
+              "all_domains": [],
+              "website": "",
+              "professional_network_url": "",
+              "professional_network_id": "8441210",
+              "profile_name": "",
+              "logo_permalink": "",
+              "description": "",
+              "company_type": "",
+              "status": "deleted",
+              "year_founded": null,
+              "employee_count_range": "",
+              "markets": []
+            },
+            "headcount": {
+              "total": null,
+              "largest_headcount_country": "",
+              "growth_percent": null,
+              "growth_absolute": null
+            }
+          },
+          {
+            "crustdata_company_id": 9604728,
+            "basic_info": {
+              "name": "Rapiid",
+              "crustdata_company_id": 9604728,
+              "primary_domain": "rapiid.co.in",
+              "all_domains": [
+                "rapiid.co.in"
+              ],
+              "website": "http://www.rapiid.co.in",
+              "professional_network_url": "https://www.linkedin.com/company/rapiid",
+              "professional_network_id": "14460343",
+              "profile_name": "Rapiid",
+              "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/15f425428e97d31d9db0089c7f9823a8685d90f19c7601f32e83672f5bc7130d.jpg",
+              "description": "Rapiid is India's first intelligent & dynamic DOOH media network. Our assets across place based environments are infused with proprietary technology to deliver measurability and accurate targeting. Our network is an opportunity for brands and partners to reimagine the power of storytelling with dynamism and engagement.  Our vision to reinvent the marketplace sets us apart from the status quo of the industry. Insights and innovative advertising solutions are at our forefront and technology powers our core . Our media integrates platforms and technologies to effectively deliver on brand objective.",
+              "company_type": "Privately Held",
+              "status": "active",
+              "year_founded": 2018,
+              "employee_count_range": "2-10",
+              "markets": [
+                "PRIVATE"
+              ]
+            },
+            "headcount": {
+              "total": 16,
+              "largest_headcount_country": "IND",
+              "growth_percent": {
+                "1m": 0,
+                "3m": 0,
+                "6m": 6.666666666666667,
+                "12m": 14.285714285714285
+              },
+              "growth_absolute": {
+                "1m": 0,
+                "3m": 0,
+                "6m": 1,
+                "12m": 2
+              }
+            }
+          },
+          {
+            "crustdata_company_id": 65997589,
+            "basic_info": {
+              "name": "",
+              "crustdata_company_id": 65997589,
+              "primary_domain": "",
+              "all_domains": [],
+              "website": "",
+              "professional_network_url": "",
+              "professional_network_id": "8187292",
+              "profile_name": "",
+              "logo_permalink": "",
+              "description": "",
+              "company_type": "",
+              "status": "deleted",
+              "year_founded": null,
+              "employee_count_range": "",
+              "markets": []
+            },
+            "headcount": {
+              "total": null,
+              "largest_headcount_country": "",
+              "growth_percent": null,
+              "growth_absolute": null
+            }
+          },
+          {
+            "crustdata_company_id": 3284786,
+            "basic_info": {
+              "name": "Speed Packages (Pvt) Ltd.",
+              "crustdata_company_id": 3284786,
+              "primary_domain": "speedpackages.com",
+              "all_domains": [
+                "speedpackages.com"
+              ],
+              "website": "http://www.speedpackages.com/",
+              "professional_network_url": "https://www.linkedin.com/company/speed-packages-pvt-ltd",
+              "professional_network_id": "69872127",
+              "profile_name": "Speed Packages (Pvt) Ltd.",
+              "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/ca298c2004d7685b6ab9042715e98938128588b3e1b258091b3f9619a509a2df.jpg",
+              "description": "Quality Production, Timely Delivery, Customer SatisfactionSpeed Packages (Pvt) Ltd. (Pvt) Ltd. feels pleasure in introducing itself as one of the leading best quality Printers of Fabric bags, ghee bags, sweet bags, carry bags, shoe bags, garments bags, surf bags, soap bags, bread bags, salt bags and other various shopping and polythene bags.",
+              "company_type": "Privately Held",
+              "status": "active",
+              "year_founded": 2007,
+              "employee_count_range": "51-200",
+              "markets": [
+                "PRIVATE"
+              ]
+            },
+            "headcount": {
+              "total": 28,
+              "largest_headcount_country": "PAK",
+              "growth_percent": {
+                "1m": 3.7037037037037033,
+                "3m": 7.6923076923076925,
+                "6m": 12,
+                "12m": 16.666666666666664
+              },
+              "growth_absolute": {
+                "1m": 1,
+                "3m": 2,
+                "6m": 3,
+                "12m": 4
+              }
+            }
+          },
+          {
+            "crustdata_company_id": 28210315,
+            "basic_info": {
+              "name": "RAPID",
+              "crustdata_company_id": 28210315,
+              "primary_domain": "",
+              "all_domains": [],
+              "website": "http://rapid2020.eu",
+              "professional_network_url": "https://www.linkedin.com/company/rapid2020",
+              "professional_network_id": "54327507",
+              "profile_name": "RAPID",
+              "logo_permalink": "",
+              "description": "",
+              "company_type": "Nonprofit",
+              "status": "active",
+              "year_founded": null,
+              "employee_count_range": "11-50",
+              "markets": [
+                "PRIVATE"
+              ]
+            },
+            "headcount": {
+              "total": null,
+              "largest_headcount_country": "",
+              "growth_percent": null,
+              "growth_absolute": null
+            }
+          },
+          {
+            "crustdata_company_id": 61749652,
+            "basic_info": {
+              "name": "",
+              "crustdata_company_id": 61749652,
+              "primary_domain": "",
+              "all_domains": [],
+              "website": "",
+              "professional_network_url": "",
+              "professional_network_id": "8297512",
+              "profile_name": "",
+              "logo_permalink": "",
+              "description": "",
+              "company_type": "",
+              "status": "deleted",
+              "year_founded": null,
+              "employee_count_range": "",
+              "markets": []
+            },
+            "headcount": {
+              "total": null,
+              "largest_headcount_country": "",
+              "growth_percent": null,
+              "growth_absolute": null
+            }
+          },
+          {
+            "crustdata_company_id": 67756570,
+            "basic_info": {
+              "name": "",
+              "crustdata_company_id": 67756570,
+              "primary_domain": "",
+              "all_domains": [],
+              "website": "",
+              "professional_network_url": "",
+              "professional_network_id": "6713809",
+              "profile_name": "",
+              "logo_permalink": "",
+              "description": "",
+              "company_type": "",
+              "status": "deleted",
+              "year_founded": null,
+              "employee_count_range": "",
+              "markets": []
+            },
+            "headcount": {
+              "total": null,
+              "largest_headcount_country": "",
+              "growth_percent": null,
+              "growth_absolute": null
+            }
+          },
+          {
+            "crustdata_company_id": 32644163,
+            "basic_info": {
+              "name": "Rapid Industrial Corporation",
+              "crustdata_company_id": 32644163,
+              "primary_domain": "rapidpacksolutions.com",
+              "all_domains": [
+                "rapidpacksolutions.com"
+              ],
+              "website": "https://rapidpacksolutions.com/",
+              "professional_network_url": "https://www.linkedin.com/company/rapidindustrialcorporation",
+              "professional_network_id": "127483945",
+              "profile_name": "Rapid Industrial Corporation",
+              "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/c83c0124cc1b7d88b21f539d42c02ffe5c6f6e157b92c7e44d9453500545de6c.jpg",
+              "description": "Rapid Industrial Corporation is a trusted provider of industrial packaging and protective material solutions, offering quality products that support safe storage, handling, and transportation across industries",
+              "company_type": "Privately Held",
+              "status": "active",
+              "year_founded": 2020,
+              "employee_count_range": "51-200",
+              "markets": [
+                "PRIVATE"
+              ]
+            },
+            "headcount": {
+              "total": 6,
+              "largest_headcount_country": "IND",
+              "growth_percent": {
+                "1m": 0,
+                "3m": 0,
+                "6m": 20,
+                "12m": 20
+              },
+              "growth_absolute": {
+                "1m": 0,
+                "3m": 0,
+                "6m": 1,
+                "12m": 1
+              }
+            }
+          }
+        ],
+        "next_cursor": "eyJzZXNzaW9uIjoiNzUxODNmZDE3MmZmNDg3NDhjNDI3N2RmYzA1YWVhNTciLCJvZmZzZXQiOjUwLCJxdWVyeSI6IjRhYmFmZjIxYjAzNTU0Mzk4MjI3MWJlYzRhMzY3NmNhM2VkZjE0MjM1OTkyNmIyZGI3NmI5MTU4Y2Q5YzE1NjAiLCJ0YWlsX2hhc2giOm51bGx9:1xGFkW:Ci29TkkX-Eo2jJjNEGRZm0bQ-NiFUQphYMGTYvCzCSk",
+        "total_count": null
+      }
+    },
+    {
+      "step": {
+        "tool": "web_search_live",
+        "params": {
+          "query": "Shopify Advanced Plus merchant count 2024 bundle app pricing rapi bundles fast bundles kaching bundles BFCM"
+        }
+      },
+      "result": {
+        "success": true,
+        "query": "Shopify Advanced Plus merchant count 2024 bundle app pricing rapi bundles fast bundles kaching bundles BFCM",
+        "timestamp": 1791810460563,
+        "results": [
+          {
+            "source": "web",
+            "title": "Rapid Bundles & Upsell app - Boost AOV ...",
+            "url": "https://apps.shopify.com/rapi",
+            "snippet": "Boost your Shopify revenue with Rapid Bundle. Create product bundles mix and match offers volume discounts and upsells. Rapi Bundle is the best bundle app.",
+            "position": 1
+          },
+          {
+            "source": "web",
+            "title": "Kaching Bundles App & Upsells - Boost AOV with quantity ...",
+            "url": "https://apps.shopify.com/bundle-deals",
+            "snippet": "Increase your average order value with offering bundles, free gifts, custom upsells and applying volume discount!",
+            "position": 2
+          },
+          {
+            "source": "web",
+            "title": "The 9 Best Bundle Apps for Shopify Stores",
+            "url": "https://www.shopify.com/blog/bundle-app",
+            "snippet": "Nov 4, 2024 — Kaching Bundle offers three paid plans starting at $15 per month for the Starter plan, with the Scale plan at $30 per month, and a Pro plan at ...",
+            "position": 3
+          },
+          {
+            "source": "web",
+            "title": "15 Best Bundle Apps for Shopify in 2026 (Free & Paid)",
+            "url": "https://maestra.io/blog/comparisons/best-shopify-bundle-apps",
+            "snippet": "6 days ago — Fast Bundle for storefront presentation, Kaching for quantity breaks, Fast Bundle Kaching Bundles. Basic runs $14–$24 a month and Plus $149–$ ...",
+            "position": 4
+          },
+          {
+            "source": "web",
+            "title": "Advanced plan",
+            "url": "https://help.shopify.com/en/manual/intro-to-shopify/pricing-plans/plans-features/shopify-advanced-plan",
+            "snippet": "The Advanced plan contains all the features of the Basic plan and the Grow plan, and has the lowest credit card rates and transaction fees. View pricing plans",
+            "position": 5
+          },
+          {
+            "source": "web",
+            "title": "Best Shopify Bundle App 2026: 15 Top Apps Tested & ...",
+            "url": "https://fastbundle.co/blog/best-shopify-bundle-apps/",
+            "snippet": "Oct 4, 2026 — Fast Bundle is a Shopify product bundling app that helps merchants increase average order value (AOV) through flexible bundle strategies.  ...",
+            "position": 6
+          },
+          {
+            "source": "web",
+            "title": "Shopify Plus vs Advanced: Pricing & features comparison ...",
+            "url": "https://www.ontapgroup.com/blog/shopify-plus-vs-advanced",
+            "snippet": "Aug 7, 2025 — Shopify Plus starts at $2300/month, while Advanced is more affordable - but the differences go beyond price. Advanced suits growing brands; ...",
+            "position": 7
+          },
+          {
+            "source": "web",
+            "title": "20 Best Shopify Bundle Apps: Verified Sept 2026",
+            "url": "https://oxify.app/blog/best-shopify-bundle-apps",
+            "snippet": "Sep 18, 2026 — choose Kaching Bundles. Fast Bundle and Koala Bundles are free for development stores only. $14.99 to $59.99/mo, 7-day trial, no free plan. ...",
+            "position": 8
+          },
+          {
+            "source": "web",
+            "title": "Kaching Bundles vs Shopify Bundles: When Is the Paid ...",
+            "url": "https://shopsidek.com/kaching-bundles-vs-shopify-bundles/",
+            "snippet": "Jul 14, 2026 — Kaching Bundles vs Shopify Bundles: compare promotions, native bundle limits, inventory, testing, and pricing when choosing a Shopify ...",
+            "position": 9
+          }
+        ],
+        "metadata": {
+          "total_results": 9,
+          "failed_pages": [],
+          "empty_pages": []
+        }
+      }
+    }
+  ],
+  "errors": [
+    {
+      "step": {
+        "tool": "company_search",
+        "params": {
+          "query": "Shopify Advanced merchants worldwide ecommerce",
+          "filters": {
+            "industry": "E-commerce",
+            "technologies": [
+              "Shopify Advanced"
+            ],
+            "geography": "Worldwide"
+          },
+          "limit": 200
+        }
+      },
+      "error": "limit: Ranked search supports at most 100 results per page"
+    },
+    {
+      "step": {
+        "tool": "company_search",
+        "params": {
+          "query": "Shopify Plus merchants worldwide ecommerce",
+          "filters": {
+            "industry": "E-commerce",
+            "technologies": [
+              "Shopify Plus"
+            ],
+            "geography": "Worldwide"
+          },
+          "limit": 200
+        }
+      },
+      "error": "limit: Ranked search supports at most 100 results per page"
+    },
+    {
+      "step": {
+        "tool": "company_identify",
+        "params": {
+          "company_name": "rapi bundles"
+        }
+      },
+      "error": "Exactly one identifier must be provided: names, domains, professional_network_profile_urls, or crustdata_company_ids"
+    },
+    {
+      "step": {
+        "tool": "company_identify",
+        "params": {
+          "company_name": "fast bundles"
+        }
+      },
+      "error": "Exactly one identifier must be provided: names, domains, professional_network_profile_urls, or crustdata_company_ids"
+    },
+    {
+      "step": {
+        "tool": "company_identify",
+        "params": {
+          "company_name": "kaching bundles"
+        }
+      },
+      "error": "Exactly one identifier must be provided: names, domains, professional_network_profile_urls, or crustdata_company_ids"
+    },
+    {
+      "step": {
+        "tool": "company_enrich",
+        "params": {
+          "company_domain": "{{step1.results[0].domain}}",
+          "fields": [
+            "name",
+            "domain",
+            "employee_count",
+            "revenue",
+            "technologies",
+            "funding",
+            "location",
+            "shopify_plan"
+          ]
+        }
+      },
+      "error": "Exactly one identifier must be provided: names, domains, professional_network_profile_urls, or crustdata_company_ids"
+    },
+    {
+      "step": {
+        "tool": "company_enrich",
+        "params": {
+          "company_domain": "{{step2.results[0].domain}}",
+          "fields": [
+            "name",
+            "domain",
+            "employee_count",
+            "revenue",
+            "technologies",
+            "funding",
+            "location",
+            "shopify_plan"
+          ]
+        }
+      },
+      "error": "Exactly one identifier must be provided: names, domains, professional_network_profile_urls, or crustdata_company_ids"
+    },
+    {
+      "step": {
+        "tool": "company_enrich",
+        "params": {
+          "company_domain": "{{step4.results[0].domain}}",
+          "fields": [
+            "name",
+            "domain",
+            "employee_count",
+            "revenue",
+            "technologies",
+            "funding",
+            "location",
+            "pricing"
+          ]
+        }
+      },
+      "error": "Exactly one identifier must be provided: names, domains, professional_network_profile_urls, or crustdata_company_ids"
+    },
+    {
+      "step": {
+        "tool": "job_search",
+        "params": {
+          "query": "ecommerce marketing OR Shopify OR promotions",
+          "filters": {
+            "company_domain": [
+              "{{step1.results[0].domain}}",
+              "{{step2.results[0].domain}}"
+            ],
+            "posted_date": "last_90_days"
+          },
+          "limit": 100
+        }
+      },
+      "error": "'filters' must be either a single condition ({\"field\", \"type\", \"value\"}) or a tree ({\"op\", \"conditions\": [...]}). Received an object with neither."
+    },
+    {
+      "step": {
+        "tool": "job_search",
+        "params": {
+          "query": "bundle OR upsell OR cross-sell OR ecommerce",
+          "filters": {
+            "company_domain": [
+              "{{step4.results[0].domain}}",
+              "{{step5.results[0].domain}}",
+              "{{step6.results[0].domain}}"
+            ],
+            "posted_date": "last_90_days"
+          },
+          "limit": 100
+        }
+      },
+      "error": "'filters' must be either a single condition ({\"field\", \"type\", \"value\"}) or a tree ({\"op\", \"conditions\": [...]}). Received an object with neither."
+    }
+  ]
+}

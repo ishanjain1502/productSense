@@ -16,10 +16,12 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { fetchAgentPrompt } from "@/lib/regression-api";
 import { runMarketAnalysis } from "@/lib/market-analysis-api";
 import {
   loadValidationSession,
   saveValidationSession,
+  withProjectIds,
   type ValidationSession,
 } from "@/lib/validation-session";
 import { cn } from "@/lib/utils";
@@ -30,7 +32,7 @@ type MarketAnalysisPageProps = {
 
 export function MarketAnalysisPage({ mode }: MarketAnalysisPageProps) {
   const router = useRouter();
-  const started = useRef(false);
+  const runAttempt = useRef(0);
   const [session, setSession] = useState<ValidationSession | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -46,34 +48,70 @@ export function MarketAnalysisPage({ mode }: MarketAnalysisPageProps) {
     }
     setSession(loaded);
 
-    if (started.current) return;
-    started.current = true;
+    const attemptId = ++runAttempt.current;
 
     void (async () => {
       try {
+        let active = loaded;
+
+        if (active.mode === "full" && !active.featureId && active.promptId) {
+          const boot = await fetchAgentPrompt({
+            mode: active.mode,
+            demoId: active.demoId,
+            productData: active.data,
+            financialReportId: active.financialReportId,
+            projectId: active.projectId,
+            featureId: active.featureId,
+            promptId: active.promptId,
+          });
+          active = withProjectIds(active, {
+            promptId: boot.promptId,
+            projectId: boot.projectId,
+            featureId: boot.featureId,
+          });
+          saveValidationSession(active);
+          setSession(active);
+        }
+
+        if (active.mode === "full" && !active.featureId) {
+          if (attemptId === runAttempt.current) {
+            router.replace(`/${mode}/agent-prompt`);
+          }
+          return;
+        }
+
+        if (attemptId !== runAttempt.current) return;
+
         const data = await runMarketAnalysis({
-          mode: loaded.mode,
-          demoId: loaded.demoId,
-          productData: loaded.data,
-          projectId: loaded.projectId,
-          featureId: loaded.featureId,
+          mode: active.mode,
+          demoId: active.demoId,
+          productData: active.data,
+          projectId: active.projectId,
+          featureId: active.featureId,
         });
         setResult(data);
         const updated: ValidationSession = {
-          ...loaded,
+          ...active,
           marketAnalysisRunId: data.runId,
           marketAnalysisReportId: data.reportId,
         };
         saveValidationSession(updated);
         setSession(updated);
       } catch (err) {
+        if (attemptId !== runAttempt.current) return;
         setError(
           err instanceof Error ? err.message : "Market analysis could not run."
         );
       } finally {
-        setLoading(false);
+        if (attemptId === runAttempt.current) {
+          setLoading(false);
+        }
       }
     })();
+
+    return () => {
+      runAttempt.current += 1;
+    };
   }, [mode, router]);
 
   return (

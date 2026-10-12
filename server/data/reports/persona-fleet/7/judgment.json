@@ -1,0 +1,297 @@
+{
+  "fleetRunId": 7,
+  "methodology": {
+    "agentCount": 25,
+    "aggregation": "mean_per_question; fleet_composite = mean(agent_means); recommendation from composite thresholds"
+  },
+  "feature": {
+    "name": "Pricing Change",
+    "description": "current pricing tiers are 0$(limited use case) and 20$(full access)\nwhich we are not changing to 20$(full access with limits on total discounts) and 50$(full access + no limits)"
+  },
+  "recommendation": "iterate",
+  "fleetComposite": {
+    "mean": 46.5,
+    "median": 48.6,
+    "percentLikelyAdopt": 0
+  },
+  "perQuestion": [
+    {
+      "key": "continueOnTwentyWithLimits",
+      "text": "How likely are you to continue using Fly Upsell & Cross Sell on the new $20/month plan that limits total discounts, on a scale of 0 to 100?",
+      "mean": 49.3,
+      "median": 35,
+      "p25": 18,
+      "p75": 82,
+      "histogram": {
+        "0-19": 7,
+        "20-39": 6,
+        "40-59": 0,
+        "60-79": 4,
+        "80-100": 8
+      }
+    },
+    {
+      "key": "upgradeToFiftyForUnlimited",
+      "text": "How likely are you to upgrade to the new $50/month plan for full access with no limits on total discounts, on a scale of 0 to 100?",
+      "mean": 51.4,
+      "median": 82,
+      "p25": 10,
+      "p75": 90,
+      "histogram": {
+        "0-19": 12,
+        "20-39": 0,
+        "40-59": 0,
+        "60-79": 0,
+        "80-100": 13
+      }
+    },
+    {
+      "key": "importanceOfUnlimitedDiscounts",
+      "text": "How important is having no limits on total discounts to your Shopify store's upsell and bundle strategy, on a scale of 0 to 100?",
+      "mean": 57.4,
+      "median": 93,
+      "p25": 15,
+      "p75": 95,
+      "histogram": {
+        "0-19": 9,
+        "20-39": 3,
+        "40-59": 0,
+        "60-79": 0,
+        "80-100": 13
+      }
+    },
+    {
+      "key": "satisfactionWithNewPricing",
+      "text": "How satisfied would you be with the new pricing structure ($20 with discount limits, $50 unlimited) compared to the current $0 and $20 tiers, on a scale of 0 to 100?",
+      "mean": 31.4,
+      "median": 30,
+      "p25": 28,
+      "p75": 35,
+      "histogram": {
+        "0-19": 1,
+        "20-39": 20,
+        "40-59": 4,
+        "60-79": 0,
+        "80-100": 0
+      }
+    },
+    {
+      "key": "recommendAfterPricingChange",
+      "text": "How likely are you to recommend Fly Upsell & Cross Sell to other Shopify Advanced or Plus merchants after this pricing change, on a scale of 0 to 100?",
+      "mean": 43.1,
+      "median": 48,
+      "p25": 30,
+      "p75": 55,
+      "histogram": {
+        "0-19": 0,
+        "20-39": 9,
+        "40-59": 14,
+        "60-79": 2,
+        "80-100": 0
+      }
+    }
+  ],
+  "segments": [
+    {
+      "archetypeType": "persona_1",
+      "label": "The BFCM Campaign Power User",
+      "count": 7,
+      "compositeMean": 56.9,
+      "perQuestionMeans": {
+        "continueOnTwentyWithLimits": 16.4,
+        "upgradeToFiftyForUnlimited": 90.4,
+        "importanceOfUnlimitedDiscounts": 96.4,
+        "satisfactionWithNewPricing": 29.9,
+        "recommendAfterPricingChange": 51.1
+      }
+    },
+    {
+      "archetypeType": "persona_2",
+      "label": "The Promotion Strategist",
+      "count": 6,
+      "compositeMean": 58.4,
+      "perQuestionMeans": {
+        "continueOnTwentyWithLimits": 27,
+        "upgradeToFiftyForUnlimited": 88.3,
+        "importanceOfUnlimitedDiscounts": 94.3,
+        "satisfactionWithNewPricing": 30.7,
+        "recommendAfterPricingChange": 51.8
+      }
+    },
+    {
+      "archetypeType": "persona_3",
+      "label": "The Efficient Small-Scale Merchant",
+      "count": 6,
+      "compositeMean": 38.3,
+      "perQuestionMeans": {
+        "continueOnTwentyWithLimits": 86.2,
+        "upgradeToFiftyForUnlimited": 8.8,
+        "importanceOfUnlimitedDiscounts": 15.3,
+        "satisfactionWithNewPricing": 38.7,
+        "recommendAfterPricingChange": 42.5
+      }
+    },
+    {
+      "archetypeType": "new_install",
+      "label": "The Stable, Low-Change Merchant",
+      "count": 6,
+      "compositeMean": 30.8,
+      "perQuestionMeans": {
+        "continueOnTwentyWithLimits": 73.2,
+        "upgradeToFiftyForUnlimited": 11.3,
+        "importanceOfUnlimitedDiscounts": 17.2,
+        "satisfactionWithNewPricing": 26.5,
+        "recommendAfterPricingChange": 25.7
+      }
+    }
+  ],
+  "quality": {
+    "agentsTotal": 25,
+    "agentsCompleted": 25,
+    "agentsMissing": 0
+  },
+  "themes": [
+    {
+      "label": "$20 plan discount limits/caps",
+      "sentiment": "negative",
+      "approxCount": 25
+    },
+    {
+      "label": "Pricing feels like a hike/repackaging of prior $20 access",
+      "sentiment": "negative",
+      "approxCount": 24
+    },
+    {
+      "label": "Reluctant upgrade to $50 for unlimited discounts",
+      "sentiment": "mixed",
+      "approxCount": 13
+    },
+    {
+      "label": "BFCM/peak-season promotional calendar urgency",
+      "sentiment": "negative",
+      "approxCount": 12
+    },
+    {
+      "label": "Low-volume/stable merchants staying on $20 and rejecting $50",
+      "sentiment": "mixed",
+      "approxCount": 12
+    },
+    {
+      "label": "Conditional recommendations/caveats for high-volume merchants",
+      "sentiment": "mixed",
+      "approxCount": 11
+    }
+  ],
+  "representativeQuotes": [
+    {
+      "agentId": "agent_d17159a5e01f0cd1",
+      "archetypeType": "persona_1",
+      "compositeScore": 60,
+      "text": "The limit on the $20 tier is a non-starter for BFCM — I run stacks of bundles, tiered discounts, and free-gift thresholds all through November, so I'd have to move to the $50 plan whether I like it or not. I'll pay it because a discount interruption during peak weekend costs far more than $30, but the pricing rollout feels like my current plan is being repackaged and resold to me at 2.5x. I'd still recommend it to other advanced merchants, with a clear warning to budget for the $50 tier before the holiday rush."
+    },
+    {
+      "agentId": "agent_a48114a74a4f551b",
+      "archetypeType": "persona_1",
+      "compositeScore": 60.4,
+      "text": "I’d upgrade to the $50 plan for BFCM because unlimited discounts are non-negotiable when running bundles, tiered offers, and BOGO at peak scale. The new limit on the $20 tier is a real problem, and the price jump will be tough to justify to my budget-conscious exec, so I’d only recommend this to high-volume merchants who can absorb the $50 plan."
+    },
+    {
+      "agentId": "agent_571f9720e1f56ea3",
+      "archetypeType": "persona_1",
+      "compositeScore": 48.6,
+      "text": "I can’t risk discount limits during BFCM, so I’d grudgingly upgrade to the $50 plan to keep campaigns running. But I’m unhappy that the old $20 full-access tier is being squeezed, and I wouldn’t enthusiastically recommend the new pricing to other advanced merchants."
+    },
+    {
+      "agentId": "agent_e7c314748d0b02d4",
+      "archetypeType": "persona_2",
+      "compositeScore": 59,
+      "text": "I’d almost certainly move to the $50 plan because unlimited discounts are essential for my promotional calendar, but I’m frustrated that I now have to pay more to keep the full access I already had. I’d recommend it to other high-volume Shopify merchants, with the clear warning that the $20 tier will choke serious bundling and cross-sell strategies."
+    },
+    {
+      "agentId": "agent_96d73cbdd419697e",
+      "archetypeType": "persona_2",
+      "compositeScore": 61,
+      "text": "I'd almost certainly upgrade to the $50 plan because my promotional calendar and bundle strategy can't afford discount limits. The $20 tier with limits would create constant friction, so I'm not happy that full access now costs $50. I'd recommend it to other high-volume Shopify merchants, but only if they're ready to pay for the top tier."
+    },
+    {
+      "agentId": "agent_f981ac627660794b",
+      "archetypeType": "persona_2",
+      "compositeScore": 56.6,
+      "text": "Unlimited discount usage is exactly what our promotional calendar needs, so we'd almost certainly move to the $50 tier rather than ration campaigns on the capped $20 plan. That said, going from full access at $20 to paying $50 for what we already had feels like a penalty for running a lot of promotions, so I'd adopt it reluctantly and would be lukewarm recommending it to similar merchants."
+    },
+    {
+      "agentId": "agent_5a38d6015e8ddc3d",
+      "archetypeType": "persona_3",
+      "compositeScore": 41,
+      "text": "I’d likely stay on the $20 plan because I don’t run enough discounts to need unlimited capacity. The new $50 tier feels unnecessary for my store, so I’d only consider it if my campaigns grew enough to hit the limits. I’m not thrilled that the $20 plan now has caps, but as long as they don’t affect me, I’ll keep using it."
+    },
+    {
+      "agentId": "agent_7ad10913478868d8",
+      "archetypeType": "persona_3",
+      "compositeScore": 41,
+      "text": "I'd stay on the $20 plan because my store doesn't need unlimited discounts, and I'm not paying $50 just to remove limits. The change makes the $20 tier less generous than before, so I'd only recommend it with caution to similar cost-sensitive merchants."
+    },
+    {
+      "agentId": "agent_021a698b83fcd70f",
+      "archetypeType": "persona_3",
+      "compositeScore": 33.6,
+      "text": "I’d stick with the $20 plan as long as the discount limits don’t get in my way, since my store only runs a few bundles and discounts. I wouldn’t upgrade to $50 for unlimited discounts I don’t need, so I’m not thrilled that full access now costs more. I’d be hesitant to recommend it to similar merchants unless they actually hit the limits."
+    },
+    {
+      "agentId": "agent_eabf1b3422905650",
+      "archetypeType": "new_install",
+      "compositeScore": 33,
+      "text": "I’d probably stay on the $20 plan if the new discount limits don’t affect my small set of proven bundles and discounts. But I don’t like that the plan I already trusted now feels restricted, and I wouldn’t upgrade to $50 unless my business genuinely grows into needing unlimited discounts."
+    },
+    {
+      "agentId": "agent_a811962769a706f4",
+      "archetypeType": "new_install",
+      "compositeScore": 33.4,
+      "text": "I'd stay on the $20 plan since my bundles and discounts are already set up and I rarely hit any caps, but paying the same price for a plan that now has limits feels like a quiet downgrade. The $50 tier is irrelevant to me because I don't need more promotional capacity, so I wouldn't recommend this change to other stable stores unless their discount volume actually grows."
+    },
+    {
+      "agentId": "agent_9b738fe3ba2d091a",
+      "archetypeType": "new_install",
+      "compositeScore": 27,
+      "text": "As a stable merchant, I don't need unlimited discounts, so I'll likely stay on the $20 plan if the limits don't disrupt my existing bundles. However, the pricing change feels like a downgrade or a forced upsell, so I'm not happy about it and wouldn't recommend it to peers."
+    },
+    {
+      "agentId": "agent_e767723638e6b81d",
+      "archetypeType": "persona_1",
+      "compositeScore": 54,
+      "text": "As a BFCM power user, discount limits are a non-starter during peak. I’d move to the $50 plan for unlimited discounts, but I’m frustrated that the previous $20 full-access tier is now capped. I’d recommend it only with the caveat that serious holiday campaigns need the $50 tier."
+    }
+  ],
+  "executiveSummary": "The provided recommendation is iterate. The proposed pricing split produces a polarized response: the $50 unlimited tier is compelling for high-volume BFCM and promotional merchants, while the capped $20 tier is widely perceived as a downgrade, repackaging, or forced upsell. Fleet composite mean is 46.5 and median is 48.6; satisfaction with new pricing is low at 31.4, and recommendation likelihood is 43.1. Persona_1 and persona_2 show high upgrade intent to $50, with upgrade means of 90.4 and 88.3 and near-max importance of unlimited discounts at 96.4 and 94.3, but they adopt reluctantly and with caveats. Persona_3 and new_install stay on $20, with continue means of 86.2 and 73.2, while rejecting $50 and reacting negatively to the caps. The path forward should address the $20 limit and repackaging concerns before broad rollout.",
+  "strengths": [
+    "The $50 unlimited plan addresses a real need: importanceOfUnlimitedDiscounts has mean 57.4 and median 93, with 13 of 25 agents scoring 80-100.",
+    "High-volume BFCM and promotional merchants are willing to upgrade: upgradeToFiftyForUnlimited means are 90.4 for persona_1 (count 7) and 88.3 for persona_2 (count 6).",
+    "The $20 capped plan retains low-volume merchants: continueOnTwentyWithLimits means are 86.2 for persona_3 (count 6) and 73.2 for new_install (count 6).",
+    "Even reluctant upgraders often conditionally recommend the product to other high-volume Shopify merchants, provided they budget for the $50 tier before peak promotional periods."
+  ],
+  "blockers": [
+    "The $20 plan discount limits/caps are a negative theme with approxCount 25; persona_1 continueOnTwentyWithLimits is only 16.4, indicating caps are a non-starter during BFCM and heavy promotional periods.",
+    "Pricing feels like a hike or repackaging of prior $20 full access, a negative theme with approxCount 24; merchants say the previous $20 tier is now capped and full access costs $50.",
+    "Satisfaction with the new pricing is low: mean 31.4, median 30, and 20 of 25 agents scored in the 20-39 range.",
+    "Recommendation likelihood after the pricing change is moderate-to-low: mean 43.1, with no scores in the 80-100 range.",
+    "Low-volume and stable merchants reject the $50 tier: upgradeToFiftyForUnlimited means are 8.8 for persona_3 and 11.3 for new_install; they see the change as a quiet downgrade or forced upsell.",
+    "The response is structurally polarized: upgradeToFiftyForUnlimited has 12 agents in 0-19 and 13 agents in 80-100, so means hide opposite reactions.",
+    "Conditional recommendations and caveats are a mixed theme with approxCount 11; willingness to recommend depends heavily on merchant volume and whether they already hit discount limits."
+  ],
+  "segmentInsights": [
+    "The BFCM Campaign Power User (persona_1, count 7, compositeMean 56.9): continueOnTwentyWithLimits 16.4 versus upgradeToFiftyForUnlimited 90.4 and importanceOfUnlimitedDiscounts 96.4. Caps are treated as a peak-season non-starter; they will grudgingly move to $50 and recommend only with a clear budget warning.",
+    "The Promotion Strategist (persona_2, count 6, compositeMean 58.4): continueOnTwentyWithLimits 27.0, upgradeToFiftyForUnlimited 88.3, and importanceOfUnlimitedDiscounts 94.3. Unlimited discounts are essential for their promotional calendars, but adoption is reluctant because full access now costs $50.",
+    "The Efficient Small-Scale Merchant (persona_3, count 6, compositeMean 38.3): continueOnTwentyWithLimits 86.2, upgradeToFiftyForUnlimited 8.8, and importanceOfUnlimitedDiscounts 15.3. They stay on $20 if caps do not bite, reject $50, and are cautious about recommending the change.",
+    "The Stable, Low-Change Merchant (new_install, count 6, compositeMean 30.8): continueOnTwentyWithLimits 73.2, upgradeToFiftyForUnlimited 11.3, importanceOfUnlimitedDiscounts 17.2, and recommendAfterPricingChange 25.7. They perceive the new $20 caps as a quiet downgrade or forced upsell and show low recommendation intent."
+  ],
+  "dataLimitations": [
+    "Synthetic agent panel of 25 agents; all 25 completed and 0 are missing. Findings are directional and not observed market behavior.",
+    "Archetype counts are small, ranging from 6 to 7 per segment, so segment-level means are sensitive and not statistically robust.",
+    "Results rely on self-reported likelihood scores. There is no real payment, usage, churn, or conversion data, and the actual discount-limit thresholds are unspecified.",
+    "Several distributions are bimodal or highly polarized. upgradeToFiftyForUnlimited has 12 agents in 0-19 and 13 in 80-100, while importanceOfUnlimitedDiscounts has median 93 versus mean 57.4; averages mask opposing reactions.",
+    "The target market is limited to Shopify Advanced and Plus merchants. Results may not generalize to other Shopify plans, lower-volume stores, or non-Shopify ecommerce platforms.",
+    "Methodology reports fleet composite mean 46.5, median 48.6, and percentLikelyAdopt 0; adoption interpretation should account for threshold-based aggregation.",
+    "Themes are approximate counts and representative quotes are illustrative synthetic examples; they should not be treated as exact prevalence or exhaustive qualitative evidence."
+  ],
+  "generatedAt": "2026-10-12T13:23:37.619Z"
+}

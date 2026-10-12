@@ -154,6 +154,9 @@ export async function persistFinancialReport(input) {
  * @param {string} projectId
  * @param {string} featureId
  */
+/**
+ * @returns {Promise<{ projectId: string; featureId: string }>}
+ */
 export async function linkFinancialReportToProject(
   userId,
   reportId,
@@ -161,19 +164,45 @@ export async function linkFinancialReportToProject(
   featureId
 ) {
   const row = await dbGet(
-    `SELECT report_id, project_id FROM financial_reports
+    `SELECT report_id, project_id, feature_id FROM financial_reports
      WHERE report_id = ? AND user_id = ?`,
     [reportId, userId]
   );
   if (!row) {
     throw Object.assign(new Error("report_not_found"), { status: 404 });
   }
-  if (row.project_id && row.project_id !== projectId) {
-    throw Object.assign(new Error("report_already_linked"), { status: 409 });
+  if (row.project_id) {
+    const linkedFeatureId =
+      typeof row.feature_id === "string" && row.feature_id
+        ? row.feature_id
+        : featureId;
+    if (row.project_id !== projectId) {
+      return { projectId: row.project_id, featureId: linkedFeatureId };
+    }
+    if (row.feature_id !== featureId) {
+      await dbRun(
+        `UPDATE financial_reports SET feature_id = ? WHERE report_id = ?`,
+        [featureId, reportId]
+      );
+    }
+    return { projectId: row.project_id, featureId };
   }
   await dbRun(
     `UPDATE financial_reports SET project_id = ?, feature_id = ? WHERE report_id = ?`,
     [projectId, featureId, reportId]
+  );
+  return { projectId, featureId };
+}
+
+/**
+ * @param {number} userId
+ * @param {number} reportId
+ */
+export async function getFinancialReportProjectLink(userId, reportId) {
+  return dbGet(
+    `SELECT project_id, feature_id FROM financial_reports
+     WHERE report_id = ? AND user_id = ?`,
+    [reportId, userId]
   );
 }
 

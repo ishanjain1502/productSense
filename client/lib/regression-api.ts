@@ -15,6 +15,9 @@ export async function fetchAgentPrompt(input: {
   demoId: string | null;
   productData: ProductValidationData;
   financialReportId?: number | null;
+  projectId?: string;
+  featureId?: string;
+  promptId?: number;
 }): Promise<AgentPromptResponse> {
   const token = getStoredToken();
   const headers: Record<string, string> = {
@@ -32,6 +35,9 @@ export async function fetchAgentPrompt(input: {
       demoId: input.demoId,
       productData: input.productData,
       financialReportId: input.financialReportId ?? undefined,
+      projectId: input.projectId,
+      featureId: input.featureId,
+      promptId: input.promptId,
     }),
   });
 
@@ -81,4 +87,75 @@ export async function checkRegressionReport(input: {
     );
   }
   return data as { found: boolean; reportId?: number };
+}
+
+function regressionSubmitErrorMessage(
+  error: string | undefined,
+  fallback: string
+): string {
+  switch (error) {
+    case "prompt_id_required":
+      return "The JSON must include a numeric promptId (or use the prompt shown on this page).";
+    case "unknown_prompt":
+      return "This promptId is not recognized. Refresh the page to get a current promptId.";
+    case "invalid_payload":
+      return "Upload a single JSON object (not an array).";
+    default:
+      return error ?? fallback;
+  }
+}
+
+export async function uploadRegressionReport(input: {
+  mode: "demo" | "full";
+  demoId?: string | null;
+  promptId: number;
+  featureId?: string;
+  payload: Record<string, unknown>;
+}): Promise<{ ok: true; reportId: number }> {
+  const token = getStoredToken();
+  const headers: Record<string, string> = {
+    "Content-Type": "application/json",
+  };
+  if (input.mode === "full" && token) {
+    headers.Authorization = `Bearer ${token}`;
+  }
+
+  const body: Record<string, unknown> = {
+    ...input.payload,
+    promptId:
+      input.payload.promptId != null
+        ? Number(input.payload.promptId)
+        : input.promptId,
+    ...(input.featureId
+      ? {
+          featureId:
+            typeof input.payload.featureId === "string" &&
+            input.payload.featureId
+              ? input.payload.featureId
+              : input.featureId,
+        }
+      : {}),
+  };
+  if (input.mode === "demo" && input.demoId) {
+    body.demoId = input.demoId;
+  }
+
+  const res = await fetch(`${API_BASE}/regression/reports`, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+  });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) {
+    const errKey =
+      typeof data.error === "string"
+        ? data.error
+        : typeof data.message === "string"
+          ? data.message
+          : undefined;
+    throw new Error(
+      regressionSubmitErrorMessage(errKey, "Could not upload regression report.")
+    );
+  }
+  return data as { ok: true; reportId: number };
 }

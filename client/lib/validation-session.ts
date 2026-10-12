@@ -43,3 +43,20 @@ export function loadValidationSession(): ValidationSession | null {
 export function clearValidationSession() {
   sessionStorage.removeItem(VALIDATION_SESSION_KEY);
 }
+
+/** Merge bootstrap ids from the regression step into the saved session. */
+export function withProjectIds(
+  session: ValidationSession,
+  ids: {
+    projectId?: string;
+    featureId?: string;
+    promptId?: number;
+  }
+): ValidationSession {
+  return {
+    ...session,
+    promptId: ids.promptId ?? session.promptId,
+    projectId: ids.projectId ?? session.projectId,
+    featureId: ids.featureId ?? session.featureId,
+  };
+}
