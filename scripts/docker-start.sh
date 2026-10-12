@@ -14,21 +14,37 @@ if [ "$WEB_PORT" = "$API_PORT" ]; then
   exit 1
 fi
 
+API_PID=""
+NEXT_PID=""
+
+cleanup() {
+  if [ -n "$NEXT_PID" ]; then
+    kill "$NEXT_PID" 2>/dev/null || true
+  fi
+  if [ -n "$API_PID" ]; then
+    kill "$API_PID" 2>/dev/null || true
+  fi
+}
+trap cleanup EXIT INT TERM
+
+echo "Starting API on 127.0.0.1:${API_PORT} and web on 0.0.0.0:${WEB_PORT}…"
+
 (
   cd "$SERVER_DIR"
   PORT="$API_PORT" node index.js
 ) &
 API_PID=$!
 
-cleanup() {
-  kill "$API_PID" 2>/dev/null || true
-}
-trap cleanup EXIT INT TERM
+(
+  cd "$WEB_DIR"
+  PORT="$WEB_PORT" HOSTNAME="${HOSTNAME:-0.0.0.0}" node server.js
+) &
+NEXT_PID=$!
 
-ready=0
-for _ in $(seq 1 90); do
+api_ready=0
+for _ in $(seq 1 120); do
   if node -e "fetch('http://127.0.0.1:${API_PORT}/health').then((r)=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"; then
-    ready=1
+    api_ready=1
     break
   fi
   if ! kill -0 "$API_PID" 2>/dev/null; then
@@ -38,10 +54,30 @@ for _ in $(seq 1 90); do
   sleep 1
 done
 
-if [ "$ready" -ne 1 ]; then
-  echo "API health check timed out"
+if [ "$api_ready" -ne 1 ]; then
+  echo "API health check timed out after 120s"
   exit 1
 fi
 
-cd "$WEB_DIR"
-exec env PORT="$WEB_PORT" HOSTNAME="${HOSTNAME:-0.0.0.0}" node server.js
+web_ready=0
+for _ in $(seq 1 60); do
+  if node -e "fetch('http://127.0.0.1:${WEB_PORT}/health').then((r)=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"; then
+    web_ready=1
+    break
+  fi
+  if ! kill -0 "$NEXT_PID" 2>/dev/null; then
+    echo "Web process exited before becoming healthy"
+    exit 1
+  fi
+  sleep 1
+done
+
+if [ "$web_ready" -ne 1 ]; then
+  echo "Web /health check timed out after 60s"
+  exit 1
+fi
+
+echo "Monolith ready (web :${WEB_PORT}, api :${API_PORT})"
+
+wait "$NEXT_PID"
+exit $?

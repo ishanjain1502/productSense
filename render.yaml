@@ -1,0 +1,26 @@
+# Optional Render Blueprint — adjust repo/branch, plan, and disk size as needed.
+# Docs: https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: productsense
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    plan: starter
+    healthCheckPath: /health
+    # Monolith: API migrations can take 30–90s on cold start; avoid "socket hang up" probes.
+    healthCheckGracePeriod: 180
+    disk:
+      name: productsense-data
+      mountPath: /app/server/data
+      sizeGB: 1
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_PATH
+        value: ./data/app.db
+      - key: API_INTERNAL_PORT
+        value: "1337"
+      # Set in dashboard (secrets): JWT_SECRET, COMMANDCODE_API_KEY, CRUSTDATA_API_KEY,
+      # CFO_TOKEN_ENCRYPTION_KEY, CLIENT_ORIGIN, PUBLIC_API_URL (your https://….onrender.com URL).
+      # Do NOT set PORT — Render assigns it automatically.

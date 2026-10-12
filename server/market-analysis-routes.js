@@ -1,11 +1,15 @@
 import { verifyToken } from "./auth.js";
 import { assertFeatureOwnedByUser } from "./projects.js";
-import { readReportFile } from "./report-storage.js";
 import {
   getMarketAnalysisReportIndex,
   getMarketAnalysisReportStatus,
 } from "./market-analysis-reports.js";
-import { getMarketAnalysisRun, runMarketAnalysis } from "./market-analysis/run.js";
+import {
+  createMarketAnalysisRun,
+  getMarketAnalysisRun,
+  loadMarketAnalysisRunResponse,
+  scheduleMarketAnalysisRun,
+} from "./market-analysis/run.js";
 
 /**
  * @param {import('express').Express} app
@@ -49,7 +53,7 @@ export function registerMarketAnalysisRoutes(app) {
         return;
       }
 
-      const result = await runMarketAnalysis({
+      const runId = await createMarketAnalysisRun({
         userId,
         projectId: mode === "full" ? projectId : null,
         featureId: mode === "full" ? featureId : null,
@@ -57,7 +61,17 @@ export function registerMarketAnalysisRoutes(app) {
         productData,
       });
 
-      res.json(result);
+      scheduleMarketAnalysisRun(runId, { productData });
+
+      res.status(202).json({
+        runId,
+        reportId: null,
+        status: "pending",
+        strategyB: null,
+        strategyC: null,
+        errorB: null,
+        errorC: null,
+      });
     } catch (err) {
       console.error(err);
       const status = err?.status && err.status >= 400 ? err.status : 500;
@@ -183,23 +197,8 @@ export function registerMarketAnalysisRoutes(app) {
         }
       }
 
-      let strategyB = null;
-      let strategyC = null;
-      if (row.strategy_b_report_url) {
-        strategyB = await readReportFile(row.strategy_b_report_url);
-      }
-      if (row.strategy_c_report_url) {
-        strategyC = await readReportFile(row.strategy_c_report_url);
-      }
-
-      res.json({
-        runId: row.id,
-        status: row.status,
-        strategyB,
-        strategyC,
-        errorB: row.error_b,
-        errorC: row.error_c,
-      });
+      const payload = await loadMarketAnalysisRunResponse(runId);
+      res.json(payload);
     } catch (err) {
       console.error(err);
       res.status(500).json({ error: "server_error" });
