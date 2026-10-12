@@ -123,8 +123,6 @@ export function ProductValidationFlow({ mode }: ProductValidationFlowProps) {
   };
 
   const renderStepContent = (stepId: ValidationStepId) => {
-    const readOnly = mode === "demo";
-
     switch (stepId) {
       case "application":
         return (
@@ -134,7 +132,6 @@ export function ProductValidationFlow({ mode }: ProductValidationFlowProps) {
               <Input
                 id="applicationName"
                 value={data.applicationName}
-                readOnly={readOnly}
                 placeholder="Application name"
                 onChange={(e) => patch({ applicationName: e.target.value })}
               />
@@ -146,7 +143,6 @@ export function ProductValidationFlow({ mode }: ProductValidationFlowProps) {
               <Textarea
                 id="applicationDescription"
                 value={data.applicationDescription}
-                readOnly={readOnly}
                 rows={4}
                 placeholder="What does this product do?"
                 onChange={(e) =>
@@ -163,7 +159,6 @@ export function ProductValidationFlow({ mode }: ProductValidationFlowProps) {
                 id="teamSize"
                 type="number"
                 min={1}
-                readOnly={readOnly}
                 value={data.teamSize === "" ? "" : data.teamSize}
                 placeholder="e.g. 7"
                 onChange={(e) => {
@@ -184,7 +179,6 @@ export function ProductValidationFlow({ mode }: ProductValidationFlowProps) {
               <Input
                 id="featureName"
                 value={data.featureName}
-                readOnly={readOnly}
                 placeholder="Name of the feature you're validating"
                 onChange={(e) => patch({ featureName: e.target.value })}
               />
@@ -196,7 +190,6 @@ export function ProductValidationFlow({ mode }: ProductValidationFlowProps) {
               <Textarea
                 id="featureDescription"
                 value={data.featureDescription}
-                readOnly={readOnly}
                 rows={4}
                 placeholder="What will this feature do?"
                 onChange={(e) =>
@@ -207,12 +200,7 @@ export function ProductValidationFlow({ mode }: ProductValidationFlowProps) {
             <DocumentAttachment
               label="Further information"
               fileName={data.featureDocumentName}
-              readOnly={readOnly}
-              onFileSelect={
-                mode === "full"
-                  ? (name) => patch({ featureDocumentName: name })
-                  : undefined
-              }
+              onFileSelect={(name) => patch({ featureDocumentName: name })}
             />
           </FieldGroup>
         );
@@ -224,7 +212,6 @@ export function ProductValidationFlow({ mode }: ProductValidationFlowProps) {
               <Textarea
                 id="targetMarket"
                 value={data.targetMarket}
-                readOnly={readOnly}
                 rows={3}
                 placeholder="Who is this product for?"
                 onChange={(e) => patch({ targetMarket: e.target.value })}
@@ -247,7 +234,6 @@ export function ProductValidationFlow({ mode }: ProductValidationFlowProps) {
                     <Input
                       id={`persona-name-${index}`}
                       value={persona.name}
-                      readOnly={readOnly}
                       onChange={(e) =>
                         updatePersona(index, "name", e.target.value)
                       }
@@ -260,7 +246,6 @@ export function ProductValidationFlow({ mode }: ProductValidationFlowProps) {
                     <Textarea
                       id={`persona-desc-${index}`}
                       value={persona.description}
-                      readOnly={readOnly}
                       rows={2}
                       onChange={(e) =>
                         updatePersona(index, "description", e.target.value)
@@ -285,7 +270,6 @@ export function ProductValidationFlow({ mode }: ProductValidationFlowProps) {
                   <Input
                     id="new-persona-name"
                     value={data.newInstallPersona.name}
-                    readOnly={readOnly}
                     onChange={(e) =>
                       patch({
                         newInstallPersona: {
@@ -301,7 +285,6 @@ export function ProductValidationFlow({ mode }: ProductValidationFlowProps) {
                   <Textarea
                     id="new-persona-desc"
                     value={data.newInstallPersona.description}
-                    readOnly={readOnly}
                     rows={2}
                     onChange={(e) =>
                       patch({
@@ -318,12 +301,7 @@ export function ProductValidationFlow({ mode }: ProductValidationFlowProps) {
             <DocumentAttachment
               label="Personas document (optional reference)"
               fileName={data.personasDocumentName}
-              readOnly={readOnly}
-              onFileSelect={
-                mode === "full"
-                  ? (name) => patch({ personasDocumentName: name })
-                  : undefined
-              }
+              onFileSelect={(name) => patch({ personasDocumentName: name })}
             />
           </FieldGroup>
         );
@@ -335,7 +313,6 @@ export function ProductValidationFlow({ mode }: ProductValidationFlowProps) {
               <Input
                 id="primaryBuyer"
                 value={data.primaryBuyer}
-                readOnly={readOnly}
                 placeholder="Who signs the check?"
                 onChange={(e) => patch({ primaryBuyer: e.target.value })}
               />
@@ -346,7 +323,6 @@ export function ProductValidationFlow({ mode }: ProductValidationFlowProps) {
               <Input
                 id="competitors"
                 value={data.competitorCompanies}
-                readOnly={readOnly}
                 placeholder="Acme, Contoso, …"
                 onChange={(e) =>
                   patch({ competitorCompanies: e.target.value })
@@ -358,7 +334,6 @@ export function ProductValidationFlow({ mode }: ProductValidationFlowProps) {
               <Input
                 id="geography"
                 value={data.geography}
-                readOnly={readOnly}
                 placeholder="Regions or countries"
                 onChange={(e) => patch({ geography: e.target.value })}
               />
@@ -381,7 +356,6 @@ export function ProductValidationFlow({ mode }: ProductValidationFlowProps) {
                 id="financialThreshold"
                 type="number"
                 min={1}
-                readOnly={readOnly}
                 value={
                   data.financialThresholdAmount === ""
                     ? ""
@@ -408,7 +382,6 @@ export function ProductValidationFlow({ mode }: ProductValidationFlowProps) {
                 id="expectedDurationWeeks"
                 type="number"
                 min={1}
-                readOnly={readOnly}
                 value={
                   data.expectedDurationWeeks === ""
                     ? ""
@@ -435,7 +408,6 @@ export function ProductValidationFlow({ mode }: ProductValidationFlowProps) {
               <Textarea
                 id="expectedResourceConsumption"
                 value={data.expectedResourceConsumption}
-                readOnly={readOnly}
                 rows={4}
                 placeholder="e.g. 2 engineers full-time, PM 25%, $5k/mo cloud during beta…"
                 onChange={(e) =>
@@ -456,7 +428,6 @@ export function ProductValidationFlow({ mode }: ProductValidationFlowProps) {
               <Textarea
                 id="companyProfitability"
                 value={data.companyProfitabilityDetails}
-                readOnly={readOnly}
                 rows={3}
                 placeholder="e.g. $2M ARR, 70% gross margin, EBITDA negative until Q3…"
                 onChange={(e) =>
@@ -475,7 +446,6 @@ export function ProductValidationFlow({ mode }: ProductValidationFlowProps) {
                 id="runwayRemainingMonths"
                 type="number"
                 min={1}
-                readOnly={readOnly}
                 value={
                   data.runwayRemainingMonths === ""
                     ? ""
@@ -517,8 +487,8 @@ export function ProductValidationFlow({ mode }: ProductValidationFlowProps) {
           <div>
             <h2 className="text-lg font-semibold">Pick a sample product</h2>
             <p className="text-sm text-muted-foreground">
-              Choose a card to load realistic context into the form below, then
-              walk through each step.
+              Choose a card to pre-fill the form below—you can edit any field
+              before continuing through each step.
             </p>
           </div>
           <DemoProductCards
@@ -567,7 +537,7 @@ export function ProductValidationFlow({ mode }: ProductValidationFlowProps) {
                   ? "Select a product above to continue."
                   : mode === "full"
                     ? "Fill in every field on this step to continue."
-                    : "Review the loaded details, then continue."}
+                    : "Pre-filled sample data—edit anything you need, then continue."}
               </CardDescription>
             </CardHeader>
             <CardContent className="pt-6">
