@@ -4,6 +4,8 @@ Validate a feature **before** you build it.
 
 ProductSense walks a product team from context (product, feature, market, GTM, financials) through code-risk, market evidence, simulated customer demand, and financial fit — then composes one verdict: ship, iterate, or don’t.
 
+**Live app:** [https://productsense-p330.onrender.com](https://productsense-p330.onrender.com) — try [demo mode](https://productsense-p330.onrender.com/demo) without signing in.
+
 The web app lives in `client/` (Next.js). The API lives in `server/` (Express + SQLite).
 
 ## What you get
@@ -107,7 +109,7 @@ Copy `server/.env.example` → `server/.env`. The client only needs `NEXT_PUBLIC
 | `DATABASE_PATH` | SQLite file (default `./data/app.db`). Created on startup. |
 | `CLIENT_ORIGIN` | Comma-separated CORS origins (must match the browser URL). |
 | `JWT_SECRET` | Signs auth tokens. Required in production. |
-| `PUBLIC_API_URL` | URL coding agents use when POSTing regression reports. Split local: `http://localhost:1337`. Monolith / Render: the public app URL. |
+| `PUBLIC_API_URL` | URL coding agents use when POSTing regression reports. Split local: `http://localhost:1337`. Monolith / Render: `https://productsense-p330.onrender.com`. |
 | `COMMANDCODE_API_KEY` | LLM calls (market synthesis, persona fleet, financials, final report). |
 | `COMMANDCODE_MODEL` | Default `deepseek/deepseek-v4-flash`. |
 | `CRUSTDATA_API_KEY` | Market analysis Step 1. Also `CRUSTDATA_API_BASE`, `CRUSTDATA_API_VERSION`, `CRUSTDATA_AUTH_SCHEME`. |
@@ -161,4 +163,6 @@ Node’s built-in test runner (`server/test/**/*.test.js`).
 
 ## Deploy
 
-`render.yaml` defines a Docker web service with a persistent disk at `/app/server/data`. In the dashboard set `JWT_SECRET`, `COMMANDCODE_API_KEY`, `CRUSTDATA_API_KEY`, `CFO_TOKEN_ENCRYPTION_KEY`, `CLIENT_ORIGIN`, and `PUBLIC_API_URL` (your `https://….onrender.com` URL). Do not set `PORT`.
+Production runs on Render: [https://productsense-p330.onrender.com](https://productsense-p330.onrender.com).
+
+`render.yaml` defines a Docker web service with a persistent disk at `/app/server/data`. In the dashboard set `JWT_SECRET`, `COMMANDCODE_API_KEY`, `CRUSTDATA_API_KEY`, `CFO_TOKEN_ENCRYPTION_KEY`, `CLIENT_ORIGIN`, and `PUBLIC_API_URL` to `https://productsense-p330.onrender.com`. Do not set `PORT`.
